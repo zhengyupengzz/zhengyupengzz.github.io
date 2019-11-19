@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>hojun</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="/"/>
+  <updated>2019-11-18T11:09:25.114Z</updated>
+  <id>/</id>
+  
+  <author>
+    <name>hojun</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>11.18JAVA学习进度</title>
+    <link href="/2019/11/18/2019-11-18-18ribao/"/>
+    <id>/2019/11/18/2019-11-18-18ribao/</id>
+    <published>2019-11-17T16:00:00.000Z</published>
+    <updated>2019-11-18T11:09:25.114Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;11-18Java学习进度&quot;&gt;&lt;a href=&quot;#11-18Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;11.18Java学习进度&quot;&gt;&lt;/a&gt;11.18Java学习进度&lt;/h1&gt;&lt;h2 id=&quot;解析xml属性操作-Xpath&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>11.16技术分享</title>
+    <link href="/2019/11/16/2019-11-16-16jishu/"/>
+    <id>/2019/11/16/2019-11-16-16jishu/</id>
+    <published>2019-11-15T16:00:00.000Z</published>
+    <updated>2019-11-16T06:36:06.690Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;11-16技术分享&quot;&gt;&lt;a href=&quot;#11-16技术分享&quot; class=&quot;headerlink&quot; title=&quot;11.16技术分享&quot;&gt;&lt;/a&gt;11.16技术分享&lt;/h1&gt;&lt;h2 id=&quot;idea运行tomcat控制台乱码&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>11.16JAVA学习进度</title>
+    <link href="/2019/11/16/2019-11-16-16ribao/"/>
+    <id>/2019/11/16/2019-11-16-16ribao/</id>
+    <published>2019-11-15T16:00:00.000Z</published>
+    <updated>2019-11-18T10:37:39.556Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;11-16Java学习进度&quot;&gt;&lt;a href=&quot;#11-16Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;11.16Java学习进度&quot;&gt;&lt;/a&gt;11.16Java学习进度&lt;/h1&gt;&lt;h2 id=&quot;数据库优化-XML&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>11.15JAVA学习进度</title>
+    <link href="/2019/11/15/2019-11-15-15ribao/"/>
+    <id>/2019/11/15/2019-11-15-15ribao/</id>
+    <published>2019-11-14T16:00:00.000Z</published>
+    <updated>2019-11-15T11:35:32.543Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;11-15Java学习进度&quot;&gt;&lt;a href=&quot;#11-15Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;11.15Java学习进度&quot;&gt;&lt;/a&gt;11.15Java学习进度&lt;/h1&gt;&lt;h4 id=&quot;JDBC事务-批处理-连接池&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>11.14JAVA学习进度</title>
+    <link href="/2019/11/14/2019-11-14-14ribao/"/>
+    <id>/2019/11/14/2019-11-14-14ribao/</id>
+    <published>2019-11-13T16:00:00.000Z</published>
+    <updated>2019-11-15T13:48:34.313Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;11-14Java学习进度&quot;&gt;&lt;a href=&quot;#11-14Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;11.14Java学习进度&quot;&gt;&lt;/a&gt;11.14Java学习进度&lt;/h1&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>11.13JAVA学习进度</title>
+    <link href="/2019/11/13/2019-11-13-13ribao/"/>
+    <id>/2019/11/13/2019-11-13-13ribao/</id>
+    <published>2019-11-12T16:00:00.000Z</published>
+    <updated>2019-11-14T01:07:03.448Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;11-13Java学习进度&quot;&gt;&lt;a href=&quot;#11-13Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;11.13Java学习进度&quot;&gt;&lt;/a&gt;11.13Java学习进度&lt;/h1&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>11.12技术分享</title>
+    <link href="/2019/11/12/2019-11-12-12jishu/"/>
+    <id>/2019/11/12/2019-11-12-12jishu/</id>
+    <published>2019-11-11T16:00:00.000Z</published>
+    <updated>2019-11-16T01:22:25.395Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;批处理-强制删除&quot;&gt;&lt;a href=&quot;#批处理-强制删除&quot; class=&quot;headerlink&quot; title=&quot;批处理:强制删除&quot;&gt;&lt;/a&gt;批处理:强制删除&lt;/h1&gt;&lt;h4 id=&quot;批处理文件编辑&quot;&gt;&lt;a href=&quot;#批处理文件编辑&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>10.26JAVA学习进度</title>
+    <link href="/2019/10/26/2019-10-26-26ribao/"/>
+    <id>/2019/10/26/2019-10-26-26ribao/</id>
+    <published>2019-10-25T16:00:00.000Z</published>
+    <updated>2019-11-12T08:22:23.337Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;10-26Java学习进度&quot;&gt;&lt;a href=&quot;#10-26Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;10.26Java学习进度&quot;&gt;&lt;/a&gt;10.26Java学习进度&lt;/h1&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>10.25JAVA学习进度</title>
+    <link href="/2019/10/25/2019-10-25-25ribao/"/>
+    <id>/2019/10/25/2019-10-25-25ribao/</id>
+    <published>2019-10-24T16:00:00.000Z</published>
+    <updated>2019-11-18T14:09:01.020Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;10-25Java学习进度&quot;&gt;&lt;a href=&quot;#10-25Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;10.25Java学习进度&quot;&gt;&lt;/a&gt;10.25Java学习进度&lt;/h1&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>10.24JAVA学习进度</title>
+    <link href="/2019/10/24/2019-10-24-24ribao/"/>
+    <id>/2019/10/24/2019-10-24-24ribao/</id>
+    <published>2019-10-23T16:00:00.000Z</published>
+    <updated>2019-11-11T03:26:15.075Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;10-24Java学习进度&quot;&gt;&lt;a href=&quot;#10-24Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;10.24Java学习进度&quot;&gt;&lt;/a&gt;10.24Java学习进度&lt;/h1&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>10.23JAVA学习进度</title>
+    <link href="/2019/10/23/2019-10-23-23ribao/"/>
+    <id>/2019/10/23/2019-10-23-23ribao/</id>
+    <published>2019-10-22T16:00:00.000Z</published>
+    <updated>2019-11-11T01:12:44.399Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;10-23Java学习进度&quot;&gt;&lt;a href=&quot;#10-23Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;10.23Java学习进度&quot;&gt;&lt;/a&gt;10.23Java学习进度&lt;/h1&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>10.22JAVA学习进度</title>
+    <link href="/2019/10/22/2019-10-22-22ribao/"/>
+    <id>/2019/10/22/2019-10-22-22ribao/</id>
+    <published>2019-10-21T16:00:00.000Z</published>
+    <updated>2019-11-09T08:32:56.265Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;10-22Java学习进度&quot;&gt;&lt;a href=&quot;#10-22Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;10.22Java学习进度&quot;&gt;&lt;/a&gt;10.22Java学习进度&lt;/h1&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>10.21JAVA学习进度</title>
+    <link href="/2019/10/21/2019-10-21-21ribao/"/>
+    <id>/2019/10/21/2019-10-21-21ribao/</id>
+    <published>2019-10-20T16:00:00.000Z</published>
+    <updated>2019-11-09T08:32:44.276Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;10-21Java学习进度&quot;&gt;&lt;a href=&quot;#10-21Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;10.21Java学习进度&quot;&gt;&lt;/a&gt;10.21Java学习进度&lt;/h1&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>10.19JAVA学习进度</title>
+    <link href="/2019/10/19/2019-10-19-19ribao/"/>
+    <id>/2019/10/19/2019-10-19-19ribao/</id>
+    <published>2019-10-18T16:00:00.000Z</published>
+    <updated>2019-11-08T15:01:16.914Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;10-19Java学习进度&quot;&gt;&lt;a href=&quot;#10-19Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;10.19Java学习进度&quot;&gt;&lt;/a&gt;10.19Java学习进度&lt;/h1&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>10.18JAVA学习进度</title>
+    <link href="/2019/10/18/2019-10-18-18ribao/"/>
+    <id>/2019/10/18/2019-10-18-18ribao/</id>
+    <published>2019-10-17T16:00:00.000Z</published>
+    <updated>2019-11-08T13:32:59.714Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;10-18Java学习进度&quot;&gt;&lt;a href=&quot;#10-18Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;10.18Java学习进度&quot;&gt;&lt;/a&gt;10.18Java学习进度&lt;/h1&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>10.17JAVA学习进度</title>
+    <link href="/2019/10/17/2019-10-17-17ribao/"/>
+    <id>/2019/10/17/2019-10-17-17ribao/</id>
+    <published>2019-10-16T16:00:00.000Z</published>
+    <updated>2019-11-08T13:31:35.876Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;10-17Java学习进度&quot;&gt;&lt;a href=&quot;#10-17Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;10.17Java学习进度&quot;&gt;&lt;/a&gt;10.17Java学习进度&lt;/h1&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>10.14</title>
+    <link href="/2019/10/14/2019-10-14-14jishu/"/>
+    <id>/2019/10/14/2019-10-14-14jishu/</id>
+    <published>2019-10-13T16:00:00.000Z</published>
+    <updated>2019-10-22T06:50:15.115Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;看板娘代码&quot;&gt;&lt;a href=&quot;#看板娘代码&quot; class=&quot;headerlink&quot; title=&quot;看板娘代码:&quot;&gt;&lt;/a&gt;看板娘代码:&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;script
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>10.13</title>
+    <link href="/2019/10/13/2019-10-13-13jishu/"/>
+    <id>/2019/10/13/2019-10-13-13jishu/</id>
+    <published>2019-10-12T16:00:00.000Z</published>
+    <updated>2019-11-12T14:17:31.141Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;今天发现了一个时间小人的特效-很有意思&quot;&gt;&lt;a href=&quot;#今天发现了一个时间小人的特效-很有意思&quot; class=&quot;headerlink&quot; title=&quot;今天发现了一个时间小人的特效 很有意思:&quot;&gt;&lt;/a&gt;今天发现了一个时间小人的特效
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>9.27七十周年心得</title>
+    <link href="/2019/09/27/2019-09-27-27xinde/"/>
+    <id>/2019/09/27/2019-09-27-27xinde/</id>
+    <published>2019-09-26T16:00:00.000Z</published>
+    <updated>2019-10-22T06:42:25.951Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;今天看了很多关于国家的视频-发现这七十年发展的是真不容易&quot;&gt;&lt;a href=&quot;#今天看了很多关于国家的视频-发现这七十年发展的是真不容易&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>9.27技术分享</title>
+    <link href="/2019/09/27/2019-09-27-27jishu/"/>
+    <id>/2019/09/27/2019-09-27-27jishu/</id>
+    <published>2019-09-26T16:00:00.000Z</published>
+    <updated>2019-10-22T06:42:22.072Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;今天发现了git克隆下来的远程库特别大&quot;&gt;&lt;a href=&quot;#今天发现了git克隆下来的远程库特别大&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
