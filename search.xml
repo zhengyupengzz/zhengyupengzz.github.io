@@ -2209,28 +2209,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.23日报</title>
-    <url>/2019/08/23/2019-08-23-23ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天把vim常用命令整理得差不多了，vim进度90%，今天开始看的linux命令，但是感觉看的很乱，进度40%。</code>  </p>
-</blockquote>
-<blockquote>
-<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天心不够静，看到属性多了就乱了，不知道从哪开背起，后来慢慢的静下来从头看也看了好几个命令。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.23技术文档</title>
     <url>/2019/08/23/2019-08-23-23jishu/</url>
     <content><![CDATA[<h1 id="linux常用命令整理之一"><a href="#linux常用命令整理之一" class="headerlink" title="linux常用命令整理之一"></a>linux常用命令整理之一</h1><p><strong>关机 (系统的关机、重启以及登出 ):</strong><br>shutdown -h now 关闭系统<br>init 0 关闭系统<br>telinit 0 关闭系统<br>shutdown -h hours:minutes &amp; 按预定时间关闭系统<br>shutdown -c 取消按预定时间关闭系统<br>shutdown -r now 重启<br>reboot 重启<br>logout 注销   </p>
@@ -2251,6 +2229,28 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.23日报</title>
+    <url>/2019/08/23/2019-08-23-23ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天把vim常用命令整理得差不多了，vim进度90%，今天开始看的linux命令，但是感觉看的很乱，进度40%。</code>  </p>
+</blockquote>
+<blockquote>
+<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天心不够静，看到属性多了就乱了，不知道从哪开背起，后来慢慢的静下来从头看也看了好几个命令。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
