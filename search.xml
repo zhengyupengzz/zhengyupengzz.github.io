@@ -729,9 +729,9 @@ System.out.println(&quot;是回文&quot;);
         <category>java</category>
       </categories>
       <tags>
+        <tag>String类</tag>
         <tag>Object类,</tag>
         <tag>包装类和数学处理类,</tag>
-        <tag>String类</tag>
       </tags>
   </entry>
   <entry>
@@ -2010,25 +2010,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.27技术文档</title>
-    <url>/2019/08/27/2019-08-27-27jishu/</url>
-    <content><![CDATA[<h1 id="TCP-IP协议"><a href="#TCP-IP协议" class="headerlink" title="TCP/IP协议"></a>TCP/IP协议</h1><blockquote>
-<p>TCP/IP协议简介:  </p>
-</blockquote>
-<p>TCP/IP传输协议，即传输控制/网络协议，也叫作网络通讯协议。它是在网络的使用中的最基本的通信协议。TCP/IP传输协议对互联网中各部分进行通信的标准和方法进行了规定。并且，TCP/IP传输协议是保证网络数据信息及时、完整传输的两个重要的协议。TCP/IP传输协议是严格来说是一个四层的体系结构，应用层、传输层、网络层和数据链路层都包含其中。</p>
-<blockquote>
-<p>TCP/IP协议的组成:  </p>
-</blockquote>
-<p>TCP/IP协议在一定程度上参考了OSI的体系结构。OSI模型共有七层，从下到上分别是物理层、数据链路层、网络层、运输层、会话层、表示层和应用层。</p>
-]]></content>
-      <categories>
-        <category>TCP</category>
-      </categories>
-      <tags>
-        <tag>TCP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.27日报</title>
     <url>/2019/08/27/2019-08-27-27ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
@@ -2045,6 +2026,25 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.27技术文档</title>
+    <url>/2019/08/27/2019-08-27-27jishu/</url>
+    <content><![CDATA[<h1 id="TCP-IP协议"><a href="#TCP-IP协议" class="headerlink" title="TCP/IP协议"></a>TCP/IP协议</h1><blockquote>
+<p>TCP/IP协议简介:  </p>
+</blockquote>
+<p>TCP/IP传输协议，即传输控制/网络协议，也叫作网络通讯协议。它是在网络的使用中的最基本的通信协议。TCP/IP传输协议对互联网中各部分进行通信的标准和方法进行了规定。并且，TCP/IP传输协议是保证网络数据信息及时、完整传输的两个重要的协议。TCP/IP传输协议是严格来说是一个四层的体系结构，应用层、传输层、网络层和数据链路层都包含其中。</p>
+<blockquote>
+<p>TCP/IP协议的组成:  </p>
+</blockquote>
+<p>TCP/IP协议在一定程度上参考了OSI的体系结构。OSI模型共有七层，从下到上分别是物理层、数据链路层、网络层、运输层、会话层、表示层和应用层。</p>
+]]></content>
+      <categories>
+        <category>TCP</category>
+      </categories>
+      <tags>
+        <tag>TCP</tag>
       </tags>
   </entry>
   <entry>
@@ -2254,28 +2254,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.22日报</title>
-    <url>/2019/08/22/2019-08-22-22ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>git已经基本完成，今天学习了如何使用vim和vim的常用命令，已经大致地过了一遍，vim学习进度大约70%。</code>  </p>
-</blockquote>
-<blockquote>
-<p><code>并且今天还按照网上的材料整理了一下常用命令，分享了技术博客。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>vim的常用语法挺简单的，但是我看了两节课没去怎么实践去敲，感觉边敲边记会更快一些。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
-]]></content>
-      <categories>
-        <category>命令</category>
-      </categories>
-      <tags>
-        <tag>vim</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.22技术文档</title>
     <url>/2019/08/22/2019-08-22-22jishu/</url>
     <content><![CDATA[<h1 id="vim常用命令整理"><a href="#vim常用命令整理" class="headerlink" title="vim常用命令整理"></a>vim常用命令整理</h1><blockquote>
@@ -2432,6 +2410,28 @@ onload          浏览器已完成页面的加载
 <p>重复前一个动作</p>
 </blockquote>
 <p> <code>.</code> </p>
+]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.22日报</title>
+    <url>/2019/08/22/2019-08-22-22ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>git已经基本完成，今天学习了如何使用vim和vim的常用命令，已经大致地过了一遍，vim学习进度大约70%。</code>  </p>
+</blockquote>
+<blockquote>
+<p><code>并且今天还按照网上的材料整理了一下常用命令，分享了技术博客。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>vim的常用语法挺简单的，但是我看了两节课没去怎么实践去敲，感觉边敲边记会更快一些。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
 ]]></content>
       <categories>
         <category>命令</category>
@@ -2780,8 +2780,8 @@ onload          浏览器已完成页面的加载
         <category>系统与命令</category>
       </categories>
       <tags>
-        <tag>ubuntu</tag>
         <tag>git</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
 </search>
