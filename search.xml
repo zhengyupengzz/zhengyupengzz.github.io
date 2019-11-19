@@ -58,6 +58,13 @@ xw.close();
 <li>使用xpath需要引包: jaxen-1.1-beta-7.jar  </li>
 </ol>
 ]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>解析xml属性操作</tag>
+        <tag>Xpath</tag>
+      </tags>
   </entry>
   <entry>
     <title>11.16技术分享</title>
@@ -88,6 +95,12 @@ xw.close();
 <p>自己改tomcat的logging.properties为GBk会导致调试时get/post参数乱码  </p>
 <p>还是都改成UTF8稳妥。</p>
 ]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>idea控制台乱码</tag>
+      </tags>
   </entry>
   <entry>
     <title>11.16JAVA学习进度</title>
@@ -209,6 +222,13 @@ for(Element e1: list){
 <li>类型引用错误</li>
 </ol>
 ]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库优化</tag>
+        <tag>XML</tag>
+      </tags>
   </entry>
   <entry>
     <title>11.15JAVA学习进度</title>
@@ -319,6 +339,14 @@ for(Element e1: list){
 </code></pre></li>
 </ol>
 ]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>JDBC事务</tag>
+        <tag>SQL批处理</tag>
+        <tag>连接池</tag>
+      </tags>
   </entry>
   <entry>
     <title>11.14JAVA学习进度</title>
@@ -351,6 +379,14 @@ for(Element e1: list){
 Statement state     执行环境
 ResultSet result     结果集对象
 </code></pre>]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>SQL注入</tag>
+        <tag>工具类思想</tag>
+        <tag>DAO</tag>
+      </tags>
   </entry>
   <entry>
     <title>11.13JAVA学习进度</title>
@@ -384,6 +420,13 @@ ResultSet result     结果集对象
 <li>由于不拼接sql, 程序员出错的概率会降低, 提高编程质量和速度。</li>
 </ol>
 ]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>JDBC</tag>
+        <tag>oracle常用表结构操作</tag>
+      </tags>
   </entry>
   <entry>
     <title>11.12技术分享</title>
@@ -411,6 +454,12 @@ RD /S /Q \\?\%1
 <p>批处理每次能处理的变量从%0—%9共10个，其中%0默认给批处理文件名使用，%1默认为使用此批处理时输入的的第一个值.  </p>
 <p>同理：%2—%9指输入的第2-9个值。</p>
 ]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>强制删除</tag>
+      </tags>
   </entry>
   <entry>
     <title>10.26JAVA学习进度</title>
@@ -519,6 +568,15 @@ for(Entry&lt;Character,Integer&gt; e:entries){
     System.out.println(key+&quot;:&quot;+value);
 }
 </code></pre>]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>泛型机制</tag>
+        <tag>Queue集合</tag>
+        <tag>Set集合</tag>
+        <tag>Map集合</tag>
+      </tags>
   </entry>
   <entry>
     <title>10.25JAVA学习进度</title>
@@ -617,6 +675,14 @@ System.out.println(&quot;是回文&quot;);
 <p>其中Vector类的底层采用数组进行数据的管理，与ArrayList类相比属于线程安全的类，因此效率比较低，在以后的开发中推荐使用ArrayList类取代之。</p>
 <p><strong>常用的方法:</strong><br>List集合的常用方法 | 功能描述<br> :-: | :-:<br>void add(int index,E element) | 向集合中指定位置添加元素<br> boolean addAll(int index,Coolection&lt;?extends E&gt; c) | 向集合中添加所有元素<br> E get(int index) | 从集合中获取指定位置元素<br> E set(int index,E element) | 修改指定位置的元素<br> E remove(int index) | 删除指定位置的元素     </p>
 ]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>String类</tag>
+        <tag>Collection集合</tag>
+        <tag>List集合</tag>
+      </tags>
   </entry>
   <entry>
     <title>10.24JAVA学习进度</title>
@@ -659,6 +725,14 @@ System.out.println(&quot;是回文&quot;);
 <p>java.lang.String类用于描述字符串，Java应用程序中所有字符串字面值都可以作为String类型的对象加以描述，如：”abc”等。<br>   该类描述的字符串内容是个常量，一旦创建完毕后则不能更改，因此可以被共享。</p>
 <p><strong>常量池:</strong><br>由于String类型描述的字符串内容是个常量不可改变，因此Java虚拟机提供了一个常量池，当Java程序中出现字符串内容时就放入常量池中，若后续出现重复的字符串内容则直接使用池中已有的对象而不需再次创建，从而提高了性能。</p>
 ]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>String类</tag>
+        <tag>Object类,</tag>
+        <tag>包装类和数学处理类,</tag>
+      </tags>
   </entry>
   <entry>
     <title>10.23JAVA学习进度</title>
@@ -715,6 +789,15 @@ System.out.println(&quot;是回文&quot;);
 <pre><code>接口/父类类型 引用变量名 = new 接口/父类类型(){ 方法的重写 };
 </code></pre><p><strong>经验的分享:</strong><br>当接口类型的引用作为方法的形参时，实参的传递方式有两种：<br>a.自定义类实现接口，然后创建该类的对象作为实参传递；<br>b.使用匿名内部类的语法格式来得到接口类型的引用作为实参传递；   </p>
 ]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>访问控制</tag>
+        <tag>关键字</tag>
+        <tag>接口</tag>
+        <tag>多态</tag>
+      </tags>
   </entry>
   <entry>
     <title>10.22JAVA学习进度</title>
@@ -754,6 +837,15 @@ System.out.println(&quot;是回文&quot;);
 <p><strong>方法的重写(override):</strong><br>(1)基本概念<br>   若从父类中继承下来的方法不满足子类的需求时，就需要在子类中重新写一个与父类中一样的方法来覆盖从父类中继承的版本，这种方式就叫做重写。</p>
 <p>(2)重写的原则(笔试题)<br>  a.要求方法名相同、参数列表相同、返回值类型相同，从jdk1.5开始允许返回子类类型<br>  b.要求方法的访问权限不能变小，可以相同或者变大。<br>  c.要求不能抛出更大的异常(异常机制)。</p>
 ]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>封装</tag>
+        <tag>static关键字</tag>
+        <tag>继承与方法的重写</tag>
+        <tag>单例设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>10.21JAVA学习进度</title>
@@ -789,6 +881,14 @@ System.out.println(&quot;是回文&quot;);
 </code></pre><p><strong>继承的基本概念:</strong><br>当多个类之间有相同的特征和行为时，可以将相同的内容提取出来组成一个公共类，让多个类吸收公共类中已有特征和行为而在多个类的内部编写自己独有特征和行为的方式，叫做继承。<br>   使用继承可以提高代码的复用性和扩展性以及可维护性。<br>   在Java语言中使用extends(扩展)关键字来表达继承关系。  </p>
 <p>如：<br>   public class Student extends Person {}  - 表示Student类继承自Person类<br>   其中Person类叫做基类、父类、超类<br>   其中Student类叫做派生类、子类、孩子类  </p>
 ]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>封装</tag>
+        <tag>static关键字</tag>
+        <tag>单例设计</tag>
+      </tags>
   </entry>
   <entry>
     <title>10.19JAVA学习进度</title>
@@ -840,6 +940,14 @@ return n * show(n-1);
 </code></pre><p><strong>(2)注意事项:</strong>  </p>
 <p>a.必须找到递归的规律和退出条件；<br>b.使用递归使得问题简单化而不是复杂化；<br>c.若递归影响到程序的执行性能则使用递推取代之；</p>
 ]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>构造方法,方法重载</tag>
+        <tag>this关键字</tag>
+        <tag>方法的传参和调用</tag>
+      </tags>
   </entry>
   <entry>
     <title>10.18JAVA学习进度</title>
@@ -880,6 +988,15 @@ Person p = new Person();
 </code></pre><p>(返回数据类型要与形参列表相同)  </p>
 <p>成员方法的调用:<br>p.show();</p>
 ]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>数组元素之间的操作</tag>
+        <tag>号码的生成和去重</tag>
+        <tag>面向对象的基本概念和三大特征</tag>
+        <tag>了解了类和对象的概念</tag>
+      </tags>
   </entry>
   <entry>
     <title>10.17JAVA学习进度</title>
@@ -893,6 +1010,14 @@ Person p = new Person();
 <p>第五课:</p>
 <p>学习了数组的操作,增删改查,<br>二维数组的操作</p>
 ]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>对java的简单了解和入门</tag>
+        <tag>简单的逻辑结构和循环结构</tag>
+        <tag>简单的数组操作</tag>
+      </tags>
   </entry>
   <entry>
     <title>10.14</title>
@@ -901,6 +1026,12 @@ Person p = new Person();
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot;/&gt;
 &lt;script src=&quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js&quot;&gt;&lt;/script&gt;
 </code></pre>]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>看板娘</tag>
+      </tags>
   </entry>
   <entry>
     <title>10.13</title>
@@ -911,6 +1042,32 @@ Person p = new Person();
 </code></pre><p>或者:  </p>
 <pre><code>&lt;script charset=&quot;Shift_JIS&quot; src=&quot;http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js&quot;&gt;&lt;/script&gt;
 </code></pre>]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>小人特效</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>9.27七十周年心得</title>
+    <url>/2019/09/27/2019-09-27-27xinde/</url>
+    <content><![CDATA[<h1 id="今天看了很多关于国家的视频-发现这七十年发展的是真不容易"><a href="#今天看了很多关于国家的视频-发现这七十年发展的是真不容易" class="headerlink" title="今天看了很多关于国家的视频,发现这七十年发展的是真不容易"></a>今天看了很多关于国家的视频,发现这七十年发展的是真不容易</h1><p>70年的风雨征程，带来了祖国繁荣强大，如同阳光照亮了我们的前程，指明了我们前进的方向，带领全国各族人民从贫穷走向富裕，从胜利走向辉煌。</p>
+<p>　　中华人民共和国国旗旗面为红色象征革命。旗上的五颗五角星及其相互关系象征共产党领导下的革命人民大团结。星用黄色是为着在红地上显出光明，四颗小五角星各有一角正对着大星的中心点，表示围绕着一个中心而团结。每逢国庆，去天安门广场看升国旗是无数人心中的梦想。因此，利用国庆长假去北京游玩的人们，通常会赶早来到天安门广场看国旗班的军人升旗，以表达对祖国的无比热爱，看着五星红旗徐徐升起，心中的激动无以言表。每年10月1日是我国的国庆节，我国于1999年修订发布《全国年节及纪念日放假办法》，将国庆节与相邻的周六、日组合为7天的国庆长假，被称之为“国庆黄金周”，用放假的形式，让老百姓共同感受国庆的欢乐。</p>
+<p>　　回首这70年，中华人民走得每一步都是步履蹒跚，每一步都付出了巨大牺牲。但是如今中国经过几十年来的艰苦建设，已取得了“乘长风，破万里浪”的迅猛发展:《辉煌中国》之《圆梦工程》透过港珠澳大桥、胡麻岭隧道、郑万铁路、复兴号、上海洋山港自动化码头、中国移动互联网等一个个超级工程，领略五年来一张张中国基础建设的大网，如何编织起人民走向幸福、美好的希望版图，托举起中华民族伟大复兴的中国梦。</p>
+<p>面对飘扬的国旗亿万双眼睛注视五星红旗冉冉升起,亿万颗心灵伴随祖国母亲一起搏动。抬头仰望,发现鲜艳的国旗已在共和国的上空飘扬了半个世纪。在世纪之交的今天,共和国已走过了七十个春秋。七十年前，”洋油” ”洋面” 还充斥着中国的大江南北;七十年后，许多国产已遍及世界各地。</p>
+<p>七十年前,我们的祖先还把汉代的耕梨插进二十世纪的农田;七十年后,现代化机械已开进中国的农家。<br>七十年前,港澳游子还站在金门望厦门;五十年后,归国侨胞已站在厦门望金门。-样的遥望,却是两样的情形。<br>七十年里，萧瑟秋风今又是，换了人间。</p>
+<p>依旧淳朴中隐着聪慧,荒中透着俊季，可再也听不见那血泪凝结的叹息,更也找不到贫贱不堪的足印，再也寻不见你昔日枯瘦蹒跚的身影,麦穗和齿轮构筑的太阳,伸出金色的臂膀擎着一片晴空,逶道而来,斩断阴霾的剑光在普照众生的沧桑。</p>
+<p>你傲然屹立于世界的东方,不管身边的风云如何的变幻,始终坚定地沿真理的方向勇往直前。你般迎着八面春风,在辐射的节奏里,眺望着更加灿烂的前程。</p>
+<p>我灵魂的纤绳永系向你风帆的桅杆;我手中的彩笔,永远写你壮重的风姿;</p>
+<p>面对飘扬国旗，血液在奔涌，思绪在沸腾,理想的根须在土里扎得更深。面对飘扬的国旗,我们已把自己溶入母亲炙热的胸襟。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
   </entry>
   <entry>
     <title>9.27技术分享</title>
@@ -952,20 +1109,12 @@ Person p = new Person();
 </blockquote>
 <p><a href="https://blog.csdn.net/yolohohohoho/article/details/90607229" target="_blank" rel="noopener">参考博客地址</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>9.27七十周年心得</title>
-    <url>/2019/09/27/2019-09-27-27xinde/</url>
-    <content><![CDATA[<h1 id="今天看了很多关于国家的视频-发现这七十年发展的是真不容易"><a href="#今天看了很多关于国家的视频-发现这七十年发展的是真不容易" class="headerlink" title="今天看了很多关于国家的视频,发现这七十年发展的是真不容易"></a>今天看了很多关于国家的视频,发现这七十年发展的是真不容易</h1><p>70年的风雨征程，带来了祖国繁荣强大，如同阳光照亮了我们的前程，指明了我们前进的方向，带领全国各族人民从贫穷走向富裕，从胜利走向辉煌。</p>
-<p>　　中华人民共和国国旗旗面为红色象征革命。旗上的五颗五角星及其相互关系象征共产党领导下的革命人民大团结。星用黄色是为着在红地上显出光明，四颗小五角星各有一角正对着大星的中心点，表示围绕着一个中心而团结。每逢国庆，去天安门广场看升国旗是无数人心中的梦想。因此，利用国庆长假去北京游玩的人们，通常会赶早来到天安门广场看国旗班的军人升旗，以表达对祖国的无比热爱，看着五星红旗徐徐升起，心中的激动无以言表。每年10月1日是我国的国庆节，我国于1999年修订发布《全国年节及纪念日放假办法》，将国庆节与相邻的周六、日组合为7天的国庆长假，被称之为“国庆黄金周”，用放假的形式，让老百姓共同感受国庆的欢乐。</p>
-<p>　　回首这70年，中华人民走得每一步都是步履蹒跚，每一步都付出了巨大牺牲。但是如今中国经过几十年来的艰苦建设，已取得了“乘长风，破万里浪”的迅猛发展:《辉煌中国》之《圆梦工程》透过港珠澳大桥、胡麻岭隧道、郑万铁路、复兴号、上海洋山港自动化码头、中国移动互联网等一个个超级工程，领略五年来一张张中国基础建设的大网，如何编织起人民走向幸福、美好的希望版图，托举起中华民族伟大复兴的中国梦。</p>
-<p>面对飘扬的国旗亿万双眼睛注视五星红旗冉冉升起,亿万颗心灵伴随祖国母亲一起搏动。抬头仰望,发现鲜艳的国旗已在共和国的上空飘扬了半个世纪。在世纪之交的今天,共和国已走过了七十个春秋。七十年前，”洋油” ”洋面” 还充斥着中国的大江南北;七十年后，许多国产已遍及世界各地。</p>
-<p>七十年前,我们的祖先还把汉代的耕梨插进二十世纪的农田;七十年后,现代化机械已开进中国的农家。<br>七十年前,港澳游子还站在金门望厦门;五十年后,归国侨胞已站在厦门望金门。-样的遥望,却是两样的情形。<br>七十年里，萧瑟秋风今又是，换了人间。</p>
-<p>依旧淳朴中隐着聪慧,荒中透着俊季，可再也听不见那血泪凝结的叹息,更也找不到贫贱不堪的足印，再也寻不见你昔日枯瘦蹒跚的身影,麦穗和齿轮构筑的太阳,伸出金色的臂膀擎着一片晴空,逶道而来,斩断阴霾的剑光在普照众生的沧桑。</p>
-<p>你傲然屹立于世界的东方,不管身边的风云如何的变幻,始终坚定地沿真理的方向勇往直前。你般迎着八面春风,在辐射的节奏里,眺望着更加灿烂的前程。</p>
-<p>我灵魂的纤绳永系向你风帆的桅杆;我手中的彩笔,永远写你壮重的风姿;</p>
-<p>面对飘扬国旗，血液在奔涌，思绪在沸腾,理想的根须在土里扎得更深。面对飘扬的国旗,我们已把自己溶入母亲炙热的胸襟。</p>
-]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>git清理</tag>
+      </tags>
   </entry>
   <entry>
     <title>9.26日报</title>
@@ -974,6 +1123,12 @@ Person p = new Person();
 <p>但是安装了虚拟机的deep系统也是基于linux的.</p>
 <p>今天已经将四个数据库安装完成,环境也配置好了.</p>
 ]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
   </entry>
   <entry>
     <title>9.19阶段感悟</title>
@@ -992,6 +1147,12 @@ Person p = new Person();
 <p>加入了兄弟会,我的学习方式彻底改变了,效率变得更高了,人生格局也发现了改变,目标也更加远大.在兄弟会了不单单学习了知识,更让精神又成长了一步.</p>
 <p>最后希望兄弟会的兄弟们都能顺利地完成兄弟会的任务,顺利地走上自己预想的那条人生轨迹.</p>
 ]]></content>
+      <categories>
+        <category>总结</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+      </tags>
   </entry>
   <entry>
     <title>9.18连接远程服务器</title>
@@ -1033,6 +1194,12 @@ Person p = new Person();
 </blockquote>
 <p>我使用的是 phpstudy 使用很方便</p>
 ]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>远程连接服务器</tag>
+      </tags>
   </entry>
   <entry>
     <title>9.16技术分享文档</title>
@@ -1108,6 +1275,12 @@ Person p = new Person();
 </blockquote>
 <p>unload</p>
 ]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>Jquery</tag>
+      </tags>
   </entry>
   <entry>
     <title>9.10日报</title>
@@ -1116,6 +1289,12 @@ Person p = new Person();
 <p>然后看了同学自己按照自己的思路写的代码,感觉思路清晰多了.</p>
 <p>今天学到了,看代码不要按照固有思路去看  别人的代码也未必是最好的代码,自己捋请思路写一遍也许效果更好.</p>
 ]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
   </entry>
   <entry>
     <title>9.09日报</title>
@@ -1125,6 +1304,12 @@ Person p = new Person();
 <p>这两个页面我样式做的都不是很好看,css要复习复习了.</p>
 <p>下午和晚自习又看了几个页面,明天争取顺利考过.</p>
 ]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
   </entry>
   <entry>
     <title>9.07技术分享文档</title>
@@ -1143,6 +1328,12 @@ Person p = new Person();
 <p><a href="https://www.pexels.com/" target="_blank">pexels(高质量图片社区)</a><br><a href="https://www.pexels.com/videos/" target="_blank">视频专区</a></p>
 <p><a href="https://gratisography.com/" target="_blank">gratisography(艺术,脑洞图片)</a></p>
 ]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>壁纸</tag>
+      </tags>
   </entry>
   <entry>
     <title>9.06git命令详细整理之二</title>
@@ -1377,6 +1568,12 @@ Person p = new Person();
 <p>新建一个tag在指定commit</p>
 </blockquote>
 ]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title>9.05git命令详细整理</title>
@@ -1460,6 +1657,12 @@ Person p = new Person();
 </blockquote>
 <p>git fetch origin</p>
 ]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title>9.4日报</title>
@@ -1473,6 +1676,12 @@ Person p = new Person();
 </code></pre><p><strong>心得：</strong></p>
 <p>团队协作效率比个人高得多，平时要多与大家交流技术性问题，做项目时候更要多交流一下功能怎么实现的。</p>
 ]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
   </entry>
   <entry>
     <title>9.03lamp环境搭建</title>
@@ -1512,6 +1721,12 @@ Person p = new Person();
 <p>将skip-grant-tables删除。</p>
 <p><a href="https://www.cnblogs.com/wuzdandz/p/10790458.html" target="_blank" rel="noopener">此方法参考博客</a></p>
 ]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>lamp安装</tag>
+      </tags>
   </entry>
   <entry>
     <title>9.2日报</title>
@@ -1525,6 +1740,12 @@ Person p = new Person();
 <p>git pull origin dev         将远程dev合并到当前分支</p>
 <p>git stash           贮藏当前工作区的修改，没有commit的</p>
 ]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.30技术文档</title>
@@ -1585,6 +1806,12 @@ onload          浏览器已完成页面的加载
 <p>clearTimeout(myVar);        停止执行</p>
 <p>clearInterval(myVar);        停止执行</p>
 ]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.30日报</title>
@@ -1596,6 +1823,12 @@ onload          浏览器已完成页面的加载
 <p>lsof -i :端口号            查询该端口占用情况</p>
 <p>kill -9  查询出对应的PID                  关闭端口进程</p>
 ]]></content>
+      <categories>
+        <category>总结</category>
+      </categories>
+      <tags>
+        <tag>端口占用</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.29技术文档</title>
@@ -1699,6 +1932,12 @@ onload          浏览器已完成页面的加载
 &lt;/html&gt;
 </code></pre><p>原理：用js获取图片的类组成数组，利用循环将所有图片都先隐藏，再利用图片数组下标逐个显示。</p>
 ]]></content>
+      <categories>
+        <category>特效</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.29日报</title>
@@ -1708,6 +1947,12 @@ onload          浏览器已完成页面的加载
 </blockquote>
 <h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天在做计时器效果与轮播图效果都是自己在网上寻找的教程与例子，当自己努力做出来的成果成果的时候是很开心的，很有动力。</p>
 ]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.28技术文档</title>
@@ -1742,6 +1987,12 @@ onload          浏览器已完成页面的加载
     console.log() 写入到浏览器的控制台
 </code></pre><p>let 声明的变量是局部变量<br>const 用来声明常量</p>
 ]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.28日报</title>
@@ -1751,6 +2002,12 @@ onload          浏览器已完成页面的加载
 </blockquote>
 <h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天学习的新任务是JS ，原来学过一些php也有一些基础学得还不算慢，总体来说今天的学习效率还可以。</p>
 ]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.27技术文档</title>
@@ -1764,6 +2021,12 @@ onload          浏览器已完成页面的加载
 </blockquote>
 <p>TCP/IP协议在一定程度上参考了OSI的体系结构。OSI模型共有七层，从下到上分别是物理层、数据链路层、网络层、运输层、会话层、表示层和应用层。</p>
 ]]></content>
+      <categories>
+        <category>TCP</category>
+      </categories>
+      <tags>
+        <tag>TCP</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.27日报</title>
@@ -1777,6 +2040,12 @@ onload          浏览器已完成页面的加载
 <h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>已经给了半天时间看文档，考试linux命令时候还勾抹几次，命令定义不明确，意思相近的有很多没有明确区分。</p>
 <h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>背东西时候要专注，有效率不能左看一眼又看一眼，这个看会了再看下一个</p>
 ]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.26技术文档</title>
@@ -1910,6 +2179,12 @@ onload          浏览器已完成页面的加载
 <p>ifconfig eth0 promisc 设置 ‘eth0’ 成混杂模式以嗅探数据包 (sniffing) </p>
 <p>dhclient eth0 以dhcp模式启用 ‘eth0’ </p>
 ]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.26日报</title>
@@ -1926,6 +2201,34 @@ onload          浏览器已完成页面的加载
 <h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天是我们组技术分享的时间，我讲的是html，虽然事先做好了ppt，但是上台还是有些放不开，不够灵活，只是死板地讲</p>
 <h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>上台演讲的事还是要多练习，还要多和大家沟通，才会一点点地会站在前面讲项目</p>
 ]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.23日报</title>
+    <url>/2019/08/23/2019-08-23-23ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天把vim常用命令整理得差不多了，vim进度90%，今天开始看的linux命令，但是感觉看的很乱，进度40%。</code>  </p>
+</blockquote>
+<blockquote>
+<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天心不够静，看到属性多了就乱了，不知道从哪开背起，后来慢慢的静下来从头看也看了好几个命令。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.23技术文档</title>
@@ -1943,38 +2246,12 @@ onload          浏览器已完成页面的加载
 <p><strong>备份:</strong><br>dump [选项] 备份后文件名  原文件或目录选项：<br>-0~9  九个备份级别<br>-f文件名： 指定备份后的文件名<br>-u： 备份成功后，把备份时间记录在/etc/dumpdates文件<br>-v：显备份过程中更多的输出信息<br>-j ：把文件压缩为.bz2格式<br>-W：显示允许被dump的分区备份登等级及备份时间<br>例： dump -0uj -f /root/boot.bak.bz2 /boot<br><strong>备份命令，先执行一次完全备份，并压缩和更新备份时间:</strong><br>cat /etc/dumpdates<br><strong>查看备份时间文件 :</strong><br>cp install.log /boot/<br><strong>复制日志文件到boot分区 :</strong><br>dump -1uj -f /root/boot,bak1.bz2 /boot/<br><strong>增量备份/boot分区，并压缩:</strong><br>dump -W<br><strong>查询分区的备份时间及备份级别 :</strong><br>备份文件或目录，只能用0级别进行完全备份，并且不支持增量备份：<br>dump -0j -f /root/etc.dump.bz2 /etc/  </p>
 <p><strong>恢复备份:</strong><br>restore [模式选项] [选项]<br>有四种模式不能混用。<br>-C：比较备份数据和实际数据的变化<br>-i：进入交互模式，手工选择需要恢复的文件<br>-t：查看模式，用于查看文件中拥有哪些数据<br>-r：还原模式，用于数据还原<br>选项：<br>-f：指定备份文件的文件名</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>8.23日报</title>
-    <url>/2019/08/23/2019-08-23-23ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天把vim常用命令整理得差不多了，vim进度90%，今天开始看的linux命令，但是感觉看的很乱，进度40%。</code>  </p>
-</blockquote>
-<blockquote>
-<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天心不够静，看到属性多了就乱了，不知道从哪开背起，后来慢慢的静下来从头看也看了好几个命令。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>8.22日报</title>
-    <url>/2019/08/22/2019-08-22-22ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>git已经基本完成，今天学习了如何使用vim和vim的常用命令，已经大致地过了一遍，vim学习进度大约70%。</code>  </p>
-</blockquote>
-<blockquote>
-<p><code>并且今天还按照网上的材料整理了一下常用命令，分享了技术博客。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>vim的常用语法挺简单的，但是我看了两节课没去怎么实践去敲，感觉边敲边记会更快一些。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
-]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.22技术文档</title>
@@ -2134,6 +2411,34 @@ onload          浏览器已完成页面的加载
 </blockquote>
 <p> <code>.</code> </p>
 ]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.22日报</title>
+    <url>/2019/08/22/2019-08-22-22ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>git已经基本完成，今天学习了如何使用vim和vim的常用命令，已经大致地过了一遍，vim学习进度大约70%。</code>  </p>
+</blockquote>
+<blockquote>
+<p><code>并且今天还按照网上的材料整理了一下常用命令，分享了技术博客。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>vim的常用语法挺简单的，但是我看了两节课没去怎么实践去敲，感觉边敲边记会更快一些。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
+]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.21技术文档</title>
@@ -2353,6 +2658,12 @@ onload          浏览器已完成页面的加载
 <p>git checkout -b 分支名 标签</p>
 <h3 id="最后放上一张网上找到的git常用命令表："><a href="#最后放上一张网上找到的git常用命令表：" class="headerlink" title="最后放上一张网上找到的git常用命令表："></a>最后放上一张网上找到的git常用命令表：</h3><p><img src="https://upload-images.jianshu.io/upload_images/2759190-030b69c3de39e145.png" alt="git常用命令"></p>
 ]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.21日报</title>
@@ -2366,6 +2677,12 @@ onload          浏览器已完成页面的加载
 <h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
 <h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
 ]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.20日报</title>
@@ -2386,6 +2703,12 @@ onload          浏览器已完成页面的加载
 <h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天看git官方文档的概念文档了，但是感觉自己看得很笼统，学习效率很低，导致越看越有点蒙。</p>
 <h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>今天我的U盘出现了没办法打开的情况，在ubuntu的系统上也不是很容易下u盘修复的工具，自己弄了1个多小时无果后寻求了老师的帮助，老师几下就解决了问题。这让我深深地体会到了经验的重要，一定要多去实践，经验才是知识进步的堆积。</p>
 ]]></content>
+      <categories>
+        <category>git进度</category>
+      </categories>
+      <tags>
+        <tag>git命令</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.19日报</title>
@@ -2407,6 +2730,12 @@ onload          浏览器已完成页面的加载
 <h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天轮到我上台讲知识点了，但是没有去准备太多的知识点去讲，基础知识也不够扎实，出现了很多预料之外的错误，准备不够充分。</p>
 <h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>上台之后逻辑不是很清楚，先讲什么后讲什么，让我理解到了程序员不光要会敲代码也要会表达。</p>
 ]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.17日报</title>
@@ -2423,6 +2752,12 @@ onload          浏览器已完成页面的加载
 <h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天将自己做的博客上交检查了，在一个之前完成的功能出现了问题，自己没有在交项目时候提前看一下，这件事我会记住的。</p>
 <h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>交项目的时候一定要将自己的所有功能都检查一边，不要因为之前解决了就不再看那个功能了，否则也许改别的时候把功能改了，否则自己麻烦别人也麻烦。</p>
 ]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title>8.16日报</title>
@@ -2441,5 +2776,12 @@ onload          浏览器已完成页面的加载
 <h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>短短的一天自学模式，我就已经发现了自己的很多问题：不喜欢查看官方文档，不喜欢多问问做出来的同学喜欢自己抠问题。</p>
 <h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>永远都有学的比较好的和学的一般的，既然自己学的不够好就要付出更加多的努力。</p>
 ]]></content>
+      <categories>
+        <category>系统与命令</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+        <tag>git</tag>
+      </tags>
   </entry>
 </search>
