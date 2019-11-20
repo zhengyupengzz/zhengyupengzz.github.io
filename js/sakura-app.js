@@ -180,10 +180,10 @@ function imgError (ele, type) {
       break
     case 3:
 
-      ele.src = 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/image-404.png'
+      ele.src = 'https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png'
       break
     default:
-      ele.src = 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/image-404.png'
+      ele.src = 'https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png'
   }
 }
 mashiro_global.post_list_show_animation = new function () {

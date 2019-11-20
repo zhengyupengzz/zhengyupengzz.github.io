@@ -729,9 +729,9 @@ System.out.println(&quot;是回文&quot;);
         <category>java</category>
       </categories>
       <tags>
+        <tag>String类</tag>
         <tag>Object类,</tag>
         <tag>包装类和数学处理类,</tag>
-        <tag>String类</tag>
       </tags>
   </entry>
   <entry>
@@ -1748,6 +1748,23 @@ Person p = new Person();
       </tags>
   </entry>
   <entry>
+    <title>8.30日报</title>
+    <url>/2019/08/30/2019-08-30-30ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天开始学node的socket模块，在网上查了各种资源勉强做出来一个简易的多人聊天室，也遇到了一些问题。</code>  </p>
+</blockquote>
+<h1 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h1><p>在关闭端口时总会出现关闭不完全的情况，我在网上寻找了这种方法：</p>
+<p>lsof -i :端口号            查询该端口占用情况</p>
+<p>kill -9  查询出对应的PID                  关闭端口进程</p>
+]]></content>
+      <categories>
+        <category>总结</category>
+      </categories>
+      <tags>
+        <tag>端口占用</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.30技术文档</title>
     <url>/2019/08/30/2019-08-30-30jishu/</url>
     <content><![CDATA[<h1 id="js的常用语法（整理版）"><a href="#js的常用语法（整理版）" class="headerlink" title="js的常用语法（整理版）"></a>js的常用语法（整理版）</h1><blockquote>
@@ -1811,23 +1828,6 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8.30日报</title>
-    <url>/2019/08/30/2019-08-30-30ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天开始学node的socket模块，在网上查了各种资源勉强做出来一个简易的多人聊天室，也遇到了一些问题。</code>  </p>
-</blockquote>
-<h1 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h1><p>在关闭端口时总会出现关闭不完全的情况，我在网上寻找了这种方法：</p>
-<p>lsof -i :端口号            查询该端口占用情况</p>
-<p>kill -9  查询出对应的PID                  关闭端口进程</p>
-]]></content>
-      <categories>
-        <category>总结</category>
-      </categories>
-      <tags>
-        <tag>端口占用</tag>
       </tags>
   </entry>
   <entry>
@@ -2780,8 +2780,8 @@ onload          浏览器已完成页面的加载
         <category>系统与命令</category>
       </categories>
       <tags>
-        <tag>ubuntu</tag>
         <tag>git</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
 </search>
