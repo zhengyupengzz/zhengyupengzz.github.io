@@ -34,9 +34,56 @@
       </tags>
   </entry>
   <entry>
-    <title>11.20心得</title>
+    <title>11.21Java学习进度</title>
+    <url>/2019/11/21/2019-11-21-21ribao/</url>
+    <content><![CDATA[<h1 id="Servlet的生命周期"><a href="#Servlet的生命周期" class="headerlink" title="Servlet的生命周期:"></a>Servlet的生命周期:</h1><p><strong>Servlet的生命周期:</strong><br>    指的是Servlet从创建到消亡的周期!  </p>
+<pre><code>Servlet的创建时机: 默认情况, 当用户第一次访问Servlet的映射地址时, 对象创建  
+
+Servlet的销毁时机: 当tomcat关闭,或者 项目从tomcat删除时,Servlet被销毁  
+
+三个方法的体现:  
+</code></pre><ol>
+<li>init方法 : 此方法在对象创建后,执行  </li>
+<li>service方法 : 服务方法,当用户每一次访问时,执行,用于处理用户的请求,以及对用户进行响应  </li>
+<li>destroy方法 : 当tomcat关闭 或 项目从tomcat删除时 执行</li>
+</ol>
+<blockquote>
+<p>在编辑项目的时候遇到了idea不能使用@WebServlet,找了很久才找到解决方法  </p>
+</blockquote>
+<p><code>解决问题的博客</code>:<a href="https://blog.csdn.net/alinekang/article/details/75669819" target="_blank" rel="noopener">https://blog.csdn.net/alinekang/article/details/75669819</a></p>
+<p><strong>ServletConfig对象:</strong><br>是Servlet的配置对象,每一个Servlet都拥有一个ServletConfig.<br>我们在web.xml中 进行Servlet配置是, 可以向一个Servlet中 添加初始化的参数 这些参数以键值对的形式存储在ServletConfig中  </p>
+<p>在web.xml中,向ServletConfig存储数据格式:  </p>
+<pre><code>&lt;servlet&gt;
+    ...
+    &lt;!-- init-param标签可以存在多个,每个init-param都表示一个键值对 --&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;键&lt;/param-name&gt;
+        &lt;param-value&gt;值&lt;/param-value&gt;
+    &lt;/init-param&gt;
+&lt;/servlet&gt;
+</code></pre><p>在Servlet中 得到ServletConfig对象的方式:<br>方式1与方式2是互斥的  </p>
+<ol>
+<li><p> 在Servlet中,重写生命周期init(ServletConfig config)方法, 使用方法参数中的config对象  </p>
+</li>
+<li><p> 在Servlet的任意代码位置,通过getServletConfig();方法,得到对象  </p>
+</li>
+</ol>
+<p>从ServletConfig 取出数据的格式:  </p>
+<pre><code>```
+String value = config对象.getInitParameter(String name);
+```
+</code></pre>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Servlet生命周期</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>11.20Java学习进度</title>
     <url>/2019/11/20/2019-11-20-20ribao/</url>
-    <content><![CDATA[<h1 id="JavaWeb开发环境的配置"><a href="#JavaWeb开发环境的配置" class="headerlink" title="JavaWeb开发环境的配置:"></a>JavaWeb开发环境的配置:</h1><p><strong>tomcat配置:</strong>  </p>
+    <content><![CDATA[<h1 id="JavaWeb开发环境的配置-http协议与HttpServlet类"><a href="#JavaWeb开发环境的配置-http协议与HttpServlet类" class="headerlink" title="JavaWeb开发环境的配置,http协议与HttpServlet类:"></a>JavaWeb开发环境的配置,http协议与HttpServlet类:</h1><p><strong>tomcat配置:</strong>  </p>
 <ol>
 <li>下载tomcat  </li>
 <li>解压到任意的英文目录  </li>
@@ -75,18 +122,69 @@ B / S :
 </li>
 </ol>
 <h4 id="开发环境下-代码部署到服务器后-访问的路径"><a href="#开发环境下-代码部署到服务器后-访问的路径" class="headerlink" title="开发环境下: 代码部署到服务器后,访问的路径:"></a>开发环境下: 代码部署到服务器后,访问的路径:</h4><pre><code>http://ip地址:端口号/项目名/文件名.后缀名  
-</code></pre><h4 id="HttpServlet类"><a href="#HttpServlet类" class="headerlink" title="HttpServlet类:"></a>HttpServlet类:</h4><pre><code>步骤:
+</code></pre><h4 id="HttpServlet类"><a href="#HttpServlet类" class="headerlink" title="HttpServlet类:"></a>HttpServlet类:</h4><pre><code>简介:  
+    是JavaWeb中的三大组件之一,  
+    本质:就是运行在tomcat中的 java类
+
+作用:  
+    用于处理客户端的请求,以及对客户端进行响应
+步骤:
 </code></pre><ol>
 <li>编写一个类,继承自HttpServlet  </li>
 <li>重写父类的service(HttpSercletRequest request,HttpServletResponse response)方法  </li>
 <li>在service方法中 对用户进行响应  </li>
 </ol>
+<p><strong>案例:</strong>  </p>
+<pre><code class="java">public class Servlet1 extends HttpServlet {
+    /**
+     * 
+     * @param request   :   请求对象,包含了请求相关的所有信息
+     * @param response  :   响应对象,tomcat提供的用于给客户端响应内容的各种工具
+     * @throws ServletException
+     * @throws IOException
+     */
+    @Override
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 1. 设置响应的编码格式以及响应的内容类型
+        response.setContentType(&quot;text/html;charset=utf-8&quot;);
+        // 2. 获取用于打印响应体的打印流  
+        PrintWriter pw = response.getWriter();
+        // 3. 打印一些准备响应的内容
+        pw.println(&quot;&lt;h1&gt;从前有座山&lt;/h1&gt;&quot;);
+        pw.flush();
+        // 当service方法执行完毕后,tomcat会将我们准备好的响应体发送给浏览器
+    }
+}
+</code></pre>
+<h3 id="将编写好的servlet-映射到一个网址上"><a href="#将编写好的servlet-映射到一个网址上" class="headerlink" title="将编写好的servlet 映射到一个网址上:"></a>将编写好的servlet 映射到一个网址上:</h3><pre><code>web3.0之前版本:  
+    修改项目中的配置文件 web.xml  
+    在web.xml根节点中 加入:  
+</code></pre><ol>
+<li><p>servlet节点, 用于将servlet类告知tomcat</p>
+<pre><code> &lt;servlet&gt;
+     &lt;servlet-name&gt;任意的标识符,给servlet起别名&lt;/servlet-name&gt;
+     &lt;servlet-class&gt;包名.类名&lt;/servlet-class&gt;
+ &lt;/servlet&gt;
+</code></pre></li>
+<li><p>servlet-mapping , 通过别名告知tomcat,某servlet的映射网址<br>映射网址,通常以/开头,例如: /demo1 , 访问网址: <a href="http://ip地址:端口号/项目名/demo1" target="_blank" rel="noopener">http://ip地址:端口号/项目名/demo1</a>  </p>
+<pre><code>&lt;/servlet-mapping&gt;
+ &lt;servlet-name&gt;要添加映射网址的别名&lt;/servlet-name&gt;
+ &lt;url-pattern&gt;/映射的网址&lt;/url-pattern&gt;
+&lt;servlet-mapping&gt;
+</code></pre></li>
+</ol>
+<p>web3.0+ 版本:<br>在类前面加一句:  </p>
+<pre><code>```
+@WebServlet(&quot;/hello2&quot;)
+```
+</code></pre><p>或者直接创建一个Servlet文件</p>
 ]]></content>
       <categories>
         <category>Java</category>
       </categories>
       <tags>
         <tag>tomcat</tag>
+        <tag>HttpServlet</tag>
       </tags>
   </entry>
   <entry>
@@ -1868,23 +1966,6 @@ Person p = new Person();
       </tags>
   </entry>
   <entry>
-    <title>8.30日报</title>
-    <url>/2019/08/30/2019-08-30-30ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天开始学node的socket模块，在网上查了各种资源勉强做出来一个简易的多人聊天室，也遇到了一些问题。</code>  </p>
-</blockquote>
-<h1 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h1><p>在关闭端口时总会出现关闭不完全的情况，我在网上寻找了这种方法：</p>
-<p>lsof -i :端口号            查询该端口占用情况</p>
-<p>kill -9  查询出对应的PID                  关闭端口进程</p>
-]]></content>
-      <categories>
-        <category>总结</category>
-      </categories>
-      <tags>
-        <tag>端口占用</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.30技术文档</title>
     <url>/2019/08/30/2019-08-30-30jishu/</url>
     <content><![CDATA[<h1 id="js的常用语法（整理版）"><a href="#js的常用语法（整理版）" class="headerlink" title="js的常用语法（整理版）"></a>js的常用语法（整理版）</h1><blockquote>
@@ -1948,6 +2029,38 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.30日报</title>
+    <url>/2019/08/30/2019-08-30-30ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天开始学node的socket模块，在网上查了各种资源勉强做出来一个简易的多人聊天室，也遇到了一些问题。</code>  </p>
+</blockquote>
+<h1 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h1><p>在关闭端口时总会出现关闭不完全的情况，我在网上寻找了这种方法：</p>
+<p>lsof -i :端口号            查询该端口占用情况</p>
+<p>kill -9  查询出对应的PID                  关闭端口进程</p>
+]]></content>
+      <categories>
+        <category>总结</category>
+      </categories>
+      <tags>
+        <tag>端口占用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.29日报</title>
+    <url>/2019/08/29/2019-08-29-29ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天完成了计时器的考核，关于计时器与属性获取基本掌握90%，轮播图效果80%，后面开始看node,但是刚开始看进度10%</code>  </p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天在做计时器效果与轮播图效果都是自己在网上寻找的教程与例子，当自己努力做出来的成果成果的时候是很开心的，很有动力。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -2060,12 +2173,12 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.29日报</title>
-    <url>/2019/08/29/2019-08-29-29ribao/</url>
+    <title>8.28日报</title>
+    <url>/2019/08/28/2019-08-28-28ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天完成了计时器的考核，关于计时器与属性获取基本掌握90%，轮播图效果80%，后面开始看node,但是刚开始看进度10%</code>  </p>
+<p><code>今天下午学习了JS基础，学习了 定时器和选择对象并修改内容，还看了一些基础语法。</code>  </p>
 </blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天在做计时器效果与轮播图效果都是自己在网上寻找的教程与例子，当自己努力做出来的成果成果的时候是很开心的，很有动力。</p>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天学习的新任务是JS ，原来学过一些php也有一些基础学得还不算慢，总体来说今天的学习效率还可以。</p>
 ]]></content>
       <categories>
         <category>心得</category>
@@ -2112,21 +2225,6 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8.28日报</title>
-    <url>/2019/08/28/2019-08-28-28ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天下午学习了JS基础，学习了 定时器和选择对象并修改内容，还看了一些基础语法。</code>  </p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天学习的新任务是JS ，原来学过一些php也有一些基础学得还不算慢，总体来说今天的学习效率还可以。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -2561,25 +2659,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.21日报</title>
-    <url>/2019/08/21/2019-08-21-21ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
-]]></content>
-      <categories>
-        <category>命令</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.21技术文档</title>
     <url>/2019/08/21/2019-08-21-21jishu/</url>
     <content><![CDATA[<h1 id="git常用命令整理"><a href="#git常用命令整理" class="headerlink" title="git常用命令整理"></a>git常用命令整理</h1><blockquote>
@@ -2805,6 +2884,25 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
+    <title>8.21日报</title>
+    <url>/2019/08/21/2019-08-21-21ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
+]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.20日报</title>
     <url>/2019/08/20/2019-08-20-20ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
@@ -2900,8 +2998,8 @@ onload          浏览器已完成页面的加载
         <category>系统与命令</category>
       </categories>
       <tags>
-        <tag>ubuntu</tag>
         <tag>git</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
 </search>

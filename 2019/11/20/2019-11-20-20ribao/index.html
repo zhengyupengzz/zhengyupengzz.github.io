@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">11.20心得 | pengpeng</title>
+  <title itemprop="name">11.20Java学习进度 | pengpeng</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -185,7 +185,7 @@
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      11.20心得</h1>
+      11.20Java学习进度</h1>
       <p class="entry-census">
         <span>
           <a href="">
@@ -210,7 +210,7 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="JavaWeb开发环境的配置"><a href="#JavaWeb开发环境的配置" class="headerlink" title="JavaWeb开发环境的配置:"></a>JavaWeb开发环境的配置:</h1><p><strong>tomcat配置:</strong>  </p>
+          <h1 id="JavaWeb开发环境的配置-http协议与HttpServlet类"><a href="#JavaWeb开发环境的配置-http协议与HttpServlet类" class="headerlink" title="JavaWeb开发环境的配置,http协议与HttpServlet类:"></a>JavaWeb开发环境的配置,http协议与HttpServlet类:</h1><p><strong>tomcat配置:</strong>  </p>
 <ol>
 <li>下载tomcat  </li>
 <li>解压到任意的英文目录  </li>
@@ -249,12 +249,62 @@ B / S :
 </li>
 </ol>
 <h4 id="开发环境下-代码部署到服务器后-访问的路径"><a href="#开发环境下-代码部署到服务器后-访问的路径" class="headerlink" title="开发环境下: 代码部署到服务器后,访问的路径:"></a>开发环境下: 代码部署到服务器后,访问的路径:</h4><pre><code>http://ip地址:端口号/项目名/文件名.后缀名  
-</code></pre><h4 id="HttpServlet类"><a href="#HttpServlet类" class="headerlink" title="HttpServlet类:"></a>HttpServlet类:</h4><pre><code>步骤:
+</code></pre><h4 id="HttpServlet类"><a href="#HttpServlet类" class="headerlink" title="HttpServlet类:"></a>HttpServlet类:</h4><pre><code>简介:  
+    是JavaWeb中的三大组件之一,  
+    本质:就是运行在tomcat中的 java类
+
+作用:  
+    用于处理客户端的请求,以及对客户端进行响应
+步骤:
 </code></pre><ol>
 <li>编写一个类,继承自HttpServlet  </li>
 <li>重写父类的service(HttpSercletRequest request,HttpServletResponse response)方法  </li>
 <li>在service方法中 对用户进行响应  </li>
 </ol>
+<p><strong>案例:</strong>  </p>
+<pre><code class="java">public class Servlet1 extends HttpServlet {
+    /**
+     * 
+     * @param request   :   请求对象,包含了请求相关的所有信息
+     * @param response  :   响应对象,tomcat提供的用于给客户端响应内容的各种工具
+     * @throws ServletException
+     * @throws IOException
+     */
+    @Override
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 1. 设置响应的编码格式以及响应的内容类型
+        response.setContentType(&quot;text/html;charset=utf-8&quot;);
+        // 2. 获取用于打印响应体的打印流  
+        PrintWriter pw = response.getWriter();
+        // 3. 打印一些准备响应的内容
+        pw.println(&quot;&lt;h1&gt;从前有座山&lt;/h1&gt;&quot;);
+        pw.flush();
+        // 当service方法执行完毕后,tomcat会将我们准备好的响应体发送给浏览器
+    }
+}
+</code></pre>
+<h3 id="将编写好的servlet-映射到一个网址上"><a href="#将编写好的servlet-映射到一个网址上" class="headerlink" title="将编写好的servlet 映射到一个网址上:"></a>将编写好的servlet 映射到一个网址上:</h3><pre><code>web3.0之前版本:  
+    修改项目中的配置文件 web.xml  
+    在web.xml根节点中 加入:  
+</code></pre><ol>
+<li><p>servlet节点, 用于将servlet类告知tomcat</p>
+<pre><code> &lt;servlet&gt;
+     &lt;servlet-name&gt;任意的标识符,给servlet起别名&lt;/servlet-name&gt;
+     &lt;servlet-class&gt;包名.类名&lt;/servlet-class&gt;
+ &lt;/servlet&gt;
+</code></pre></li>
+<li><p>servlet-mapping , 通过别名告知tomcat,某servlet的映射网址<br>映射网址,通常以/开头,例如: /demo1 , 访问网址: <a href="http://ip地址:端口号/项目名/demo1" target="_blank" rel="noopener">http://ip地址:端口号/项目名/demo1</a>  </p>
+<pre><code>&lt;/servlet-mapping&gt;
+ &lt;servlet-name&gt;要添加映射网址的别名&lt;/servlet-name&gt;
+ &lt;url-pattern&gt;/映射的网址&lt;/url-pattern&gt;
+&lt;servlet-mapping&gt;
+</code></pre></li>
+</ol>
+<p>web3.0+ 版本:<br>在类前面加一句:  </p>
+<pre><code>```
+@WebServlet(&quot;/hello2&quot;)
+```
+</code></pre><p>或者直接创建一个Servlet文件</p>
 
         </div>
         <!-- .entry-content -->
@@ -286,7 +336,7 @@ B / S :
           
             <div class="post-nepre half previous">
           
-            <a href="/2019/11/21/2019-11-21-21jishu/" rel="prev">
+            <a href="/2019/11/21/2019-11-21-21ribao/" rel="prev">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
               </div>
@@ -294,7 +344,7 @@ B / S :
               Previous Post</span>
               <div class="info">
                 <h3>
-                11.21技术分享</h3>
+                11.21Java学习进度</h3>
                 <hr>
               </div>
             </a>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">11.21技术分享 | pengpeng</title>
+  <title itemprop="name">Tag: HttpServlet | pengpeng</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -172,165 +172,64 @@
   </div>
 </header>
 
-      <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
-<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/sharejs.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+      
 <div class="pattern-center-blank"></div>
-
-  <div class="pattern-center single-center">
-    <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
-    </div>
-    <header class="pattern-header single-header">
-      <h1 class="entry-title">
-      11.21技术分享</h1>
-      <p class="entry-census">
-        <span>
-          <a href="">
-            <img src="https://s2.ax1x.com/2019/11/20/MWejJ0.png">
-          </a>
-        </span>
-        <span>
-          <a href="">鹏鹏</a>
-        </span>
-        <span class="bull">
-        ·</span>
-        2019-11-21<span class="bull">
-        </span></p>
-    </header>
+<div class="pattern-center ">
+  <div class="pattern-attachment-img">
+    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="HttpServlet.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
   </div>
-
+  <header class="pattern-header ">
+    <h1 class="cat-title">HttpServlet</h1>
+  </header>
+</div>
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-        <div class="toc"></div>
-        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
-        
-        <div class="entry-content">
-          <h1 id="对谷歌插件的导入导出"><a href="#对谷歌插件的导入导出" class="headerlink" title="对谷歌插件的导入导出:"></a>对谷歌插件的导入导出:</h1><ol>
-<li>导出谷歌插件</li>
-</ol>
-<p>在你的电脑中找到谷歌的安装的位置   </p>
-<p>正常情况下默认为<code>C:\Users\Administrator\AppData\Local\Google\Chrome\User Data\Default\Extensions</code></p>
-<p>这个路径下存放的都是谷歌浏览器中安装的插件  </p>
-<p>将此目录下的插件文件复制即可</p>
-<ol start="2">
-<li>判断文件分别对应哪个插件  </li>
-</ol>
-<p>在插件这个目录下 文件名都是随机生成的, 所以我们没办法直接在这里区分哪个插件  </p>
-<p>我们可以点进每个文件夹 它的下级目录就是一个版本号 , 在谷歌的扩展程序中寻找与之相同的插件  </p>
-<p>那这个文件夹就是对应的插件了 </p>
-<ol start="3">
-<li>如何导入谷歌插件</li>
-</ol>
-<p>设置—&gt; 左侧栏扩展程序 —&gt; 右上角确定开启开发者模式 —&gt; 加载已解压的扩展程序  </p>
-<p>然后在文件中找到之前复制导出的那些文件夹,<code>注意:要选中加载的文件夹 是乱码名下那个版本号名的文件夹!</code>  </p>
-<blockquote>
-<p>这里再分享一个安装插件的小技巧  </p>
-</blockquote>
-<p><strong>有时候我们在网上下载下来的是.crx文件,然而谷歌有时候会安装不上这种文件</strong><br><strong>这时候可以将.crx文件后缀名改为<code>.zip</code>或者其他压缩文件后缀名,然后再解压,之后的导入插件步骤同上</strong></p>
-
+      
+  <!-- 首页默认取最最新文章集 -->
+  
+    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/2019/11/20/2019-11-20-20ribao/">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
         </div>
-        <!-- .entry-content -->
-        <!-- <div class="single-reward">
-          <div class="reward-open">赏
-            <div class="reward-main">
-              <ul class="reward-row">
-                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6null"></li>
-                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6null"></li>
-              </ul>
-            </div>
-          </div>
-        </div> -->
-        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-        <footer class="post-footer">
-          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-          <div class="post-tags">
-          </div>
-          <div class="post-share">
-            <div class="social-share sharehidden share-component"></div>
-            <i class="iconfont show-share icon-forward"></i>
-          </div>
-        </footer><!-- .entry-footer -->
-      </article>
-      <!-- #post-## -->
-      <div class="toc" style="background: none;"></div>
-      <section class="post-squares nextprev">
-        
-        
-          
-            <div class="post-nepre full next">
-          
-            <a href="/2019/11/21/2019-11-21-21ribao/" rel="next">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
-              </div>
-              <span class="label">
-              Next Post</span>
-              <div class="info">
-                <h3>
-                11.21Java学习进度</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-      </section>
-      <!-- 
-<div id="vcomments"></div>
-<script>
-  window.onload = function(){
-      var valine = new Valine();
-      valine.init({
-        el: '#vcomments',
-        appId: "AmxH4yw61P6os5AiWxgsp3eh-gzGzoHsz",
-        appKey: "jfvqz9VwDczpjELERSQUWguL",
-        path: window.location.pathname,
-        placeholder: "你是我一生只会遇见一次的惊喜 ..."
-      })
-  }
-</script>
- -->
+        <img width="150" height="150" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
+      </a>
+    </div>
+    <h1 class="entry-title">
+    <a href="/2019/11/20/2019-11-20-20ribao/">
+    11.20Java学习进度</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+    2019-11-20</div>
+    <p>
+    </p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/2019/11/20/2019-11-20-20ribao/">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+  
 
 
-<div id="vcomments"></div>
-<script>
-    window.onload = function(){
-          var valine = new Valine();
-          valine.init({    
-            el: '#vcomments',    
-            appId: "AmxH4yw61P6os5AiWxgsp3eh-gzGzoHsz",   
-             appKey: "jfvqz9VwDczpjELERSQUWguL",    
-             path: window.location.pathname,    
-             placeholder: "你是我一生只会遇见一次的惊喜 ...",    
-             avatar:'wavatar', //用不同面孔和背景组合生成的头像    
-             notify: true, // 邮件提醒!!!    
-             verify: true, // 验证码      
-          })  
-    }
-</script>
-
-      <section class="author-profile">
-        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="" class="profile gravatar"><img src="https://s2.ax1x.com/2019/11/20/MWejJ0.png" itemprop="image" alt="鹏鹏" height="70" width="70"></a>
-          <div class="meta">
-            <span class="title">Author</span>
-            <h3 itemprop="name">
-            <a href="" itemprop="url" rel="author">鹏鹏</a>
-            </h3>
-          </div>
-        </div>
-        <hr>
-        <p><i class="iconfont icon-write"></i></p>
-      </section>
-    </main><!-- #main -->
-  </div><!-- #primary -->
+      <div class="clearer">
+      </div>
+    </main>
+    <!--  -->
+    
+  </div>
 </div>
-
-
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

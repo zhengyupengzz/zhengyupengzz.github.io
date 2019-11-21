@@ -43,11 +43,11 @@
   </entry>
   
   <entry>
-    <title>11.20心得</title>
-    <link href="/2019/11/20/2019-11-20-20ribao/"/>
-    <id>/2019/11/20/2019-11-20-20ribao/</id>
-    <published>2019-11-19T16:00:00.000Z</published>
-    <updated>2019-11-21T02:40:45.916Z</updated>
+    <title>11.21Java学习进度</title>
+    <link href="/2019/11/21/2019-11-21-21ribao/"/>
+    <id>/2019/11/21/2019-11-21-21ribao/</id>
+    <published>2019-11-20T16:00:00.000Z</published>
+    <updated>2019-11-21T14:10:45.204Z</updated>
     
     <summary type="html">
     
@@ -55,7 +55,33 @@
       
         
         
-          &lt;h1 id=&quot;JavaWeb开发环境的配置&quot;&gt;&lt;a href=&quot;#JavaWeb开发环境的配置&quot; class=&quot;headerlink&quot;
+          &lt;h1 id=&quot;Servlet的生命周期&quot;&gt;&lt;a href=&quot;#Servlet的生命周期&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="/categories/Java/"/>
+    
+    
+      <category term="Servlet生命周期" scheme="/tags/Servlet%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11.20Java学习进度</title>
+    <link href="/2019/11/20/2019-11-20-20ribao/"/>
+    <id>/2019/11/20/2019-11-20-20ribao/</id>
+    <published>2019-11-19T16:00:00.000Z</published>
+    <updated>2019-11-21T10:48:50.795Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JavaWeb开发环境的配置-http协议与HttpServlet类&quot;&gt;&lt;a href=&quot;#JavaWeb开发环境的配置-http协议与HttpServlet类&quot; class=&quot;headerlink&quot;
         
       
     
@@ -65,6 +91,8 @@
     
     
       <category term="tomcat" scheme="/tags/tomcat/"/>
+    
+      <category term="HttpServlet" scheme="/tags/HttpServlet/"/>
     
   </entry>
   
@@ -565,32 +593,6 @@
       <category term="简单的逻辑结构和循环结构" scheme="/tags/%E7%AE%80%E5%8D%95%E7%9A%84%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E5%92%8C%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84/"/>
     
       <category term="简单的数组操作" scheme="/tags/%E7%AE%80%E5%8D%95%E7%9A%84%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>10.14</title>
-    <link href="/2019/10/14/2019-10-14-14jishu/"/>
-    <id>/2019/10/14/2019-10-14-14jishu/</id>
-    <published>2019-10-13T16:00:00.000Z</published>
-    <updated>2019-11-20T03:12:38.702Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;看板娘代码&quot;&gt;&lt;a href=&quot;#看板娘代码&quot; class=&quot;headerlink&quot; title=&quot;看板娘代码:&quot;&gt;&lt;/a&gt;看板娘代码:&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;&amp;lt;script
-        
-      
-    
-    </summary>
-    
-      <category term="分享" scheme="/categories/%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="看板娘" scheme="/tags/%E7%9C%8B%E6%9D%BF%E5%A8%98/"/>
     
   </entry>
   

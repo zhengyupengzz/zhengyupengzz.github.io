@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">11.21技术分享 | pengpeng</title>
+  <title itemprop="name">11.21Java学习进度 | pengpeng</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -185,7 +185,7 @@
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      11.21技术分享</h1>
+      11.21Java学习进度</h1>
       <p class="entry-census">
         <span>
           <a href="">
@@ -210,29 +210,43 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="对谷歌插件的导入导出"><a href="#对谷歌插件的导入导出" class="headerlink" title="对谷歌插件的导入导出:"></a>对谷歌插件的导入导出:</h1><ol>
-<li>导出谷歌插件</li>
-</ol>
-<p>在你的电脑中找到谷歌的安装的位置   </p>
-<p>正常情况下默认为<code>C:\Users\Administrator\AppData\Local\Google\Chrome\User Data\Default\Extensions</code></p>
-<p>这个路径下存放的都是谷歌浏览器中安装的插件  </p>
-<p>将此目录下的插件文件复制即可</p>
-<ol start="2">
-<li>判断文件分别对应哪个插件  </li>
-</ol>
-<p>在插件这个目录下 文件名都是随机生成的, 所以我们没办法直接在这里区分哪个插件  </p>
-<p>我们可以点进每个文件夹 它的下级目录就是一个版本号 , 在谷歌的扩展程序中寻找与之相同的插件  </p>
-<p>那这个文件夹就是对应的插件了 </p>
-<ol start="3">
-<li>如何导入谷歌插件</li>
-</ol>
-<p>设置—&gt; 左侧栏扩展程序 —&gt; 右上角确定开启开发者模式 —&gt; 加载已解压的扩展程序  </p>
-<p>然后在文件中找到之前复制导出的那些文件夹,<code>注意:要选中加载的文件夹 是乱码名下那个版本号名的文件夹!</code>  </p>
-<blockquote>
-<p>这里再分享一个安装插件的小技巧  </p>
-</blockquote>
-<p><strong>有时候我们在网上下载下来的是.crx文件,然而谷歌有时候会安装不上这种文件</strong><br><strong>这时候可以将.crx文件后缀名改为<code>.zip</code>或者其他压缩文件后缀名,然后再解压,之后的导入插件步骤同上</strong></p>
+          <h1 id="Servlet的生命周期"><a href="#Servlet的生命周期" class="headerlink" title="Servlet的生命周期:"></a>Servlet的生命周期:</h1><p><strong>Servlet的生命周期:</strong><br>    指的是Servlet从创建到消亡的周期!  </p>
+<pre><code>Servlet的创建时机: 默认情况, 当用户第一次访问Servlet的映射地址时, 对象创建  
 
+Servlet的销毁时机: 当tomcat关闭,或者 项目从tomcat删除时,Servlet被销毁  
+
+三个方法的体现:  
+</code></pre><ol>
+<li>init方法 : 此方法在对象创建后,执行  </li>
+<li>service方法 : 服务方法,当用户每一次访问时,执行,用于处理用户的请求,以及对用户进行响应  </li>
+<li>destroy方法 : 当tomcat关闭 或 项目从tomcat删除时 执行</li>
+</ol>
+<blockquote>
+<p>在编辑项目的时候遇到了idea不能使用@WebServlet,找了很久才找到解决方法  </p>
+</blockquote>
+<p><code>解决问题的博客</code>:<a href="https://blog.csdn.net/alinekang/article/details/75669819" target="_blank" rel="noopener">https://blog.csdn.net/alinekang/article/details/75669819</a></p>
+<p><strong>ServletConfig对象:</strong><br>是Servlet的配置对象,每一个Servlet都拥有一个ServletConfig.<br>我们在web.xml中 进行Servlet配置是, 可以向一个Servlet中 添加初始化的参数 这些参数以键值对的形式存储在ServletConfig中  </p>
+<p>在web.xml中,向ServletConfig存储数据格式:  </p>
+<pre><code>&lt;servlet&gt;
+    ...
+    &lt;!-- init-param标签可以存在多个,每个init-param都表示一个键值对 --&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;键&lt;/param-name&gt;
+        &lt;param-value&gt;值&lt;/param-value&gt;
+    &lt;/init-param&gt;
+&lt;/servlet&gt;
+</code></pre><p>在Servlet中 得到ServletConfig对象的方式:<br>方式1与方式2是互斥的  </p>
+<ol>
+<li><p> 在Servlet中,重写生命周期init(ServletConfig config)方法, 使用方法参数中的config对象  </p>
+</li>
+<li><p> 在Servlet的任意代码位置,通过getServletConfig();方法,得到对象  </p>
+</li>
+</ol>
+<p>从ServletConfig 取出数据的格式:  </p>
+<pre><code>```
+String value = config对象.getInitParameter(String name);
+```
+</code></pre>
         </div>
         <!-- .entry-content -->
         <!-- <div class="single-reward">
@@ -260,11 +274,28 @@
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2019/11/21/2019-11-21-21jishu/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                11.21技术分享</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
         
           
-            <div class="post-nepre full next">
+            <div class="post-nepre half next">
           
-            <a href="/2019/11/21/2019-11-21-21ribao/" rel="next">
+            <a href="/2019/11/20/2019-11-20-20ribao/" rel="next">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
               </div>
@@ -272,7 +303,7 @@
               Next Post</span>
               <div class="info">
                 <h3>
-                11.21Java学习进度</h3>
+                11.20Java学习进度</h3>
                 <hr>
               </div>
             </a>
