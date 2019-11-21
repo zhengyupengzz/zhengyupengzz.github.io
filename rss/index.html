@@ -178,7 +178,7 @@
     <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
       
       <!-- .entry-content -->
-      
+      <!-- 
 <div id="vcomments"></div>
 <script>
   window.onload = function(){
@@ -191,6 +191,25 @@
         placeholder: "你是我一生只会遇见一次的惊喜 ..."
       })
   }
+</script>
+ -->
+
+
+<div id="vcomments"></div>
+<script>
+    window.onload = function(){
+          var valine = new Valine();
+          valine.init({    
+            el: '#vcomments',    
+            appId: "AmxH4yw61P6os5AiWxgsp3eh-gzGzoHsz",   
+             appKey: "jfvqz9VwDczpjELERSQUWguL",    
+             path: window.location.pathname,    
+             placeholder: "你是我一生只会遇见一次的惊喜 ...",    
+             avatar:'wavatar', //用不同面孔和背景组合生成的头像    
+             notify: true, // 邮件提醒!!!    
+             verify: true, // 验证码      
+          })  
+    }
 </script>
 
       <!-- <div class="single-reward">

@@ -367,7 +367,7 @@ System.out.println(&quot;是回文&quot;);
           </div>
         
       </section>
-      
+      <!-- 
 <div id="vcomments"></div>
 <script>
   window.onload = function(){
@@ -380,6 +380,25 @@ System.out.println(&quot;是回文&quot;);
         placeholder: "你是我一生只会遇见一次的惊喜 ..."
       })
   }
+</script>
+ -->
+
+
+<div id="vcomments"></div>
+<script>
+    window.onload = function(){
+          var valine = new Valine();
+          valine.init({    
+            el: '#vcomments',    
+            appId: "AmxH4yw61P6os5AiWxgsp3eh-gzGzoHsz",   
+             appKey: "jfvqz9VwDczpjELERSQUWguL",    
+             path: window.location.pathname,    
+             placeholder: "你是我一生只会遇见一次的惊喜 ...",    
+             avatar:'wavatar', //用不同面孔和背景组合生成的头像    
+             notify: true, // 邮件提醒!!!    
+             verify: true, // 验证码      
+          })  
+    }
 </script>
 
       <section class="author-profile">
