@@ -81,6 +81,37 @@ String value = config对象.getInitParameter(String name);
       </tags>
   </entry>
   <entry>
+    <title>11.20心得</title>
+    <url>/2019/11/20/2019-11-20-20xinde/</url>
+    <content><![CDATA[<h1 id="对于博客模板的修改"><a href="#对于博客模板的修改" class="headerlink" title="对于博客模板的修改:"></a>对于博客模板的修改:</h1><blockquote>
+<p>由于19号发现了之前自己的博客模板有一些没改好的地方,便下决心这次要彻底改好一个博客模板</p>
+</blockquote>
+<p>所以19号的整整一天就都是在找模板,看效果的  </p>
+<p>然后晚自习的时候就已经确定好了这个模板,开始着手修改  </p>
+<p>由于不太了解博客里面元素和.ejs文件的构造 在改一些东西的时候总会有报错  </p>
+<p>后来想到了把所有文件打开  然后去查找那个关键字  </p>
+<p>由于有一些js基础,这么一查找到,想做些修改也不是很难  </p>
+<p>在将一些404图片修改了,把多余的文字修改了之后  </p>
+<blockquote>
+<p>后续又对博客进行了一些优化  </p>
+</blockquote>
+<p>首先将<code>Valine</code>评论区的 ID 和 Key 换成了自己注册的LeanCloud 的ID 和 Key  </p>
+<p>还将github博客也推到了coding 这个仓库可以让国内访问github可以快一些  </p>
+<p>并将自己之前购买的域名都绑定到了自己的博客上:  </p>
+<p><a href="http://zhengyupeng.top" target="_blank" rel="noopener">zhengyupeng.top</a>  </p>
+<p><a href="https://www.zhengyupeng.top" target="_blank" rel="noopener">www.zhengyupeng.top</a>  </p>
+<p>也都能访问到我的博客了!  </p>
+<p><strong>最后总结一下心得吧:</strong>  </p>
+<p>昨天一天和今天上午到十点多相当于在学习Java的进度上没有进展,<br>但是改完这个博客,也学到了很多的东西,了解到了很多东西,<br>并且改完这个博客心情都变好了,可以安心学习去了。<br>接下来传完的个博客我就继续学习Java了,<strong><code>冲冲冲!!!</code></strong></p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>11.20Java学习进度</title>
     <url>/2019/11/20/2019-11-20-20ribao/</url>
     <content><![CDATA[<h1 id="JavaWeb开发环境的配置-http协议与HttpServlet类"><a href="#JavaWeb开发环境的配置-http协议与HttpServlet类" class="headerlink" title="JavaWeb开发环境的配置,http协议与HttpServlet类:"></a>JavaWeb开发环境的配置,http协议与HttpServlet类:</h1><p><strong>tomcat配置:</strong>  </p>
@@ -135,7 +166,7 @@ B / S :
 <li>在service方法中 对用户进行响应  </li>
 </ol>
 <p><strong>案例:</strong>  </p>
-<pre><code class="java">public class Servlet1 extends HttpServlet {
+<pre><code class="Java">public class Servlet1 extends HttpServlet {
     /**
      * 
      * @param request   :   请求对象,包含了请求相关的所有信息
@@ -185,37 +216,6 @@ B / S :
       <tags>
         <tag>tomcat</tag>
         <tag>HttpServlet</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>11.20心得</title>
-    <url>/2019/11/20/2019-11-20-20xinde/</url>
-    <content><![CDATA[<h1 id="对于博客模板的修改"><a href="#对于博客模板的修改" class="headerlink" title="对于博客模板的修改:"></a>对于博客模板的修改:</h1><blockquote>
-<p>由于19号发现了之前自己的博客模板有一些没改好的地方,便下决心这次要彻底改好一个博客模板</p>
-</blockquote>
-<p>所以19号的整整一天就都是在找模板,看效果的  </p>
-<p>然后晚自习的时候就已经确定好了这个模板,开始着手修改  </p>
-<p>由于不太了解博客里面元素和.ejs文件的构造 在改一些东西的时候总会有报错  </p>
-<p>后来想到了把所有文件打开  然后去查找那个关键字  </p>
-<p>由于有一些js基础,这么一查找到,想做些修改也不是很难  </p>
-<p>在将一些404图片修改了,把多余的文字修改了之后  </p>
-<blockquote>
-<p>后续又对博客进行了一些优化  </p>
-</blockquote>
-<p>首先将<code>Valine</code>评论区的 ID 和 Key 换成了自己注册的LeanCloud 的ID 和 Key  </p>
-<p>还将github博客也推到了coding 这个仓库可以让国内访问github可以快一些  </p>
-<p>并将自己之前购买的域名都绑定到了自己的博客上:  </p>
-<p><a href="http://zhengyupeng.top" target="_blank" rel="noopener">zhengyupeng.top</a>  </p>
-<p><a href="https://www.zhengyupeng.top" target="_blank" rel="noopener">www.zhengyupeng.top</a>  </p>
-<p>也都能访问到我的博客了!  </p>
-<p><strong>最后总结一下心得吧:</strong>  </p>
-<p>昨天一天和今天上午到十点多相当于在学习Java的进度上没有进展,<br>但是改完这个博客,也学到了很多的东西,了解到了很多东西,<br>并且改完这个博客心情都变好了,可以安心学习去了。<br>接下来传完的个博客我就继续学习Java了,<strong><code>冲冲冲!!!</code></strong></p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -282,6 +282,42 @@ xw.close();
       <tags>
         <tag>解析xml属性操作</tag>
         <tag>Xpath</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>11.16技术分享</title>
+    <url>/2019/11/16/2019-11-16-16jishu/</url>
+    <content><![CDATA[<h1 id="11-16技术分享"><a href="#11-16技术分享" class="headerlink" title="11.16技术分享"></a>11.16技术分享</h1><h2 id="idea运行tomcat控制台乱码"><a href="#idea运行tomcat控制台乱码" class="headerlink" title="idea运行tomcat控制台乱码:"></a>idea运行tomcat控制台乱码:</h2><h3 id="1-首先设置idea的编码格式"><a href="#1-首先设置idea的编码格式" class="headerlink" title="1.首先设置idea的编码格式:"></a>1.首先设置idea的编码格式:</h3><p>File–&gt;Settings–&gt;File Encodings</p>
+<p><img src="http://zhengyupeng.top/images/idea%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F.png" alt="idea编码格式">  </p>
+<p>将所有编码格式统一设置成UTF-8。  </p>
+<h3 id="2-再设置tomcat的编码格式"><a href="#2-再设置tomcat的编码格式" class="headerlink" title="2.再设置tomcat的编码格式:"></a>2.再设置tomcat的编码格式:</h3><p><img src="http://zhengyupeng.top/images/tomcat%E8%AE%BE%E7%BD%AE.png" alt="tomcat设置">  </p>
+<p>改变VM options为-Dfile.encoding=UTF-8:<br><img src="http://zhengyupeng.top/images/tomcat%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F.png" alt="tomcat编码格式"> </p>
+<p><strong><code>完成上面的设置后还会有乱码,不要急</code></strong>  </p>
+<h3 id="3-配置idea的文件设置"><a href="#3-配置idea的文件设置" class="headerlink" title="3.配置idea的文件设置:"></a>3.配置idea的文件设置:</h3><p>找到idea图标,右键,打开文件位置找到  </p>
+<p><code>idea.exe.vmoptions</code>和<code>idea64.exe.vmoptions</code>文件  并打开文件  </p>
+<p>在文件后面添加一行：-Dfile.encoding=UTF-8   </p>
+<p>idae中的设置配置也要修改</p>
+<p>help–&gt;Edit Custom VM Options…  </p>
+<p>打开此配置 也在最后一行添加:-Dfile.encoding=UTF-8  </p>
+<h3 id="4-修改tomcat的运行编码格式"><a href="#4-修改tomcat的运行编码格式" class="headerlink" title="4.修改tomcat的运行编码格式:"></a>4.修改tomcat的运行编码格式:</h3><p>进入到tomcat的根目录的bin目录下  </p>
+<p>此时可以在文件地址栏输入cmd来启动dos窗口执行  </p>
+<pre><code>catalina.bat run
+</code></pre><p>(或者也可以直接cmd  然后cd到bin目录下 执行此命令)  </p>
+<p>之后再用命令切换cmd的编码格式<br>“chcp 65001”切换cmd为utf8，”chcp 936”切换cmd为gbk  </p>
+<p>这里我们使用chcp 65001来切换成utf8  </p>
+<p>执行之后可以再运行一下</p>
+<pre><code>catalina.bat run
+</code></pre><p>看看命令是否都编程正常汉语,若都成正常汉语就是成功了!</p>
+<p>然后重启idea即可.  </p>
+<p><code>最后提一句:</code>  </p>
+<p>自己改tomcat的logging.properties为GBk会导致调试时get/post参数乱码  </p>
+<p>还是都改成UTF8稳妥。</p>
+]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>idea控制台乱码</tag>
       </tags>
   </entry>
   <entry>
@@ -410,42 +446,6 @@ for(Element e1: list){
       <tags>
         <tag>数据库优化</tag>
         <tag>XML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>11.16技术分享</title>
-    <url>/2019/11/16/2019-11-16-16jishu/</url>
-    <content><![CDATA[<h1 id="11-16技术分享"><a href="#11-16技术分享" class="headerlink" title="11.16技术分享"></a>11.16技术分享</h1><h2 id="idea运行tomcat控制台乱码"><a href="#idea运行tomcat控制台乱码" class="headerlink" title="idea运行tomcat控制台乱码:"></a>idea运行tomcat控制台乱码:</h2><h3 id="1-首先设置idea的编码格式"><a href="#1-首先设置idea的编码格式" class="headerlink" title="1.首先设置idea的编码格式:"></a>1.首先设置idea的编码格式:</h3><p>File–&gt;Settings–&gt;File Encodings</p>
-<p><img src="http://zhengyupeng.top/images/idea%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F.png" alt="idea编码格式">  </p>
-<p>将所有编码格式统一设置成UTF-8。  </p>
-<h3 id="2-再设置tomcat的编码格式"><a href="#2-再设置tomcat的编码格式" class="headerlink" title="2.再设置tomcat的编码格式:"></a>2.再设置tomcat的编码格式:</h3><p><img src="http://zhengyupeng.top/images/tomcat%E8%AE%BE%E7%BD%AE.png" alt="tomcat设置">  </p>
-<p>改变VM options为-Dfile.encoding=UTF-8:<br><img src="http://zhengyupeng.top/images/tomcat%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F.png" alt="tomcat编码格式"> </p>
-<p><strong><code>完成上面的设置后还会有乱码,不要急</code></strong>  </p>
-<h3 id="3-配置idea的文件设置"><a href="#3-配置idea的文件设置" class="headerlink" title="3.配置idea的文件设置:"></a>3.配置idea的文件设置:</h3><p>找到idea图标,右键,打开文件位置找到  </p>
-<p><code>idea.exe.vmoptions</code>和<code>idea64.exe.vmoptions</code>文件  并打开文件  </p>
-<p>在文件后面添加一行：-Dfile.encoding=UTF-8   </p>
-<p>idae中的设置配置也要修改</p>
-<p>help–&gt;Edit Custom VM Options…  </p>
-<p>打开此配置 也在最后一行添加:-Dfile.encoding=UTF-8  </p>
-<h3 id="4-修改tomcat的运行编码格式"><a href="#4-修改tomcat的运行编码格式" class="headerlink" title="4.修改tomcat的运行编码格式:"></a>4.修改tomcat的运行编码格式:</h3><p>进入到tomcat的根目录的bin目录下  </p>
-<p>此时可以在文件地址栏输入cmd来启动dos窗口执行  </p>
-<pre><code>catalina.bat run
-</code></pre><p>(或者也可以直接cmd  然后cd到bin目录下 执行此命令)  </p>
-<p>之后再用命令切换cmd的编码格式<br>“chcp 65001”切换cmd为utf8，”chcp 936”切换cmd为gbk  </p>
-<p>这里我们使用chcp 65001来切换成utf8  </p>
-<p>执行之后可以再运行一下</p>
-<pre><code>catalina.bat run
-</code></pre><p>看看命令是否都编程正常汉语,若都成正常汉语就是成功了!</p>
-<p>然后重启idea即可.  </p>
-<p><code>最后提一句:</code>  </p>
-<p>自己改tomcat的logging.properties为GBk会导致调试时get/post参数乱码  </p>
-<p>还是都改成UTF8稳妥。</p>
-]]></content>
-      <categories>
-        <category>分享</category>
-      </categories>
-      <tags>
-        <tag>idea控制台乱码</tag>
       </tags>
   </entry>
   <entry>
@@ -1268,6 +1268,26 @@ Person p = new Person();
       </tags>
   </entry>
   <entry>
+    <title>9.27七十周年心得</title>
+    <url>/2019/09/27/2019-09-27-27xinde/</url>
+    <content><![CDATA[<h1 id="今天看了很多关于国家的视频-发现这七十年发展的是真不容易"><a href="#今天看了很多关于国家的视频-发现这七十年发展的是真不容易" class="headerlink" title="今天看了很多关于国家的视频,发现这七十年发展的是真不容易"></a>今天看了很多关于国家的视频,发现这七十年发展的是真不容易</h1><p>70年的风雨征程，带来了祖国繁荣强大，如同阳光照亮了我们的前程，指明了我们前进的方向，带领全国各族人民从贫穷走向富裕，从胜利走向辉煌。</p>
+<p>　　中华人民共和国国旗旗面为红色象征革命。旗上的五颗五角星及其相互关系象征共产党领导下的革命人民大团结。星用黄色是为着在红地上显出光明，四颗小五角星各有一角正对着大星的中心点，表示围绕着一个中心而团结。每逢国庆，去天安门广场看升国旗是无数人心中的梦想。因此，利用国庆长假去北京游玩的人们，通常会赶早来到天安门广场看国旗班的军人升旗，以表达对祖国的无比热爱，看着五星红旗徐徐升起，心中的激动无以言表。每年10月1日是我国的国庆节，我国于1999年修订发布《全国年节及纪念日放假办法》，将国庆节与相邻的周六、日组合为7天的国庆长假，被称之为“国庆黄金周”，用放假的形式，让老百姓共同感受国庆的欢乐。</p>
+<p>　　回首这70年，中华人民走得每一步都是步履蹒跚，每一步都付出了巨大牺牲。但是如今中国经过几十年来的艰苦建设，已取得了“乘长风，破万里浪”的迅猛发展:《辉煌中国》之《圆梦工程》透过港珠澳大桥、胡麻岭隧道、郑万铁路、复兴号、上海洋山港自动化码头、中国移动互联网等一个个超级工程，领略五年来一张张中国基础建设的大网，如何编织起人民走向幸福、美好的希望版图，托举起中华民族伟大复兴的中国梦。</p>
+<p>面对飘扬的国旗亿万双眼睛注视五星红旗冉冉升起,亿万颗心灵伴随祖国母亲一起搏动。抬头仰望,发现鲜艳的国旗已在共和国的上空飘扬了半个世纪。在世纪之交的今天,共和国已走过了七十个春秋。七十年前，”洋油” ”洋面” 还充斥着中国的大江南北;七十年后，许多国产已遍及世界各地。</p>
+<p>七十年前,我们的祖先还把汉代的耕梨插进二十世纪的农田;七十年后,现代化机械已开进中国的农家。<br>七十年前,港澳游子还站在金门望厦门;五十年后,归国侨胞已站在厦门望金门。-样的遥望,却是两样的情形。<br>七十年里，萧瑟秋风今又是，换了人间。</p>
+<p>依旧淳朴中隐着聪慧,荒中透着俊季，可再也听不见那血泪凝结的叹息,更也找不到贫贱不堪的足印，再也寻不见你昔日枯瘦蹒跚的身影,麦穗和齿轮构筑的太阳,伸出金色的臂膀擎着一片晴空,逶道而来,斩断阴霾的剑光在普照众生的沧桑。</p>
+<p>你傲然屹立于世界的东方,不管身边的风云如何的变幻,始终坚定地沿真理的方向勇往直前。你般迎着八面春风,在辐射的节奏里,眺望着更加灿烂的前程。</p>
+<p>我灵魂的纤绳永系向你风帆的桅杆;我手中的彩笔,永远写你壮重的风姿;</p>
+<p>面对飘扬国旗，血液在奔涌，思绪在沸腾,理想的根须在土里扎得更深。面对飘扬的国旗,我们已把自己溶入母亲炙热的胸襟。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>9.27技术分享</title>
     <url>/2019/09/27/2019-09-27-27jishu/</url>
     <content><![CDATA[<h1 id="今天发现了git克隆下来的远程库特别大"><a href="#今天发现了git克隆下来的远程库特别大" class="headerlink" title="今天发现了git克隆下来的远程库特别大:"></a>今天发现了git克隆下来的远程库特别大:</h1><p>经过查询之后发现是每次推送之后都会留下记录缓存，这样很多没用的记录就会占用多余的空间，别人克隆的时候也会多耗费时间，今天我查到了一个清除无用记录的方法。</p>
@@ -1312,26 +1332,6 @@ Person p = new Person();
       </categories>
       <tags>
         <tag>git清理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>9.27七十周年心得</title>
-    <url>/2019/09/27/2019-09-27-27xinde/</url>
-    <content><![CDATA[<h1 id="今天看了很多关于国家的视频-发现这七十年发展的是真不容易"><a href="#今天看了很多关于国家的视频-发现这七十年发展的是真不容易" class="headerlink" title="今天看了很多关于国家的视频,发现这七十年发展的是真不容易"></a>今天看了很多关于国家的视频,发现这七十年发展的是真不容易</h1><p>70年的风雨征程，带来了祖国繁荣强大，如同阳光照亮了我们的前程，指明了我们前进的方向，带领全国各族人民从贫穷走向富裕，从胜利走向辉煌。</p>
-<p>　　中华人民共和国国旗旗面为红色象征革命。旗上的五颗五角星及其相互关系象征共产党领导下的革命人民大团结。星用黄色是为着在红地上显出光明，四颗小五角星各有一角正对着大星的中心点，表示围绕着一个中心而团结。每逢国庆，去天安门广场看升国旗是无数人心中的梦想。因此，利用国庆长假去北京游玩的人们，通常会赶早来到天安门广场看国旗班的军人升旗，以表达对祖国的无比热爱，看着五星红旗徐徐升起，心中的激动无以言表。每年10月1日是我国的国庆节，我国于1999年修订发布《全国年节及纪念日放假办法》，将国庆节与相邻的周六、日组合为7天的国庆长假，被称之为“国庆黄金周”，用放假的形式，让老百姓共同感受国庆的欢乐。</p>
-<p>　　回首这70年，中华人民走得每一步都是步履蹒跚，每一步都付出了巨大牺牲。但是如今中国经过几十年来的艰苦建设，已取得了“乘长风，破万里浪”的迅猛发展:《辉煌中国》之《圆梦工程》透过港珠澳大桥、胡麻岭隧道、郑万铁路、复兴号、上海洋山港自动化码头、中国移动互联网等一个个超级工程，领略五年来一张张中国基础建设的大网，如何编织起人民走向幸福、美好的希望版图，托举起中华民族伟大复兴的中国梦。</p>
-<p>面对飘扬的国旗亿万双眼睛注视五星红旗冉冉升起,亿万颗心灵伴随祖国母亲一起搏动。抬头仰望,发现鲜艳的国旗已在共和国的上空飘扬了半个世纪。在世纪之交的今天,共和国已走过了七十个春秋。七十年前，”洋油” ”洋面” 还充斥着中国的大江南北;七十年后，许多国产已遍及世界各地。</p>
-<p>七十年前,我们的祖先还把汉代的耕梨插进二十世纪的农田;七十年后,现代化机械已开进中国的农家。<br>七十年前,港澳游子还站在金门望厦门;五十年后,归国侨胞已站在厦门望金门。-样的遥望,却是两样的情形。<br>七十年里，萧瑟秋风今又是，换了人间。</p>
-<p>依旧淳朴中隐着聪慧,荒中透着俊季，可再也听不见那血泪凝结的叹息,更也找不到贫贱不堪的足印，再也寻不见你昔日枯瘦蹒跚的身影,麦穗和齿轮构筑的太阳,伸出金色的臂膀擎着一片晴空,逶道而来,斩断阴霾的剑光在普照众生的沧桑。</p>
-<p>你傲然屹立于世界的东方,不管身边的风云如何的变幻,始终坚定地沿真理的方向勇往直前。你般迎着八面春风,在辐射的节奏里,眺望着更加灿烂的前程。</p>
-<p>我灵魂的纤绳永系向你风帆的桅杆;我手中的彩笔,永远写你壮重的风姿;</p>
-<p>面对飘扬国旗，血液在奔涌，思绪在沸腾,理想的根须在土里扎得更深。面对飘扬的国旗,我们已把自己溶入母亲炙热的胸襟。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -2049,21 +2049,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.29日报</title>
-    <url>/2019/08/29/2019-08-29-29ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天完成了计时器的考核，关于计时器与属性获取基本掌握90%，轮播图效果80%，后面开始看node,但是刚开始看进度10%</code>  </p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天在做计时器效果与轮播图效果都是自己在网上寻找的教程与例子，当自己努力做出来的成果成果的时候是很开心的，很有动力。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.29技术文档</title>
     <url>/2019/08/29/2019-08-29-29jishu/</url>
     <content><![CDATA[<h1 id="简易的图片轮播"><a href="#简易的图片轮播" class="headerlink" title="简易的图片轮播"></a>简易的图片轮播</h1><p>今天主要学习了轮播图的原理和简易制作，以下是我轮播图的代码：</p>
@@ -2173,12 +2158,12 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.28日报</title>
-    <url>/2019/08/28/2019-08-28-28ribao/</url>
+    <title>8.29日报</title>
+    <url>/2019/08/29/2019-08-29-29ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天下午学习了JS基础，学习了 定时器和选择对象并修改内容，还看了一些基础语法。</code>  </p>
+<p><code>今天完成了计时器的考核，关于计时器与属性获取基本掌握90%，轮播图效果80%，后面开始看node,但是刚开始看进度10%</code>  </p>
 </blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天学习的新任务是JS ，原来学过一些php也有一些基础学得还不算慢，总体来说今天的学习效率还可以。</p>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天在做计时器效果与轮播图效果都是自己在网上寻找的教程与例子，当自己努力做出来的成果成果的时候是很开心的，很有动力。</p>
 ]]></content>
       <categories>
         <category>心得</category>
@@ -2225,6 +2210,21 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.28日报</title>
+    <url>/2019/08/28/2019-08-28-28ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天下午学习了JS基础，学习了 定时器和选择对象并修改内容，还看了一些基础语法。</code>  </p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天学习的新任务是JS ，原来学过一些php也有一些基础学得还不算慢，总体来说今天的学习效率还可以。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -2427,28 +2427,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.23日报</title>
-    <url>/2019/08/23/2019-08-23-23ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天把vim常用命令整理得差不多了，vim进度90%，今天开始看的linux命令，但是感觉看的很乱，进度40%。</code>  </p>
-</blockquote>
-<blockquote>
-<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天心不够静，看到属性多了就乱了，不知道从哪开背起，后来慢慢的静下来从头看也看了好几个命令。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.23技术文档</title>
     <url>/2019/08/23/2019-08-23-23jishu/</url>
     <content><![CDATA[<h1 id="linux常用命令整理之一"><a href="#linux常用命令整理之一" class="headerlink" title="linux常用命令整理之一"></a>linux常用命令整理之一</h1><p><strong>关机 (系统的关机、重启以及登出 ):</strong><br>shutdown -h now 关闭系统<br>init 0 关闭系统<br>telinit 0 关闭系统<br>shutdown -h hours:minutes &amp; 按预定时间关闭系统<br>shutdown -c 取消按预定时间关闭系统<br>shutdown -r now 重启<br>reboot 重启<br>logout 注销   </p>
@@ -2469,6 +2447,28 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.23日报</title>
+    <url>/2019/08/23/2019-08-23-23ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天把vim常用命令整理得差不多了，vim进度90%，今天开始看的linux命令，但是感觉看的很乱，进度40%。</code>  </p>
+</blockquote>
+<blockquote>
+<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天心不够静，看到属性多了就乱了，不知道从哪开背起，后来慢慢的静下来从头看也看了好几个命令。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -2998,8 +2998,8 @@ onload          浏览器已完成页面的加载
         <category>系统与命令</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>ubuntu</tag>
+        <tag>git</tag>
       </tags>
   </entry>
 </search>
