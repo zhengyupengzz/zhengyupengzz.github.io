@@ -2048,21 +2048,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.29日报</title>
-    <url>/2019/08/29/2019-08-29-29ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天完成了计时器的考核，关于计时器与属性获取基本掌握90%，轮播图效果80%，后面开始看node,但是刚开始看进度10%</code>  </p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天在做计时器效果与轮播图效果都是自己在网上寻找的教程与例子，当自己努力做出来的成果成果的时候是很开心的，很有动力。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.29技术文档</title>
     <url>/2019/08/29/2019-08-29-29jishu/</url>
     <content><![CDATA[<h1 id="简易的图片轮播"><a href="#简易的图片轮播" class="headerlink" title="简易的图片轮播"></a>简易的图片轮播</h1><p>今天主要学习了轮播图的原理和简易制作，以下是我轮播图的代码：</p>
@@ -2172,6 +2157,21 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
+    <title>8.29日报</title>
+    <url>/2019/08/29/2019-08-29-29ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天完成了计时器的考核，关于计时器与属性获取基本掌握90%，轮播图效果80%，后面开始看node,但是刚开始看进度10%</code>  </p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天在做计时器效果与轮播图效果都是自己在网上寻找的教程与例子，当自己努力做出来的成果成果的时候是很开心的，很有动力。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.28技术文档</title>
     <url>/2019/08/28/2019-08-28-28jishu/</url>
     <content><![CDATA[<h1 id="JS常用知识"><a href="#JS常用知识" class="headerlink" title="JS常用知识"></a>JS常用知识</h1><blockquote>
@@ -2227,25 +2227,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.27技术文档</title>
-    <url>/2019/08/27/2019-08-27-27jishu/</url>
-    <content><![CDATA[<h1 id="TCP-IP协议"><a href="#TCP-IP协议" class="headerlink" title="TCP/IP协议"></a>TCP/IP协议</h1><blockquote>
-<p>TCP/IP协议简介:  </p>
-</blockquote>
-<p>TCP/IP传输协议，即传输控制/网络协议，也叫作网络通讯协议。它是在网络的使用中的最基本的通信协议。TCP/IP传输协议对互联网中各部分进行通信的标准和方法进行了规定。并且，TCP/IP传输协议是保证网络数据信息及时、完整传输的两个重要的协议。TCP/IP传输协议是严格来说是一个四层的体系结构，应用层、传输层、网络层和数据链路层都包含其中。</p>
-<blockquote>
-<p>TCP/IP协议的组成:  </p>
-</blockquote>
-<p>TCP/IP协议在一定程度上参考了OSI的体系结构。OSI模型共有七层，从下到上分别是物理层、数据链路层、网络层、运输层、会话层、表示层和应用层。</p>
-]]></content>
-      <categories>
-        <category>TCP</category>
-      </categories>
-      <tags>
-        <tag>TCP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.27日报</title>
     <url>/2019/08/27/2019-08-27-27ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
@@ -2262,6 +2243,25 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.27技术文档</title>
+    <url>/2019/08/27/2019-08-27-27jishu/</url>
+    <content><![CDATA[<h1 id="TCP-IP协议"><a href="#TCP-IP协议" class="headerlink" title="TCP/IP协议"></a>TCP/IP协议</h1><blockquote>
+<p>TCP/IP协议简介:  </p>
+</blockquote>
+<p>TCP/IP传输协议，即传输控制/网络协议，也叫作网络通讯协议。它是在网络的使用中的最基本的通信协议。TCP/IP传输协议对互联网中各部分进行通信的标准和方法进行了规定。并且，TCP/IP传输协议是保证网络数据信息及时、完整传输的两个重要的协议。TCP/IP传输协议是严格来说是一个四层的体系结构，应用层、传输层、网络层和数据链路层都包含其中。</p>
+<blockquote>
+<p>TCP/IP协议的组成:  </p>
+</blockquote>
+<p>TCP/IP协议在一定程度上参考了OSI的体系结构。OSI模型共有七层，从下到上分别是物理层、数据链路层、网络层、运输层、会话层、表示层和应用层。</p>
+]]></content>
+      <categories>
+        <category>TCP</category>
+      </categories>
+      <tags>
+        <tag>TCP</tag>
       </tags>
   </entry>
   <entry>
