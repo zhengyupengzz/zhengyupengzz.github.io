@@ -287,10 +287,10 @@ xw.close();
     <title>11.16技术分享</title>
     <url>/2019/11/16/2019-11-16-16jishu/</url>
     <content><![CDATA[<h1 id="11-16技术分享"><a href="#11-16技术分享" class="headerlink" title="11.16技术分享"></a>11.16技术分享</h1><h2 id="idea运行tomcat控制台乱码"><a href="#idea运行tomcat控制台乱码" class="headerlink" title="idea运行tomcat控制台乱码:"></a>idea运行tomcat控制台乱码:</h2><h3 id="1-首先设置idea的编码格式"><a href="#1-首先设置idea的编码格式" class="headerlink" title="1.首先设置idea的编码格式:"></a>1.首先设置idea的编码格式:</h3><p>File–&gt;Settings–&gt;File Encodings</p>
-<p><img src="http://zhengyupeng.top/images/idea%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F.png" alt="idea编码格式">  </p>
+<p><img src="https://s2.ax1x.com/2019/11/20/MWMwvV.md.png" alt="idea编码格式">  </p>
 <p>将所有编码格式统一设置成UTF-8。  </p>
-<h3 id="2-再设置tomcat的编码格式"><a href="#2-再设置tomcat的编码格式" class="headerlink" title="2.再设置tomcat的编码格式:"></a>2.再设置tomcat的编码格式:</h3><p><img src="http://zhengyupeng.top/images/tomcat%E8%AE%BE%E7%BD%AE.png" alt="tomcat设置">  </p>
-<p>改变VM options为-Dfile.encoding=UTF-8:<br><img src="http://zhengyupeng.top/images/tomcat%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F.png" alt="tomcat编码格式"> </p>
+<h3 id="2-再设置tomcat的编码格式"><a href="#2-再设置tomcat的编码格式" class="headerlink" title="2.再设置tomcat的编码格式:"></a>2.再设置tomcat的编码格式:</h3><p><img src="https://s2.ax1x.com/2019/11/20/MWMyE4.png" alt="tomcat设置">  </p>
+<p>改变VM options为-Dfile.encoding=UTF-8:<br><img src="https://s2.ax1x.com/2019/11/20/MWMrbF.md.png" alt="tomcat编码格式"> </p>
 <p><strong><code>完成上面的设置后还会有乱码,不要急</code></strong>  </p>
 <h3 id="3-配置idea的文件设置"><a href="#3-配置idea的文件设置" class="headerlink" title="3.配置idea的文件设置:"></a>3.配置idea的文件设置:</h3><p>找到idea图标,右键,打开文件位置找到  </p>
 <p><code>idea.exe.vmoptions</code>和<code>idea64.exe.vmoptions</code>文件  并打开文件  </p>
@@ -846,7 +846,7 @@ System.out.println(&quot;是回文&quot;);
 <p> <strong>Date类基本概念:</strong><br> java.util.Date类用于描述特定的瞬间，可以精确到毫秒。  </p>
 <p> <strong>SimpleDateFormat类基本概念:</strong><br> java.text.SimpleDateFormat类主要用于实现日期和文本之间的相关转换。  </p>
 <p> <strong>Calendar类基本概念:</strong><br>java.util.Calendar类用于取代Date类来描述年月日时分秒的特定瞬间。   </p>
-<p><strong>Collection集合:</strong><br><strong>集合框架:</strong><br><img src="http://zhengyupeng.top/images/Collection%E6%A1%86%E6%9E%B6.jpg" alt="Collection框架"><br><img src="http://zhengyupeng.top/images/Collection%E6%A1%86%E6%9E%B6%E8%AF%A6%E7%BB%86.jpg" alt="Collection框架详细">  </p>
+<p><strong>Collection集合:</strong><br><strong>集合框架:</strong><br><img src="https://s2.ax1x.com/2019/11/20/MWMa3q.md.jpg" alt="Collection框架"><br><img src="https://s2.ax1x.com/2019/11/20/MWMdg0.md.jpg" alt="Collection框架详细">  </p>
 <p><strong>集合的由来:</strong><br>当需要在程序中记录单个数据内容时，则声明一个变量即可；<br>当需要在程序中记录多个类型相同的数据内容时，则声明一个一维数组即可；<br>当需要在程序中记录多个类型不同的数据内容时，则构造一个对象即可；<br>当需要在程序中记录多个类型相同的对象时，则声明一个对象数组即可；<br>当需要在程序中记录多个类型不同的对象时，则声明一个集合即可；  </p>
 <p><strong>集合框架结构:</strong><br>在Java语言中集合框架的顶层是：java.util.Collection集合 和 java.util.Map集合<br>其中Collection集合中操作元素的基本单位是：单个元素。<br>其中Map集合中操作元素的基本单位是：单对元素。<br>在以后的开发中很少直接使用Collection集合，而是使用该集合的子集合：List集合、Queue集合、Set集合等。  </p>
 <p><strong>Collection集合基本概念:</strong><br>java.util.Collection集合是集合框架的根接口，其它接口是该接口的子接口。  </p>
@@ -2471,28 +2471,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.22日报</title>
-    <url>/2019/08/22/2019-08-22-22ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>git已经基本完成，今天学习了如何使用vim和vim的常用命令，已经大致地过了一遍，vim学习进度大约70%。</code>  </p>
-</blockquote>
-<blockquote>
-<p><code>并且今天还按照网上的材料整理了一下常用命令，分享了技术博客。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>vim的常用语法挺简单的，但是我看了两节课没去怎么实践去敲，感觉边敲边记会更快一些。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
-]]></content>
-      <categories>
-        <category>命令</category>
-      </categories>
-      <tags>
-        <tag>vim</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.22技术文档</title>
     <url>/2019/08/22/2019-08-22-22jishu/</url>
     <content><![CDATA[<h1 id="vim常用命令整理"><a href="#vim常用命令整理" class="headerlink" title="vim常用命令整理"></a>vim常用命令整理</h1><blockquote>
@@ -2655,6 +2633,47 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.22日报</title>
+    <url>/2019/08/22/2019-08-22-22ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>git已经基本完成，今天学习了如何使用vim和vim的常用命令，已经大致地过了一遍，vim学习进度大约70%。</code>  </p>
+</blockquote>
+<blockquote>
+<p><code>并且今天还按照网上的材料整理了一下常用命令，分享了技术博客。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>vim的常用语法挺简单的，但是我看了两节课没去怎么实践去敲，感觉边敲边记会更快一些。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
+]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.21日报</title>
+    <url>/2019/08/21/2019-08-21-21ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
+]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -2873,26 +2892,7 @@ onload          浏览器已完成页面的加载
 <p>新建一个分支 指向某个标签</p>
 </blockquote>
 <p>git checkout -b 分支名 标签</p>
-<h3 id="最后放上一张网上找到的git常用命令表："><a href="#最后放上一张网上找到的git常用命令表：" class="headerlink" title="最后放上一张网上找到的git常用命令表："></a>最后放上一张网上找到的git常用命令表：</h3><p><img src="http://zhengyupeng.top/images/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%A8.png" alt="git常用命令"></p>
-]]></content>
-      <categories>
-        <category>命令</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8.21日报</title>
-    <url>/2019/08/21/2019-08-21-21ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
+<h3 id="最后放上一张网上找到的git常用命令表："><a href="#最后放上一张网上找到的git常用命令表：" class="headerlink" title="最后放上一张网上找到的git常用命令表："></a>最后放上一张网上找到的git常用命令表：</h3><p><img src="https://s2.ax1x.com/2019/11/20/MWMBuT.md.png" alt="git常用命令"></p>
 ]]></content>
       <categories>
         <category>命令</category>
