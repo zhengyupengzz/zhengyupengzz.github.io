@@ -11,7 +11,7 @@
   <meta http-equiv="x-dns-prefetch-control" content="on">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
   <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
-  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" id="sakura_css-css" href="/css/style.css" type="text/css" media="all">
   <link rel="stylesheet" href="/css/lib.min.css" media="all">
   <link rel="stylesheet" href="/css/font.css" media="all">
   <link rel="stylesheet" href="/css/insight.css" media="all">
@@ -210,13 +210,11 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="Servlet的生命周期"><a href="#Servlet的生命周期" class="headerlink" title="Servlet的生命周期:"></a>Servlet的生命周期:</h1><p><strong>Servlet的生命周期:</strong><br>    指的是Servlet从创建到消亡的周期!  </p>
-<pre><code>Servlet的创建时机: 默认情况, 当用户第一次访问Servlet的映射地址时, 对象创建  
-
-Servlet的销毁时机: 当tomcat关闭,或者 项目从tomcat删除时,Servlet被销毁  
-
-三个方法的体现:  
-</code></pre><ol>
+          <h1 id="Servlet-接收用户表单的参数-GET-POST-乱码问题"><a href="#Servlet-接收用户表单的参数-GET-POST-乱码问题" class="headerlink" title="Servlet,接收用户表单的参数,GET,POST,乱码问题:"></a>Servlet,接收用户表单的参数,GET,POST,乱码问题:</h1><p><strong>Servlet的生命周期:</strong><br>指的是Servlet从创建到消亡的周期!  </p>
+<p>Servlet的创建时机: 默认情况, 当用户第一次访问Servlet的映射地址时, 对象创建  </p>
+<p>Servlet的销毁时机: 当tomcat关闭,或者 项目从tomcat删除时,Servlet被销毁  </p>
+<p>三个方法的体现:  </p>
+<ol>
 <li>init方法 : 此方法在对象创建后,执行  </li>
 <li>service方法 : 服务方法,当用户每一次访问时,执行,用于处理用户的请求,以及对用户进行响应  </li>
 <li>destroy方法 : 当tomcat关闭 或 项目从tomcat删除时 执行</li>
@@ -246,7 +244,63 @@ Servlet的销毁时机: 当tomcat关闭,或者 项目从tomcat删除时,Servlet�
 <pre><code>```
 String value = config对象.getInitParameter(String name);
 ```
-</code></pre>
+</code></pre><p><strong>Servlet的创建时机(懒汉 变 饿汉):</strong>  </p>
+<p>在web.xml中 配置servlet时 </p>
+<pre><code>&lt;servlet&gt;
+    &lt;servlet-name...
+    &lt;servlet-class...
+    &lt;load-on-startup&gt;数字&lt;/load-on-startup&gt;
+&lt;/servlet&gt;
+</code></pre><p>load-on-startup:<br>取值为数字:(默认值为-1)<br>当值为负数是:懒汉模式,第一次请求时加载,<br>当值&gt;=时,描述的是请求的顺序,值越小越早加载  </p>
+<p>如果多个servlet值相同:  按照web.xml中servlet的配置顺序 自上而下加载  </p>
+<p><strong>接受用户表单的参数:</strong>  </p>
+<ol>
+<li>根据一个name,接收单个参数  <pre><code>String value = request.getParameter(String name);
+</code></pre></li>
+<li>根据一个name,接收一组参数  <pre><code>String[] values = request.getParameters(String name);
+</code></pre></li>
+</ol>
+<p><strong>HttpGET请求 与 HttpPOST请求的区别:</strong><br>GET请求:  </p>
+<ul>
+<li>请求的参数,以键值对的形式存储在网址中 ,在网址中,编写在<code>?</code>后,有1个或多个键值对之间使用<code>&amp;</code>分割  </li>
+<li>只能传输字符串类型的参数  </li>
+<li>网址的最大长度为4kb 通常支持的文字2048个文字  </li>
+<li>数据传输不安全  </li>
+</ul>
+<p>tomcat8+版本:  GET请求不会乱码  </p>
+<p>POST请求:  </p>
+<ul>
+<li>请求的数据,以键值对的形式存储在请求体中  </li>
+<li>请求体是一个单独的数据包,较GET请求而言, 安全  </li>
+<li>可以传输任意类型的数据  </li>
+<li>数据的大小,理论上是无上限的  </li>
+</ul>
+<p>tomcat8+版本: Post请求默认编码为 ISO-8859-1(不支持中文)  </p>
+<p><strong>什么样的请求时GET:</strong><br>以我们目前所学习的技术来说,除了表单提交是method=”POST”,其他的访问方式都是GET请求  </p>
+<p>例如:  </p>
+<ul>
+<li>点击超链接 访问  </li>
+<li>通过js: window.location.href=’’访问  </li>
+<li>浏览器中输入网址+回车  </li>
+<li>表单提交时,method=”GET” 或默认  </li>
+<li>ajax的get请求  </li>
+</ul>
+<p><strong>什么样的请求是POST:</strong>  </p>
+<ul>
+<li>表单提交时method=”POST”  </li>
+<li>ajax的post请求  </li>
+<li>Java代码的URL类的POST请求  </li>
+</ul>
+<p><strong>响应的乱码问题:</strong>  </p>
+<ol>
+<li><p>设置网页的内容类型,以及网页的编码格式:  </p>
+<pre><code>response.setContentType(&quot;text/html;charset=utf-8&quot;);
+</code></pre></li>
+<li><p>设置网页的编码格式(因为没有设置网页内容类型为html,所以浏览器解析时也是乱码)  </p>
+<pre><code>response.setCharacterEncoding(&quot;UTF-8&quot;);
+</code></pre></li>
+</ol>
+
         </div>
         <!-- .entry-content -->
         <!-- <div class="single-reward">
@@ -274,28 +328,11 @@ String value = config对象.getInitParameter(String name);
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2019/11/21/2019-11-21-21jishu/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                11.21技术分享</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
         
           
-            <div class="post-nepre half next">
+            <div class="post-nepre full next">
           
-            <a href="/2019/11/20/2019-11-20-20ribao/" rel="next">
+            <a href="/2019/11/21/2019-11-21-21jishu/" rel="next">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
               </div>
@@ -303,7 +340,7 @@ String value = config对象.getInitParameter(String name);
               Next Post</span>
               <div class="info">
                 <h3>
-                11.20Java学习进度</h3>
+                11.21技术分享</h3>
                 <hr>
               </div>
             </a>
