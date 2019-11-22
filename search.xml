@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>11.21技术分享</title>
-    <url>/hexo/2019/11/21/2019-11-21-21jishu/</url>
+    <url>/2019/11/21/2019-11-21-21jishu/</url>
     <content><![CDATA[<h1 id="对谷歌插件的导入导出"><a href="#对谷歌插件的导入导出" class="headerlink" title="对谷歌插件的导入导出:"></a>对谷歌插件的导入导出:</h1><ol>
 <li>导出谷歌插件</li>
 </ol>
@@ -35,7 +35,7 @@
   </entry>
   <entry>
     <title>11.21Java学习进度</title>
-    <url>/hexo/2019/11/21/2019-11-21-21ribao/</url>
+    <url>/2019/11/21/2019-11-21-21ribao/</url>
     <content><![CDATA[<h1 id="Servlet的生命周期"><a href="#Servlet的生命周期" class="headerlink" title="Servlet的生命周期:"></a>Servlet的生命周期:</h1><p><strong>Servlet的生命周期:</strong><br>    指的是Servlet从创建到消亡的周期!  </p>
 <pre><code>Servlet的创建时机: 默认情况, 当用户第一次访问Servlet的映射地址时, 对象创建  
 
@@ -82,7 +82,7 @@ String value = config对象.getInitParameter(String name);
   </entry>
   <entry>
     <title>11.20Java学习进度</title>
-    <url>/hexo/2019/11/20/2019-11-20-20ribao/</url>
+    <url>/2019/11/20/2019-11-20-20ribao/</url>
     <content><![CDATA[<h1 id="JavaWeb开发环境的配置-http协议与HttpServlet类"><a href="#JavaWeb开发环境的配置-http协议与HttpServlet类" class="headerlink" title="JavaWeb开发环境的配置,http协议与HttpServlet类:"></a>JavaWeb开发环境的配置,http协议与HttpServlet类:</h1><p><strong>tomcat配置:</strong>  </p>
 <ol>
 <li>下载tomcat  </li>
@@ -188,7 +188,7 @@ B / S :
   </entry>
   <entry>
     <title>11.20心得</title>
-    <url>/hexo/2019/11/20/2019-11-20-20xinde/</url>
+    <url>/2019/11/20/2019-11-20-20xinde/</url>
     <content><![CDATA[<h1 id="对于博客模板的修改"><a href="#对于博客模板的修改" class="headerlink" title="对于博客模板的修改:"></a>对于博客模板的修改:</h1><blockquote>
 <p>由于19号发现了之前自己的博客模板有一些没改好的地方,便下决心这次要彻底改好一个博客模板</p>
 </blockquote>
@@ -219,7 +219,7 @@ B / S :
   </entry>
   <entry>
     <title>11.18JAVA学习进度</title>
-    <url>/hexo/2019/11/18/2019-11-18-18ribao/</url>
+    <url>/2019/11/18/2019-11-18-18ribao/</url>
     <content><![CDATA[<h1 id="11-18Java学习进度"><a href="#11-18Java学习进度" class="headerlink" title="11.18Java学习进度"></a>11.18Java学习进度</h1><h2 id="解析xml属性操作-Xpath"><a href="#解析xml属性操作-Xpath" class="headerlink" title="解析xml属性操作,Xpath:"></a>解析xml属性操作,Xpath:</h2><pre><code>// 1. 加载xml文件到jvm中,形成数据流
 InputStream is TestXML_1.class.getClassLoader().getResourceAsStream(&quot;test4.xml&quot;);
 
@@ -285,7 +285,7 @@ xw.close();
   </entry>
   <entry>
     <title>11.16技术分享</title>
-    <url>/hexo/2019/11/16/2019-11-16-16jishu/</url>
+    <url>/2019/11/16/2019-11-16-16jishu/</url>
     <content><![CDATA[<h1 id="11-16技术分享"><a href="#11-16技术分享" class="headerlink" title="11.16技术分享"></a>11.16技术分享</h1><h2 id="idea运行tomcat控制台乱码"><a href="#idea运行tomcat控制台乱码" class="headerlink" title="idea运行tomcat控制台乱码:"></a>idea运行tomcat控制台乱码:</h2><h3 id="1-首先设置idea的编码格式"><a href="#1-首先设置idea的编码格式" class="headerlink" title="1.首先设置idea的编码格式:"></a>1.首先设置idea的编码格式:</h3><p>File–&gt;Settings–&gt;File Encodings</p>
 <p><img src="http://zhengyupeng.top/images/idea%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F.png" alt="idea编码格式">  </p>
 <p>将所有编码格式统一设置成UTF-8。  </p>
@@ -321,7 +321,7 @@ xw.close();
   </entry>
   <entry>
     <title>11.16JAVA学习进度</title>
-    <url>/hexo/2019/11/16/2019-11-16-16ribao/</url>
+    <url>/2019/11/16/2019-11-16-16ribao/</url>
     <content><![CDATA[<h1 id="11-16Java学习进度"><a href="#11-16Java学习进度" class="headerlink" title="11.16Java学习进度"></a>11.16Java学习进度</h1><h2 id="数据库优化-XML"><a href="#数据库优化-XML" class="headerlink" title="数据库优化,XML:"></a>数据库优化,XML:</h2><h4 id="数据库优化"><a href="#数据库优化" class="headerlink" title="数据库优化:"></a>数据库优化:</h4><ol>
 <li><code>在进行表格查询时</code>,where子句中的条件执行顺序是从左至右,清除数据量较大的条件应该放在左边.(<code>特别注意:笛卡尔积消除条件必须放在左边</code>)<pre><code>10000 --&gt;9999 ---&gt;9998 ---&gt;999
 10000 ---&gt;999 ---&gt;998
@@ -449,7 +449,7 @@ for(Element e1: list){
   </entry>
   <entry>
     <title>11.15JAVA学习进度</title>
-    <url>/hexo/2019/11/15/2019-11-15-15ribao/</url>
+    <url>/2019/11/15/2019-11-15-15ribao/</url>
     <content><![CDATA[<h1 id="11-15Java学习进度"><a href="#11-15Java学习进度" class="headerlink" title="11.15Java学习进度"></a>11.15Java学习进度</h1><h4 id="JDBC事务-批处理-连接池"><a href="#JDBC事务-批处理-连接池" class="headerlink" title="JDBC事务,批处理,连接池:"></a>JDBC事务,批处理,连接池:</h4><p><strong>JDBC事务:</strong><br>在dos命令行操作oracle时,执行DML,需要结束事务(commit提交 或 rollback回退)<br>在JDBC中,事务是自动提交的,每执行一条DML语句,事务就自动提交一次<br>我们可以通过JDBC的事务API,开始事务的手动提交,将多条DML语句看作一个整体要么一起成功,要么一起失败.    </p>
 <p><strong>事务特性:</strong><br>特性:  </p>
 <p>事务是恢复和并发控制的基本单位。<br>事务应该具有4个属性：原子性、一致性、隔离性、持久性。这四个属性通常称为ACID特性。<br><code>原子性</code>（atomicity）。一个事务是一个不可分割的工作单位，事务中包括的诸操作要么都做，要么都不做。<br><code>一致性</code>（consistency）。事务必须是使数据库从一个一致性状态变到另一个一致性状态。一致性与原子性是密切相关的。<br><code>隔离性</code>（isolation）。一个事务的执行不能被其他事务干扰。即一个事务内部的操作及使用的数据对并发的其他事务是隔离的，并发执行的各个事务之间不能互相干扰。<br><code>持久性</code>（durability）。持久性也称永久性（permanence），指一个事务一旦提交，它对数据库中数据的改变就应该是永久性的。接下来的其他操作或故障不应该对其有任何影响。  </p>
@@ -567,7 +567,7 @@ for(Element e1: list){
   </entry>
   <entry>
     <title>11.14JAVA学习进度</title>
-    <url>/hexo/2019/11/14/2019-11-14-14ribao/</url>
+    <url>/2019/11/14/2019-11-14-14ribao/</url>
     <content><![CDATA[<h1 id="11-14Java学习进度"><a href="#11-14Java学习进度" class="headerlink" title="11.14Java学习进度"></a>11.14Java学习进度</h1><h4 id="防止sql注入-创建序列-工具类思想-配置文件思想-DAO"><a href="#防止sql注入-创建序列-工具类思想-配置文件思想-DAO" class="headerlink" title="防止sql注入,创建序列,工具类思想,配置文件思想,DAO:"></a>防止sql注入,创建序列,工具类思想,配置文件思想,DAO:</h4><p><strong>防止sql注入:</strong><br>使用PreparedStatement 替换 Statement:  </p>
 <ol>
 <li>可以防止拼接的sql注入, 原理就是你输入的数据不拼接,直接作为真实数据。  </li>
@@ -607,7 +607,7 @@ ResultSet result     结果集对象
   </entry>
   <entry>
     <title>11.13JAVA学习进度</title>
-    <url>/hexo/2019/11/13/2019-11-13-13ribao/</url>
+    <url>/2019/11/13/2019-11-13-13ribao/</url>
     <content><![CDATA[<h1 id="11-13Java学习进度"><a href="#11-13Java学习进度" class="headerlink" title="11.13Java学习进度"></a>11.13Java学习进度</h1><h4 id="JDBC-oracle常用表结构操作-防止sql注入"><a href="#JDBC-oracle常用表结构操作-防止sql注入" class="headerlink" title="JDBC,oracle常用表结构操作,防止sql注入:"></a>JDBC,oracle常用表结构操作,防止sql注入:</h4><p><strong>JDBC访问数据库的步骤:</strong>  </p>
 <ol>
 <li>加载驱动  </li>
@@ -647,7 +647,7 @@ ResultSet result     结果集对象
   </entry>
   <entry>
     <title>11.12技术分享</title>
-    <url>/hexo/2019/11/12/2019-11-12-12jishu/</url>
+    <url>/2019/11/12/2019-11-12-12jishu/</url>
     <content><![CDATA[<h1 id="批处理-强制删除"><a href="#批处理-强制删除" class="headerlink" title="批处理:强制删除"></a>批处理:强制删除</h1><h4 id="批处理文件编辑"><a href="#批处理文件编辑" class="headerlink" title="批处理文件编辑:"></a>批处理文件编辑:</h4><pre><code>DEL /F /A /Q \\?\%1
 RD /S /Q \\?\%1
 </code></pre><p>将上边代码另存为.bat文件<br>将需要删除的文件拖到文件上就可以实现强制删除.<br>%1可以替换为特定路径,此时双击即可实现对特定路径的删除.<br>这个批处理常用于普通手段无法删除的文件  </p>
@@ -680,7 +680,7 @@ RD /S /Q \\?\%1
   </entry>
   <entry>
     <title>10.26JAVA学习进度</title>
-    <url>/hexo/2019/10/26/2019-10-26-26ribao/</url>
+    <url>/2019/10/26/2019-10-26-26ribao/</url>
     <content><![CDATA[<h1 id="10-26Java学习进度"><a href="#10-26Java学习进度" class="headerlink" title="10.26Java学习进度"></a>10.26Java学习进度</h1><h4 id="泛型机制-Queue集合-Set集合-Map集合"><a href="#泛型机制-Queue集合-Set集合-Map集合" class="headerlink" title="泛型机制,Queue集合,Set集合,Map集合:"></a>泛型机制,Queue集合,Set集合,Map集合:</h4><p><strong>泛型机制基本概念:</strong><br>通常情况下集合中可以存放不同类型的对象，本质上是将这些对象全部看做Object类型放入的，因此从集合中取出元素时也是Object类型，为了表达元素最真实的数据类型就需要强制类型转换，而强制类型转换可能发生类型转换异常。<br>为了避免上述错误的发生，从jdk1.5开始提出泛型机制，也就是在集合名称的右侧使用&lt;数据类型&gt;的方式明确要求该集合可以存放的元素类型，若放入其它类型则编译报错    </p>
 <p>如：</p>
 <pre><code>List lt1 = new LinkedList();   - 可以放入任意类型对象，取出麻烦
@@ -797,7 +797,7 @@ for(Entry&lt;Character,Integer&gt; e:entries){
   </entry>
   <entry>
     <title>10.25JAVA学习进度</title>
-    <url>/hexo/2019/10/25/2019-10-25-25ribao/</url>
+    <url>/2019/10/25/2019-10-25-25ribao/</url>
     <content><![CDATA[<h1 id="10-25Java学习进度"><a href="#10-25Java学习进度" class="headerlink" title="10.25Java学习进度"></a>10.25Java学习进度</h1><h4 id="String类的常用方法-StringBuilder类和StringBuffer类-日期相关的类-Collection集合-List集合"><a href="#String类的常用方法-StringBuilder类和StringBuffer类-日期相关的类-Collection集合-List集合" class="headerlink" title="String类的常用方法,StringBuilder类和StringBuffer类,日期相关的类,Collection集合,List集合:"></a>String类的常用方法,StringBuilder类和StringBuffer类,日期相关的类,Collection集合,List集合:</h4><p><strong>String类的基本方法:</strong><br>检测字符串是否为”回文”:</p>
 <pre><code>String str = &quot;上海自来水来自上海&quot;;
 for(int i = 0; i&lt;str.length()/2; i++){
@@ -903,7 +903,7 @@ System.out.println(&quot;是回文&quot;);
   </entry>
   <entry>
     <title>10.24JAVA学习进度</title>
-    <url>/hexo/2019/10/24/2019-10-24-24ribao/</url>
+    <url>/2019/10/24/2019-10-24-24ribao/</url>
     <content><![CDATA[<h1 id="10-24Java学习进度"><a href="#10-24Java学习进度" class="headerlink" title="10.24Java学习进度"></a>10.24Java学习进度</h1><h4 id="Object类-包装类和数学处理类-String类"><a href="#Object类-包装类和数学处理类-String类" class="headerlink" title="Object类,包装类和数学处理类,String类:"></a>Object类,包装类和数学处理类,String类:</h4><p><strong>Object类:</strong><br>常用的包<br>java.lang包 - 该包是Java语言中的核心包，该包中的内容由Java虚拟机自动导入<br>如：  String类、System类等<br>java.util包 - 该包是Java语言中的工具包，里面包含了大量的工具类和集合类等<br>如：Scanner类、Random类等<br>java.io包   - 该包是Java语言中的输入输出包，里面包含了大量读写文件的类等<br>如：FileOutputStream类、FileInputStream类等<br>java.net包  - 该包是Java语言中的网络包，里面包含了大量网络编程的类等<br>如：ServerSocket类、Socket类等  </p>
 <p><strong>Object类基本概念:</strong><br>java.lang.Object类是所有类层次结构的根类，任何类都是该类的直接或间接子类。  </p>
 <p><strong><em>Object常用的方法:</em></strong><br>Object() - 使用无参方式构造对象。<br>boolean equals(Object obj) - 用于判断调用对象是否与参数对象相等。  </p>
@@ -953,7 +953,7 @@ System.out.println(&quot;是回文&quot;);
   </entry>
   <entry>
     <title>10.23JAVA学习进度</title>
-    <url>/hexo/2019/10/23/2019-10-23-23ribao/</url>
+    <url>/2019/10/23/2019-10-23-23ribao/</url>
     <content><![CDATA[<h1 id="10-23Java学习进度"><a href="#10-23Java学习进度" class="headerlink" title="10.23Java学习进度"></a>10.23Java学习进度</h1><h4 id="访问控制-final关键字-多态-抽象类-接口-匿名内部类"><a href="#访问控制-final关键字-多态-抽象类-接口-匿名内部类" class="headerlink" title="访问控制,final关键字,多态,抽象类,接口,匿名内部类:"></a>访问控制,final关键字,多态,抽象类,接口,匿名内部类:</h4><p><strong>访问控制:</strong><br>常用的访问控制符 访问控制符 访问权限 本类 本包中的类 子类 其它包中的其它类</p>
 <hr>
 <pre><code> public       公有的      ok        ok        ok          ok  
@@ -1018,7 +1018,7 @@ System.out.println(&quot;是回文&quot;);
   </entry>
   <entry>
     <title>10.22JAVA学习进度</title>
-    <url>/hexo/2019/10/22/2019-10-22-22ribao/</url>
+    <url>/2019/10/22/2019-10-22-22ribao/</url>
     <content><![CDATA[<h1 id="10-22Java学习进度"><a href="#10-22Java学习进度" class="headerlink" title="10.22Java学习进度"></a>10.22Java学习进度</h1><h4 id="封装-static关键字-单例设计模式-继承与方法的重写"><a href="#封装-static关键字-单例设计模式-继承与方法的重写" class="headerlink" title="封装,static关键字,单例设计模式,继承与方法的重写:"></a>封装,static关键字,单例设计模式,继承与方法的重写:</h4><p><strong>封装基本概念:</strong><br>为了避免对成员变量的赋值合法但是不合理,与现实生活不符,为了避免这种现象采用封装.<br>封装可以保证成员变量的合理性.</p>
 <p><strong>封装的实现流程:</strong><br>(1)私有化成员变量，使用private关键字修饰；<br>(2)提供公有的get和set方法，在方法体中进行合理值的判断；<br>(3)在构造方法中调用set方法进行合理值的判断；<br><strong><em>对于封装的实现,大框架可以在编译器里实现:</em></strong><br><em>(1)eclipse中用右键-Source(alt+shift+s)中的带Generate的一些选项实现</em><br><em>(2)idea中用右键-Generate…(alt+insert)选项中选项实现</em></p>
 <p><strong>static关键字:</strong><br>使用static关键字修饰成员变量表达静态的含义，该成员变量由对象层级提升为类层级被所有对象共享，该成员变量随着类的加载准备就绪，与是否创建对象无关。<br>static关键字就是把对象级提高到类级,在<code>类加载</code>时就准备完成了,而不需要创建对象(new)。<br>静态的成员(属性和方法)可以用 对象. 调用,但是一般推荐用 类名. 调用  </p>
@@ -1066,7 +1066,7 @@ System.out.println(&quot;是回文&quot;);
   </entry>
   <entry>
     <title>10.21JAVA学习进度</title>
-    <url>/hexo/2019/10/21/2019-10-21-21ribao/</url>
+    <url>/2019/10/21/2019-10-21-21ribao/</url>
     <content><![CDATA[<h1 id="10-21Java学习进度"><a href="#10-21Java学习进度" class="headerlink" title="10.21Java学习进度"></a>10.21Java学习进度</h1><h4 id="封装-static关键字-单例设计模式"><a href="#封装-static关键字-单例设计模式" class="headerlink" title="封装,static关键字,单例设计模式:"></a>封装,static关键字,单例设计模式:</h4><p><strong>封装基本概念:</strong><br>为了避免对成员变量的赋值合法但是不合理,与现实生活不符,为了避免这种现象采用封装.<br>封装可以保证成员变量的合理性.</p>
 <p><strong>封装的实现流程:</strong><br>(1)私有化成员变量，使用private关键字修饰；<br>(2)提供公有的get和set方法，在方法体中进行合理值的判断；<br>(3)在构造方法中调用set方法进行合理值的判断；<br><strong><em>对于封装的实现,大框架可以在编译器里实现:</em></strong><br><em>(1)eclipse中用右键-Source(alt+shift+s)中的带Generate的一些选项实现</em><br><em>(2)idea中用右键-Generate…(alt+insert)选项中选项实现</em></p>
 <p><strong>static关键字:</strong><br>使用static关键字修饰成员变量表达静态的含义，该成员变量由对象层级提升为类层级被所有对象共享，该成员变量随着类的加载准备就绪，与是否创建对象无关。<br>static关键字就是把对象级提高到类级,在<code>类加载</code>时就准备完成了,而不需要创建对象(new)。<br>静态的成员(属性和方法)可以用 对象. 调用,但是一般推荐用 类名. 调用  </p>
@@ -1109,7 +1109,7 @@ System.out.println(&quot;是回文&quot;);
   </entry>
   <entry>
     <title>10.19JAVA学习进度</title>
-    <url>/hexo/2019/10/19/2019-10-19-19ribao/</url>
+    <url>/2019/10/19/2019-10-19-19ribao/</url>
     <content><![CDATA[<h1 id="10-19Java学习进度"><a href="#10-19Java学习进度" class="headerlink" title="10.19Java学习进度"></a>10.19Java学习进度</h1><h4 id="构造方法-方法重载-this关键字-方法的传参和调用"><a href="#构造方法-方法重载-this关键字-方法的传参和调用" class="headerlink" title="构造方法,方法重载,this关键字,方法的传参和调用:"></a>构造方法,方法重载,this关键字,方法的传参和调用:</h4><p><strong>学习了构造方法的概念和使用</strong><br>无参和有参构造方法的使用</p>
 <p><strong>方法的重载概念和体现形式</strong><br>几个类的方法名相同,参数列表不同,就是重载<br>在创建对象时候会根据不同参数调用不同构造方法  </p>
 <p><strong>this关键字的使用方式,原理:</strong><br>在构造方法中代表当前正在构造的对象<br>在成员方法中代表当前正在调用的对象   </p>
@@ -1168,7 +1168,7 @@ return n * show(n-1);
   </entry>
   <entry>
     <title>10.18JAVA学习进度</title>
-    <url>/hexo/2019/10/18/2019-10-18-18ribao/</url>
+    <url>/2019/10/18/2019-10-18-18ribao/</url>
     <content><![CDATA[<h1 id="10-18Java学习进度"><a href="#10-18Java学习进度" class="headerlink" title="10.18Java学习进度"></a>10.18Java学习进度</h1><h4 id="数组元素之间的操作-号码的生成和去重-面向对象的基本概念和三大特征-了解了类和对象的概念"><a href="#数组元素之间的操作-号码的生成和去重-面向对象的基本概念和三大特征-了解了类和对象的概念" class="headerlink" title="数组元素之间的操作,号码的生成和去重,面向对象的基本概念和三大特征,了解了类和对象的概念:"></a>数组元素之间的操作,号码的生成和去重,面向对象的基本概念和三大特征,了解了类和对象的概念:</h4><p>学习了数组元素之间的拷贝  </p>
 <p>统计拆分的原理和实现:求出一串数字各数字出现的次数  </p>
 <p>双色球号码的生成和去重<br>去重方法:<br>当前元素与之前元素对比如果有相同的就使用i– 再重新生成一遍当前数组下标的元素  </p>
@@ -1217,7 +1217,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>10.17JAVA学习进度</title>
-    <url>/hexo/2019/10/17/2019-10-17-17ribao/</url>
+    <url>/2019/10/17/2019-10-17-17ribao/</url>
     <content><![CDATA[<h1 id="10-17Java学习进度"><a href="#10-17Java学习进度" class="headerlink" title="10.17Java学习进度"></a>10.17Java学习进度</h1><h3 id="对java的简单了解和入门-简单的逻辑结构和循环结构-简单的数组操作"><a href="#对java的简单了解和入门-简单的逻辑结构和循环结构-简单的数组操作" class="headerlink" title="对java的简单了解和入门,简单的逻辑结构和循环结构,简单的数组操作"></a>对java的简单了解和入门,简单的逻辑结构和循环结构,简单的数组操作</h3><p>第一课:</p>
 <p>了解了java的历史<br>看了基础的helloworld打印</p>
 <p>第二课:</p>
@@ -1238,7 +1238,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>10.14</title>
-    <url>/hexo/2019/10/14/2019-10-14-14jishu/</url>
+    <url>/2019/10/14/2019-10-14-14jishu/</url>
     <content><![CDATA[<h1 id="看板娘代码"><a href="#看板娘代码" class="headerlink" title="看板娘代码:"></a>看板娘代码:</h1><pre><code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot;/&gt;
 &lt;script src=&quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js&quot;&gt;&lt;/script&gt;
@@ -1252,7 +1252,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>10.13</title>
-    <url>/hexo/2019/10/13/2019-10-13-13jishu/</url>
+    <url>/2019/10/13/2019-10-13-13jishu/</url>
     <content><![CDATA[<h1 id="今天发现了一个时间小人的特效-很有意思"><a href="#今天发现了一个时间小人的特效-很有意思" class="headerlink" title="今天发现了一个时间小人的特效 很有意思:"></a>今天发现了一个时间小人的特效 很有意思:</h1><pre><code>&lt;div&gt;
 &lt;embed wmode=&quot;transparent&quot; src=&quot;http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.swf&quot; quality=&quot;high&quot; bgcolor=&quot;#ffffff&quot; width=&quot;160&quot; height=&quot;70&quot; name=&quot;honehoneclock&quot; align=&quot;middle&quot; allowscriptaccess=&quot;always&quot; type=&quot;application/x-shockwave-flash&quot; pluginspage=&quot;http://www.macromedia.com/go/getflashplayer&quot;&gt;
 &lt;/div&gt;
@@ -1268,7 +1268,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>9.27技术分享</title>
-    <url>/hexo/2019/09/27/2019-09-27-27jishu/</url>
+    <url>/2019/09/27/2019-09-27-27jishu/</url>
     <content><![CDATA[<h1 id="今天发现了git克隆下来的远程库特别大"><a href="#今天发现了git克隆下来的远程库特别大" class="headerlink" title="今天发现了git克隆下来的远程库特别大:"></a>今天发现了git克隆下来的远程库特别大:</h1><p>经过查询之后发现是每次推送之后都会留下记录缓存，这样很多没用的记录就会占用多余的空间，别人克隆的时候也会多耗费时间，今天我查到了一个清除无用记录的方法。</p>
 <blockquote>
 <p>首先进入你的本地库</p>
@@ -1315,7 +1315,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>9.27七十周年心得</title>
-    <url>/hexo/2019/09/27/2019-09-27-27xinde/</url>
+    <url>/2019/09/27/2019-09-27-27xinde/</url>
     <content><![CDATA[<h1 id="今天看了很多关于国家的视频-发现这七十年发展的是真不容易"><a href="#今天看了很多关于国家的视频-发现这七十年发展的是真不容易" class="headerlink" title="今天看了很多关于国家的视频,发现这七十年发展的是真不容易"></a>今天看了很多关于国家的视频,发现这七十年发展的是真不容易</h1><p>70年的风雨征程，带来了祖国繁荣强大，如同阳光照亮了我们的前程，指明了我们前进的方向，带领全国各族人民从贫穷走向富裕，从胜利走向辉煌。</p>
 <p>　　中华人民共和国国旗旗面为红色象征革命。旗上的五颗五角星及其相互关系象征共产党领导下的革命人民大团结。星用黄色是为着在红地上显出光明，四颗小五角星各有一角正对着大星的中心点，表示围绕着一个中心而团结。每逢国庆，去天安门广场看升国旗是无数人心中的梦想。因此，利用国庆长假去北京游玩的人们，通常会赶早来到天安门广场看国旗班的军人升旗，以表达对祖国的无比热爱，看着五星红旗徐徐升起，心中的激动无以言表。每年10月1日是我国的国庆节，我国于1999年修订发布《全国年节及纪念日放假办法》，将国庆节与相邻的周六、日组合为7天的国庆长假，被称之为“国庆黄金周”，用放假的形式，让老百姓共同感受国庆的欢乐。</p>
 <p>　　回首这70年，中华人民走得每一步都是步履蹒跚，每一步都付出了巨大牺牲。但是如今中国经过几十年来的艰苦建设，已取得了“乘长风，破万里浪”的迅猛发展:《辉煌中国》之《圆梦工程》透过港珠澳大桥、胡麻岭隧道、郑万铁路、复兴号、上海洋山港自动化码头、中国移动互联网等一个个超级工程，领略五年来一张张中国基础建设的大网，如何编织起人民走向幸福、美好的希望版图，托举起中华民族伟大复兴的中国梦。</p>
@@ -1335,7 +1335,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>9.26日报</title>
-    <url>/hexo/2019/09/26/2019-09-26-26ribao/</url>
+    <url>/2019/09/26/2019-09-26-26ribao/</url>
     <content><![CDATA[<h1 id="今天也是收获颇丰的一天"><a href="#今天也是收获颇丰的一天" class="headerlink" title="今天也是收获颇丰的一天:"></a>今天也是收获颇丰的一天:</h1><p>因为要学四个数据库,再ubuntu安装比较麻烦,所以我刷回了Windows系统.</p>
 <p>但是安装了虚拟机的deep系统也是基于linux的.</p>
 <p>今天已经将四个数据库安装完成,环境也配置好了.</p>
@@ -1349,7 +1349,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>9.19阶段感悟</title>
-    <url>/hexo/2019/09/19/2019-09-19-19ganwu/</url>
+    <url>/2019/09/19/2019-09-19-19ganwu/</url>
     <content><![CDATA[<h1 id="从加入兄弟会到现在的感悟与总结"><a href="#从加入兄弟会到现在的感悟与总结" class="headerlink" title="从加入兄弟会到现在的感悟与总结"></a>从加入兄弟会到现在的感悟与总结</h1><p>从听说兄弟会的学习模式开始,我就一直盼望着加入兄弟会,然而我也确实很幸运地通过面试加入进了兄弟会.</p>
 <p>刚加入时候是迷茫的,不知道该做些什么,遇见问题无从下手,仅仅是安装ubuntu系统就花费了一整天的时间.</p>
 <p>当然兄弟会的教官也教了我们自学效率比较高的方式,查阅资料和向已经学会的同学交流请教,我觉得这很符合现在公司里面的学习方式,进到公司里面不会被特意地教学只能自己根据资料和向前辈请教来快速提升自己.</p>
@@ -1373,7 +1373,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>9.18连接远程服务器</title>
-    <url>/hexo/2019/09/18/2019-09-18-18jishu/</url>
+    <url>/2019/09/18/2019-09-18-18jishu/</url>
     <content><![CDATA[<h1 id="连接远程服务器-上传文件方法"><a href="#连接远程服务器-上传文件方法" class="headerlink" title="连接远程服务器,上传文件方法"></a>连接远程服务器,上传文件方法</h1><blockquote>
 <p>安装rdesktop</p>
 </blockquote>
@@ -1420,7 +1420,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>9.16技术分享文档</title>
-    <url>/hexo/2019/09/16/2019-09-16-16jishu/</url>
+    <url>/2019/09/16/2019-09-16-16jishu/</url>
     <content><![CDATA[<h1 id="jquery-常用事件整理"><a href="#jquery-常用事件整理" class="headerlink" title="jquery 常用事件整理"></a>jquery 常用事件整理</h1><blockquote>
 <p>鼠标点击事件</p>
 </blockquote>
@@ -1501,7 +1501,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>9.10日报</title>
-    <url>/hexo/2019/09/10/2019-09-10-10ribao/</url>
+    <url>/2019/09/10/2019-09-10-10ribao/</url>
     <content><![CDATA[<h1 id="今天也是收获颇丰的一天-在同学那学到了很多"><a href="#今天也是收获颇丰的一天-在同学那学到了很多" class="headerlink" title="今天也是收获颇丰的一天,在同学那学到了很多:"></a>今天也是收获颇丰的一天,在同学那学到了很多:</h1><p>今天上午开始去背的倒计时,但是背了挺长时间背得效率也不是那么高.</p>
 <p>然后看了同学自己按照自己的思路写的代码,感觉思路清晰多了.</p>
 <p>今天学到了,看代码不要按照固有思路去看  别人的代码也未必是最好的代码,自己捋请思路写一遍也许效果更好.</p>
@@ -1515,7 +1515,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>9.09日报</title>
-    <url>/hexo/2019/09/09/2019-09-09-09ribao/</url>
+    <url>/2019/09/09/2019-09-09-09ribao/</url>
     <content><![CDATA[<h1 id="今天考考了两个js特效的实现页面-总结一下"><a href="#今天考考了两个js特效的实现页面-总结一下" class="headerlink" title="今天考考了两个js特效的实现页面,总结一下:"></a>今天考考了两个js特效的实现页面,总结一下:</h1><p>在做选项卡页面的时候,忘记了引用jqery文件,导致一直运行失败 还好在最后的时候想了起来.</p>
 <p>还有样式要记得加上浮动效果比较好,</p>
 <p>这两个页面我样式做的都不是很好看,css要复习复习了.</p>
@@ -1530,7 +1530,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>9.07技术分享文档</title>
-    <url>/hexo/2019/09/07/2019-09-07-07jishu/</url>
+    <url>/2019/09/07/2019-09-07-07jishu/</url>
     <content><![CDATA[<h1 id="今天分享几个经过细心挑选了的较高质量的壁纸网站"><a href="#今天分享几个经过细心挑选了的较高质量的壁纸网站" class="headerlink" title="今天分享几个经过细心挑选了的较高质量的壁纸网站:"></a>今天分享几个经过细心挑选了的较高质量的壁纸网站:</h1><p><a href="http://www.jj20.com/" target="_blank">娟娟壁纸</a></p>
 <p><a href="http://pic.netbian.com/" target="_blank">彼岸图网</a></p>
 <p><a href="https://bz.zzzmh.cn/" target="_blank">极简壁纸</a></p>
@@ -1554,7 +1554,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>9.06git命令详细整理之二</title>
-    <url>/hexo/2019/09/06/2019-09-06-06jishu/</url>
+    <url>/2019/09/06/2019-09-06-06jishu/</url>
     <content><![CDATA[<p><a href="https://blog.csdn.net/afei__/article/details/51476529" target="_blank" rel="noopener">git命令整理博客1</a></p>
 <p><strong>还有大家一起整理了挺全的命令整理：</strong></p>
 <blockquote>
@@ -1794,7 +1794,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>9.05git命令详细整理</title>
-    <url>/hexo/2019/09/05/2019-09-05-05jishu/</url>
+    <url>/2019/09/05/2019-09-05-05jishu/</url>
     <content><![CDATA[<p><a href="https://blog.csdn.net/afei__/article/details/51476529" target="_blank" rel="noopener">git命令整理博客1</a></p>
 <p><strong>还有大家一起整理了挺全的命令整理：</strong></p>
 <blockquote>
@@ -1883,7 +1883,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>9.4日报</title>
-    <url>/hexo/2019/09/04/2019-09-04-04ribao/</url>
+    <url>/2019/09/04/2019-09-04-04ribao/</url>
     <content><![CDATA[<blockquote>
 <p><code>今天下午考了一个node聊天室，一个js的轮播图。</code>  </p>
 </blockquote>
@@ -1902,7 +1902,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>9.03lamp环境搭建</title>
-    <url>/hexo/2019/09/03/2019-09-03-03jishu/</url>
+    <url>/2019/09/03/2019-09-03-03jishu/</url>
     <content><![CDATA[<h1 id="lamp环境的搭建方法与我遇到的问题"><a href="#lamp环境的搭建方法与我遇到的问题" class="headerlink" title="lamp环境的搭建方法与我遇到的问题"></a>lamp环境的搭建方法与我遇到的问题</h1><p>首先我在网上找到了一个很全的安装教程：</p>
 <p><a href="https://www.cnblogs.com/opsprobe/p/9126411.html" target="_blank" rel="noopener">lamp安装教程</a></p>
 <p>还有一个mysql安装教程：</p>
@@ -1947,7 +1947,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>9.2日报</title>
-    <url>/hexo/2019/09/02/2019-09-02-02ribao/</url>
+    <url>/2019/09/02/2019-09-02-02ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
 <p><code>今天开始回去翻看之前的git,vim,linux,js笔记，今天看完了git,vim。明天继续看linux命令与js语法。我整理了一下不太熟的命令在这里。</code>  </p>
 </blockquote>
@@ -1966,7 +1966,7 @@ Person p = new Person();
   </entry>
   <entry>
     <title>8.30技术文档</title>
-    <url>/hexo/2019/08/30/2019-08-30-30jishu/</url>
+    <url>/2019/08/30/2019-08-30-30jishu/</url>
     <content><![CDATA[<h1 id="js的常用语法（整理版）"><a href="#js的常用语法（整理版）" class="headerlink" title="js的常用语法（整理版）"></a>js的常用语法（整理版）</h1><blockquote>
 <p>今天在看node的空闲时间又重新整理了之前的js语法：</p>
 </blockquote>
@@ -2032,7 +2032,7 @@ onload          浏览器已完成页面的加载
   </entry>
   <entry>
     <title>8.30日报</title>
-    <url>/hexo/2019/08/30/2019-08-30-30ribao/</url>
+    <url>/2019/08/30/2019-08-30-30ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
 <p><code>今天开始学node的socket模块，在网上查了各种资源勉强做出来一个简易的多人聊天室，也遇到了一些问题。</code>  </p>
 </blockquote>
@@ -2049,7 +2049,7 @@ onload          浏览器已完成页面的加载
   </entry>
   <entry>
     <title>8.29技术文档</title>
-    <url>/hexo/2019/08/29/2019-08-29-29jishu/</url>
+    <url>/2019/08/29/2019-08-29-29jishu/</url>
     <content><![CDATA[<h1 id="简易的图片轮播"><a href="#简易的图片轮播" class="headerlink" title="简易的图片轮播"></a>简易的图片轮播</h1><p>今天主要学习了轮播图的原理和简易制作，以下是我轮播图的代码：</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;zh&quot;&gt;
@@ -2158,7 +2158,7 @@ onload          浏览器已完成页面的加载
   </entry>
   <entry>
     <title>8.29日报</title>
-    <url>/hexo/2019/08/29/2019-08-29-29ribao/</url>
+    <url>/2019/08/29/2019-08-29-29ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
 <p><code>今天完成了计时器的考核，关于计时器与属性获取基本掌握90%，轮播图效果80%，后面开始看node,但是刚开始看进度10%</code>  </p>
 </blockquote>
@@ -2173,7 +2173,7 @@ onload          浏览器已完成页面的加载
   </entry>
   <entry>
     <title>8.28技术文档</title>
-    <url>/hexo/2019/08/28/2019-08-28-28jishu/</url>
+    <url>/2019/08/28/2019-08-28-28jishu/</url>
     <content><![CDATA[<h1 id="JS常用知识"><a href="#JS常用知识" class="headerlink" title="JS常用知识"></a>JS常用知识</h1><blockquote>
 <p>直接写入html输出流：</p>
 </blockquote>
@@ -2213,7 +2213,7 @@ onload          浏览器已完成页面的加载
   </entry>
   <entry>
     <title>8.28日报</title>
-    <url>/hexo/2019/08/28/2019-08-28-28ribao/</url>
+    <url>/2019/08/28/2019-08-28-28ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
 <p><code>今天下午学习了JS基础，学习了 定时器和选择对象并修改内容，还看了一些基础语法。</code>  </p>
 </blockquote>
@@ -2228,7 +2228,7 @@ onload          浏览器已完成页面的加载
   </entry>
   <entry>
     <title>8.27技术文档</title>
-    <url>/hexo/2019/08/27/2019-08-27-27jishu/</url>
+    <url>/2019/08/27/2019-08-27-27jishu/</url>
     <content><![CDATA[<h1 id="TCP-IP协议"><a href="#TCP-IP协议" class="headerlink" title="TCP/IP协议"></a>TCP/IP协议</h1><blockquote>
 <p>TCP/IP协议简介:  </p>
 </blockquote>
@@ -2247,7 +2247,7 @@ onload          浏览器已完成页面的加载
   </entry>
   <entry>
     <title>8.27日报</title>
-    <url>/hexo/2019/08/27/2019-08-27-27ribao/</url>
+    <url>/2019/08/27/2019-08-27-27ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
 <p><code>linux命令已通过考核，但是还有一些没有太熟练，学习进度95%，下午绘制了聊天室的流程图和思维导图基本绘制完成进度90%。</code>  </p>
 </blockquote>
@@ -2265,8 +2265,30 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
+    <title>8.26日报</title>
+    <url>/2019/08/26/2019-08-26-26ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天看了一天的linux命令但是侧重点不够明确，常用的命令也基本认识了，学习linux命令70%。</code>  </p>
+</blockquote>
+<blockquote>
+<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天是我们组技术分享的时间，我讲的是html，虽然事先做好了ppt，但是上台还是有些放不开，不够灵活，只是死板地讲</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>上台演讲的事还是要多练习，还要多和大家沟通，才会一点点地会站在前面讲项目</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.26技术文档</title>
-    <url>/hexo/2019/08/26/2019-08-26-26jishu/</url>
+    <url>/2019/08/26/2019-08-26-26jishu/</url>
     <content><![CDATA[<h1 id="linux常用命令整合版"><a href="#linux常用命令整合版" class="headerlink" title="linux常用命令整合版"></a>linux常用命令整合版</h1><p><strong>关机 (系统的关机、重启以及登出 ):</strong><br>shutdown -h now 关闭系统<br>init 0 关闭系统<br>telinit 0 关闭系统<br>shutdown -h hours:minutes &amp; 按预定时间关闭系统<br>shutdown -c 取消按预定时间关闭系统<br>shutdown -r now 重启<br>reboot 重启<br>logout 注销   </p>
 <p><strong>文件和目录:</strong><br>cd /home 进入 ‘/ home’ 目录’<br>cd .. 返回上一级目录<br>cd ../.. 返回上两级目录<br>cd 进入个人的主目录<br>cd ~user1 进入个人的主目录<br>cd - 返回上次所在的目录<br>pwd 显示工作路径<br>ls 查看目录中的文件<br>ls -F 查看目录中的文件<br>ls -l 显示文件和目录的详细资料<br>ls -a 显示隐藏文件<br>ls <em>[0-9]</em> 显示包含数字的文件名和目录名<br>tree 显示文件和目录由根目录开始的树形结构<br>lstree 显示文件和目录由根目录开始的树形结构<br>mkdir dir1 创建一个叫做 ‘dir1’ 的目录’<br>mkdir dir1 dir2 同时创建两个目录<br>mkdir -p /tmp/dir1/dir2 创建一个目录树<br>rm -f file1 删除一个叫做 ‘file1’ 的文件’<br>rmdir dir1 删除一个叫做 ‘dir1’ 的目录’<br>rm -rf dir1 删除一个叫做 ‘dir1’ 的目录并同时删除其内容<br>rm -rf dir1 dir2 同时删除两个目录及它们的内容<br>mv dir1 new_dir 重命名/移动 一个目录<br>cp file1 file2 复制一个文件<br>cp dir/* . 复制一个目录下的所有文件到当前工作目录<br>cp -a /tmp/dir1 . 复制一个目录到当前工作目录<br>cp -a dir1 dir2 复制一个目录<br>ln -s file1 lnk1 创建一个指向文件或目录的软链接<br>ln file1 lnk1 创建一个指向文件或目录的物理链接<br>touch -t 0712250000 file1 修改一个文件或目录的时间戳 - (YYMMDDhhmm)<br>file file1 outputs the mime type of the file as text<br>iconv -l 列出已知的编码   </p>
 <p><strong>文件搜索 :</strong><br>find / -name file1 从 ‘/‘ 开始进入根文件系统搜索文件和目录<br>find / -user user1 搜索属于用户 ‘user1’ 的文件和目录   </p>
@@ -2404,30 +2426,8 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.26日报</title>
-    <url>/hexo/2019/08/26/2019-08-26-26ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天看了一天的linux命令但是侧重点不够明确，常用的命令也基本认识了，学习linux命令70%。</code>  </p>
-</blockquote>
-<blockquote>
-<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天是我们组技术分享的时间，我讲的是html，虽然事先做好了ppt，但是上台还是有些放不开，不够灵活，只是死板地讲</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>上台演讲的事还是要多练习，还要多和大家沟通，才会一点点地会站在前面讲项目</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.23技术文档</title>
-    <url>/hexo/2019/08/23/2019-08-23-23jishu/</url>
+    <url>/2019/08/23/2019-08-23-23jishu/</url>
     <content><![CDATA[<h1 id="linux常用命令整理之一"><a href="#linux常用命令整理之一" class="headerlink" title="linux常用命令整理之一"></a>linux常用命令整理之一</h1><p><strong>关机 (系统的关机、重启以及登出 ):</strong><br>shutdown -h now 关闭系统<br>init 0 关闭系统<br>telinit 0 关闭系统<br>shutdown -h hours:minutes &amp; 按预定时间关闭系统<br>shutdown -c 取消按预定时间关闭系统<br>shutdown -r now 重启<br>reboot 重启<br>logout 注销   </p>
 <p><strong>文件和目录:</strong><br>cd /home 进入 ‘/ home’ 目录’<br>cd .. 返回上一级目录<br>cd ../.. 返回上两级目录<br>cd 进入个人的主目录<br>cd ~user1 进入个人的主目录<br>cd - 返回上次所在的目录<br>pwd 显示工作路径<br>ls 查看目录中的文件<br>ls -F 查看目录中的文件<br>ls -l 显示文件和目录的详细资料<br>ls -a 显示隐藏文件<br>ls <em>[0-9]</em> 显示包含数字的文件名和目录名<br>tree 显示文件和目录由根目录开始的树形结构<br>lstree 显示文件和目录由根目录开始的树形结构<br>mkdir dir1 创建一个叫做 ‘dir1’ 的目录’<br>mkdir dir1 dir2 同时创建两个目录<br>mkdir -p /tmp/dir1/dir2 创建一个目录树<br>rm -f file1 删除一个叫做 ‘file1’ 的文件’<br>rmdir dir1 删除一个叫做 ‘dir1’ 的目录’<br>rm -rf dir1 删除一个叫做 ‘dir1’ 的目录并同时删除其内容<br>rm -rf dir1 dir2 同时删除两个目录及它们的内容<br>mv dir1 new_dir 重命名/移动 一个目录<br>cp file1 file2 复制一个文件<br>cp dir/* . 复制一个目录下的所有文件到当前工作目录<br>cp -a /tmp/dir1 . 复制一个目录到当前工作目录<br>cp -a dir1 dir2 复制一个目录<br>ln -s file1 lnk1 创建一个指向文件或目录的软链接<br>ln file1 lnk1 创建一个指向文件或目录的物理链接<br>touch -t 0712250000 file1 修改一个文件或目录的时间戳 - (YYMMDDhhmm)<br>file file1 outputs the mime type of the file as text<br>iconv -l 列出已知的编码   </p>
 <p><strong>文件搜索 :</strong><br>find / -name file1 从 ‘/‘ 开始进入根文件系统搜索文件和目录<br>find / -user user1 搜索属于用户 ‘user1’ 的文件和目录   </p>
@@ -2450,7 +2450,7 @@ onload          浏览器已完成页面的加载
   </entry>
   <entry>
     <title>8.23日报</title>
-    <url>/hexo/2019/08/23/2019-08-23-23ribao/</url>
+    <url>/2019/08/23/2019-08-23-23ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
 <p><code>今天把vim常用命令整理得差不多了，vim进度90%，今天开始看的linux命令，但是感觉看的很乱，进度40%。</code>  </p>
 </blockquote>
@@ -2472,7 +2472,7 @@ onload          浏览器已完成页面的加载
   </entry>
   <entry>
     <title>8.22技术文档</title>
-    <url>/hexo/2019/08/22/2019-08-22-22jishu/</url>
+    <url>/2019/08/22/2019-08-22-22jishu/</url>
     <content><![CDATA[<h1 id="vim常用命令整理"><a href="#vim常用命令整理" class="headerlink" title="vim常用命令整理"></a>vim常用命令整理</h1><blockquote>
 <p>打开或新建一个文件，光标在第一行首</p>
 </blockquote>
@@ -2637,7 +2637,7 @@ onload          浏览器已完成页面的加载
   </entry>
   <entry>
     <title>8.22日报</title>
-    <url>/hexo/2019/08/22/2019-08-22-22ribao/</url>
+    <url>/2019/08/22/2019-08-22-22ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
 <p><code>git已经基本完成，今天学习了如何使用vim和vim的常用命令，已经大致地过了一遍，vim学习进度大约70%。</code>  </p>
 </blockquote>
@@ -2658,8 +2658,27 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
+    <title>8.21日报</title>
+    <url>/2019/08/21/2019-08-21-21ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
+]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.21技术文档</title>
-    <url>/hexo/2019/08/21/2019-08-21-21jishu/</url>
+    <url>/2019/08/21/2019-08-21-21jishu/</url>
     <content><![CDATA[<h1 id="git常用命令整理"><a href="#git常用命令整理" class="headerlink" title="git常用命令整理"></a>git常用命令整理</h1><blockquote>
 <p>初始化代码库</p>
 </blockquote>
@@ -2883,27 +2902,8 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.21日报</title>
-    <url>/hexo/2019/08/21/2019-08-21-21ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
-]]></content>
-      <categories>
-        <category>命令</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.20日报</title>
-    <url>/hexo/2019/08/20/2019-08-20-20ribao/</url>
+    <url>/2019/08/20/2019-08-20-20ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
 <p>今天对git的一些基础命令熟练度80%，又继续往后看官方的文档，关于git的实际工作流程，看了举的几个例子，也大致了解了工作流程。</p>
 </blockquote>
@@ -2929,7 +2929,7 @@ onload          浏览器已完成页面的加载
   </entry>
   <entry>
     <title>8.19日报</title>
-    <url>/hexo/2019/08/19/2019-08-19-19ribao/</url>
+    <url>/2019/08/19/2019-08-19-19ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
 <p>今天又进一步地熟练了git的命令，以及深入地了解到了git分支的流程和使用方法</p>
 </blockquote>
@@ -2956,7 +2956,7 @@ onload          浏览器已完成页面的加载
   </entry>
   <entry>
     <title>8.17日报</title>
-    <url>/hexo/2019/08/17/2019-08-17-17ribao/</url>
+    <url>/2019/08/17/2019-08-17-17ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
 <p>今天我深入了解并学习了git</p>
 </blockquote>
@@ -2978,7 +2978,7 @@ onload          浏览器已完成页面的加载
   </entry>
   <entry>
     <title>8.16日报</title>
-    <url>/hexo/2019/08/16/2019-08-16-16ribao/</url>
+    <url>/2019/08/16/2019-08-16-16ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
 <p>今天主要学习了ubuntu系统的安装与git的使用</p>
 </blockquote>
@@ -2997,8 +2997,8 @@ onload          浏览器已完成页面的加载
         <category>系统与命令</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>ubuntu</tag>
+        <tag>git</tag>
       </tags>
   </entry>
 </search>
