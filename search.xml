@@ -2048,6 +2048,21 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
+    <title>8.29日报</title>
+    <url>/2019/08/29/2019-08-29-29ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天完成了计时器的考核，关于计时器与属性获取基本掌握90%，轮播图效果80%，后面开始看node,但是刚开始看进度10%</code>  </p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天在做计时器效果与轮播图效果都是自己在网上寻找的教程与例子，当自己努力做出来的成果成果的时候是很开心的，很有动力。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.29技术文档</title>
     <url>/2019/08/29/2019-08-29-29jishu/</url>
     <content><![CDATA[<h1 id="简易的图片轮播"><a href="#简易的图片轮播" class="headerlink" title="简易的图片轮播"></a>简易的图片轮播</h1><p>今天主要学习了轮播图的原理和简易制作，以下是我轮播图的代码：</p>
@@ -2157,21 +2172,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.29日报</title>
-    <url>/2019/08/29/2019-08-29-29ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天完成了计时器的考核，关于计时器与属性获取基本掌握90%，轮播图效果80%，后面开始看node,但是刚开始看进度10%</code>  </p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天在做计时器效果与轮播图效果都是自己在网上寻找的教程与例子，当自己努力做出来的成果成果的时候是很开心的，很有动力。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.28技术文档</title>
     <url>/2019/08/28/2019-08-28-28jishu/</url>
     <content><![CDATA[<h1 id="JS常用知识"><a href="#JS常用知识" class="headerlink" title="JS常用知识"></a>JS常用知识</h1><blockquote>
@@ -2256,28 +2256,6 @@ onload          浏览器已完成页面的加载
 </blockquote>
 <h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>已经给了半天时间看文档，考试linux命令时候还勾抹几次，命令定义不明确，意思相近的有很多没有明确区分。</p>
 <h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>背东西时候要专注，有效率不能左看一眼又看一眼，这个看会了再看下一个</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8.26日报</title>
-    <url>/2019/08/26/2019-08-26-26ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天看了一天的linux命令但是侧重点不够明确，常用的命令也基本认识了，学习linux命令70%。</code>  </p>
-</blockquote>
-<blockquote>
-<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天是我们组技术分享的时间，我讲的是html，虽然事先做好了ppt，但是上台还是有些放不开，不够灵活，只是死板地讲</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>上台演讲的事还是要多练习，还要多和大家沟通，才会一点点地会站在前面讲项目</p>
 ]]></content>
       <categories>
         <category>心得</category>
@@ -2423,6 +2401,28 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.26日报</title>
+    <url>/2019/08/26/2019-08-26-26ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天看了一天的linux命令但是侧重点不够明确，常用的命令也基本认识了，学习linux命令70%。</code>  </p>
+</blockquote>
+<blockquote>
+<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天是我们组技术分享的时间，我讲的是html，虽然事先做好了ppt，但是上台还是有些放不开，不够灵活，只是死板地讲</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>上台演讲的事还是要多练习，还要多和大家沟通，才会一点点地会站在前面讲项目</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -2658,25 +2658,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.21日报</title>
-    <url>/2019/08/21/2019-08-21-21ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
-]]></content>
-      <categories>
-        <category>命令</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.21技术文档</title>
     <url>/2019/08/21/2019-08-21-21jishu/</url>
     <content><![CDATA[<h1 id="git常用命令整理"><a href="#git常用命令整理" class="headerlink" title="git常用命令整理"></a>git常用命令整理</h1><blockquote>
@@ -2902,6 +2883,25 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
+    <title>8.21日报</title>
+    <url>/2019/08/21/2019-08-21-21ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
+]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.20日报</title>
     <url>/2019/08/20/2019-08-20-20ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
@@ -2997,8 +2997,8 @@ onload          浏览器已完成页面的加载
         <category>系统与命令</category>
       </categories>
       <tags>
-        <tag>ubuntu</tag>
         <tag>git</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
 </search>
