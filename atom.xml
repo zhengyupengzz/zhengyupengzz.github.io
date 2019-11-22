@@ -3,11 +3,11 @@
   <title>pengpeng</title>
   
   
-  <link href="/atom.xml" rel="self"/>
+  <link href="/hexo/atom.xml" rel="self"/>
   
-  <link href="/"/>
-  <updated>2019-11-21T07:17:59.874Z</updated>
-  <id>/</id>
+  <link href="http://zhengyupengzz.gitee.io/"/>
+  <updated>2019-11-21T14:10:45.204Z</updated>
+  <id>http://zhengyupengzz.gitee.io/</id>
   
   <author>
     <name>pengpeng</name>
@@ -17,35 +17,9 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>11.21技术分享</title>
-    <link href="/2019/11/21/2019-11-21-21jishu/"/>
-    <id>/2019/11/21/2019-11-21-21jishu/</id>
-    <published>2019-11-20T16:00:00.000Z</published>
-    <updated>2019-11-21T07:17:59.874Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;对谷歌插件的导入导出&quot;&gt;&lt;a href=&quot;#对谷歌插件的导入导出&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="技术分享" scheme="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="谷歌插件" scheme="/tags/%E8%B0%B7%E6%AD%8C%E6%8F%92%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
     <title>11.21Java学习进度</title>
-    <link href="/2019/11/21/2019-11-21-21ribao/"/>
-    <id>/2019/11/21/2019-11-21-21ribao/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/11/21/2019-11-21-21ribao/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/11/21/2019-11-21-21ribao/</id>
     <published>2019-11-20T16:00:00.000Z</published>
     <updated>2019-11-21T14:10:45.204Z</updated>
     
@@ -61,17 +35,43 @@
     
     </summary>
     
-      <category term="Java" scheme="/categories/Java/"/>
+      <category term="Java" scheme="http://zhengyupengzz.gitee.io/categories/Java/"/>
     
     
-      <category term="Servlet生命周期" scheme="/tags/Servlet%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+      <category term="Servlet生命周期" scheme="http://zhengyupengzz.gitee.io/tags/Servlet%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11.21技术分享</title>
+    <link href="http://zhengyupengzz.gitee.io/2019/11/21/2019-11-21-21jishu/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/11/21/2019-11-21-21jishu/</id>
+    <published>2019-11-20T16:00:00.000Z</published>
+    <updated>2019-11-21T07:17:59.874Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;对谷歌插件的导入导出&quot;&gt;&lt;a href=&quot;#对谷歌插件的导入导出&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="技术分享" scheme="http://zhengyupengzz.gitee.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="谷歌插件" scheme="http://zhengyupengzz.gitee.io/tags/%E8%B0%B7%E6%AD%8C%E6%8F%92%E4%BB%B6/"/>
     
   </entry>
   
   <entry>
     <title>11.20心得</title>
-    <link href="/2019/11/20/2019-11-20-20xinde/"/>
-    <id>/2019/11/20/2019-11-20-20xinde/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/11/20/2019-11-20-20xinde/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/11/20/2019-11-20-20xinde/</id>
     <published>2019-11-19T16:00:00.000Z</published>
     <updated>2019-11-20T03:13:06.709Z</updated>
     
@@ -87,19 +87,19 @@
     
     </summary>
     
-      <category term="心得" scheme="/categories/%E5%BF%83%E5%BE%97/"/>
+      <category term="心得" scheme="http://zhengyupengzz.gitee.io/categories/%E5%BF%83%E5%BE%97/"/>
     
     
-      <category term="博客" scheme="/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="http://zhengyupengzz.gitee.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>11.20Java学习进度</title>
-    <link href="/2019/11/20/2019-11-20-20ribao/"/>
-    <id>/2019/11/20/2019-11-20-20ribao/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/11/20/2019-11-20-20ribao/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/11/20/2019-11-20-20ribao/</id>
     <published>2019-11-19T16:00:00.000Z</published>
-    <updated>2019-11-21T14:17:06.122Z</updated>
+    <updated>2019-11-21T14:24:26.322Z</updated>
     
     <summary type="html">
     
@@ -113,19 +113,19 @@
     
     </summary>
     
-      <category term="Java" scheme="/categories/Java/"/>
+      <category term="Java" scheme="http://zhengyupengzz.gitee.io/categories/Java/"/>
     
     
-      <category term="tomcat" scheme="/tags/tomcat/"/>
+      <category term="tomcat" scheme="http://zhengyupengzz.gitee.io/tags/tomcat/"/>
     
-      <category term="HttpServlet" scheme="/tags/HttpServlet/"/>
+      <category term="HttpServlet" scheme="http://zhengyupengzz.gitee.io/tags/HttpServlet/"/>
     
   </entry>
   
   <entry>
     <title>11.18JAVA学习进度</title>
-    <link href="/2019/11/18/2019-11-18-18ribao/"/>
-    <id>/2019/11/18/2019-11-18-18ribao/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/11/18/2019-11-18-18ribao/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/11/18/2019-11-18-18ribao/</id>
     <published>2019-11-17T16:00:00.000Z</published>
     <updated>2019-11-20T03:13:09.576Z</updated>
     
@@ -141,19 +141,19 @@
     
     </summary>
     
-      <category term="笔记" scheme="/categories/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://zhengyupengzz.gitee.io/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="解析xml属性操作" scheme="/tags/%E8%A7%A3%E6%9E%90xml%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/"/>
+      <category term="解析xml属性操作" scheme="http://zhengyupengzz.gitee.io/tags/%E8%A7%A3%E6%9E%90xml%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/"/>
     
-      <category term="Xpath" scheme="/tags/Xpath/"/>
+      <category term="Xpath" scheme="http://zhengyupengzz.gitee.io/tags/Xpath/"/>
     
   </entry>
   
   <entry>
     <title>11.16技术分享</title>
-    <link href="/2019/11/16/2019-11-16-16jishu/"/>
-    <id>/2019/11/16/2019-11-16-16jishu/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/11/16/2019-11-16-16jishu/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/11/16/2019-11-16-16jishu/</id>
     <published>2019-11-15T16:00:00.000Z</published>
     <updated>2019-11-20T03:13:15.088Z</updated>
     
@@ -169,17 +169,17 @@
     
     </summary>
     
-      <category term="分享" scheme="/categories/%E5%88%86%E4%BA%AB/"/>
+      <category term="分享" scheme="http://zhengyupengzz.gitee.io/categories/%E5%88%86%E4%BA%AB/"/>
     
     
-      <category term="idea控制台乱码" scheme="/tags/idea%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81/"/>
+      <category term="idea控制台乱码" scheme="http://zhengyupengzz.gitee.io/tags/idea%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81/"/>
     
   </entry>
   
   <entry>
     <title>11.16JAVA学习进度</title>
-    <link href="/2019/11/16/2019-11-16-16ribao/"/>
-    <id>/2019/11/16/2019-11-16-16ribao/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/11/16/2019-11-16-16ribao/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/11/16/2019-11-16-16ribao/</id>
     <published>2019-11-15T16:00:00.000Z</published>
     <updated>2019-11-20T03:13:12.349Z</updated>
     
@@ -195,19 +195,19 @@
     
     </summary>
     
-      <category term="数据库" scheme="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://zhengyupengzz.gitee.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="数据库优化" scheme="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/"/>
+      <category term="数据库优化" scheme="http://zhengyupengzz.gitee.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/"/>
     
-      <category term="XML" scheme="/tags/XML/"/>
+      <category term="XML" scheme="http://zhengyupengzz.gitee.io/tags/XML/"/>
     
   </entry>
   
   <entry>
     <title>11.15JAVA学习进度</title>
-    <link href="/2019/11/15/2019-11-15-15ribao/"/>
-    <id>/2019/11/15/2019-11-15-15ribao/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/11/15/2019-11-15-15ribao/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/11/15/2019-11-15-15ribao/</id>
     <published>2019-11-14T16:00:00.000Z</published>
     <updated>2019-11-20T03:13:17.697Z</updated>
     
@@ -223,21 +223,21 @@
     
     </summary>
     
-      <category term="java" scheme="/categories/java/"/>
+      <category term="java" scheme="http://zhengyupengzz.gitee.io/categories/java/"/>
     
     
-      <category term="JDBC事务" scheme="/tags/JDBC%E4%BA%8B%E5%8A%A1/"/>
+      <category term="JDBC事务" scheme="http://zhengyupengzz.gitee.io/tags/JDBC%E4%BA%8B%E5%8A%A1/"/>
     
-      <category term="SQL批处理" scheme="/tags/SQL%E6%89%B9%E5%A4%84%E7%90%86/"/>
+      <category term="SQL批处理" scheme="http://zhengyupengzz.gitee.io/tags/SQL%E6%89%B9%E5%A4%84%E7%90%86/"/>
     
-      <category term="连接池" scheme="/tags/%E8%BF%9E%E6%8E%A5%E6%B1%A0/"/>
+      <category term="连接池" scheme="http://zhengyupengzz.gitee.io/tags/%E8%BF%9E%E6%8E%A5%E6%B1%A0/"/>
     
   </entry>
   
   <entry>
     <title>11.14JAVA学习进度</title>
-    <link href="/2019/11/14/2019-11-14-14ribao/"/>
-    <id>/2019/11/14/2019-11-14-14ribao/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/11/14/2019-11-14-14ribao/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/11/14/2019-11-14-14ribao/</id>
     <published>2019-11-13T16:00:00.000Z</published>
     <updated>2019-11-20T03:13:20.497Z</updated>
     
@@ -253,21 +253,21 @@
     
     </summary>
     
-      <category term="java" scheme="/categories/java/"/>
+      <category term="java" scheme="http://zhengyupengzz.gitee.io/categories/java/"/>
     
     
-      <category term="SQL注入" scheme="/tags/SQL%E6%B3%A8%E5%85%A5/"/>
+      <category term="SQL注入" scheme="http://zhengyupengzz.gitee.io/tags/SQL%E6%B3%A8%E5%85%A5/"/>
     
-      <category term="工具类思想" scheme="/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB%E6%80%9D%E6%83%B3/"/>
+      <category term="工具类思想" scheme="http://zhengyupengzz.gitee.io/tags/%E5%B7%A5%E5%85%B7%E7%B1%BB%E6%80%9D%E6%83%B3/"/>
     
-      <category term="DAO" scheme="/tags/DAO/"/>
+      <category term="DAO" scheme="http://zhengyupengzz.gitee.io/tags/DAO/"/>
     
   </entry>
   
   <entry>
     <title>11.13JAVA学习进度</title>
-    <link href="/2019/11/13/2019-11-13-13ribao/"/>
-    <id>/2019/11/13/2019-11-13-13ribao/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/11/13/2019-11-13-13ribao/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/11/13/2019-11-13-13ribao/</id>
     <published>2019-11-12T16:00:00.000Z</published>
     <updated>2019-11-20T03:13:24.063Z</updated>
     
@@ -283,19 +283,19 @@
     
     </summary>
     
-      <category term="数据库" scheme="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://zhengyupengzz.gitee.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="JDBC" scheme="/tags/JDBC/"/>
+      <category term="JDBC" scheme="http://zhengyupengzz.gitee.io/tags/JDBC/"/>
     
-      <category term="oracle常用表结构操作" scheme="/tags/oracle%E5%B8%B8%E7%94%A8%E8%A1%A8%E7%BB%93%E6%9E%84%E6%93%8D%E4%BD%9C/"/>
+      <category term="oracle常用表结构操作" scheme="http://zhengyupengzz.gitee.io/tags/oracle%E5%B8%B8%E7%94%A8%E8%A1%A8%E7%BB%93%E6%9E%84%E6%93%8D%E4%BD%9C/"/>
     
   </entry>
   
   <entry>
     <title>11.12技术分享</title>
-    <link href="/2019/11/12/2019-11-12-12jishu/"/>
-    <id>/2019/11/12/2019-11-12-12jishu/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/11/12/2019-11-12-12jishu/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/11/12/2019-11-12-12jishu/</id>
     <published>2019-11-11T16:00:00.000Z</published>
     <updated>2019-11-20T03:13:27.427Z</updated>
     
@@ -311,17 +311,17 @@
     
     </summary>
     
-      <category term="分享" scheme="/categories/%E5%88%86%E4%BA%AB/"/>
+      <category term="分享" scheme="http://zhengyupengzz.gitee.io/categories/%E5%88%86%E4%BA%AB/"/>
     
     
-      <category term="强制删除" scheme="/tags/%E5%BC%BA%E5%88%B6%E5%88%A0%E9%99%A4/"/>
+      <category term="强制删除" scheme="http://zhengyupengzz.gitee.io/tags/%E5%BC%BA%E5%88%B6%E5%88%A0%E9%99%A4/"/>
     
   </entry>
   
   <entry>
     <title>10.26JAVA学习进度</title>
-    <link href="/2019/10/26/2019-10-26-26ribao/"/>
-    <id>/2019/10/26/2019-10-26-26ribao/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/10/26/2019-10-26-26ribao/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/10/26/2019-10-26-26ribao/</id>
     <published>2019-10-25T16:00:00.000Z</published>
     <updated>2019-11-20T03:12:54.683Z</updated>
     
@@ -337,23 +337,23 @@
     
     </summary>
     
-      <category term="java" scheme="/categories/java/"/>
+      <category term="java" scheme="http://zhengyupengzz.gitee.io/categories/java/"/>
     
     
-      <category term="泛型机制" scheme="/tags/%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6/"/>
+      <category term="泛型机制" scheme="http://zhengyupengzz.gitee.io/tags/%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6/"/>
     
-      <category term="Queue集合" scheme="/tags/Queue%E9%9B%86%E5%90%88/"/>
+      <category term="Queue集合" scheme="http://zhengyupengzz.gitee.io/tags/Queue%E9%9B%86%E5%90%88/"/>
     
-      <category term="Set集合" scheme="/tags/Set%E9%9B%86%E5%90%88/"/>
+      <category term="Set集合" scheme="http://zhengyupengzz.gitee.io/tags/Set%E9%9B%86%E5%90%88/"/>
     
-      <category term="Map集合" scheme="/tags/Map%E9%9B%86%E5%90%88/"/>
+      <category term="Map集合" scheme="http://zhengyupengzz.gitee.io/tags/Map%E9%9B%86%E5%90%88/"/>
     
   </entry>
   
   <entry>
     <title>10.25JAVA学习进度</title>
-    <link href="/2019/10/25/2019-10-25-25ribao/"/>
-    <id>/2019/10/25/2019-10-25-25ribao/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/10/25/2019-10-25-25ribao/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/10/25/2019-10-25-25ribao/</id>
     <published>2019-10-24T16:00:00.000Z</published>
     <updated>2019-11-20T03:12:20.372Z</updated>
     
@@ -369,21 +369,21 @@
     
     </summary>
     
-      <category term="java" scheme="/categories/java/"/>
+      <category term="java" scheme="http://zhengyupengzz.gitee.io/categories/java/"/>
     
     
-      <category term="String类" scheme="/tags/String%E7%B1%BB/"/>
+      <category term="String类" scheme="http://zhengyupengzz.gitee.io/tags/String%E7%B1%BB/"/>
     
-      <category term="Collection集合" scheme="/tags/Collection%E9%9B%86%E5%90%88/"/>
+      <category term="Collection集合" scheme="http://zhengyupengzz.gitee.io/tags/Collection%E9%9B%86%E5%90%88/"/>
     
-      <category term="List集合" scheme="/tags/List%E9%9B%86%E5%90%88/"/>
+      <category term="List集合" scheme="http://zhengyupengzz.gitee.io/tags/List%E9%9B%86%E5%90%88/"/>
     
   </entry>
   
   <entry>
     <title>10.24JAVA学习进度</title>
-    <link href="/2019/10/24/2019-10-24-24ribao/"/>
-    <id>/2019/10/24/2019-10-24-24ribao/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/10/24/2019-10-24-24ribao/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/10/24/2019-10-24-24ribao/</id>
     <published>2019-10-23T16:00:00.000Z</published>
     <updated>2019-11-20T03:12:26.899Z</updated>
     
@@ -399,21 +399,21 @@
     
     </summary>
     
-      <category term="java" scheme="/categories/java/"/>
+      <category term="java" scheme="http://zhengyupengzz.gitee.io/categories/java/"/>
     
     
-      <category term="Object类," scheme="/tags/Object%E7%B1%BB/"/>
+      <category term="Object类," scheme="http://zhengyupengzz.gitee.io/tags/Object%E7%B1%BB/"/>
     
-      <category term="包装类和数学处理类," scheme="/tags/%E5%8C%85%E8%A3%85%E7%B1%BB%E5%92%8C%E6%95%B0%E5%AD%A6%E5%A4%84%E7%90%86%E7%B1%BB/"/>
+      <category term="包装类和数学处理类," scheme="http://zhengyupengzz.gitee.io/tags/%E5%8C%85%E8%A3%85%E7%B1%BB%E5%92%8C%E6%95%B0%E5%AD%A6%E5%A4%84%E7%90%86%E7%B1%BB/"/>
     
-      <category term="String类" scheme="/tags/String%E7%B1%BB/"/>
+      <category term="String类" scheme="http://zhengyupengzz.gitee.io/tags/String%E7%B1%BB/"/>
     
   </entry>
   
   <entry>
     <title>10.23JAVA学习进度</title>
-    <link href="/2019/10/23/2019-10-23-23ribao/"/>
-    <id>/2019/10/23/2019-10-23-23ribao/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/10/23/2019-10-23-23ribao/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/10/23/2019-10-23-23ribao/</id>
     <published>2019-10-22T16:00:00.000Z</published>
     <updated>2019-11-20T03:12:29.045Z</updated>
     
@@ -429,23 +429,23 @@
     
     </summary>
     
-      <category term="java" scheme="/categories/java/"/>
+      <category term="java" scheme="http://zhengyupengzz.gitee.io/categories/java/"/>
     
     
-      <category term="访问控制" scheme="/tags/%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/"/>
+      <category term="访问控制" scheme="http://zhengyupengzz.gitee.io/tags/%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/"/>
     
-      <category term="关键字" scheme="/tags/%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+      <category term="关键字" scheme="http://zhengyupengzz.gitee.io/tags/%E5%85%B3%E9%94%AE%E5%AD%97/"/>
     
-      <category term="接口" scheme="/tags/%E6%8E%A5%E5%8F%A3/"/>
+      <category term="接口" scheme="http://zhengyupengzz.gitee.io/tags/%E6%8E%A5%E5%8F%A3/"/>
     
-      <category term="多态" scheme="/tags/%E5%A4%9A%E6%80%81/"/>
+      <category term="多态" scheme="http://zhengyupengzz.gitee.io/tags/%E5%A4%9A%E6%80%81/"/>
     
   </entry>
   
   <entry>
     <title>10.22JAVA学习进度</title>
-    <link href="/2019/10/22/2019-10-22-22ribao/"/>
-    <id>/2019/10/22/2019-10-22-22ribao/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/10/22/2019-10-22-22ribao/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/10/22/2019-10-22-22ribao/</id>
     <published>2019-10-21T16:00:00.000Z</published>
     <updated>2019-11-20T03:12:24.086Z</updated>
     
@@ -461,23 +461,23 @@
     
     </summary>
     
-      <category term="java" scheme="/categories/java/"/>
+      <category term="java" scheme="http://zhengyupengzz.gitee.io/categories/java/"/>
     
     
-      <category term="封装" scheme="/tags/%E5%B0%81%E8%A3%85/"/>
+      <category term="封装" scheme="http://zhengyupengzz.gitee.io/tags/%E5%B0%81%E8%A3%85/"/>
     
-      <category term="static关键字" scheme="/tags/static%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+      <category term="static关键字" scheme="http://zhengyupengzz.gitee.io/tags/static%E5%85%B3%E9%94%AE%E5%AD%97/"/>
     
-      <category term="继承与方法的重写" scheme="/tags/%E7%BB%A7%E6%89%BF%E4%B8%8E%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E5%86%99/"/>
+      <category term="继承与方法的重写" scheme="http://zhengyupengzz.gitee.io/tags/%E7%BB%A7%E6%89%BF%E4%B8%8E%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E5%86%99/"/>
     
-      <category term="单例设计模式" scheme="/tags/%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="单例设计模式" scheme="http://zhengyupengzz.gitee.io/tags/%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>10.21JAVA学习进度</title>
-    <link href="/2019/10/21/2019-10-21-21ribao/"/>
-    <id>/2019/10/21/2019-10-21-21ribao/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/10/21/2019-10-21-21ribao/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/10/21/2019-10-21-21ribao/</id>
     <published>2019-10-20T16:00:00.000Z</published>
     <updated>2019-11-20T03:12:31.969Z</updated>
     
@@ -493,21 +493,21 @@
     
     </summary>
     
-      <category term="java" scheme="/categories/java/"/>
+      <category term="java" scheme="http://zhengyupengzz.gitee.io/categories/java/"/>
     
     
-      <category term="封装" scheme="/tags/%E5%B0%81%E8%A3%85/"/>
+      <category term="封装" scheme="http://zhengyupengzz.gitee.io/tags/%E5%B0%81%E8%A3%85/"/>
     
-      <category term="static关键字" scheme="/tags/static%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+      <category term="static关键字" scheme="http://zhengyupengzz.gitee.io/tags/static%E5%85%B3%E9%94%AE%E5%AD%97/"/>
     
-      <category term="单例设计" scheme="/tags/%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1/"/>
+      <category term="单例设计" scheme="http://zhengyupengzz.gitee.io/tags/%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
   <entry>
     <title>10.19JAVA学习进度</title>
-    <link href="/2019/10/19/2019-10-19-19ribao/"/>
-    <id>/2019/10/19/2019-10-19-19ribao/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/10/19/2019-10-19-19ribao/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/10/19/2019-10-19-19ribao/</id>
     <published>2019-10-18T16:00:00.000Z</published>
     <updated>2019-11-20T03:12:36.656Z</updated>
     
@@ -523,21 +523,21 @@
     
     </summary>
     
-      <category term="java" scheme="/categories/java/"/>
+      <category term="java" scheme="http://zhengyupengzz.gitee.io/categories/java/"/>
     
     
-      <category term="构造方法,方法重载" scheme="/tags/%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95-%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/"/>
+      <category term="构造方法,方法重载" scheme="http://zhengyupengzz.gitee.io/tags/%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95-%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD/"/>
     
-      <category term="this关键字" scheme="/tags/this%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+      <category term="this关键字" scheme="http://zhengyupengzz.gitee.io/tags/this%E5%85%B3%E9%94%AE%E5%AD%97/"/>
     
-      <category term="方法的传参和调用" scheme="/tags/%E6%96%B9%E6%B3%95%E7%9A%84%E4%BC%A0%E5%8F%82%E5%92%8C%E8%B0%83%E7%94%A8/"/>
+      <category term="方法的传参和调用" scheme="http://zhengyupengzz.gitee.io/tags/%E6%96%B9%E6%B3%95%E7%9A%84%E4%BC%A0%E5%8F%82%E5%92%8C%E8%B0%83%E7%94%A8/"/>
     
   </entry>
   
   <entry>
     <title>10.18JAVA学习进度</title>
-    <link href="/2019/10/18/2019-10-18-18ribao/"/>
-    <id>/2019/10/18/2019-10-18-18ribao/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/10/18/2019-10-18-18ribao/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/10/18/2019-10-18-18ribao/</id>
     <published>2019-10-17T16:00:00.000Z</published>
     <updated>2019-11-20T03:12:43.047Z</updated>
     
@@ -553,23 +553,23 @@
     
     </summary>
     
-      <category term="java" scheme="/categories/java/"/>
+      <category term="java" scheme="http://zhengyupengzz.gitee.io/categories/java/"/>
     
     
-      <category term="数组元素之间的操作" scheme="/tags/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B9%8B%E9%97%B4%E7%9A%84%E6%93%8D%E4%BD%9C/"/>
+      <category term="数组元素之间的操作" scheme="http://zhengyupengzz.gitee.io/tags/%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E4%B9%8B%E9%97%B4%E7%9A%84%E6%93%8D%E4%BD%9C/"/>
     
-      <category term="号码的生成和去重" scheme="/tags/%E5%8F%B7%E7%A0%81%E7%9A%84%E7%94%9F%E6%88%90%E5%92%8C%E5%8E%BB%E9%87%8D/"/>
+      <category term="号码的生成和去重" scheme="http://zhengyupengzz.gitee.io/tags/%E5%8F%B7%E7%A0%81%E7%9A%84%E7%94%9F%E6%88%90%E5%92%8C%E5%8E%BB%E9%87%8D/"/>
     
-      <category term="面向对象的基本概念和三大特征" scheme="/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81/"/>
+      <category term="面向对象的基本概念和三大特征" scheme="http://zhengyupengzz.gitee.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81/"/>
     
-      <category term="了解了类和对象的概念" scheme="/tags/%E4%BA%86%E8%A7%A3%E4%BA%86%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%A6%82%E5%BF%B5/"/>
+      <category term="了解了类和对象的概念" scheme="http://zhengyupengzz.gitee.io/tags/%E4%BA%86%E8%A7%A3%E4%BA%86%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%A6%82%E5%BF%B5/"/>
     
   </entry>
   
   <entry>
     <title>10.17JAVA学习进度</title>
-    <link href="/2019/10/17/2019-10-17-17ribao/"/>
-    <id>/2019/10/17/2019-10-17-17ribao/</id>
+    <link href="http://zhengyupengzz.gitee.io/2019/10/17/2019-10-17-17ribao/"/>
+    <id>http://zhengyupengzz.gitee.io/2019/10/17/2019-10-17-17ribao/</id>
     <published>2019-10-16T16:00:00.000Z</published>
     <updated>2019-11-20T03:12:34.339Z</updated>
     
@@ -585,14 +585,14 @@
     
     </summary>
     
-      <category term="java" scheme="/categories/java/"/>
+      <category term="java" scheme="http://zhengyupengzz.gitee.io/categories/java/"/>
     
     
-      <category term="对java的简单了解和入门" scheme="/tags/%E5%AF%B9java%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3%E5%92%8C%E5%85%A5%E9%97%A8/"/>
+      <category term="对java的简单了解和入门" scheme="http://zhengyupengzz.gitee.io/tags/%E5%AF%B9java%E7%9A%84%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3%E5%92%8C%E5%85%A5%E9%97%A8/"/>
     
-      <category term="简单的逻辑结构和循环结构" scheme="/tags/%E7%AE%80%E5%8D%95%E7%9A%84%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E5%92%8C%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84/"/>
+      <category term="简单的逻辑结构和循环结构" scheme="http://zhengyupengzz.gitee.io/tags/%E7%AE%80%E5%8D%95%E7%9A%84%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84%E5%92%8C%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84/"/>
     
-      <category term="简单的数组操作" scheme="/tags/%E7%AE%80%E5%8D%95%E7%9A%84%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/"/>
+      <category term="简单的数组操作" scheme="http://zhengyupengzz.gitee.io/tags/%E7%AE%80%E5%8D%95%E7%9A%84%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C/"/>
     
   </entry>
   
