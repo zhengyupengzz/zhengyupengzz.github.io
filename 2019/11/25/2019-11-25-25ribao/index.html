@@ -386,7 +386,7 @@
 </ol>
 <p><strong>请求的重定向:</strong><br>概念: 响应时,告知浏览器的新的请求地址,浏览器接受到 自动请求显得地址!  </p>
 <p>步骤:  </p>
-<pre><code>response.esndRedirect(&quot;重定向地址&quot;);
+<pre><code>response.sendRedirect(&quot;重定向地址&quot;);
 </code></pre><p>重定向流程:<br>    步骤1. 当浏览器访问服务时,服务器对浏览器响应一个302的状态码,以及一个location的地址<br>    步骤2. HTTP协议约定,当浏览器接收到302状态码时,会自动寻找location地址,并发起新的请求.(相当于 控制用户浏览器 自动完成页面的跳转操作.)  </p>
 <p>特点:  </p>
 <ol>
@@ -421,6 +421,69 @@
 </code></pre></li>
 </ol>
 <p><strong>ServletContext 上下文:</strong>  </p>
+<p>每一个Servlet都是一个独立的用于处理请求的对象<br>为了便于多个Servlet之间的数据交流,JavaWeb提供了一个上下文对象ServletContext<br>我们在任何的Servlet代码中,都可以获得这个ServletContext对象,且每一个Servlet获取的都是同一份ServletContext对象.<br>上下文对象,类似于我们SE所学习的MAP集合,是一个键值对的容器.  </p>
+<p>作用: ServletContext是Servlet之间通信的桥梁,用于多个Servlet之间信息的共享.  </p>
+<p><strong>从Servlet中得到上下文对象:</strong>  </p>
+<p>格式:</p>
+<pre><code>    ServletContext context = getServletContext();  
+</code></pre><p><strong>ServletContext的常用方法:</strong>  </p>
+<ol>
+<li>存储数据  <pre><code>context.setAttribute(String key,Object value);
+</code></pre></li>
+<li>获取数据  <pre><code>Object value = context.getAttribute(String key);
+</code></pre></li>
+<li>删除数据  <pre><code>context.removeAttribute(String key);
+</code></pre></li>
+<li>获取项目运行时的 文件夹绝对路径  </li>
+</ol>
+<p>//因为一个项目,只有一个ServletContext对象,且在项目启动时创建了,项目销毁时销毁.<br>//所以我们再一次项目启动的过程中,一个Servlet存储的数据,任何Servlet都可以获取到</p>
+<p><strong>会话跟踪(状态管理):</strong><br>HTTP协议是无状态的, 我们的服务器在与客户端进行交互时,没有记忆.<br>两种方式来实现状态管理:  </p>
+<ol>
+<li>Cookie技术: 将状态, 存储到客户端中  </li>
+<li>Session技术: 将id存储在客户端中, 将状态存储在服务器中  </li>
+</ol>
+<p><strong>Cookie技术:</strong><br>技术实现步骤以及原理:  </p>
+<ol>
+<li>当服务器向客户端响应时 ,可以响应头部加入Cookie, 每一个Cookie表示一个键值对.  </li>
+<li>浏览器在接收到响应后,如果存在Cookie,则会将Cookie存储在文本文件中(.txt)<br><code>存储时,会存储的信息有: 服务器的域,路径,Cookie键,Cookie的值,存储时长...</code>  </li>
+<li>当浏览器向客户端请求时,会遍历Cookie的文本文件,将匹配新请求地址的Cookie携带上,放在请求头部,发送给服务器.<br><code>Cookie匹配的规则:</code><br> <code>当cookie存储的域相同时,路径匹配时,才会将Cookie发送给服务器.</code>   </li>
+</ol>
+<p><strong>如何创建Cookie:</strong><br>Cookie在Java中的体现,就是一个表示键值对的Java类,类名为:Cookie.<br>格式:  </p>
+<pre><code>Cookie cookie = new Cookie(String name,String value);
+</code></pre><p><strong>如何将Cookie添加到响应头部:</strong><br>通过响应对象,将Cookie添加到响应头部<br>格式:</p>
+<pre><code>response.addCookie(Cookie cookie);
+</code></pre><p>一次响应,可以添加n个cookie<br>如果浏览器中已经存储过与某个Cookie的那么相同的Cookie, 再次存储时会覆盖value<br><strong>如何从请求头部 得到之前存储的所有Cookie:  </strong><br>因为一个域 和路径下,可能存在多个Cookie,所以获取的不是单个Cookie,而是数组:  </p>
+<pre><code>Cookie[] cookies = request.getCookies();
+//如果从未存储过,则返回的数组值是null
+</code></pre><p><strong>得到Cookie后,如何取出其中的键和值:</strong><br>获取Cookie的键:  </p>
+<pre><code>String name = cookie.getName();
+</code></pre><p>获取Cookie的值:  </p>
+<pre><code>String value  cookie.getValue();
+</code></pre><p><strong>如何调整Cookie存储时长:</strong><br>cookie.getMaxAge(int 秒):<br>传入值:  </p>
+<ul>
+<li>负数 : 默认 -1 ,表示浏览会话结束时删除  </li>
+<li>正数 : 存活的秒数, 例如60*60*24*365*10表示十年  </li>
+<li>0 : 经常用于覆盖一个cookie时使用, 作用为0秒后删除(立即删除)  </li>
+</ul>
+<p><strong>Cookie存储时,路径问题的解决:</strong>  </p>
+<p>路径匹配的规则:  </p>
+<ul>
+<li>Cookie的替换: 只能由相同域,相同路径的完成替换.  </li>
+<li>Cookie的获取: 只能由相同域,相同路径或子路径获取  </li>
+</ul>
+<p>例如:<br>    A地址: localhost/x/a.do<br>    B地址: localhost/x/b.do<br>    C地址: localhost/c.do  </p>
+<p>A存储数据时: a/b可以获取, a/b可以替换 . c不能获取也不能替换<br>C存储数据时: a/b/c可以获取 , c可以替换  </p>
+<p>Cookie的路径问题,经常影响我们的开发   </p>
+<p>JavaWeb给我们提供了一个cookie方法,用于设置Cookie的路径<br>通常我们会将cookie的路径设置为/(根目录)<br>格式:  </p>
+<pre><code>cookie.setPath(&quot;/&quot;); 
+</code></pre><p><strong>Cookie的优缺点:</strong><br>缺点:  </p>
+<ol>
+<li>Cookie存储的数据类型,只能是字符串  </li>
+<li>数据存储的大小,有限制,最大为4kb  </li>
+<li>数据存储在用户的计算机上, 不安全  </li>
+<li>受限于用户的浏览器设置,当浏览器禁止使用Cookie时,cookie就无法再存储了  </li>
+</ol>
+<p>优点:<br>数据存储在客户端, 分散了服务器的压力</p>
 
         </div>
         <!-- .entry-content -->
@@ -449,11 +512,28 @@
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2019/11/26/2019-11-26-26ribao/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                11.26Java学习进度</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
         
           
-            <div class="post-nepre full next">
+            <div class="post-nepre half next">
           
-            <a href="/2019/11/21/2019-11-21-21jishu/" rel="next">
+            <a href="/2019/11/21/2019-11-21-21ribao/" rel="next">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
               </div>
@@ -461,7 +541,7 @@
               Next Post</span>
               <div class="info">
                 <h3>
-                11.21技术分享</h3>
+                11.21Java学习进度</h3>
                 <hr>
               </div>
             </a>

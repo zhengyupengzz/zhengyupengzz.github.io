@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">11.16技术分享 | pengpeng</title>
+  <title itemprop="name">11.27Java学习进度 | pengpeng</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -332,7 +332,7 @@
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      11.16技术分享</h1>
+      11.27Java学习进度</h1>
       <p class="entry-census">
         <span>
           <a href="">
@@ -344,7 +344,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2019-11-16<span class="bull">
+        2019-11-27<span class="bull">
         </span></p>
     </header>
   </div>
@@ -357,31 +357,141 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="11-16技术分享"><a href="#11-16技术分享" class="headerlink" title="11.16技术分享"></a>11.16技术分享</h1><h2 id="idea运行tomcat控制台乱码"><a href="#idea运行tomcat控制台乱码" class="headerlink" title="idea运行tomcat控制台乱码:"></a>idea运行tomcat控制台乱码:</h2><h3 id="1-首先设置idea的编码格式"><a href="#1-首先设置idea的编码格式" class="headerlink" title="1.首先设置idea的编码格式:"></a>1.首先设置idea的编码格式:</h3><p>File–&gt;Settings–&gt;File Encodings</p>
-<p><img src="https://s2.ax1x.com/2019/11/20/MWMwvV.md.png" alt="idea编码格式">  </p>
-<p>将所有编码格式统一设置成UTF-8。  </p>
-<h3 id="2-再设置tomcat的编码格式"><a href="#2-再设置tomcat的编码格式" class="headerlink" title="2.再设置tomcat的编码格式:"></a>2.再设置tomcat的编码格式:</h3><p><img src="https://s2.ax1x.com/2019/11/20/MWMyE4.png" alt="tomcat设置">  </p>
-<p>改变VM options为-Dfile.encoding=UTF-8:<br><img src="https://s2.ax1x.com/2019/11/20/MWMrbF.md.png" alt="tomcat编码格式"> </p>
-<p><strong><code>完成上面的设置后还会有乱码,不要急</code></strong>  </p>
-<h3 id="3-配置idea的文件设置"><a href="#3-配置idea的文件设置" class="headerlink" title="3.配置idea的文件设置:"></a>3.配置idea的文件设置:</h3><p>找到idea图标,右键,打开文件位置找到  </p>
-<p><code>idea.exe.vmoptions</code>和<code>idea64.exe.vmoptions</code>文件  并打开文件  </p>
-<p>在文件后面添加一行：-Dfile.encoding=UTF-8   </p>
-<p>idae中的设置配置也要修改</p>
-<p>help–&gt;Edit Custom VM Options…  </p>
-<p>打开此配置 也在最后一行添加:-Dfile.encoding=UTF-8  </p>
-<h3 id="4-修改tomcat的运行编码格式"><a href="#4-修改tomcat的运行编码格式" class="headerlink" title="4.修改tomcat的运行编码格式:"></a>4.修改tomcat的运行编码格式:</h3><p>进入到tomcat的根目录的bin目录下  </p>
-<p>此时可以在文件地址栏输入cmd来启动dos窗口执行  </p>
-<pre><code>catalina.bat run
-</code></pre><p>(或者也可以直接cmd  然后cd到bin目录下 执行此命令)  </p>
-<p>之后再用命令切换cmd的编码格式<br>“chcp 65001”切换cmd为utf8，”chcp 936”切换cmd为gbk  </p>
-<p>这里我们使用chcp 65001来切换成utf8  </p>
-<p>执行之后可以再运行一下</p>
-<pre><code>catalina.bat run
-</code></pre><p>看看命令是否都编程正常汉语,若都成正常汉语就是成功了!</p>
-<p>然后重启idea即可.  </p>
-<p><code>最后提一句:</code>  </p>
-<p>自己改tomcat的logging.properties为GBk会导致调试时get/post参数乱码  </p>
-<p>还是都改成UTF8稳妥。</p>
+          <h1 id="JSP指令-JSP的九大内置对象-EL"><a href="#JSP指令-JSP的九大内置对象-EL" class="headerlink" title="JSP指令,JSP的九大内置对象,EL:"></a>JSP指令,JSP的九大内置对象,EL:</h1><p><strong>include 指令:</strong><br>用于将一个JSP或HTML文件引入到另一个JSP中.<br>格式:  </p>
+<pre><code>&lt;%@ include file=&quot;引入的路径&quot; %&gt;
+</code></pre><p><strong>include 动作:</strong><br>用于将一个JSP或HTML文件引入到另一个JSP中.<br>格式:  </p>
+<pre><code>&lt;jsp:include page=&quot;引入路径&quot; flush=&quot;true&quot;(刷新属性)/&gt;
+</code></pre><p><strong>include 指令 与 include动作的区别:</strong>  </p>
+<p>include指令: 在JSP程序的转换时期,将被引入的JSP文件嵌入到include指令的位置,然后统一编译执行(最终生成了一个.java文件)  </p>
+<p>include动作: 在JSP程序的转换时期,被引入的文件不会嵌入到include动作的位置上,而是等客户端请求时,再临时将被引入的文件以额外的servlet的方式加载到响应中(最终生成的是多个.java文件)  </p>
+<p><strong>JSP的内置对象(隐含对象):</strong>  </p>
+<p>内置对象指的是: JSP引擎在转换JSP文件时,帮我们的代码在执行之前 创建的一些 供我们使用的对象,<br>内置对象具备大量的JSP中的常用功能,使用JSP内置对象可以大大的简化我们的开发流程.  </p>
+<p><strong>JSP的九大内置对象:</strong>  </p>
+<p><code>request:</code><br>类型: HttpServletRequest<br>作用: 请求对象,包含了请求相关的信息和参数  </p>
+<p><code>response:</code><br>类型: HttpServletResponse<br>作用: 响应对象,包含了一些用于响应的功能.  </p>
+<p><code>out:</code><br>类型: JSPWriter<br>作用: 是打印流,用于向响应体中输出数据  </p>
+<p><code>session:</code><br>类型: HttpSession<br>作用: 会话对象,用于状态管理以及会话跟踪  </p>
+<p><code>application:</code><br>类型: ServletContext<br>作用: Servlet的上下文,一个应用内存中同时只有一个上下文对象,用于多个Servlet/JSP之间通信.  </p>
+<hr>
+<p>config:<br>类型: ServletConfig<br>作用: Servlet的配置对象,用于配置一些初始的键值对信息.  </p>
+<p>pageContext:<br>类型: PageContext<br>作用: 页面的上下文,每一个JSP都拥有一个上下文对象,用于多段代码之间进行通信  </p>
+<p>exception:<br>类型: Throwable<br>作用: 当页面的page指令中 isErrorPage属性值为true时,才会存在此对象,用于收集错误信息!<br>    通常此对象值为null,只有其他页面指定errorPage=当前页面时,且其他页面发生BUG后,跳转到此页面时,对象才不为null  </p>
+<p>page:<br>类型: Object<br>作用: 指当前JSP页面自身,在JSP引擎生成的代码中,page对象的赋值代码为:<br>    Object page = this;  </p>
+<p><strong>JSP的四大域对象:</strong><br>九大隐含对象中,包含了四个较为特殊的隐含对象,这四个对象我们称其为域对象,它们都具备存储数据/删除数据/获取属性值的方法:<br>存储数据:  </p>
+<pre><code>setAttribute(String key, Object value);
+</code></pre><p>获取数据:  </p>
+<pre><code>Object value = getAttribute(String key);
+</code></pre><p>删除数据:<br>removeAttribute(String key);  </p>
+<p>这四个域对象,’域’指的是作用域  </p>
+<p>分别是:<br>pageContext : 页面的上下文   作用域: 一个JSP页面<br>request : 请求对象  作用域: 一次请求(请求可以被转发,一次请求可能包含多个JSP页面)<br>session : 会话对象  作用域: 一次会话(一次会话可能包含多次请求)<br>application : servlet上下文对象  作用域: 一次服务(服务器的启动到关闭)(一次服务可能包含多次会话)  </p>
+<hr>
+<p>点击加入购物车–&gt;携带id发送给查询的servlet–&gt;查询成功–&gt;转发到添加购物车的servlet–&gt;将商品信息添加到购物车中  </p>
+<p><strong>JSP useBean 动作:</strong><br>作用: 向四大域对象中,存储bean对象.<br>格式:  </p>
+<pre><code>&lt;jsp:useBean
+    id=&quot;存储时的key&quot;  
+    scope=&quot;page/request/session/application&quot;  
+    class=&quot;要存储的对象类型&quot;&gt;
+&lt;/jsp:useBean&gt;
+</code></pre><p><strong>JSP useBean + setProperty动作:</strong><br>作用: 向四大域对象中,存储bean对象,且设置属性值<br>格式:  </p>
+<pre><code>&lt;jsp:useBean
+    id=&quot;存储时的key&quot;  
+    scope=&quot;page/request/session/application&quot;  
+    class=&quot;要存储的对象类型&quot;&gt;  
+&lt;/jsp:uesBean&gt;  
+&lt;jsp:setProperty name=&quot;存储时的key&quot; property=&quot;属性名&quot; value=&quot;属性值&quot;/&gt;  
+//setProperty动作可以出现多次
+</code></pre><p>案例:  </p>
+<pre><code>&lt;jsp:useBean id=&quot;p&quot; scope=&quot;page&quot; class=&quot;cn.xdl.bean.Person&quot;&gt;&lt;/jsp:useBean&gt;  
+&lt;jsp:setProperty name=&quot;p&quot; property=&quot;name&quot; value=&quot;刘建&quot;/&gt;  
+&lt;jsp:setProperty name=&quot;p&quot; property=&quot;age&quot; value=&quot;18&quot;/&gt;
+</code></pre><p><strong>JSP useBean + setProperty动作 快速获取表单提交的内容:</strong><br>格式:  </p>
+<pre><code>&lt;jsp:useBean
+    id=&quot;存储时的key&quot;
+    scope=&quot;page/request/session/application&quot;
+    class=&quot;要存储的对象类型&quot;&gt;
+&lt;/jsp:useBean&gt;  
+&lt;jsp:setProperty name=&quot;存储时的key&quot; property=&quot;属性名&quot;/&gt;  
+</code></pre><p>注意:<br>如果setProperty动作中,property的值即是对象的属性名,又是我们用户请求的参数的名称的话,会自动将参数获取到并赋值给对象  </p>
+<p><strong>JSP getProperty动作:</strong><br>作用:<br>从四大域对象中取出某个对象的属性,并显示到网页中  </p>
+<p>格式:  </p>
+<pre><code>&lt;jsp:getProperty name=&quot;对象的key&quot; property=&quot;属性名&quot;&gt;
+</code></pre><p><strong>通过重写URL,得到session:</strong><br>//1. 重写普通的网址,通常是超链接/表单中使用的网址<br>// url = response.encodeUrl(url);  </p>
+<p>//2. 重写重定向的网址,这种网址用于重定向<br>url = response.encodeRedirectUrl(url);  </p>
+<p><strong>EL表达式:</strong><br>作用:<br>用于快速的从域对象中取出数据,并将结果输出到网页<br>也可以用于一些运算,运算的结果也会输出到网页<br>格式:<br>${表达式}<br>例如:  </p>
+<pre><code>运算的结果:${ 1+2+3+4+5 }
+</code></pre><p><strong>用于取出域对象中的数据:</strong><br>访问存储数据的格式:<br>${存储的key}  </p>
+<p>访问存储的对象属性值:<br>静态取值:${存储的key.属性名}<br>静态取值:${存储的key[属性名]}<br>动态取值:${存储的key[“属性名的key”]}  </p>
+<p>访问集合/数组中的对象:<br>静态取值:${存储的key[下标].属性名}<br>静态取值:${存储的key[下标][“属性名”]}<br>动态取值:${存储的key[下标][属性名的key]}  </p>
+<p>有时我们需要使用变量的值,可以将其先存储到域对象中,再在el表达式中使用存储的key来操作<br>例如:  </p>
+<pre><code>&lt;%
+    User[] data = {new User(&quot;root1&quot;,&quot;123&quot;),new User(&quot;root2&quot;,&quot;223&quot;),new User(&quot;root3&quot;,&quot;323&quot;),new User(&quot;root4&quot;,&quot;423&quot;),};
+    pageContext.setAttribute(&quot;Users&quot;,data);
+    pageContext.setAttribute(&quot;a&quot;,&quot;username&quot;);
+%&gt;
+&lt;%
+    for(int i = 0; i&lt;data.length;i++){
+        pageContext.setAttribute(&quot;index&quot;,i);
+    }
+%&gt;
+    静态取值: ${user[index].username}
+&lt;%} %&gt;
+</code></pre><p><strong>EL表达式 取出数据的流程:</strong>  </p>
+<p>取出顺序: 范围从小到大  </p>
+<p>步骤:  </p>
+<ol>
+<li>先从pageContext中寻找数据是否存在  </li>
+<li>当pageContext中不存在数据时,去request中寻找数据是否存在  </li>
+<li>当request中不存在数据时,去session中寻找数据是否存在  </li>
+<li>当session中不存在此数据时,去application中寻找数据是否存在  </li>
+<li>当application中不存在此数据时,向网页输出长度为0的字符串(是””,不是null)  </li>
+</ol>
+<p>在上述的流程中,一旦某个步骤寻找到了数据,就会将数据输出到网页中,且后续流程不再执行.  </p>
+<p><strong>taglib指令:</strong><br>用于在JSP中引入标签库<br>语法格式:  </p>
+<pre><code>&lt;%@ taglib prefix=&quot;&quot; uri=&quot;&quot;%&gt;
+</code></pre><p>属性:<br>prefix: 是引入标签库的名称,用于区分多个标签库,在使用此标签库中的标签时,需在标签前添加标签库名称:<br>例如: 我们引入一个标签库,prefix=a,则其中的标签在使用时:  </p>
+<pre><code>&lt;a:标签名&gt;&lt;/a:标签&gt;
+</code></pre><p>uri: 用于匹配标签库,在引入的tld文件中存在一个uri属性值,我们uri属性与tld文件中的属性相同,则引入这个文件描述的库.  </p>
+<p><strong>JSTL标签库:</strong>  </p>
+<p>是一套JSP的标准标签库,对JSP的标签进行了扩展  </p>
+<p><strong>IF标签:</strong>  </p>
+<p>用于判断元素是否显示  </p>
+<p>格式:  </p>
+<pre><code>&lt;库的名称:if test=&quot;&quot;&gt;&lt;/库的名称:if&gt;  
+test属性值:  
+    可以是boolean值,或运算结果为boolean的el表达式. 
+</code></pre><p>案例:  </p>
+<pre><code>&lt;%--
+&lt;heiheihei:if test=&quot;true&quot;&gt;
+    从前有座山
+&lt;/heiheihei:if&gt;  
+&lt;heiheihei:if test=&quot;false&quot;&gt;
+    从前有座山
+&lt;/heiheihei:if&gt;  
+--%&gt;  
+&lt;%
+    pageContext.setAttribute(&quot;flag&quot;,false);
+%&gt;  
+&lt;heiheihei:if test=&quot;${ flag }&quot;&gt;  
+    从前有座山  
+&lt;/heiheihei:if&gt;  
+&lt;%
+    pageContext.setAttribute(&quot;flag&quot;,true);
+%&gt;  
+&lt;heiheihei:if test=&quot;${ flag }&quot;&gt;  
+    山上有座庙  
+&lt;/heiheihei:if&gt;
+</code></pre><p><strong>choose+when+otherwise标签:</strong><br>类似Java中的: switch+case+default<br>这三个标签,只有when是由test属性的,属性值是boolean值,允许使用el表达式传入<br>作用:<br>用于多分支显示.  </p>
+<p><strong>forEach标签:</strong><br>用于遍历集合 或数组元素<br>格式:  </p>
+<pre><code>&lt;标签库名称:forEach items=&quot;&quot; var=&quot;&quot;&gt;
+
+&lt;/标签库名称:forEach&gt;
+</code></pre><p>属性:<br>items : 要遍历的数组或集合 必须通过el表达式传递<br>var : 从循环遍历时,从数组或集合中取出每个元素会被存储到pageContext中,key就是var的值  </p>
+<p><strong>如何自定义标签库:</strong>  </p>
+<p>自定义标签库的类:<br>两种实现的方式:  </p>
+<ol>
+<li>继承SimpleTagSupport  </li>
+<li>继承TagSupport</li>
+</ol>
 
         </div>
         <!-- .entry-content -->
@@ -410,28 +520,11 @@
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2019/11/16/2019-11-16-16ribao/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                11.16JAVA学习进度</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
         
           
-            <div class="post-nepre half next">
+            <div class="post-nepre full next">
           
-            <a href="/2019/11/15/2019-11-15-15ribao/" rel="next">
+            <a href="/2019/11/26/2019-11-26-26ribao/" rel="next">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
               </div>
@@ -439,7 +532,7 @@
               Next Post</span>
               <div class="info">
                 <h3>
-                11.15JAVA学习进度</h3>
+                11.26Java学习进度</h3>
                 <hr>
               </div>
             </a>

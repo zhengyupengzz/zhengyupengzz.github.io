@@ -1,6 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>11.27Java学习进度</title>
+    <url>/2019/11/27/2019-11-27-27ribao/</url>
+    <content><![CDATA[<h1 id="JSP指令-JSP的九大内置对象-EL"><a href="#JSP指令-JSP的九大内置对象-EL" class="headerlink" title="JSP指令,JSP的九大内置对象,EL:"></a>JSP指令,JSP的九大内置对象,EL:</h1><p><strong>include 指令:</strong><br>用于将一个JSP或HTML文件引入到另一个JSP中.<br>格式:  </p>
+<pre><code>&lt;%@ include file=&quot;引入的路径&quot; %&gt;
+</code></pre><p><strong>include 动作:</strong><br>用于将一个JSP或HTML文件引入到另一个JSP中.<br>格式:  </p>
+<pre><code>&lt;jsp:include page=&quot;引入路径&quot; flush=&quot;true&quot;(刷新属性)/&gt;
+</code></pre><p><strong>include 指令 与 include动作的区别:</strong>  </p>
+<p>include指令: 在JSP程序的转换时期,将被引入的JSP文件嵌入到include指令的位置,然后统一编译执行(最终生成了一个.java文件)  </p>
+<p>include动作: 在JSP程序的转换时期,被引入的文件不会嵌入到include动作的位置上,而是等客户端请求时,再临时将被引入的文件以额外的servlet的方式加载到响应中(最终生成的是多个.java文件)  </p>
+<p><strong>JSP的内置对象(隐含对象):</strong>  </p>
+<p>内置对象指的是: JSP引擎在转换JSP文件时,帮我们的代码在执行之前 创建的一些 供我们使用的对象,<br>内置对象具备大量的JSP中的常用功能,使用JSP内置对象可以大大的简化我们的开发流程.  </p>
+<p><strong>JSP的九大内置对象:</strong>  </p>
+<p><code>request:</code><br>类型: HttpServletRequest<br>作用: 请求对象,包含了请求相关的信息和参数  </p>
+<p><code>response:</code><br>类型: HttpServletResponse<br>作用: 响应对象,包含了一些用于响应的功能.  </p>
+<p><code>out:</code><br>类型: JSPWriter<br>作用: 是打印流,用于向响应体中输出数据  </p>
+<p><code>session:</code><br>类型: HttpSession<br>作用: 会话对象,用于状态管理以及会话跟踪  </p>
+<p><code>application:</code><br>类型: ServletContext<br>作用: Servlet的上下文,一个应用内存中同时只有一个上下文对象,用于多个Servlet/JSP之间通信.  </p>
+<hr>
+<p>config:<br>类型: ServletConfig<br>作用: Servlet的配置对象,用于配置一些初始的键值对信息.  </p>
+<p>pageContext:<br>类型: PageContext<br>作用: 页面的上下文,每一个JSP都拥有一个上下文对象,用于多段代码之间进行通信  </p>
+<p>exception:<br>类型: Throwable<br>作用: 当页面的page指令中 isErrorPage属性值为true时,才会存在此对象,用于收集错误信息!<br>    通常此对象值为null,只有其他页面指定errorPage=当前页面时,且其他页面发生BUG后,跳转到此页面时,对象才不为null  </p>
+<p>page:<br>类型: Object<br>作用: 指当前JSP页面自身,在JSP引擎生成的代码中,page对象的赋值代码为:<br>    Object page = this;  </p>
+<p><strong>JSP的四大域对象:</strong><br>九大隐含对象中,包含了四个较为特殊的隐含对象,这四个对象我们称其为域对象,它们都具备存储数据/删除数据/获取属性值的方法:<br>存储数据:  </p>
+<pre><code>setAttribute(String key, Object value);
+</code></pre><p>获取数据:  </p>
+<pre><code>Object value = getAttribute(String key);
+</code></pre><p>删除数据:<br>removeAttribute(String key);  </p>
+<p>这四个域对象,’域’指的是作用域  </p>
+<p>分别是:<br>pageContext : 页面的上下文   作用域: 一个JSP页面<br>request : 请求对象  作用域: 一次请求(请求可以被转发,一次请求可能包含多个JSP页面)<br>session : 会话对象  作用域: 一次会话(一次会话可能包含多次请求)<br>application : servlet上下文对象  作用域: 一次服务(服务器的启动到关闭)(一次服务可能包含多次会话)  </p>
+<hr>
+<p>点击加入购物车–&gt;携带id发送给查询的servlet–&gt;查询成功–&gt;转发到添加购物车的servlet–&gt;将商品信息添加到购物车中  </p>
+<p><strong>JSP useBean 动作:</strong><br>作用: 向四大域对象中,存储bean对象.<br>格式:  </p>
+<pre><code>&lt;jsp:useBean
+    id=&quot;存储时的key&quot;  
+    scope=&quot;page/request/session/application&quot;  
+    class=&quot;要存储的对象类型&quot;&gt;
+&lt;/jsp:useBean&gt;
+</code></pre><p><strong>JSP useBean + setProperty动作:</strong><br>作用: 向四大域对象中,存储bean对象,且设置属性值<br>格式:  </p>
+<pre><code>&lt;jsp:useBean
+    id=&quot;存储时的key&quot;  
+    scope=&quot;page/request/session/application&quot;  
+    class=&quot;要存储的对象类型&quot;&gt;  
+&lt;/jsp:uesBean&gt;  
+&lt;jsp:setProperty name=&quot;存储时的key&quot; property=&quot;属性名&quot; value=&quot;属性值&quot;/&gt;  
+//setProperty动作可以出现多次
+</code></pre><p>案例:  </p>
+<pre><code>&lt;jsp:useBean id=&quot;p&quot; scope=&quot;page&quot; class=&quot;cn.xdl.bean.Person&quot;&gt;&lt;/jsp:useBean&gt;  
+&lt;jsp:setProperty name=&quot;p&quot; property=&quot;name&quot; value=&quot;刘建&quot;/&gt;  
+&lt;jsp:setProperty name=&quot;p&quot; property=&quot;age&quot; value=&quot;18&quot;/&gt;
+</code></pre><p><strong>JSP useBean + setProperty动作 快速获取表单提交的内容:</strong><br>格式:  </p>
+<pre><code>&lt;jsp:useBean
+    id=&quot;存储时的key&quot;
+    scope=&quot;page/request/session/application&quot;
+    class=&quot;要存储的对象类型&quot;&gt;
+&lt;/jsp:useBean&gt;  
+&lt;jsp:setProperty name=&quot;存储时的key&quot; property=&quot;属性名&quot;/&gt;  
+</code></pre><p>注意:<br>如果setProperty动作中,property的值即是对象的属性名,又是我们用户请求的参数的名称的话,会自动将参数获取到并赋值给对象  </p>
+<p><strong>JSP getProperty动作:</strong><br>作用:<br>从四大域对象中取出某个对象的属性,并显示到网页中  </p>
+<p>格式:  </p>
+<pre><code>&lt;jsp:getProperty name=&quot;对象的key&quot; property=&quot;属性名&quot;&gt;
+</code></pre><p><strong>通过重写URL,得到session:</strong><br>//1. 重写普通的网址,通常是超链接/表单中使用的网址<br>// url = response.encodeUrl(url);  </p>
+<p>//2. 重写重定向的网址,这种网址用于重定向<br>url = response.encodeRedirectUrl(url);  </p>
+<p><strong>EL表达式:</strong><br>作用:<br>用于快速的从域对象中取出数据,并将结果输出到网页<br>也可以用于一些运算,运算的结果也会输出到网页<br>格式:<br>${表达式}<br>例如:  </p>
+<pre><code>运算的结果:${ 1+2+3+4+5 }
+</code></pre><p><strong>用于取出域对象中的数据:</strong><br>访问存储数据的格式:<br>${存储的key}  </p>
+<p>访问存储的对象属性值:<br>静态取值:${存储的key.属性名}<br>静态取值:${存储的key[属性名]}<br>动态取值:${存储的key[“属性名的key”]}  </p>
+<p>访问集合/数组中的对象:<br>静态取值:${存储的key[下标].属性名}<br>静态取值:${存储的key[下标][“属性名”]}<br>动态取值:${存储的key[下标][属性名的key]}  </p>
+<p>有时我们需要使用变量的值,可以将其先存储到域对象中,再在el表达式中使用存储的key来操作<br>例如:  </p>
+<pre><code>&lt;%
+    User[] data = {new User(&quot;root1&quot;,&quot;123&quot;),new User(&quot;root2&quot;,&quot;223&quot;),new User(&quot;root3&quot;,&quot;323&quot;),new User(&quot;root4&quot;,&quot;423&quot;),};
+    pageContext.setAttribute(&quot;Users&quot;,data);
+    pageContext.setAttribute(&quot;a&quot;,&quot;username&quot;);
+%&gt;
+&lt;%
+    for(int i = 0; i&lt;data.length;i++){
+        pageContext.setAttribute(&quot;index&quot;,i);
+    }
+%&gt;
+    静态取值: ${user[index].username}
+&lt;%} %&gt;
+</code></pre><p><strong>EL表达式 取出数据的流程:</strong>  </p>
+<p>取出顺序: 范围从小到大  </p>
+<p>步骤:  </p>
+<ol>
+<li>先从pageContext中寻找数据是否存在  </li>
+<li>当pageContext中不存在数据时,去request中寻找数据是否存在  </li>
+<li>当request中不存在数据时,去session中寻找数据是否存在  </li>
+<li>当session中不存在此数据时,去application中寻找数据是否存在  </li>
+<li>当application中不存在此数据时,向网页输出长度为0的字符串(是””,不是null)  </li>
+</ol>
+<p>在上述的流程中,一旦某个步骤寻找到了数据,就会将数据输出到网页中,且后续流程不再执行.  </p>
+<p><strong>taglib指令:</strong><br>用于在JSP中引入标签库<br>语法格式:  </p>
+<pre><code>&lt;%@ taglib prefix=&quot;&quot; uri=&quot;&quot;%&gt;
+</code></pre><p>属性:<br>prefix: 是引入标签库的名称,用于区分多个标签库,在使用此标签库中的标签时,需在标签前添加标签库名称:<br>例如: 我们引入一个标签库,prefix=a,则其中的标签在使用时:  </p>
+<pre><code>&lt;a:标签名&gt;&lt;/a:标签&gt;
+</code></pre><p>uri: 用于匹配标签库,在引入的tld文件中存在一个uri属性值,我们uri属性与tld文件中的属性相同,则引入这个文件描述的库.  </p>
+<p><strong>JSTL标签库:</strong>  </p>
+<p>是一套JSP的标准标签库,对JSP的标签进行了扩展  </p>
+<p><strong>IF标签:</strong>  </p>
+<p>用于判断元素是否显示  </p>
+<p>格式:  </p>
+<pre><code>&lt;库的名称:if test=&quot;&quot;&gt;&lt;/库的名称:if&gt;  
+test属性值:  
+    可以是boolean值,或运算结果为boolean的el表达式. 
+</code></pre><p>案例:  </p>
+<pre><code>&lt;%--
+&lt;heiheihei:if test=&quot;true&quot;&gt;
+    从前有座山
+&lt;/heiheihei:if&gt;  
+&lt;heiheihei:if test=&quot;false&quot;&gt;
+    从前有座山
+&lt;/heiheihei:if&gt;  
+--%&gt;  
+&lt;%
+    pageContext.setAttribute(&quot;flag&quot;,false);
+%&gt;  
+&lt;heiheihei:if test=&quot;${ flag }&quot;&gt;  
+    从前有座山  
+&lt;/heiheihei:if&gt;  
+&lt;%
+    pageContext.setAttribute(&quot;flag&quot;,true);
+%&gt;  
+&lt;heiheihei:if test=&quot;${ flag }&quot;&gt;  
+    山上有座庙  
+&lt;/heiheihei:if&gt;
+</code></pre><p><strong>choose+when+otherwise标签:</strong><br>类似Java中的: switch+case+default<br>这三个标签,只有when是由test属性的,属性值是boolean值,允许使用el表达式传入<br>作用:<br>用于多分支显示.  </p>
+<p><strong>forEach标签:</strong><br>用于遍历集合 或数组元素<br>格式:  </p>
+<pre><code>&lt;标签库名称:forEach items=&quot;&quot; var=&quot;&quot;&gt;
+
+&lt;/标签库名称:forEach&gt;
+</code></pre><p>属性:<br>items : 要遍历的数组或集合 必须通过el表达式传递<br>var : 从循环遍历时,从数组或集合中取出每个元素会被存储到pageContext中,key就是var的值  </p>
+<p><strong>如何自定义标签库:</strong>  </p>
+<p>自定义标签库的类:<br>两种实现的方式:  </p>
+<ol>
+<li>继承SimpleTagSupport  </li>
+<li>继承TagSupport</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>JSP指令</tag>
+        <tag>JSP对象</tag>
+        <tag>EL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>11.26Java学习进度</title>
+    <url>/2019/11/26/2019-11-26-26ribao/</url>
+    <content><![CDATA[<h1 id="Session技术-JSP引擎-JSP指令"><a href="#Session技术-JSP引擎-JSP指令" class="headerlink" title="Session技术,JSP引擎,JSP指令:"></a>Session技术,JSP引擎,JSP指令:</h1><p><strong>Session技术(会话):</strong><br>基于Cookie实现的技术,是Java中的一个键值对的容器,就像我们常用的Map集合<br>技术原理:  </p>
+<ol>
+<li>浏览器访问服务器时,服务器可以选择创建Session对象.  </li>
+<li>session对象在创建时,会生成一个id,我们称其为sessionid,sessionid是session的密钥, 是唯一的!  </li>
+<li>session创建完毕后,会自动将sessionid以cookie的形式存储到用户的浏览器中.  </li>
+<li>当浏览器再次访问服务器时,会自动携带sessionid发送给服务器.  </li>
+<li>服务器得到session后,会去匹配找到对应的session对象,供用户使用  </li>
+</ol>
+<p><strong>如何获取session对象:</strong><br>在Java中,session是一个Java对象,对象的类型为HttpSession<br>获取Session对象的格式:  </p>
+<ol>
+<li><p>无参方法:<br>HttpSession session = request.getSession();<br>内部调用了一参方法, 且传入true  </p>
+</li>
+<li><p>一参方法:<br>HttpSession session = request.getSession(boolean isNew);<br>用于获取session参数:<br>true: 根据当前浏览器传入的sessionid,寻找session对象并返回, 如果不存在, 则创建新的session并返回<br>false: 根据当前浏览器传入的sessionid,寻找session对象并返回, 如果不存在,则返回null</p>
+</li>
+</ol>
+<p><strong>session的常用方法:</strong>  </p>
+<ol>
+<li>存储数据  <pre><code>session.setAttribute(String key , Object value);
+</code></pre></li>
+<li>获取数据  <pre><code>session.getAttribute(String key);
+</code></pre></li>
+<li>删除数据  <pre><code>session.removeAttribute(String key);
+</code></pre></li>
+<li>销毁session(应用场景: 基本是退出登录)  <pre><code>session.invalidate();
+</code></pre></li>
+</ol>
+<p><strong>session的存活时长:</strong><br>session的默认时长为: 30分钟<br>指的是: 用户的上一次访问大于30分钟时,session自动删除  </p>
+<p>设置Session时长:  </p>
+<ol>
+<li>修改单个session的时长:  <pre><code>session.setMaxInactiveInterval(int 秒);
+</code></pre></li>
+<li>修改tomcat下,所有session的默认时长:<br>独立环境: 寻找到tomcat/conf/web.xml文件<br>开发环境: 寻找Servers项目中 web.xml </li>
+</ol>
+<p>修改web.xml中 session-config节点  </p>
+<pre><code>&lt;session-config&gt;
+    &lt;session-timeout&gt;数值分钟&lt;/session-timeout&gt;
+&lt;/session-config&gt;
+</code></pre><p><strong>session的优缺点:</strong>  </p>
+<p>优点:  </p>
+<ol>
+<li>数据存储在服务器中,安全  </li>
+<li>session存储时的值类型为: Object,可以存储任意类型数据  </li>
+<li>可存储的数据大小,理论上是无上限的  </li>
+</ol>
+<p>缺点:<br>数据在服务器的内存中存储,内存通常是有限的, 会对服务器造成大量的压力, 很容易耗尽服务器资源  </p>
+<p><strong>Cookie技术和Session技术不是互斥的:</strong><br>Cookie和Session是结合使用的:  </p>
+<ol>
+<li>对于安全不敏感的数据,建议使用Cookie存储  </li>
+<li>对于安全敏感的数据,建议使用session存储  </li>
+<li>对于安全敏感,且较大的数据,存储在数据库  </li>
+</ol>
+<p><strong>JSP引擎:</strong><br>引擎原理:<br>JSP引擎用于将JSP文件,转换为Servlet  </p>
+<ol>
+<li>在服务器启动时, JSP引擎读取.jsp文件.  </li>
+<li>将文件转换为Servlet的代码,并给servlet添加映射地址为jsp的文件名称.  </li>
+<li>当用户浏览器访问jsp文件名称时, 其实请求的不是jsp文件, 而是生成的servlet  </li>
+<li>servlet负责给浏览器进行响应  </li>
+</ol>
+<p><strong>JSP语法结构:</strong><br>JSP文件保存的路径: webContent目录下<br>JSP文件 可以包含HTML代码, Java代码,以及JSP特有的标记.  </p>
+<p><strong>Java代码 声明区:</strong><br>指的是Java的成员代码位置, 在JSP声明区中编写的Java代码,会生成到servlet的成员位置.<br>语法:  </p>
+<pre><code>&lt;%!
+    这里用于编写Java代码,且会生成到声明区
+%&gt;
+</code></pre><p><strong>Java代码 执行区:</strong><br>指的是Servlet的service方法中. 用户每次请求都会执行<br>语法:  </p>
+<pre><code>&lt;%!
+    Java代码
+%&gt;
+</code></pre><p><strong>表达式:</strong><br>用于快速的将Java代码中的变量输出到网页中.<br>语法:  </p>
+<pre><code>&lt;%=变量名%&gt;  
+</code></pre><p>转换的Java:  </p>
+<pre><code>out.print(变量名);
+</code></pre><p><strong>JSP中如何编写注释:</strong>  </p>
+<p>因为JSP文件包含了三种语法结构(Java/HTML/jsp)<br>所以,三种语法结构的注释,都可以起到注释的效果:<br>html注释:  </p>
+<pre><code>&lt;!--html--&gt;  
+</code></pre><p>JSP中,HTML的注释会被JSP引擎认为是HTML代码,会转换为</p>
+<pre><code>out.write(&quot;&lt;!----&gt;&quot;);  
+</code></pre><p>Java注释:  </p>
+<pre><code>/*Java注释*/
+</code></pre><p>JSP中,Java的注释会被JSP引擎认为是Java代码,会原封不动的放到_jsp.java文件中  </p>
+<p>JSP注释:  </p>
+<pre><code>&lt;%--JSP注释--%&gt;
+</code></pre><p>在JSP引擎将jsp文件 转换为.java文件时,会忽略JSP注释的部分  </p>
+<p><strong>JSP三大指令:</strong><br>指令格式:  </p>
+<pre><code>&lt;$@ 指令名称 属性名=值 属性名2=值 ... 属性n=值$&gt;
+</code></pre><p><strong>page指令:</strong>  </p>
+<p>用于设置页面<br>完整格式:  </p>
+<pre><code>&lt;%@ page
+    language=&quot;java&quot;
+    extends=&quot;继承的类&quot;
+    buffer=&quot;数值|none&quot;  -- 缓冲大小,none表示不缓冲,默认是8kb
+    session=&quot;true|false&quot;  --true:自动创建session
+    autoFlush=&quot;true|false&quot;  -- 缓冲器自动清除,默认是true
+    isThreadSafe=&quot;true|false&quot;  --&lt;%%&gt;中的代码是否是同步的,true表示同步,默认是false  
+    contentType=&quot;text/html;charset=utf-8&quot;  -- 内容类型以及编码格式    
+
+    errorPage=&quot;网页地址&quot;  -- 当JSP代码出错误,页面由指定地址进行显示*  
+
+    isErrorPage=&quot;true|false&quot;  -- true:当前页面是处理错误的页面,只有为true时,才可以查看异常信息.*  
+
+    import=&quot;导包列表&quot;  -- 属性值是一个或多个导入的包,包与包之间使用逗号隔开即可
+
+%&gt;
+</code></pre><p><strong>指定项目全局错误页面:</strong>  </p>
+<p>编写项目的web.xml<br>在根节点中,加入子节点:  </p>
+<pre><code>&lt;error-page&gt;
+    &lt;error-code&gt;404&lt;/error-code&gt;
+    &lt;location&gt;处理404的页面地址&lt;/location&gt;
+&lt;/error-page&gt;
+&lt;error-page&gt;
+    &lt;error-code&gt;500&lt;/error-code&gt;
+    &lt;location&gt;处理500的页面地址&lt;/location&gt;
+&lt;/error-page&gt;
+</code></pre>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Session技术</tag>
+        <tag>JSP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>11.25Java学习进度</title>
     <url>/2019/11/25/2019-11-25-25ribao/</url>
     <content><![CDATA[<h1 id="Servlet线程安全-请求的转发和重定向"><a href="#Servlet线程安全-请求的转发和重定向" class="headerlink" title="Servlet线程安全,请求的转发和重定向:"></a>Servlet线程安全,请求的转发和重定向:</h1><p><strong>Servlet线程安全:</strong><br>Servlet的service方法,每次被请求时,调用.<br>这个调用很特殊,是在新的子线程中调用的,当service方法执行完毕,子线程死亡了.<br>可以简单理解为: service方法每次执行都是一个新的线程  </p>
@@ -32,7 +304,7 @@
 </ol>
 <p><strong>请求的重定向:</strong><br>概念: 响应时,告知浏览器的新的请求地址,浏览器接受到 自动请求显得地址!  </p>
 <p>步骤:  </p>
-<pre><code>response.esndRedirect(&quot;重定向地址&quot;);
+<pre><code>response.sendRedirect(&quot;重定向地址&quot;);
 </code></pre><p>重定向流程:<br>    步骤1. 当浏览器访问服务时,服务器对浏览器响应一个302的状态码,以及一个location的地址<br>    步骤2. HTTP协议约定,当浏览器接收到302状态码时,会自动寻找location地址,并发起新的请求.(相当于 控制用户浏览器 自动完成页面的跳转操作.)  </p>
 <p>特点:  </p>
 <ol>
@@ -67,6 +339,69 @@
 </code></pre></li>
 </ol>
 <p><strong>ServletContext 上下文:</strong>  </p>
+<p>每一个Servlet都是一个独立的用于处理请求的对象<br>为了便于多个Servlet之间的数据交流,JavaWeb提供了一个上下文对象ServletContext<br>我们在任何的Servlet代码中,都可以获得这个ServletContext对象,且每一个Servlet获取的都是同一份ServletContext对象.<br>上下文对象,类似于我们SE所学习的MAP集合,是一个键值对的容器.  </p>
+<p>作用: ServletContext是Servlet之间通信的桥梁,用于多个Servlet之间信息的共享.  </p>
+<p><strong>从Servlet中得到上下文对象:</strong>  </p>
+<p>格式:</p>
+<pre><code>    ServletContext context = getServletContext();  
+</code></pre><p><strong>ServletContext的常用方法:</strong>  </p>
+<ol>
+<li>存储数据  <pre><code>context.setAttribute(String key,Object value);
+</code></pre></li>
+<li>获取数据  <pre><code>Object value = context.getAttribute(String key);
+</code></pre></li>
+<li>删除数据  <pre><code>context.removeAttribute(String key);
+</code></pre></li>
+<li>获取项目运行时的 文件夹绝对路径  </li>
+</ol>
+<p>//因为一个项目,只有一个ServletContext对象,且在项目启动时创建了,项目销毁时销毁.<br>//所以我们再一次项目启动的过程中,一个Servlet存储的数据,任何Servlet都可以获取到</p>
+<p><strong>会话跟踪(状态管理):</strong><br>HTTP协议是无状态的, 我们的服务器在与客户端进行交互时,没有记忆.<br>两种方式来实现状态管理:  </p>
+<ol>
+<li>Cookie技术: 将状态, 存储到客户端中  </li>
+<li>Session技术: 将id存储在客户端中, 将状态存储在服务器中  </li>
+</ol>
+<p><strong>Cookie技术:</strong><br>技术实现步骤以及原理:  </p>
+<ol>
+<li>当服务器向客户端响应时 ,可以响应头部加入Cookie, 每一个Cookie表示一个键值对.  </li>
+<li>浏览器在接收到响应后,如果存在Cookie,则会将Cookie存储在文本文件中(.txt)<br><code>存储时,会存储的信息有: 服务器的域,路径,Cookie键,Cookie的值,存储时长...</code>  </li>
+<li>当浏览器向客户端请求时,会遍历Cookie的文本文件,将匹配新请求地址的Cookie携带上,放在请求头部,发送给服务器.<br><code>Cookie匹配的规则:</code><br> <code>当cookie存储的域相同时,路径匹配时,才会将Cookie发送给服务器.</code>   </li>
+</ol>
+<p><strong>如何创建Cookie:</strong><br>Cookie在Java中的体现,就是一个表示键值对的Java类,类名为:Cookie.<br>格式:  </p>
+<pre><code>Cookie cookie = new Cookie(String name,String value);
+</code></pre><p><strong>如何将Cookie添加到响应头部:</strong><br>通过响应对象,将Cookie添加到响应头部<br>格式:</p>
+<pre><code>response.addCookie(Cookie cookie);
+</code></pre><p>一次响应,可以添加n个cookie<br>如果浏览器中已经存储过与某个Cookie的那么相同的Cookie, 再次存储时会覆盖value<br><strong>如何从请求头部 得到之前存储的所有Cookie:  </strong><br>因为一个域 和路径下,可能存在多个Cookie,所以获取的不是单个Cookie,而是数组:  </p>
+<pre><code>Cookie[] cookies = request.getCookies();
+//如果从未存储过,则返回的数组值是null
+</code></pre><p><strong>得到Cookie后,如何取出其中的键和值:</strong><br>获取Cookie的键:  </p>
+<pre><code>String name = cookie.getName();
+</code></pre><p>获取Cookie的值:  </p>
+<pre><code>String value  cookie.getValue();
+</code></pre><p><strong>如何调整Cookie存储时长:</strong><br>cookie.getMaxAge(int 秒):<br>传入值:  </p>
+<ul>
+<li>负数 : 默认 -1 ,表示浏览会话结束时删除  </li>
+<li>正数 : 存活的秒数, 例如60*60*24*365*10表示十年  </li>
+<li>0 : 经常用于覆盖一个cookie时使用, 作用为0秒后删除(立即删除)  </li>
+</ul>
+<p><strong>Cookie存储时,路径问题的解决:</strong>  </p>
+<p>路径匹配的规则:  </p>
+<ul>
+<li>Cookie的替换: 只能由相同域,相同路径的完成替换.  </li>
+<li>Cookie的获取: 只能由相同域,相同路径或子路径获取  </li>
+</ul>
+<p>例如:<br>    A地址: localhost/x/a.do<br>    B地址: localhost/x/b.do<br>    C地址: localhost/c.do  </p>
+<p>A存储数据时: a/b可以获取, a/b可以替换 . c不能获取也不能替换<br>C存储数据时: a/b/c可以获取 , c可以替换  </p>
+<p>Cookie的路径问题,经常影响我们的开发   </p>
+<p>JavaWeb给我们提供了一个cookie方法,用于设置Cookie的路径<br>通常我们会将cookie的路径设置为/(根目录)<br>格式:  </p>
+<pre><code>cookie.setPath(&quot;/&quot;); 
+</code></pre><p><strong>Cookie的优缺点:</strong><br>缺点:  </p>
+<ol>
+<li>Cookie存储的数据类型,只能是字符串  </li>
+<li>数据存储的大小,有限制,最大为4kb  </li>
+<li>数据存储在用户的计算机上, 不安全  </li>
+<li>受限于用户的浏览器设置,当浏览器禁止使用Cookie时,cookie就无法再存储了  </li>
+</ol>
+<p>优点:<br>数据存储在客户端, 分散了服务器的压力</p>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -75,39 +410,6 @@
         <tag>Servlet线程安全</tag>
         <tag>请求的转发和重定向</tag>
         <tag>HttpServletRequest</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>11.21技术分享</title>
-    <url>/2019/11/21/2019-11-21-21jishu/</url>
-    <content><![CDATA[<h1 id="对谷歌插件的导入导出"><a href="#对谷歌插件的导入导出" class="headerlink" title="对谷歌插件的导入导出:"></a>对谷歌插件的导入导出:</h1><ol>
-<li>导出谷歌插件</li>
-</ol>
-<p>在你的电脑中找到谷歌的安装的位置   </p>
-<p>正常情况下默认为<code>C:\Users\Administrator\AppData\Local\Google\Chrome\User Data\Default\Extensions</code></p>
-<p>这个路径下存放的都是谷歌浏览器中安装的插件  </p>
-<p>将此目录下的插件文件复制即可</p>
-<ol start="2">
-<li>判断文件分别对应哪个插件  </li>
-</ol>
-<p>在插件这个目录下 文件名都是随机生成的, 所以我们没办法直接在这里区分哪个插件  </p>
-<p>我们可以点进每个文件夹 它的下级目录就是一个版本号 , 在谷歌的扩展程序中寻找与之相同的插件  </p>
-<p>那这个文件夹就是对应的插件了 </p>
-<ol start="3">
-<li>如何导入谷歌插件</li>
-</ol>
-<p>设置—&gt; 左侧栏扩展程序 —&gt; 右上角确定开启开发者模式 —&gt; 加载已解压的扩展程序  </p>
-<p>然后在文件中找到之前复制导出的那些文件夹,<code>注意:要选中加载的文件夹 是乱码名下那个版本号名的文件夹!</code>  </p>
-<blockquote>
-<p>这里再分享一个安装插件的小技巧  </p>
-</blockquote>
-<p><strong>有时候我们在网上下载下来的插件是.crx文件,然而谷歌有时候会安装不上这种文件</strong><br><strong>这时候可以将.crx文件后缀名改为<code>.zip</code>或者其他压缩文件后缀名,然后再解压,之后的导入插件步骤同上</strong></p>
-]]></content>
-      <categories>
-        <category>技术分享</category>
-      </categories>
-      <tags>
-        <tag>谷歌插件</tag>
       </tags>
   </entry>
   <entry>
@@ -230,6 +532,70 @@ String username = request.getParameter(&quot;username&quot;);
       </tags>
   </entry>
   <entry>
+    <title>11.21技术分享</title>
+    <url>/2019/11/21/2019-11-21-21jishu/</url>
+    <content><![CDATA[<h1 id="对谷歌插件的导入导出"><a href="#对谷歌插件的导入导出" class="headerlink" title="对谷歌插件的导入导出:"></a>对谷歌插件的导入导出:</h1><ol>
+<li>导出谷歌插件</li>
+</ol>
+<p>在你的电脑中找到谷歌的安装的位置   </p>
+<p>正常情况下默认为<code>C:\Users\Administrator\AppData\Local\Google\Chrome\User Data\Default\Extensions</code></p>
+<p>这个路径下存放的都是谷歌浏览器中安装的插件  </p>
+<p>将此目录下的插件文件复制即可</p>
+<ol start="2">
+<li>判断文件分别对应哪个插件  </li>
+</ol>
+<p>在插件这个目录下 文件名都是随机生成的, 所以我们没办法直接在这里区分哪个插件  </p>
+<p>我们可以点进每个文件夹 它的下级目录就是一个版本号 , 在谷歌的扩展程序中寻找与之相同的插件  </p>
+<p>那这个文件夹就是对应的插件了 </p>
+<ol start="3">
+<li>如何导入谷歌插件</li>
+</ol>
+<p>设置—&gt; 左侧栏扩展程序 —&gt; 右上角确定开启开发者模式 —&gt; 加载已解压的扩展程序  </p>
+<p>然后在文件中找到之前复制导出的那些文件夹,<code>注意:要选中加载的文件夹 是乱码名下那个版本号名的文件夹!</code>  </p>
+<blockquote>
+<p>这里再分享一个安装插件的小技巧  </p>
+</blockquote>
+<p><strong>有时候我们在网上下载下来的插件是.crx文件,然而谷歌有时候会安装不上这种文件</strong><br><strong>这时候可以将.crx文件后缀名改为<code>.zip</code>或者其他压缩文件后缀名,然后再解压,之后的导入插件步骤同上</strong></p>
+]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>谷歌插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>11.20心得</title>
+    <url>/2019/11/20/2019-11-20-20xinde/</url>
+    <content><![CDATA[<h1 id="对于博客模板的修改"><a href="#对于博客模板的修改" class="headerlink" title="对于博客模板的修改:"></a>对于博客模板的修改:</h1><blockquote>
+<p>由于19号发现了之前自己的博客模板有一些没改好的地方,便下决心这次要彻底改好一个博客模板</p>
+</blockquote>
+<p>所以19号的整整一天就都是在找模板,看效果的  </p>
+<p>然后晚自习的时候就已经确定好了这个模板,开始着手修改  </p>
+<p>由于不太了解博客里面元素和.ejs文件的构造 在改一些东西的时候总会有报错  </p>
+<p>后来想到了把所有文件打开  然后去查找那个关键字  </p>
+<p>由于有一些js基础,这么一查找到,想做些修改也不是很难  </p>
+<p>在将一些404图片修改了,把多余的文字修改了之后  </p>
+<blockquote>
+<p>后续又对博客进行了一些优化  </p>
+</blockquote>
+<p>首先将<code>Valine</code>评论区的 ID 和 Key 换成了自己注册的LeanCloud 的ID 和 Key  </p>
+<p>还将github博客也推到了coding 这个仓库可以让国内访问github可以快一些  </p>
+<p>并将自己之前购买的域名都绑定到了自己的博客上:  </p>
+<p><a href="http://zhengyupeng.top" target="_blank" rel="noopener">zhengyupeng.top</a>  </p>
+<p><a href="https://www.zhengyupeng.top" target="_blank" rel="noopener">www.zhengyupeng.top</a>  </p>
+<p>也都能访问到我的博客了!  </p>
+<p><strong>最后总结一下心得吧:</strong>  </p>
+<p>昨天一天和今天上午到十点多相当于在学习Java的进度上没有进展,<br>但是改完这个博客,也学到了很多的东西,了解到了很多东西,<br>并且改完这个博客心情都变好了,可以安心学习去了。<br>接下来传完的个博客我就继续学习Java了,<strong><code>冲冲冲!!!</code></strong></p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>11.20Java学习进度</title>
     <url>/2019/11/20/2019-11-20-20ribao/</url>
     <content><![CDATA[<h1 id="JavaWeb开发环境的配置-http协议与HttpServlet类"><a href="#JavaWeb开发环境的配置-http协议与HttpServlet类" class="headerlink" title="JavaWeb开发环境的配置,http协议与HttpServlet类:"></a>JavaWeb开发环境的配置,http协议与HttpServlet类:</h1><p><strong>tomcat配置:</strong>  </p>
@@ -336,37 +702,6 @@ B / S :
       </tags>
   </entry>
   <entry>
-    <title>11.20心得</title>
-    <url>/2019/11/20/2019-11-20-20xinde/</url>
-    <content><![CDATA[<h1 id="对于博客模板的修改"><a href="#对于博客模板的修改" class="headerlink" title="对于博客模板的修改:"></a>对于博客模板的修改:</h1><blockquote>
-<p>由于19号发现了之前自己的博客模板有一些没改好的地方,便下决心这次要彻底改好一个博客模板</p>
-</blockquote>
-<p>所以19号的整整一天就都是在找模板,看效果的  </p>
-<p>然后晚自习的时候就已经确定好了这个模板,开始着手修改  </p>
-<p>由于不太了解博客里面元素和.ejs文件的构造 在改一些东西的时候总会有报错  </p>
-<p>后来想到了把所有文件打开  然后去查找那个关键字  </p>
-<p>由于有一些js基础,这么一查找到,想做些修改也不是很难  </p>
-<p>在将一些404图片修改了,把多余的文字修改了之后  </p>
-<blockquote>
-<p>后续又对博客进行了一些优化  </p>
-</blockquote>
-<p>首先将<code>Valine</code>评论区的 ID 和 Key 换成了自己注册的LeanCloud 的ID 和 Key  </p>
-<p>还将github博客也推到了coding 这个仓库可以让国内访问github可以快一些  </p>
-<p>并将自己之前购买的域名都绑定到了自己的博客上:  </p>
-<p><a href="http://zhengyupeng.top" target="_blank" rel="noopener">zhengyupeng.top</a>  </p>
-<p><a href="https://www.zhengyupeng.top" target="_blank" rel="noopener">www.zhengyupeng.top</a>  </p>
-<p>也都能访问到我的博客了!  </p>
-<p><strong>最后总结一下心得吧:</strong>  </p>
-<p>昨天一天和今天上午到十点多相当于在学习Java的进度上没有进展,<br>但是改完这个博客,也学到了很多的东西,了解到了很多东西,<br>并且改完这个博客心情都变好了,可以安心学习去了。<br>接下来传完的个博客我就继续学习Java了,<strong><code>冲冲冲!!!</code></strong></p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>11.18JAVA学习进度</title>
     <url>/2019/11/18/2019-11-18-18ribao/</url>
     <content><![CDATA[<h1 id="11-18Java学习进度"><a href="#11-18Java学习进度" class="headerlink" title="11.18Java学习进度"></a>11.18Java学习进度</h1><h2 id="解析xml属性操作-Xpath"><a href="#解析xml属性操作-Xpath" class="headerlink" title="解析xml属性操作,Xpath:"></a>解析xml属性操作,Xpath:</h2><pre><code>// 1. 加载xml文件到jvm中,形成数据流
@@ -430,42 +765,6 @@ xw.close();
       <tags>
         <tag>解析xml属性操作</tag>
         <tag>Xpath</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>11.16技术分享</title>
-    <url>/2019/11/16/2019-11-16-16jishu/</url>
-    <content><![CDATA[<h1 id="11-16技术分享"><a href="#11-16技术分享" class="headerlink" title="11.16技术分享"></a>11.16技术分享</h1><h2 id="idea运行tomcat控制台乱码"><a href="#idea运行tomcat控制台乱码" class="headerlink" title="idea运行tomcat控制台乱码:"></a>idea运行tomcat控制台乱码:</h2><h3 id="1-首先设置idea的编码格式"><a href="#1-首先设置idea的编码格式" class="headerlink" title="1.首先设置idea的编码格式:"></a>1.首先设置idea的编码格式:</h3><p>File–&gt;Settings–&gt;File Encodings</p>
-<p><img src="https://s2.ax1x.com/2019/11/20/MWMwvV.md.png" alt="idea编码格式">  </p>
-<p>将所有编码格式统一设置成UTF-8。  </p>
-<h3 id="2-再设置tomcat的编码格式"><a href="#2-再设置tomcat的编码格式" class="headerlink" title="2.再设置tomcat的编码格式:"></a>2.再设置tomcat的编码格式:</h3><p><img src="https://s2.ax1x.com/2019/11/20/MWMyE4.png" alt="tomcat设置">  </p>
-<p>改变VM options为-Dfile.encoding=UTF-8:<br><img src="https://s2.ax1x.com/2019/11/20/MWMrbF.md.png" alt="tomcat编码格式"> </p>
-<p><strong><code>完成上面的设置后还会有乱码,不要急</code></strong>  </p>
-<h3 id="3-配置idea的文件设置"><a href="#3-配置idea的文件设置" class="headerlink" title="3.配置idea的文件设置:"></a>3.配置idea的文件设置:</h3><p>找到idea图标,右键,打开文件位置找到  </p>
-<p><code>idea.exe.vmoptions</code>和<code>idea64.exe.vmoptions</code>文件  并打开文件  </p>
-<p>在文件后面添加一行：-Dfile.encoding=UTF-8   </p>
-<p>idae中的设置配置也要修改</p>
-<p>help–&gt;Edit Custom VM Options…  </p>
-<p>打开此配置 也在最后一行添加:-Dfile.encoding=UTF-8  </p>
-<h3 id="4-修改tomcat的运行编码格式"><a href="#4-修改tomcat的运行编码格式" class="headerlink" title="4.修改tomcat的运行编码格式:"></a>4.修改tomcat的运行编码格式:</h3><p>进入到tomcat的根目录的bin目录下  </p>
-<p>此时可以在文件地址栏输入cmd来启动dos窗口执行  </p>
-<pre><code>catalina.bat run
-</code></pre><p>(或者也可以直接cmd  然后cd到bin目录下 执行此命令)  </p>
-<p>之后再用命令切换cmd的编码格式<br>“chcp 65001”切换cmd为utf8，”chcp 936”切换cmd为gbk  </p>
-<p>这里我们使用chcp 65001来切换成utf8  </p>
-<p>执行之后可以再运行一下</p>
-<pre><code>catalina.bat run
-</code></pre><p>看看命令是否都编程正常汉语,若都成正常汉语就是成功了!</p>
-<p>然后重启idea即可.  </p>
-<p><code>最后提一句:</code>  </p>
-<p>自己改tomcat的logging.properties为GBk会导致调试时get/post参数乱码  </p>
-<p>还是都改成UTF8稳妥。</p>
-]]></content>
-      <categories>
-        <category>分享</category>
-      </categories>
-      <tags>
-        <tag>idea控制台乱码</tag>
       </tags>
   </entry>
   <entry>
@@ -594,6 +893,42 @@ for(Element e1: list){
       <tags>
         <tag>数据库优化</tag>
         <tag>XML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>11.16技术分享</title>
+    <url>/2019/11/16/2019-11-16-16jishu/</url>
+    <content><![CDATA[<h1 id="11-16技术分享"><a href="#11-16技术分享" class="headerlink" title="11.16技术分享"></a>11.16技术分享</h1><h2 id="idea运行tomcat控制台乱码"><a href="#idea运行tomcat控制台乱码" class="headerlink" title="idea运行tomcat控制台乱码:"></a>idea运行tomcat控制台乱码:</h2><h3 id="1-首先设置idea的编码格式"><a href="#1-首先设置idea的编码格式" class="headerlink" title="1.首先设置idea的编码格式:"></a>1.首先设置idea的编码格式:</h3><p>File–&gt;Settings–&gt;File Encodings</p>
+<p><img src="https://s2.ax1x.com/2019/11/20/MWMwvV.md.png" alt="idea编码格式">  </p>
+<p>将所有编码格式统一设置成UTF-8。  </p>
+<h3 id="2-再设置tomcat的编码格式"><a href="#2-再设置tomcat的编码格式" class="headerlink" title="2.再设置tomcat的编码格式:"></a>2.再设置tomcat的编码格式:</h3><p><img src="https://s2.ax1x.com/2019/11/20/MWMyE4.png" alt="tomcat设置">  </p>
+<p>改变VM options为-Dfile.encoding=UTF-8:<br><img src="https://s2.ax1x.com/2019/11/20/MWMrbF.md.png" alt="tomcat编码格式"> </p>
+<p><strong><code>完成上面的设置后还会有乱码,不要急</code></strong>  </p>
+<h3 id="3-配置idea的文件设置"><a href="#3-配置idea的文件设置" class="headerlink" title="3.配置idea的文件设置:"></a>3.配置idea的文件设置:</h3><p>找到idea图标,右键,打开文件位置找到  </p>
+<p><code>idea.exe.vmoptions</code>和<code>idea64.exe.vmoptions</code>文件  并打开文件  </p>
+<p>在文件后面添加一行：-Dfile.encoding=UTF-8   </p>
+<p>idae中的设置配置也要修改</p>
+<p>help–&gt;Edit Custom VM Options…  </p>
+<p>打开此配置 也在最后一行添加:-Dfile.encoding=UTF-8  </p>
+<h3 id="4-修改tomcat的运行编码格式"><a href="#4-修改tomcat的运行编码格式" class="headerlink" title="4.修改tomcat的运行编码格式:"></a>4.修改tomcat的运行编码格式:</h3><p>进入到tomcat的根目录的bin目录下  </p>
+<p>此时可以在文件地址栏输入cmd来启动dos窗口执行  </p>
+<pre><code>catalina.bat run
+</code></pre><p>(或者也可以直接cmd  然后cd到bin目录下 执行此命令)  </p>
+<p>之后再用命令切换cmd的编码格式<br>“chcp 65001”切换cmd为utf8，”chcp 936”切换cmd为gbk  </p>
+<p>这里我们使用chcp 65001来切换成utf8  </p>
+<p>执行之后可以再运行一下</p>
+<pre><code>catalina.bat run
+</code></pre><p>看看命令是否都编程正常汉语,若都成正常汉语就是成功了!</p>
+<p>然后重启idea即可.  </p>
+<p><code>最后提一句:</code>  </p>
+<p>自己改tomcat的logging.properties为GBk会导致调试时get/post参数乱码  </p>
+<p>还是都改成UTF8稳妥。</p>
+]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>idea控制台乱码</tag>
       </tags>
   </entry>
   <entry>
@@ -1095,9 +1430,9 @@ System.out.println(&quot;是回文&quot;);
         <category>java</category>
       </categories>
       <tags>
+        <tag>String类</tag>
         <tag>Object类,</tag>
         <tag>包装类和数学处理类,</tag>
-        <tag>String类</tag>
       </tags>
   </entry>
   <entry>
@@ -1449,26 +1784,6 @@ Person p = new Person();
       </tags>
   </entry>
   <entry>
-    <title>9.27七十周年心得</title>
-    <url>/2019/09/27/2019-09-27-27xinde/</url>
-    <content><![CDATA[<h1 id="今天看了很多关于国家的视频-发现这七十年发展的是真不容易"><a href="#今天看了很多关于国家的视频-发现这七十年发展的是真不容易" class="headerlink" title="今天看了很多关于国家的视频,发现这七十年发展的是真不容易"></a>今天看了很多关于国家的视频,发现这七十年发展的是真不容易</h1><p>70年的风雨征程，带来了祖国繁荣强大，如同阳光照亮了我们的前程，指明了我们前进的方向，带领全国各族人民从贫穷走向富裕，从胜利走向辉煌。</p>
-<p>　　中华人民共和国国旗旗面为红色象征革命。旗上的五颗五角星及其相互关系象征共产党领导下的革命人民大团结。星用黄色是为着在红地上显出光明，四颗小五角星各有一角正对着大星的中心点，表示围绕着一个中心而团结。每逢国庆，去天安门广场看升国旗是无数人心中的梦想。因此，利用国庆长假去北京游玩的人们，通常会赶早来到天安门广场看国旗班的军人升旗，以表达对祖国的无比热爱，看着五星红旗徐徐升起，心中的激动无以言表。每年10月1日是我国的国庆节，我国于1999年修订发布《全国年节及纪念日放假办法》，将国庆节与相邻的周六、日组合为7天的国庆长假，被称之为“国庆黄金周”，用放假的形式，让老百姓共同感受国庆的欢乐。</p>
-<p>　　回首这70年，中华人民走得每一步都是步履蹒跚，每一步都付出了巨大牺牲。但是如今中国经过几十年来的艰苦建设，已取得了“乘长风，破万里浪”的迅猛发展:《辉煌中国》之《圆梦工程》透过港珠澳大桥、胡麻岭隧道、郑万铁路、复兴号、上海洋山港自动化码头、中国移动互联网等一个个超级工程，领略五年来一张张中国基础建设的大网，如何编织起人民走向幸福、美好的希望版图，托举起中华民族伟大复兴的中国梦。</p>
-<p>面对飘扬的国旗亿万双眼睛注视五星红旗冉冉升起,亿万颗心灵伴随祖国母亲一起搏动。抬头仰望,发现鲜艳的国旗已在共和国的上空飘扬了半个世纪。在世纪之交的今天,共和国已走过了七十个春秋。七十年前，”洋油” ”洋面” 还充斥着中国的大江南北;七十年后，许多国产已遍及世界各地。</p>
-<p>七十年前,我们的祖先还把汉代的耕梨插进二十世纪的农田;七十年后,现代化机械已开进中国的农家。<br>七十年前,港澳游子还站在金门望厦门;五十年后,归国侨胞已站在厦门望金门。-样的遥望,却是两样的情形。<br>七十年里，萧瑟秋风今又是，换了人间。</p>
-<p>依旧淳朴中隐着聪慧,荒中透着俊季，可再也听不见那血泪凝结的叹息,更也找不到贫贱不堪的足印，再也寻不见你昔日枯瘦蹒跚的身影,麦穗和齿轮构筑的太阳,伸出金色的臂膀擎着一片晴空,逶道而来,斩断阴霾的剑光在普照众生的沧桑。</p>
-<p>你傲然屹立于世界的东方,不管身边的风云如何的变幻,始终坚定地沿真理的方向勇往直前。你般迎着八面春风,在辐射的节奏里,眺望着更加灿烂的前程。</p>
-<p>我灵魂的纤绳永系向你风帆的桅杆;我手中的彩笔,永远写你壮重的风姿;</p>
-<p>面对飘扬国旗，血液在奔涌，思绪在沸腾,理想的根须在土里扎得更深。面对飘扬的国旗,我们已把自己溶入母亲炙热的胸襟。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>9.27技术分享</title>
     <url>/2019/09/27/2019-09-27-27jishu/</url>
     <content><![CDATA[<h1 id="今天发现了git克隆下来的远程库特别大"><a href="#今天发现了git克隆下来的远程库特别大" class="headerlink" title="今天发现了git克隆下来的远程库特别大:"></a>今天发现了git克隆下来的远程库特别大:</h1><p>经过查询之后发现是每次推送之后都会留下记录缓存，这样很多没用的记录就会占用多余的空间，别人克隆的时候也会多耗费时间，今天我查到了一个清除无用记录的方法。</p>
@@ -1513,6 +1828,26 @@ Person p = new Person();
       </categories>
       <tags>
         <tag>git清理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>9.27七十周年心得</title>
+    <url>/2019/09/27/2019-09-27-27xinde/</url>
+    <content><![CDATA[<h1 id="今天看了很多关于国家的视频-发现这七十年发展的是真不容易"><a href="#今天看了很多关于国家的视频-发现这七十年发展的是真不容易" class="headerlink" title="今天看了很多关于国家的视频,发现这七十年发展的是真不容易"></a>今天看了很多关于国家的视频,发现这七十年发展的是真不容易</h1><p>70年的风雨征程，带来了祖国繁荣强大，如同阳光照亮了我们的前程，指明了我们前进的方向，带领全国各族人民从贫穷走向富裕，从胜利走向辉煌。</p>
+<p>　　中华人民共和国国旗旗面为红色象征革命。旗上的五颗五角星及其相互关系象征共产党领导下的革命人民大团结。星用黄色是为着在红地上显出光明，四颗小五角星各有一角正对着大星的中心点，表示围绕着一个中心而团结。每逢国庆，去天安门广场看升国旗是无数人心中的梦想。因此，利用国庆长假去北京游玩的人们，通常会赶早来到天安门广场看国旗班的军人升旗，以表达对祖国的无比热爱，看着五星红旗徐徐升起，心中的激动无以言表。每年10月1日是我国的国庆节，我国于1999年修订发布《全国年节及纪念日放假办法》，将国庆节与相邻的周六、日组合为7天的国庆长假，被称之为“国庆黄金周”，用放假的形式，让老百姓共同感受国庆的欢乐。</p>
+<p>　　回首这70年，中华人民走得每一步都是步履蹒跚，每一步都付出了巨大牺牲。但是如今中国经过几十年来的艰苦建设，已取得了“乘长风，破万里浪”的迅猛发展:《辉煌中国》之《圆梦工程》透过港珠澳大桥、胡麻岭隧道、郑万铁路、复兴号、上海洋山港自动化码头、中国移动互联网等一个个超级工程，领略五年来一张张中国基础建设的大网，如何编织起人民走向幸福、美好的希望版图，托举起中华民族伟大复兴的中国梦。</p>
+<p>面对飘扬的国旗亿万双眼睛注视五星红旗冉冉升起,亿万颗心灵伴随祖国母亲一起搏动。抬头仰望,发现鲜艳的国旗已在共和国的上空飘扬了半个世纪。在世纪之交的今天,共和国已走过了七十个春秋。七十年前，”洋油” ”洋面” 还充斥着中国的大江南北;七十年后，许多国产已遍及世界各地。</p>
+<p>七十年前,我们的祖先还把汉代的耕梨插进二十世纪的农田;七十年后,现代化机械已开进中国的农家。<br>七十年前,港澳游子还站在金门望厦门;五十年后,归国侨胞已站在厦门望金门。-样的遥望,却是两样的情形。<br>七十年里，萧瑟秋风今又是，换了人间。</p>
+<p>依旧淳朴中隐着聪慧,荒中透着俊季，可再也听不见那血泪凝结的叹息,更也找不到贫贱不堪的足印，再也寻不见你昔日枯瘦蹒跚的身影,麦穗和齿轮构筑的太阳,伸出金色的臂膀擎着一片晴空,逶道而来,斩断阴霾的剑光在普照众生的沧桑。</p>
+<p>你傲然屹立于世界的东方,不管身边的风云如何的变幻,始终坚定地沿真理的方向勇往直前。你般迎着八面春风,在辐射的节奏里,眺望着更加灿烂的前程。</p>
+<p>我灵魂的纤绳永系向你风帆的桅杆;我手中的彩笔,永远写你壮重的风姿;</p>
+<p>面对飘扬国旗，血液在奔涌，思绪在沸腾,理想的根须在土里扎得更深。面对飘扬的国旗,我们已把自己溶入母亲炙热的胸襟。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -2147,23 +2482,6 @@ Person p = new Person();
       </tags>
   </entry>
   <entry>
-    <title>8.30日报</title>
-    <url>/2019/08/30/2019-08-30-30ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天开始学node的socket模块，在网上查了各种资源勉强做出来一个简易的多人聊天室，也遇到了一些问题。</code>  </p>
-</blockquote>
-<h1 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h1><p>在关闭端口时总会出现关闭不完全的情况，我在网上寻找了这种方法：</p>
-<p>lsof -i :端口号            查询该端口占用情况</p>
-<p>kill -9  查询出对应的PID                  关闭端口进程</p>
-]]></content>
-      <categories>
-        <category>总结</category>
-      </categories>
-      <tags>
-        <tag>端口占用</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.30技术文档</title>
     <url>/2019/08/30/2019-08-30-30jishu/</url>
     <content><![CDATA[<h1 id="js的常用语法（整理版）"><a href="#js的常用语法（整理版）" class="headerlink" title="js的常用语法（整理版）"></a>js的常用语法（整理版）</h1><blockquote>
@@ -2227,6 +2545,23 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.30日报</title>
+    <url>/2019/08/30/2019-08-30-30ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天开始学node的socket模块，在网上查了各种资源勉强做出来一个简易的多人聊天室，也遇到了一些问题。</code>  </p>
+</blockquote>
+<h1 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h1><p>在关闭端口时总会出现关闭不完全的情况，我在网上寻找了这种方法：</p>
+<p>lsof -i :端口号            查询该端口占用情况</p>
+<p>kill -9  查询出对应的PID                  关闭端口进程</p>
+]]></content>
+      <categories>
+        <category>总结</category>
+      </categories>
+      <tags>
+        <tag>端口占用</tag>
       </tags>
   </entry>
   <entry>
@@ -2354,6 +2689,21 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
+    <title>8.28日报</title>
+    <url>/2019/08/28/2019-08-28-28ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天下午学习了JS基础，学习了 定时器和选择对象并修改内容，还看了一些基础语法。</code>  </p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天学习的新任务是JS ，原来学过一些php也有一些基础学得还不算慢，总体来说今天的学习效率还可以。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.28技术文档</title>
     <url>/2019/08/28/2019-08-28-28jishu/</url>
     <content><![CDATA[<h1 id="JS常用知识"><a href="#JS常用知识" class="headerlink" title="JS常用知识"></a>JS常用知识</h1><blockquote>
@@ -2391,21 +2741,6 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8.28日报</title>
-    <url>/2019/08/28/2019-08-28-28ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天下午学习了JS基础，学习了 定时器和选择对象并修改内容，还看了一些基础语法。</code>  </p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天学习的新任务是JS ，原来学过一些php也有一些基础学得还不算慢，总体来说今天的学习效率还可以。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -2840,6 +3175,25 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
+    <title>8.21日报</title>
+    <url>/2019/08/21/2019-08-21-21ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
+]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.21技术文档</title>
     <url>/2019/08/21/2019-08-21-21jishu/</url>
     <content><![CDATA[<h1 id="git常用命令整理"><a href="#git常用命令整理" class="headerlink" title="git常用命令整理"></a>git常用命令整理</h1><blockquote>
@@ -3065,25 +3419,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.21日报</title>
-    <url>/2019/08/21/2019-08-21-21ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
-]]></content>
-      <categories>
-        <category>命令</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.20日报</title>
     <url>/2019/08/20/2019-08-20-20ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
@@ -3179,8 +3514,8 @@ onload          浏览器已完成页面的加载
         <category>系统与命令</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>ubuntu</tag>
+        <tag>git</tag>
       </tags>
   </entry>
 </search>

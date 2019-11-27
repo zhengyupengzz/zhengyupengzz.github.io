@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">11.16技术分享 | pengpeng</title>
+  <title itemprop="name">11.26Java学习进度 | pengpeng</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -332,7 +332,7 @@
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      11.16技术分享</h1>
+      11.26Java学习进度</h1>
       <p class="entry-census">
         <span>
           <a href="">
@@ -344,7 +344,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2019-11-16<span class="bull">
+        2019-11-26<span class="bull">
         </span></p>
     </header>
   </div>
@@ -357,32 +357,119 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="11-16技术分享"><a href="#11-16技术分享" class="headerlink" title="11.16技术分享"></a>11.16技术分享</h1><h2 id="idea运行tomcat控制台乱码"><a href="#idea运行tomcat控制台乱码" class="headerlink" title="idea运行tomcat控制台乱码:"></a>idea运行tomcat控制台乱码:</h2><h3 id="1-首先设置idea的编码格式"><a href="#1-首先设置idea的编码格式" class="headerlink" title="1.首先设置idea的编码格式:"></a>1.首先设置idea的编码格式:</h3><p>File–&gt;Settings–&gt;File Encodings</p>
-<p><img src="https://s2.ax1x.com/2019/11/20/MWMwvV.md.png" alt="idea编码格式">  </p>
-<p>将所有编码格式统一设置成UTF-8。  </p>
-<h3 id="2-再设置tomcat的编码格式"><a href="#2-再设置tomcat的编码格式" class="headerlink" title="2.再设置tomcat的编码格式:"></a>2.再设置tomcat的编码格式:</h3><p><img src="https://s2.ax1x.com/2019/11/20/MWMyE4.png" alt="tomcat设置">  </p>
-<p>改变VM options为-Dfile.encoding=UTF-8:<br><img src="https://s2.ax1x.com/2019/11/20/MWMrbF.md.png" alt="tomcat编码格式"> </p>
-<p><strong><code>完成上面的设置后还会有乱码,不要急</code></strong>  </p>
-<h3 id="3-配置idea的文件设置"><a href="#3-配置idea的文件设置" class="headerlink" title="3.配置idea的文件设置:"></a>3.配置idea的文件设置:</h3><p>找到idea图标,右键,打开文件位置找到  </p>
-<p><code>idea.exe.vmoptions</code>和<code>idea64.exe.vmoptions</code>文件  并打开文件  </p>
-<p>在文件后面添加一行：-Dfile.encoding=UTF-8   </p>
-<p>idae中的设置配置也要修改</p>
-<p>help–&gt;Edit Custom VM Options…  </p>
-<p>打开此配置 也在最后一行添加:-Dfile.encoding=UTF-8  </p>
-<h3 id="4-修改tomcat的运行编码格式"><a href="#4-修改tomcat的运行编码格式" class="headerlink" title="4.修改tomcat的运行编码格式:"></a>4.修改tomcat的运行编码格式:</h3><p>进入到tomcat的根目录的bin目录下  </p>
-<p>此时可以在文件地址栏输入cmd来启动dos窗口执行  </p>
-<pre><code>catalina.bat run
-</code></pre><p>(或者也可以直接cmd  然后cd到bin目录下 执行此命令)  </p>
-<p>之后再用命令切换cmd的编码格式<br>“chcp 65001”切换cmd为utf8，”chcp 936”切换cmd为gbk  </p>
-<p>这里我们使用chcp 65001来切换成utf8  </p>
-<p>执行之后可以再运行一下</p>
-<pre><code>catalina.bat run
-</code></pre><p>看看命令是否都编程正常汉语,若都成正常汉语就是成功了!</p>
-<p>然后重启idea即可.  </p>
-<p><code>最后提一句:</code>  </p>
-<p>自己改tomcat的logging.properties为GBk会导致调试时get/post参数乱码  </p>
-<p>还是都改成UTF8稳妥。</p>
+          <h1 id="Session技术-JSP引擎-JSP指令"><a href="#Session技术-JSP引擎-JSP指令" class="headerlink" title="Session技术,JSP引擎,JSP指令:"></a>Session技术,JSP引擎,JSP指令:</h1><p><strong>Session技术(会话):</strong><br>基于Cookie实现的技术,是Java中的一个键值对的容器,就像我们常用的Map集合<br>技术原理:  </p>
+<ol>
+<li>浏览器访问服务器时,服务器可以选择创建Session对象.  </li>
+<li>session对象在创建时,会生成一个id,我们称其为sessionid,sessionid是session的密钥, 是唯一的!  </li>
+<li>session创建完毕后,会自动将sessionid以cookie的形式存储到用户的浏览器中.  </li>
+<li>当浏览器再次访问服务器时,会自动携带sessionid发送给服务器.  </li>
+<li>服务器得到session后,会去匹配找到对应的session对象,供用户使用  </li>
+</ol>
+<p><strong>如何获取session对象:</strong><br>在Java中,session是一个Java对象,对象的类型为HttpSession<br>获取Session对象的格式:  </p>
+<ol>
+<li><p>无参方法:<br>HttpSession session = request.getSession();<br>内部调用了一参方法, 且传入true  </p>
+</li>
+<li><p>一参方法:<br>HttpSession session = request.getSession(boolean isNew);<br>用于获取session参数:<br>true: 根据当前浏览器传入的sessionid,寻找session对象并返回, 如果不存在, 则创建新的session并返回<br>false: 根据当前浏览器传入的sessionid,寻找session对象并返回, 如果不存在,则返回null</p>
+</li>
+</ol>
+<p><strong>session的常用方法:</strong>  </p>
+<ol>
+<li>存储数据  <pre><code>session.setAttribute(String key , Object value);
+</code></pre></li>
+<li>获取数据  <pre><code>session.getAttribute(String key);
+</code></pre></li>
+<li>删除数据  <pre><code>session.removeAttribute(String key);
+</code></pre></li>
+<li>销毁session(应用场景: 基本是退出登录)  <pre><code>session.invalidate();
+</code></pre></li>
+</ol>
+<p><strong>session的存活时长:</strong><br>session的默认时长为: 30分钟<br>指的是: 用户的上一次访问大于30分钟时,session自动删除  </p>
+<p>设置Session时长:  </p>
+<ol>
+<li>修改单个session的时长:  <pre><code>session.setMaxInactiveInterval(int 秒);
+</code></pre></li>
+<li>修改tomcat下,所有session的默认时长:<br>独立环境: 寻找到tomcat/conf/web.xml文件<br>开发环境: 寻找Servers项目中 web.xml </li>
+</ol>
+<p>修改web.xml中 session-config节点  </p>
+<pre><code>&lt;session-config&gt;
+    &lt;session-timeout&gt;数值分钟&lt;/session-timeout&gt;
+&lt;/session-config&gt;
+</code></pre><p><strong>session的优缺点:</strong>  </p>
+<p>优点:  </p>
+<ol>
+<li>数据存储在服务器中,安全  </li>
+<li>session存储时的值类型为: Object,可以存储任意类型数据  </li>
+<li>可存储的数据大小,理论上是无上限的  </li>
+</ol>
+<p>缺点:<br>数据在服务器的内存中存储,内存通常是有限的, 会对服务器造成大量的压力, 很容易耗尽服务器资源  </p>
+<p><strong>Cookie技术和Session技术不是互斥的:</strong><br>Cookie和Session是结合使用的:  </p>
+<ol>
+<li>对于安全不敏感的数据,建议使用Cookie存储  </li>
+<li>对于安全敏感的数据,建议使用session存储  </li>
+<li>对于安全敏感,且较大的数据,存储在数据库  </li>
+</ol>
+<p><strong>JSP引擎:</strong><br>引擎原理:<br>JSP引擎用于将JSP文件,转换为Servlet  </p>
+<ol>
+<li>在服务器启动时, JSP引擎读取.jsp文件.  </li>
+<li>将文件转换为Servlet的代码,并给servlet添加映射地址为jsp的文件名称.  </li>
+<li>当用户浏览器访问jsp文件名称时, 其实请求的不是jsp文件, 而是生成的servlet  </li>
+<li>servlet负责给浏览器进行响应  </li>
+</ol>
+<p><strong>JSP语法结构:</strong><br>JSP文件保存的路径: webContent目录下<br>JSP文件 可以包含HTML代码, Java代码,以及JSP特有的标记.  </p>
+<p><strong>Java代码 声明区:</strong><br>指的是Java的成员代码位置, 在JSP声明区中编写的Java代码,会生成到servlet的成员位置.<br>语法:  </p>
+<pre><code>&lt;%!
+    这里用于编写Java代码,且会生成到声明区
+%&gt;
+</code></pre><p><strong>Java代码 执行区:</strong><br>指的是Servlet的service方法中. 用户每次请求都会执行<br>语法:  </p>
+<pre><code>&lt;%!
+    Java代码
+%&gt;
+</code></pre><p><strong>表达式:</strong><br>用于快速的将Java代码中的变量输出到网页中.<br>语法:  </p>
+<pre><code>&lt;%=变量名%&gt;  
+</code></pre><p>转换的Java:  </p>
+<pre><code>out.print(变量名);
+</code></pre><p><strong>JSP中如何编写注释:</strong>  </p>
+<p>因为JSP文件包含了三种语法结构(Java/HTML/jsp)<br>所以,三种语法结构的注释,都可以起到注释的效果:<br>html注释:  </p>
+<pre><code>&lt;!--html--&gt;  
+</code></pre><p>JSP中,HTML的注释会被JSP引擎认为是HTML代码,会转换为</p>
+<pre><code>out.write(&quot;&lt;!----&gt;&quot;);  
+</code></pre><p>Java注释:  </p>
+<pre><code>/*Java注释*/
+</code></pre><p>JSP中,Java的注释会被JSP引擎认为是Java代码,会原封不动的放到_jsp.java文件中  </p>
+<p>JSP注释:  </p>
+<pre><code>&lt;%--JSP注释--%&gt;
+</code></pre><p>在JSP引擎将jsp文件 转换为.java文件时,会忽略JSP注释的部分  </p>
+<p><strong>JSP三大指令:</strong><br>指令格式:  </p>
+<pre><code>&lt;$@ 指令名称 属性名=值 属性名2=值 ... 属性n=值$&gt;
+</code></pre><p><strong>page指令:</strong>  </p>
+<p>用于设置页面<br>完整格式:  </p>
+<pre><code>&lt;%@ page
+    language=&quot;java&quot;
+    extends=&quot;继承的类&quot;
+    buffer=&quot;数值|none&quot;  -- 缓冲大小,none表示不缓冲,默认是8kb
+    session=&quot;true|false&quot;  --true:自动创建session
+    autoFlush=&quot;true|false&quot;  -- 缓冲器自动清除,默认是true
+    isThreadSafe=&quot;true|false&quot;  --&lt;%%&gt;中的代码是否是同步的,true表示同步,默认是false  
+    contentType=&quot;text/html;charset=utf-8&quot;  -- 内容类型以及编码格式    
 
+    errorPage=&quot;网页地址&quot;  -- 当JSP代码出错误,页面由指定地址进行显示*  
+
+    isErrorPage=&quot;true|false&quot;  -- true:当前页面是处理错误的页面,只有为true时,才可以查看异常信息.*  
+
+    import=&quot;导包列表&quot;  -- 属性值是一个或多个导入的包,包与包之间使用逗号隔开即可
+
+%&gt;
+</code></pre><p><strong>指定项目全局错误页面:</strong>  </p>
+<p>编写项目的web.xml<br>在根节点中,加入子节点:  </p>
+<pre><code>&lt;error-page&gt;
+    &lt;error-code&gt;404&lt;/error-code&gt;
+    &lt;location&gt;处理404的页面地址&lt;/location&gt;
+&lt;/error-page&gt;
+&lt;error-page&gt;
+    &lt;error-code&gt;500&lt;/error-code&gt;
+    &lt;location&gt;处理500的页面地址&lt;/location&gt;
+&lt;/error-page&gt;
+</code></pre>
         </div>
         <!-- .entry-content -->
         <!-- <div class="single-reward">
@@ -413,7 +500,7 @@
           
             <div class="post-nepre half previous">
           
-            <a href="/2019/11/16/2019-11-16-16ribao/" rel="prev">
+            <a href="/2019/11/27/2019-11-27-27ribao/" rel="prev">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
               </div>
@@ -421,7 +508,7 @@
               Previous Post</span>
               <div class="info">
                 <h3>
-                11.16JAVA学习进度</h3>
+                11.27Java学习进度</h3>
                 <hr>
               </div>
             </a>
@@ -431,7 +518,7 @@
           
             <div class="post-nepre half next">
           
-            <a href="/2019/11/15/2019-11-15-15ribao/" rel="next">
+            <a href="/2019/11/25/2019-11-25-25ribao/" rel="next">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
               </div>
@@ -439,7 +526,7 @@
               Next Post</span>
               <div class="info">
                 <h3>
-                11.15JAVA学习进度</h3>
+                11.25Java学习进度</h3>
                 <hr>
               </div>
             </a>
