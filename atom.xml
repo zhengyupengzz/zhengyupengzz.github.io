@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-11-27T14:02:20.803Z</updated>
+  <updated>2019-12-05T08:01:16.721Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,199 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>12.04Java学习进度</title>
+    <link href="/2019/12/04/2019-12-04-04ribao/"/>
+    <id>/2019/12/04/2019-12-04-04ribao/</id>
+    <published>2019-12-03T16:00:00.000Z</published>
+    <updated>2019-12-05T08:01:16.721Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Bean-参数的注入&quot;&gt;&lt;a href=&quot;#Bean-参数的注入&quot; class=&quot;headerlink&quot; title=&quot;Bean 参数的注入:&quot;&gt;&lt;/a&gt;Bean 参数的注入:&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Bean 参数的注入 
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="/categories/Java/"/>
+    
+    
+      <category term="Bean 参数的注入" scheme="/tags/Bean-%E5%8F%82%E6%95%B0%E7%9A%84%E6%B3%A8%E5%85%A5/"/>
+    
+      <category term="Spring DAO 对JDBC的改进" scheme="/tags/Spring-DAO-%E5%AF%B9JDBC%E7%9A%84%E6%94%B9%E8%BF%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>12.04Java学习进度</title>
+    <link href="/2019/12/04/2019-12-05-05ribao/"/>
+    <id>/2019/12/04/2019-12-05-05ribao/</id>
+    <published>2019-12-03T16:00:00.000Z</published>
+    <updated>2019-12-05T07:55:40.239Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;#
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="/categories/Java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>12.03Java学习进度</title>
+    <link href="/2019/12/03/2019-12-03-03ribao/"/>
+    <id>/2019/12/03/2019-12-03-03ribao/</id>
+    <published>2019-12-02T16:00:00.000Z</published>
+    <updated>2019-12-04T06:15:05.784Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;bean-对象的延迟实例化-DI-依赖注入-组件扫描&quot;&gt;&lt;a href=&quot;#bean-对象的延迟实例化-DI-依赖注入-组件扫描&quot; class=&quot;headerlink&quot; title=&quot;bean 对象的延迟实例化,DI(依赖注入),组件扫描:&quot;&gt;&lt;/a&gt;bean
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="/categories/Java/"/>
+    
+    
+      <category term="DI(依赖注入)" scheme="/tags/DI-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/"/>
+    
+      <category term="组件扫描" scheme="/tags/%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>12.02Java学习进度</title>
+    <link href="/2019/12/02/2019-12-02-02ribao/"/>
+    <id>/2019/12/02/2019-12-02-02ribao/</id>
+    <published>2019-12-01T16:00:00.000Z</published>
+    <updated>2019-12-03T02:48:40.985Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;项目编程思想-Spring-框架的构成-IOC&quot;&gt;&lt;a href=&quot;#项目编程思想-Spring-框架的构成-IOC&quot; class=&quot;headerlink&quot; title=&quot;项目编程思想,Spring 框架的构成,IOC:&quot;&gt;&lt;/a&gt;项目编程思想,Spring
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="/categories/Java/"/>
+    
+    
+      <category term="项目编程思想" scheme="/tags/%E9%A1%B9%E7%9B%AE%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/"/>
+    
+      <category term="Spring 框架" scheme="/tags/Spring-%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11.30Java学习进度</title>
+    <link href="/2019/11/30/2019-11-30-30ribao/"/>
+    <id>/2019/11/30/2019-11-30-30ribao/</id>
+    <published>2019-11-29T16:00:00.000Z</published>
+    <updated>2019-12-02T00:39:17.465Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Ajax-Jquery-Ajax请求-缓存问题&quot;&gt;&lt;a href=&quot;#Ajax-Jquery-Ajax请求-缓存问题&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="/categories/Java/"/>
+    
+    
+      <category term="Jquery" scheme="/tags/Jquery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11.29Java学习进度</title>
+    <link href="/2019/11/29/2019-11-29-29ribao/"/>
+    <id>/2019/11/29/2019-11-29-29ribao/</id>
+    <published>2019-11-28T16:00:00.000Z</published>
+    <updated>2019-11-30T01:35:09.509Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Ajax-GSON-jar&quot;&gt;&lt;a href=&quot;#Ajax-GSON-jar&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="/categories/Java/"/>
+    
+    
+      <category term="Ajax" scheme="/tags/Ajax/"/>
+    
+      <category term="GSON.jar" scheme="/tags/GSON-jar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11.28Java学习进度</title>
+    <link href="/2019/11/28/2019-11-28-28ribao/"/>
+    <id>/2019/11/28/2019-11-28-28ribao/</id>
+    <published>2019-11-27T16:00:00.000Z</published>
+    <updated>2019-11-28T15:55:09.579Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JSTL常用标签-自定义标签-web三大组件&quot;&gt;&lt;a href=&quot;#JSTL常用标签-自定义标签-web三大组件&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="/categories/Java/"/>
+    
+    
+      <category term="JSTL标签" scheme="/tags/JSTL%E6%A0%87%E7%AD%BE/"/>
+    
+      <category term="自定义标签" scheme="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%87%E7%AD%BE/"/>
+    
+      <category term="web三大组件" scheme="/tags/web%E4%B8%89%E5%A4%A7%E7%BB%84%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>11.27Java学习进度</title>
@@ -159,32 +352,6 @@
   </entry>
   
   <entry>
-    <title>11.20心得</title>
-    <link href="/2019/11/20/2019-11-20-20xinde/"/>
-    <id>/2019/11/20/2019-11-20-20xinde/</id>
-    <published>2019-11-19T16:00:00.000Z</published>
-    <updated>2019-11-20T03:13:06.709Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;对于博客模板的修改&quot;&gt;&lt;a href=&quot;#对于博客模板的修改&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="心得" scheme="/categories/%E5%BF%83%E5%BE%97/"/>
-    
-    
-      <category term="博客" scheme="/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
     <title>11.20Java学习进度</title>
     <link href="/2019/11/20/2019-11-20-20ribao/"/>
     <id>/2019/11/20/2019-11-20-20ribao/</id>
@@ -209,6 +376,32 @@
       <category term="tomcat" scheme="/tags/tomcat/"/>
     
       <category term="HttpServlet" scheme="/tags/HttpServlet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11.20心得</title>
+    <link href="/2019/11/20/2019-11-20-20xinde/"/>
+    <id>/2019/11/20/2019-11-20-20xinde/</id>
+    <published>2019-11-19T16:00:00.000Z</published>
+    <updated>2019-11-20T03:13:06.709Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;对于博客模板的修改&quot;&gt;&lt;a href=&quot;#对于博客模板的修改&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="心得" scheme="/categories/%E5%BF%83%E5%BE%97/"/>
+    
+    
+      <category term="博客" scheme="/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
@@ -241,6 +434,32 @@
   </entry>
   
   <entry>
+    <title>11.16技术分享</title>
+    <link href="/2019/11/16/2019-11-16-16jishu/"/>
+    <id>/2019/11/16/2019-11-16-16jishu/</id>
+    <published>2019-11-15T16:00:00.000Z</published>
+    <updated>2019-11-22T02:07:05.208Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;11-16技术分享&quot;&gt;&lt;a href=&quot;#11-16技术分享&quot; class=&quot;headerlink&quot; title=&quot;11.16技术分享&quot;&gt;&lt;/a&gt;11.16技术分享&lt;/h1&gt;&lt;h2 id=&quot;idea运行tomcat控制台乱码&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="分享" scheme="/categories/%E5%88%86%E4%BA%AB/"/>
+    
+    
+      <category term="idea控制台乱码" scheme="/tags/idea%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
     <title>11.16JAVA学习进度</title>
     <link href="/2019/11/16/2019-11-16-16ribao/"/>
     <id>/2019/11/16/2019-11-16-16ribao/</id>
@@ -265,32 +484,6 @@
       <category term="数据库优化" scheme="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/"/>
     
       <category term="XML" scheme="/tags/XML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11.16技术分享</title>
-    <link href="/2019/11/16/2019-11-16-16jishu/"/>
-    <id>/2019/11/16/2019-11-16-16jishu/</id>
-    <published>2019-11-15T16:00:00.000Z</published>
-    <updated>2019-11-22T02:07:05.208Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;11-16技术分享&quot;&gt;&lt;a href=&quot;#11-16技术分享&quot; class=&quot;headerlink&quot; title=&quot;11.16技术分享&quot;&gt;&lt;/a&gt;11.16技术分享&lt;/h1&gt;&lt;h2 id=&quot;idea运行tomcat控制台乱码&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="分享" scheme="/categories/%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="idea控制台乱码" scheme="/tags/idea%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81/"/>
     
   </entry>
   
@@ -379,218 +572,6 @@
       <category term="JDBC" scheme="/tags/JDBC/"/>
     
       <category term="oracle常用表结构操作" scheme="/tags/oracle%E5%B8%B8%E7%94%A8%E8%A1%A8%E7%BB%93%E6%9E%84%E6%93%8D%E4%BD%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11.12技术分享</title>
-    <link href="/2019/11/12/2019-11-12-12jishu/"/>
-    <id>/2019/11/12/2019-11-12-12jishu/</id>
-    <published>2019-11-11T16:00:00.000Z</published>
-    <updated>2019-11-20T03:13:27.427Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;批处理-强制删除&quot;&gt;&lt;a href=&quot;#批处理-强制删除&quot; class=&quot;headerlink&quot; title=&quot;批处理:强制删除&quot;&gt;&lt;/a&gt;批处理:强制删除&lt;/h1&gt;&lt;h4 id=&quot;批处理文件编辑&quot;&gt;&lt;a href=&quot;#批处理文件编辑&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="分享" scheme="/categories/%E5%88%86%E4%BA%AB/"/>
-    
-    
-      <category term="强制删除" scheme="/tags/%E5%BC%BA%E5%88%B6%E5%88%A0%E9%99%A4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>10.26JAVA学习进度</title>
-    <link href="/2019/10/26/2019-10-26-26ribao/"/>
-    <id>/2019/10/26/2019-10-26-26ribao/</id>
-    <published>2019-10-25T16:00:00.000Z</published>
-    <updated>2019-11-20T03:12:54.683Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;10-26Java学习进度&quot;&gt;&lt;a href=&quot;#10-26Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;10.26Java学习进度&quot;&gt;&lt;/a&gt;10.26Java学习进度&lt;/h1&gt;&lt;h4
-        
-      
-    
-    </summary>
-    
-      <category term="java" scheme="/categories/java/"/>
-    
-    
-      <category term="泛型机制" scheme="/tags/%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6/"/>
-    
-      <category term="Queue集合" scheme="/tags/Queue%E9%9B%86%E5%90%88/"/>
-    
-      <category term="Set集合" scheme="/tags/Set%E9%9B%86%E5%90%88/"/>
-    
-      <category term="Map集合" scheme="/tags/Map%E9%9B%86%E5%90%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>10.25JAVA学习进度</title>
-    <link href="/2019/10/25/2019-10-25-25ribao/"/>
-    <id>/2019/10/25/2019-10-25-25ribao/</id>
-    <published>2019-10-24T16:00:00.000Z</published>
-    <updated>2019-11-22T02:10:07.259Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;10-25Java学习进度&quot;&gt;&lt;a href=&quot;#10-25Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;10.25Java学习进度&quot;&gt;&lt;/a&gt;10.25Java学习进度&lt;/h1&gt;&lt;h4
-        
-      
-    
-    </summary>
-    
-      <category term="java" scheme="/categories/java/"/>
-    
-    
-      <category term="String类" scheme="/tags/String%E7%B1%BB/"/>
-    
-      <category term="Collection集合" scheme="/tags/Collection%E9%9B%86%E5%90%88/"/>
-    
-      <category term="List集合" scheme="/tags/List%E9%9B%86%E5%90%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>10.24JAVA学习进度</title>
-    <link href="/2019/10/24/2019-10-24-24ribao/"/>
-    <id>/2019/10/24/2019-10-24-24ribao/</id>
-    <published>2019-10-23T16:00:00.000Z</published>
-    <updated>2019-11-20T03:12:26.899Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;10-24Java学习进度&quot;&gt;&lt;a href=&quot;#10-24Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;10.24Java学习进度&quot;&gt;&lt;/a&gt;10.24Java学习进度&lt;/h1&gt;&lt;h4
-        
-      
-    
-    </summary>
-    
-      <category term="java" scheme="/categories/java/"/>
-    
-    
-      <category term="String类" scheme="/tags/String%E7%B1%BB/"/>
-    
-      <category term="Object类," scheme="/tags/Object%E7%B1%BB/"/>
-    
-      <category term="包装类和数学处理类," scheme="/tags/%E5%8C%85%E8%A3%85%E7%B1%BB%E5%92%8C%E6%95%B0%E5%AD%A6%E5%A4%84%E7%90%86%E7%B1%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>10.23JAVA学习进度</title>
-    <link href="/2019/10/23/2019-10-23-23ribao/"/>
-    <id>/2019/10/23/2019-10-23-23ribao/</id>
-    <published>2019-10-22T16:00:00.000Z</published>
-    <updated>2019-11-20T03:12:29.045Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;10-23Java学习进度&quot;&gt;&lt;a href=&quot;#10-23Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;10.23Java学习进度&quot;&gt;&lt;/a&gt;10.23Java学习进度&lt;/h1&gt;&lt;h4
-        
-      
-    
-    </summary>
-    
-      <category term="java" scheme="/categories/java/"/>
-    
-    
-      <category term="访问控制" scheme="/tags/%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/"/>
-    
-      <category term="关键字" scheme="/tags/%E5%85%B3%E9%94%AE%E5%AD%97/"/>
-    
-      <category term="接口" scheme="/tags/%E6%8E%A5%E5%8F%A3/"/>
-    
-      <category term="多态" scheme="/tags/%E5%A4%9A%E6%80%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>10.22JAVA学习进度</title>
-    <link href="/2019/10/22/2019-10-22-22ribao/"/>
-    <id>/2019/10/22/2019-10-22-22ribao/</id>
-    <published>2019-10-21T16:00:00.000Z</published>
-    <updated>2019-11-20T03:12:24.086Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;10-22Java学习进度&quot;&gt;&lt;a href=&quot;#10-22Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;10.22Java学习进度&quot;&gt;&lt;/a&gt;10.22Java学习进度&lt;/h1&gt;&lt;h4
-        
-      
-    
-    </summary>
-    
-      <category term="java" scheme="/categories/java/"/>
-    
-    
-      <category term="封装" scheme="/tags/%E5%B0%81%E8%A3%85/"/>
-    
-      <category term="static关键字" scheme="/tags/static%E5%85%B3%E9%94%AE%E5%AD%97/"/>
-    
-      <category term="继承与方法的重写" scheme="/tags/%E7%BB%A7%E6%89%BF%E4%B8%8E%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E5%86%99/"/>
-    
-      <category term="单例设计模式" scheme="/tags/%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>10.21JAVA学习进度</title>
-    <link href="/2019/10/21/2019-10-21-21ribao/"/>
-    <id>/2019/10/21/2019-10-21-21ribao/</id>
-    <published>2019-10-20T16:00:00.000Z</published>
-    <updated>2019-11-20T03:12:31.969Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;10-21Java学习进度&quot;&gt;&lt;a href=&quot;#10-21Java学习进度&quot; class=&quot;headerlink&quot; title=&quot;10.21Java学习进度&quot;&gt;&lt;/a&gt;10.21Java学习进度&lt;/h1&gt;&lt;h4
-        
-      
-    
-    </summary>
-    
-      <category term="java" scheme="/categories/java/"/>
-    
-    
-      <category term="封装" scheme="/tags/%E5%B0%81%E8%A3%85/"/>
-    
-      <category term="static关键字" scheme="/tags/static%E5%85%B3%E9%94%AE%E5%AD%97/"/>
-    
-      <category term="单例设计" scheme="/tags/%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   

@@ -1,6 +1,516 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>12.04Java学习进度</title>
+    <url>/2019/12/04/2019-12-04-04ribao/</url>
+    <content><![CDATA[<h1 id="Bean-参数的注入"><a href="#Bean-参数的注入" class="headerlink" title="Bean 参数的注入:"></a>Bean 参数的注入:</h1><ol>
+<li><p>Bean 参数的注入  </p>
+<ol>
+<li>简单值的注入<br>八种基本类型 和 对应的封装类 枚举 String<br>在spring 容器中创建连接池对象  </li>
+<li>复杂值的注入<br>只要把上面的value 换成ref即可  </li>
+<li>集合参数的注入  </li>
+</ol>
+<ul>
+<li>Java中集合:<br>List Set Map Properties  </li>
+<li>List:  <pre><code>&lt;property name=&quot;&quot;&gt;
+&lt;list&gt;
+   &lt;value&gt;值&lt;/value&gt;
+   &lt;value&gt;值&lt;/value&gt;
+&lt;/list&gt;
+&lt;/property&gt;
+</code></pre></li>
+<li><p>Set  </p>
+<pre><code>&lt;property name=&quot;&quot;&gt;
+&lt;set&gt;
+   &lt;value&gt;值&lt;/value&gt;
+   &lt;value&gt;值&lt;/value&gt;
+&lt;/set&gt;
+&lt;/property&gt;
+</code></pre></li>
+<li><p>Map  </p>
+<pre><code>&lt;map&gt;
+   &lt;entry key=&quot;13888888888&quot; value=&quot;李白&quot;&gt;
+   &lt;/entry&gt;
+&lt;/map&gt;
+</code></pre></li>
+<li><p>Properties  </p>
+<pre><code>&lt;props&gt;
+   &lt;prop key=&quot;13888888888&quot; value=&quot;李白&quot;&gt;
+   &lt;/prop&gt;
+&lt;/props&gt;
+</code></pre></li>
+<li><p>集合参数单独定义  </p>
+<pre><code>&lt;util:list id=&quot;&quot;    &gt;
+&lt;util:set id=&quot;&quot;    &gt;
+&lt;util:map id=&quot;&quot;    &gt;
+&lt;util:properties id=&quot;&quot;    &gt;
+</code></pre></li>
+<li><p>Properties 单独定义时 可以关联一个.properties 文件  </p>
+</li>
+</ul>
+</li>
+<li><p>Spring DAO 对JDBC的改进<br>简化了DAO 实现类组件的编写 对jdbc的操作步骤做了简化和封装<br>提供了基于AOP的事务管理  </p>
+<pre><code>conn.setAutoCommit(false) 连接自动提交设为false状态
+conn.commit()
+</code></pre><p>对JDBC中的异常 做了封装 把原来的检查异常 封装成了继承自 运行异常的一个异常类<code>DataAccessException</code>  </p>
+</li>
+<li><p>SpringDAO的核心类<br>JdbcTemplate jdbc模板类<br>自动加载驱动 自动获取连接 自动获取sql执行环境 以及自动释放资源<br>JdbcDaoSupport jdbc DAO的支持类<br>这个类 可以提供模板对象  </p>
+</li>
+<li><p>Spring DAO 访问数据库的步骤 以查询某张表的数据量为例  </p>
+<ol>
+<li>建立一个银行账户表 并为表建立对应的序列 插入测试数据 提交  <pre><code>create table xdl_bank_account_29(
+id number constraint xdl_bank_account_29_id_pk primary key,
+acc _no varchar2(30) constraint xdl_bank_account_29_acc_no_uk unique,
+acc_password varchar2(30),
+acc_money number
+);
+create sequence xdl_bank_account_29_id_seq;
+</code></pre></li>
+<li>建立一个项目 导入jar包(ioc aop dao 数据库驱动 连接池) 拷贝配置文件到src下  </li>
+<li>编写DAO接口  </li>
+<li>编写DAO的实现类 继承 JdbcDaoSupport 利用模板完成查询  </li>
+<li>开启组件扫描 在DAO实现类上打对应的标注  同时给JdbcDaoSupport 这个类 注入一个 dataSource 对象  </li>
+<li>获取DAO的实现类 测试  </li>
+</ol>
+</li>
+</ol>
+<ol start="5">
+<li>重新建立一个项目 然后使用Spring DAO 访问数据库的步骤 完成<br>根据id 查询银行账号  <ol>
+<li>建立一个项目 导入jar包(ioc aop dao 数据库驱动 连接池) 拷贝配置文件到src下  </li>
+<li>根据表建立对应的实体类 XdlBankAccount  </li>
+<li>编写DAO接口  </li>
+<li>编写DAO的实现类 继承JdbcSupport 利用模板完成查询  </li>
+<li>开启组件扫描 在DAO 实现类上打对应的标注 同时给JdbcDaoSupport 这个类 注入一个 dataSource 对象  </li>
+<li>获得DAO的实现类 测试  </li>
+</ol>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Bean 参数的注入</tag>
+        <tag>Spring DAO 对JDBC的改进</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>12.04Java学习进度</title>
+    <url>/2019/12/04/2019-12-05-05ribao/</url>
+    <content><![CDATA[<p># </p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>12.03Java学习进度</title>
+    <url>/2019/12/03/2019-12-03-03ribao/</url>
+    <content><![CDATA[<h1 id="bean-对象的延迟实例化-DI-依赖注入-组件扫描"><a href="#bean-对象的延迟实例化-DI-依赖注入-组件扫描" class="headerlink" title="bean 对象的延迟实例化,DI(依赖注入),组件扫描:"></a>bean 对象的延迟实例化,DI(依赖注入),组件扫描:</h1><p><strong>bean 对象的延迟实例化:</strong><br>单例对象 默认是容器启动时 创建 可以通过bean标记的 <code>lazy-init=&quot;true&quot;</code> 就可以让对象推迟实例化 只有用到这个对象时 才会创建对象  </p>
+<p><strong>什么是 DI?</strong><br>Dependence Injection(依赖注入 或者 依赖注射)<br>用来解决组件之间的装配问题  </p>
+<p><strong>实现DI的方式:</strong>  </p>
+<ol>
+<li><p>setter 注入<br>一个组件装配值时 参考的是类型对应的set方法 格式如下:  </p>
+<pre><code>&lt;bean id=&quot;&quot; class=&quot;&quot;&gt;  
+ &lt;property name=&quot;set方法去掉set之后首字母小写&quot; value=&quot;值&quot;&gt;&lt;/property&gt;
+&lt;/bean&gt;
+</code></pre><p>如果装配的是一个复杂的对象 则需要把<code>value</code>改成<code>ref</code> 只有八种基本类型 和对应的封装类 枚举 String 这些可以使用<code>value</code> 其他使用<code>ref</code>  </p>
+</li>
+<li><p>构造器注入<br>把上面的<code>property</code> 换成 <code>constructor-arg</code><br>只不过我们不但可以使用name=”构造方法参数名” 还可以使用index 代表参数的位置 编号从0开始  </p>
+</li>
+<li><p>自动化注入<br>在bean 标记中使用autowire属性可以完成自动化注入<br>autowire 的取值有 byName byType constructor<br>byName 参考的是类型中对应的set方法<br>byType 参考的是类型中对应的成员变量类型 然后去容器中找类型匹配的组件 但是可能会找到多个 找到多个就崩溃<br>constructor 参考的是构造方法 只要有一个参数无法装配成功 则终止后续装配 但不报错   </p>
+</li>
+</ol>
+<p><strong>组件扫描:</strong>  </p>
+<ol>
+<li><p>什么是组件扫描<br>Component Scan  组件扫描<br>它是Spring 提供的一套基于标注(注解)的技术<br>目的是为了简化XML 的配置  </p>
+</li>
+<li><p>实现组件扫描的步骤  </p>
+<ol>
+<li>建立一个项目 导入jar包(ioc aop) 并拷贝配置文件到src下  </li>
+<li>在配置文件中开启组件扫描  <pre><code>&lt;context:component-scan base-package=&quot;包名&quot;/&gt;&gt;
+</code></pre></li>
+<li>建立一个类然后在类上打对应的标注  <pre><code>@Repository  持久层标注 一般加载DAO上
+@Service     服务层标注
+@Controller  控制层标注
+@Component   通用层标注
+d.创建Spring 容器 从容器中获取对象 进行测试
+</code></pre></li>
+</ol>
+</li>
+<li><p>和组件扫描相关的其他标注  </p>
+<pre><code> @Scope(&quot;singleton&quot;||&quot;prototype&quot;) 和对象作用域相关的标注
+ @PostContruct 加在初始化方法上
+ @PreDestroy  即将销毁对象时调用的方法
+</code></pre></li>
+<li><p>和DI相关的标注  </p>
+<ol>
+<li><p>@Value<br>它可以用在成员变量上 或者set方法上<br>如果是简单值(八种基本类型和封装类 String 枚举) 可以直接使用@Value(“值”)<br>但是如果是复杂对象的赋值 则需要使用Spring 的EL表达式赋值 从Spring容器中<br>进行取值 取值的语法是 把之前的$ 换成# 即可  </p>
+<ol start="2">
+<li><p>@Autowired<br>它可以用在成员变量 set方法 构造方法上<br>它可以用来解决复杂值的装配问题的<br>它优先使用类型进行匹配 如果类型有冲突 则会启用名字匹配进行装配<br>它可以和@Qualifier 配合使用 @Qualifier可以指定查找的组件名 如果找不到则程序报错<br>注意@Qualifier 不能用在构造方法上<br>当使用@Qualifier 指定名字查找时 对组件的依赖 属于强依赖(找不到程序就报错) 可以使用@Autowired的属性 <code>requried=false</code> 来接触这种强依赖 就是让程序尽量的去查找组件 找不到也不报错  </p>
+</li>
+<li><p>@Resource<br>它可以用在成员变量 set方法上<br>它也是用来解决复杂值的装配问题<br>它优先按照名字(参考的是set方法名 而不是参数的名字)进行匹配 如果名字不匹配 会启动类型进行匹配<br>它是JDK 提供的标注<br>可以通过 @Resource 的name 属性 指定查找的组件 如果找不到就报错 但是无法解除强依赖  </p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>DI(依赖注入)</tag>
+        <tag>组件扫描</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>12.02Java学习进度</title>
+    <url>/2019/12/02/2019-12-02-02ribao/</url>
+    <content><![CDATA[<h1 id="项目编程思想-Spring-框架的构成-IOC"><a href="#项目编程思想-Spring-框架的构成-IOC" class="headerlink" title="项目编程思想,Spring 框架的构成,IOC:"></a>项目编程思想,Spring 框架的构成,IOC:</h1><p><strong>项目编程思想:</strong><br>项目功能的开发思路 —以注册为准 MVC  </p>
+<ol>
+<li>根据需求文档 建立对应的表 xdl_user  </li>
+<li>根据表建立对应的实体类 XdlUser  </li>
+<li>定义一个DAO接口  </li>
+<li>利用jdbc的工具类结合JDBC访问数据库的五步完成功能  </li>
+<li>加一个工厂类 提供DAO的实现类 接触Service和DAO的耦合度  </li>
+<li>编写一个业务类 XdlUserService 注册 —测试 —-M  </li>
+<li>观察 register.jsp 让其发出register.do —-V  </li>
+<li>编写一个Servlet 充当控制器 接收页面请求参数  </li>
+<li>利用M层完成注册,根据注册结果做数据设置和页面跳转  </li>
+<li>利用上面的思想 设计快件列表的显示  </li>
+</ol>
+<p>利用上面的思想 设计快件列表的显示  </p>
+<ol>
+<li>建立快件对应的表  </li>
+<li>根据表建立对应的实体类  </li>
+<li>编写DAO 接口  </li>
+<li>编写DAO 的实现类  </li>
+<li>编写DAO 工厂类  </li>
+<li>编写Service 类 包装一个业务方法 可以提供快件列表的数据 —测试 M  </li>
+<li>编写控制器类 使用M层获取快件列表 放入request中 转发到快递列表对应的jsp —C  </li>
+<li><p>使用jstl + el 在jsp中展示快件列表 —V  </p>
+</li>
+<li><p>建立快件对应的表  </p>
+</li>
+<li>根据表建立对应的实体类  </li>
+<li>编写DAO 接口  </li>
+<li>编写DAO 的实现类  </li>
+<li>编写DAO 工厂类  </li>
+<li>编写Service 类 包装一个业务方法 可以提供快件列表的数据 —测试 M  </li>
+<li>编写一个控制器 使用M层获取快件列表 使用第三方jar包 把列表转成JSON字符串 写给浏览器  </li>
+<li>jsp 中发送ajax请求 把返回的数据 使用js 显示到页面中  </li>
+</ol>
+<p><strong>Spring 框架的构成:</strong>  </p>
+<ol>
+<li>IOC 控制反转模块 这是Spring框架的核心  </li>
+<li>DAO 数据访问模块 Spring框架对jdbc访问数据库做了简化和封装  </li>
+<li>WebMVC Spring 对web部分以及MVC框架的支持  </li>
+<li>AOP 面向切面编程 在面对对象的基础上做了扩展  </li>
+<li>ORM Mybatis 以面向对象的思想来操作数据库  </li>
+<li>JEE Spring 对远程调用消息服务 邮件服务等的支持  </li>
+</ol>
+<p><strong>什么是IOC:</strong>  </p>
+<p>Inversion Of Control 控制反转<br>程序中一个组件 用到另外一个组件时 由原来的new的方式 变成了由容器来进行 组件的创建 管理 和维护组件关系<br>这样做的好处是 可以大大降低组件之间的耦合度  </p>
+<p><strong>Spring容器:</strong>  </p>
+<p>在Spring中,任何Java类都被当成Bean组件通过容器管理和使用<br>Spring容器实现了IOC和AOP机制<br>Spring容器有ApplicationContext和BeanFactory两种类型  </p>
+<p><strong>Spring 容器的使用步骤:</strong><br>—使用容器获取日期类型的对象  </p>
+<ol>
+<li>建立一个项目 导入jar包(ioc) 拷贝Spring 容器对象的配置文件到src下  </li>
+<li>在spring容器配置文件中 写对象对应的配置  <pre><code>&lt;bean id=&quot;对象的引用名&quot; class=&quot;包名.类名&quot;&gt;&lt;/bean&gt;
+</code></pre></li>
+<li>创建Spring 容器对象 和从容器中获取对象  <pre><code>ApplicationContext app = new ClassPathXmlApplicationContext(&quot;配置文件名&quot;);
+app.getBean(&quot;对象的引用名&quot;,类型.class);
+</code></pre></li>
+</ol>
+<p><strong>Spring 容器创建对象的三种方式:</strong>  </p>
+<ol>
+<li><p>构造器方式实例化  </p>
+<pre><code>&lt;bean id=&quot;对象引用名&quot; class=&quot;包名.类名&quot;&gt;
+</code></pre><p>默认调用类型对应的无参构造  </p>
+<pre><code>Date date = new Date();
+</code></pre></li>
+<li><p>静态工厂方法实例化<br>使用类型 调用对应的静态方法来获取对象  </p>
+<pre><code>&lt;bean id=&quot;对象引用名&quot; class=&quot;包名.工厂类名&quot; factory-method=&quot;静态方法名&quot;&gt;&lt;/bean&gt;
+</code></pre></li>
+<li><p>实例工厂方法实例化<br>本质上这种方式是使用一个已经存在的对象 创建出另一个类型的对象  </p>
+<pre><code>&lt;bean id=&quot;对象引用名&quot; (可不写)class=&quot;包名.目标类名&quot; factory-method=&quot;成员方法名&quot; factory-bean=&quot;工厂对象的id&quot;&gt;&lt;/bean&gt;
+</code></pre></li>
+</ol>
+<p><strong>Spring 容器中Bean 对象的作用域:</strong><br>Spring容器中 默认一个对象的作用域是单例的 可以再spring 配置文件中通过bean标记的<br>scope 属性来指定对象的作用域 取值有 singleton 或者 prototype 其他的 如 request<br>session 等到web部分才涉及  </p>
+<p><strong>bean 对象的初始化和销毁:</strong>  </p>
+<ol>
+<li>对象的初始化:  </li>
+</ol>
+<p>bean 对象创建完成后 可以通过beans标记中的 default-init-method 属性指定初始化方法 , 由于这样会影响到spring容器中配置的所有对象 这样影响的范围比较大 所以对象对应的类型中国没有对应的初始化方法也不会报错.<br>也可以在bean标记中通过 init-method 来指定初始化方法 这样只影响到一个具体的对象 所以控制的比较精准 当这个对象对应的类型中没有对应的初始化方法时,程序会报错.  </p>
+<ol start="2">
+<li>对象的销毁:  </li>
+</ol>
+<p>bean 对象即将消亡 可以通过beans标记中的 default-destroy-method 属性指定销毁方法 由于这样会影响到spring容器中配置的所有对象, 这样影响的范围比较大 所以对象对应的类型中没有对应的销毁方法也不会报错.<br>也可以在bean标记中通过 destroy-method 来指定销毁方法 这样只影响到一个具体的对象 所以控制的比较精准 当这个对象对应的类型中没有对应的销毁方法时 程序会报错.<br>销毁方法只针对单例模式的对象.  </p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>项目编程思想</tag>
+        <tag>Spring 框架</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>11.30Java学习进度</title>
+    <url>/2019/11/30/2019-11-30-30ribao/</url>
+    <content><![CDATA[<h1 id="Ajax-Jquery-Ajax请求-缓存问题"><a href="#Ajax-Jquery-Ajax请求-缓存问题" class="headerlink" title="Ajax-Jquery,Ajax请求,缓存问题:"></a>Ajax-Jquery,Ajax请求,缓存问题:</h1><p><strong>Ajax-Jquery:</strong>  </p>
+<p>Jquery对Ajax操作,进行了封装,简化了ajax的开发,且实现了多浏览器的兼容性  </p>
+<p><strong>ajax函数:</strong><br>函数名称: ajax<br>参数列表: 长度为1, 需要传递一个对象.  </p>
+<p>通常我们传递参数时,传递的是JSON对象, 格式:  </p>
+<pre><code>{
+  &quot;url&quot;:&quot;请求地址&quot;,
+  &quot;type&quot;:&quot;请求方式GET/POST&quot;,
+  &quot;async&quot;:请求是否为异步(默认true为异步),
+  &quot;data&quot;:&quot;请求的参数,格式与网址后的参数拼接一致&quot;,
+  &quot;dataType&quot;:&quot;服务器返回的数据类型TEXT或JSON&quot;,
+  &quot;success&quot;:function(data){
+    //当请求成功时,函数执行了,相当于xhr.readyState==4  status==200
+    //data就是响应的内容  
+    //如果dataType:JSON, 则data就是一个JSON对象.
+    //如果dataType:TEXT, 则data就是一个字符串文本.
+  },
+  &quot;error&quot;:function(){
+    //当请求失败时,函数执行
+  }
+}
+</code></pre><p><strong>$.get函数 / $.post函数</strong><br>这两个函数的格式,完全一致,一个用于GET请求,一个用于POST请求  </p>
+<p>函数名称: $.get / $.post<br>参数列表:  </p>
+<ol>
+<li>url : 请求地址  </li>
+<li>data : 请求时携带的参数  </li>
+<li>success : 请求成功时 处理的函数</li>
+<li>响应的数据类型 : TEXT/JSON  </li>
+</ol>
+<p><strong>getJSON函数:</strong><br>用于get请求, 返回JSON对象<br>函数名: $.getJSON();<br>参数列表:  </p>
+<ol>
+<li>url : 请求地址  </li>
+<li>data : 请求时携带的参数  </li>
+<li>success : 请求成功时,处理的函数  </li>
+</ol>
+<p><strong>jquery对象.load:</strong><br>通过jquery对象,调用load函数,将服务器返回的内容直接嵌入到元素的内部<br>使用load函数访问的服务器通常返回的不是JSON,耳饰html标签<br>函数名称: $lbj.load<br>参数列表:  </p>
+<ol>
+<li>url : 请求的地址  </li>
+<li>data : 传递的参数  </li>
+<li>success : 请求成功时执行的函数  </li>
+</ol>
+<p><strong>ajax请求 数据缓存问题 :</strong><br>在操作ajax时,浏览器对ajax请求的结果缓存以后,当我们再次向这个地址发起ajax时,浏览器有可能会不再请求服务器,采用上一次缓存<br>解决缓存:<br>需要先明白缓存原理. 浏览器是按照网址进行缓存的.<br>所以我们想要浏览器不使用缓存,只需要保证网址不重复就可以了  </p>
+<p>格式:<br>给请求地址字符串,添加一个时间戳参数.  </p>
+<p>例如:  </p>
+<pre><code>$.load(&quot;s3.do&quot;,time=&quot;+new Date().getTime(),function(){}&quot;);
+</code></pre>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Jquery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>11.29Java学习进度</title>
+    <url>/2019/11/29/2019-11-29-29ribao/</url>
+    <content><![CDATA[<h1 id="Ajax-GSON-jar"><a href="#Ajax-GSON-jar" class="headerlink" title="Ajax,GSON.jar:"></a>Ajax,GSON.jar:</h1><p><strong>Ajax简介:</strong><br>一种用于网页 异步请求的技术.  </p>
+<p><strong>作用:</strong><br>用于与服务器进行异步交互 以及局部页面的刷新  </p>
+<p><strong>Ajax的GET使用步骤:</strong>  </p>
+<ol>
+<li><p>创建一个 异步请求的对象  </p>
+<pre><code>var xhr = new XMLHttpRequest();
+</code></pre></li>
+<li><p>设置请求的方式,以及请求的地址  </p>
+<pre><code>xhr.open(&quot;GET&quot;,&quot;请求地址&quot;);
+</code></pre></li>
+<li><p>设置请求结果产生时的时间处理函数(当请求状态发生改变时,执行的函数)  </p>
+<pre><code>xhr.onreadystatechange = function(){
+//此方法在一次ajax中,会执行五次,分别表示五种状态  
+//每次的状态值,从xhr.readyState属性中得到.  
+//状态值:  
+// 0 请求初始化中,它的触发,在new对象时,此方法不会执行  
+// 1 请求正在发送,它的触发在open函数执行时,此方法如果在open前指定,则状态发生时,方法执行  
+// 2 请求发送完毕  
+// 3 服务器开始响应  
+// 4 响应完毕  
+
+//请求也存在状态码, 例如: 404 表示资源找不到 500表示服务器内部错误. 200表示成功 302表示重定向  
+//请求状态码,通过xhr.status得到 如果是200表示请求成功  
+
+if(xhr.readyState == 4){
+ if(xhr.status == 200 ){
+   //成功得到结果  
+   //得到结果,在xhr.responseText中 . 是文本内容
+ }else{
+   //请求失败
+   //提示失败
+ }
+}
+}
+</code></pre></li>
+</ol>
+<blockquote>
+<p>P(OST请求的话)设置请求头部  </p>
+<pre><code>xhr.setRequestHeader(&quot;content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);
+</code></pre></blockquote>
+<ol start="4">
+<li>发送请求  <pre><code>xhr.send(null);
+</code></pre></li>
+</ol>
+<p><strong>使用IE浏览器8/8- 操作上述的案例:</strong>  </p>
+<p>GET或POST请求 都需要修改第一步:  </p>
+<pre><code>var xhr = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+</code></pre><p><strong>GSON.jar:</strong><br>作用:<br>将Java中的对象,快速的转换为JSON格式的字符串<br>将JSON格式的字符串,转换为Java的对象  </p>
+<p>转换JSON字符串的步骤:  </p>
+<ol>
+<li>引入jar包  </li>
+<li>在需要转换JSON字符串的位置编写如下代码即可:  <pre><code>String json = new Gson().toJSON(要转换的对象);
+</code></pre></li>
+</ol>
+<p>转换Java对象的步骤  </p>
+<ol>
+<li>引入jar包  </li>
+<li>在需要转换Java对象的位置,编写如下代码:  <pre><code>对象 = new Gson().fromJson(JSON字符串,对象类型.class);
+</code></pre></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Ajax</tag>
+        <tag>GSON.jar</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>11.28Java学习进度</title>
+    <url>/2019/11/28/2019-11-28-28ribao/</url>
+    <content><![CDATA[<h1 id="JSTL常用标签-自定义标签-web三大组件"><a href="#JSTL常用标签-自定义标签-web三大组件" class="headerlink" title="JSTL常用标签,自定义标签,web三大组件:"></a>JSTL常用标签,自定义标签,web三大组件:</h1><p><strong>JSTL常用标签:</strong><br> 单分支判断if标签： </p>
+<pre><code>           &lt;c  : if  test = “EL条件表达式”&gt; 
+           满足条件执行 
+           &lt;/c  : if &gt;   
+</code></pre><p>多分支判断choose标签： </p>
+<pre><code>            &lt;c  : choose &gt; 
+             &lt;c  : when test = “EL表达式”&gt; 
+                         满足条件执行 
+                  &lt;/c  : when&gt; 
+             … 
+             &lt;c  : otherwise&gt; 
+                         不满足上述when条件时执行 
+             &lt;/c  : otherwise&gt; 
+            &lt;/c  : choose &gt;   
+</code></pre><p>循环forEach标签： </p>
+<pre><code>        &lt;c  : forEach  var= “循环变量”  
+            items= “集合” varStatus= “状态变量”  
+       &gt; 
+            …  … 
+           &lt;/c  : forEach&gt;   
+</code></pre><p><strong>JSTL自定义标签:</strong>  </p>
+<p>如果上面几个标签不能满足需求，程序员也可以自定义标签，步骤如下： </p>
+<ol>
+<li>编写标签类 ，继承SimpleTagSupport或TagSupport </li>
+<li>重写父类方法(doTag或doStartTag、doEndTag) </li>
+<li>配置标签说明文件 （tld标签库文件 ）  </li>
+</ol>
+<p>编写标签的Java类和doTag方法处理： </p>
+<pre><code>      public class PagerTag extends SimpleTagSupport  { 
+
+            private int pageSize;//定义标签属性 
+            //省略了set和get方法 
+
+           public void doTag() throws JspException,  
+      IOException  { 
+                JspWriter out = this.getJspContext().getOut(); 
+                out.print( “要输出的HTML内容”); 
+           } 
+      }   
+</code></pre><p>定义标签库文件,放置到WEB-INF下： </p>
+<pre><code>             &lt;?xml version= &quot;1.0 &quot; encoding=&quot;UTF-8 &quot; ?&gt; 
+             &lt;taglib xmlns= &quot;http ://java.sun.com/xml/ns/javaee &quot; 
+                 xmlns:xsi= &quot;http ://www.w3.org/2001/XMLSchema-instance &quot; 
+                 xsi:schemaLocation= &quot;http ://java.sun.com/xml/ns/javaee 
+                 http ://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd&quot; version= &quot;2.1&quot;&gt;   
+               &lt;tlib-version&gt;1.0&lt;/tlib-version&gt; 
+               &lt;short-name&gt;xdl&lt;/short-name&gt; 
+               &lt;uri&gt;http://www.lampbrother.net/pager&lt;/uri&gt; 
+               &lt;tag&gt; 
+                 &lt;description&gt;生成分页按钮&lt;/description&gt; 
+                 &lt;name&gt;pager&lt;/name&gt; 
+                 &lt;tag-class&gt;com.xdl.tag.PagerTag&lt;/tag-class&gt; 
+                 &lt;body-content&gt;empty&lt;/body-content&gt; 
+                 &lt;attribute&gt; 
+                     &lt;description&gt;每页显示记录数&lt;/description&gt; 
+                     &lt;name&gt;pageSize&lt;/name&gt; 
+                     &lt;required&gt;true&lt;/required&gt; 
+                     &lt;rtexprvalue&gt;true&lt;/rtexprvalue&gt; 
+                 &lt;/attribute&gt; 
+              &lt;/tag&gt;   
+             &lt;/taglib&gt;   
+</code></pre><p>在JSP中添加taglib指令引入标签库使用： </p>
+<pre><code>       &lt;%@ page language= &quot;java &quot; import=&quot;java.util.* &quot;  
+       pageEncoding=&quot;UTF-8 &quot;%&gt; 
+       &lt;%@taglib prefix= &quot;xdl&quot;   
+       uri=&quot;http ://www.lampbrother.net/pager &quot;%&gt; 
+       &lt;html&gt; 
+         &lt;head&gt; 
+           &lt;title&gt;自定义标签应用&lt;/title&gt; 
+         &lt;/head&gt; 
+         &lt;body&gt; 
+           &lt;xdl:pager totalSize= &quot;21&quot; pageSize=&quot;5 &quot;/&gt; 
+         &lt;/body&gt; 
+       &lt;/html&gt;   
+</code></pre><p><strong>Servlet:</strong>  </p>
+<p>HTML –&gt; 静态网页<br>Servlet –&gt; 接收用户的参数 | 准备HTML响应体<br>JSP –&gt; 更方便的准备HTML响应体  </p>
+<p>字符转(字符编码) ‘A’ = 65  </p>
+<p>HashMap<br>1001 : 考试<br>1002 : 提交成绩  </p>
+<p>堆内存 –&gt; Java的规则  </p>
+<p>JSON :  </p>
+<pre><code>var person = {&quot;name&quot;:&quot;张三&quot;, &quot;age&quot;:18};  
+var user = {&quot;username&quot;,&quot;123&quot;,&quot;password&quot;:&quot;456&quot;};  
+</code></pre><p>XML :  </p>
+<pre><code>&lt;person&gt;
+    &lt;name&gt;张三&lt;/name&gt;
+    &lt;age&gt;18&lt;/age&gt;
+&lt;/person&gt;
+</code></pre><p><strong>JSP心得:</strong><br>功能该分开要分开,避免耦合度过高<br>将一个大项目拆分成多个模块<br><img src="https://s2.ax1x.com/2019/11/28/QiS4AJ.png" alt="避免耦合度过高">  </p>
+<p><strong>web三大组件:</strong><br>Servlet是web的三大组件之一.  </p>
+<ol>
+<li>Servlet</li>
+<li>Filter 过滤器</li>
+<li>Listener 监听器  </li>
+</ol>
+<p><strong>Filter 过滤器:</strong>  </p>
+<p>过滤的是请求.<br>面向切面编程思想<br>使用步骤:  </p>
+<ol>
+<li>编写一个类,实现Filter接口  </li>
+<li>通过web.xml 或 注解的方式,配置过滤器的过滤地址.  </li>
+</ol>
+<p><strong>doFilter中的请求与响应对象 为什么不是http的 ?</strong>  </p>
+<p>过滤器在早期设计时,不只是针对HTTP请求,针对所有协议的请求都可以进行过滤.<br>因为我们现在都是使用HTTP协议,所以感觉很怪异<br>想要操作HTTP相关的请求对象 与 响应对象 怎么办?<br>只需要将请求对象强制转换为HttpServletRequest 将响应对象 强制转换为HttpServletResponse 即可  </p>
+<p><strong>过滤器链:</strong><br>当多个过滤器的过滤地址重复时,就形成了过滤器链,<br>用户的一次请求,需要经过多次过滤放行.  </p>
+<p>过滤器链的执行顺序是:<br>web.xml中配置的顺序:<br>    按照xml中配置的先后顺序来执行的, web.xml中配置代码靠前的,优先执行.  </p>
+<p>注解配置的顺序:<br>    按照类名的自然排序执行.<br>    注意: 注解配置的过滤器,一定执行在web.xml过滤器之后<br>    例如:<br>    类名Filter1 执行在类名Filter2之前.<br>    类名Aaa 执行在 类名Aab之前  </p>
+<p><strong>Listener监听器:</strong><br>事件驱动,监听的是tomcat产生的事件:<br>两类事件:  </p>
+<ol>
+<li>生命周期相关的事件  </li>
+<li>域对象中数据的变化事件  </li>
+</ol>
+<p><strong>ServletContextAttributeListener监听器:</strong><br>监听Servlet上下文中数据的 增加,删除 以及修改.  </p>
+<p><strong>HttpSessionListener:</strong><br>用于监听session的创建与销毁<br>因为我们服务器中每一个session表示一次用户的会话<br>一个客户端就会创建一个单独的session. 可以将session的数量,理解为在线用户的数量.<br>所以我们经常在session创建与销毁的监听中, 计算当前在线的人数.  </p>
+<p><strong>HttpSessionAttributeListener:</strong><br>用于监听session中的数据增加,删除,修改  </p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>JSTL标签</tag>
+        <tag>自定义标签</tag>
+        <tag>web三大组件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>11.27Java学习进度</title>
     <url>/2019/11/27/2019-11-27-27ribao/</url>
     <content><![CDATA[<h1 id="JSP指令-JSP的九大内置对象-EL"><a href="#JSP指令-JSP的九大内置对象-EL" class="headerlink" title="JSP指令,JSP的九大内置对象,EL:"></a>JSP指令,JSP的九大内置对象,EL:</h1><p><strong>include 指令:</strong><br>用于将一个JSP或HTML文件引入到另一个JSP中.<br>格式:  </p>
@@ -565,37 +1075,6 @@ String username = request.getParameter(&quot;username&quot;);
       </tags>
   </entry>
   <entry>
-    <title>11.20心得</title>
-    <url>/2019/11/20/2019-11-20-20xinde/</url>
-    <content><![CDATA[<h1 id="对于博客模板的修改"><a href="#对于博客模板的修改" class="headerlink" title="对于博客模板的修改:"></a>对于博客模板的修改:</h1><blockquote>
-<p>由于19号发现了之前自己的博客模板有一些没改好的地方,便下决心这次要彻底改好一个博客模板</p>
-</blockquote>
-<p>所以19号的整整一天就都是在找模板,看效果的  </p>
-<p>然后晚自习的时候就已经确定好了这个模板,开始着手修改  </p>
-<p>由于不太了解博客里面元素和.ejs文件的构造 在改一些东西的时候总会有报错  </p>
-<p>后来想到了把所有文件打开  然后去查找那个关键字  </p>
-<p>由于有一些js基础,这么一查找到,想做些修改也不是很难  </p>
-<p>在将一些404图片修改了,把多余的文字修改了之后  </p>
-<blockquote>
-<p>后续又对博客进行了一些优化  </p>
-</blockquote>
-<p>首先将<code>Valine</code>评论区的 ID 和 Key 换成了自己注册的LeanCloud 的ID 和 Key  </p>
-<p>还将github博客也推到了coding 这个仓库可以让国内访问github可以快一些  </p>
-<p>并将自己之前购买的域名都绑定到了自己的博客上:  </p>
-<p><a href="http://zhengyupeng.top" target="_blank" rel="noopener">zhengyupeng.top</a>  </p>
-<p><a href="https://www.zhengyupeng.top" target="_blank" rel="noopener">www.zhengyupeng.top</a>  </p>
-<p>也都能访问到我的博客了!  </p>
-<p><strong>最后总结一下心得吧:</strong>  </p>
-<p>昨天一天和今天上午到十点多相当于在学习Java的进度上没有进展,<br>但是改完这个博客,也学到了很多的东西,了解到了很多东西,<br>并且改完这个博客心情都变好了,可以安心学习去了。<br>接下来传完的个博客我就继续学习Java了,<strong><code>冲冲冲!!!</code></strong></p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>11.20Java学习进度</title>
     <url>/2019/11/20/2019-11-20-20ribao/</url>
     <content><![CDATA[<h1 id="JavaWeb开发环境的配置-http协议与HttpServlet类"><a href="#JavaWeb开发环境的配置-http协议与HttpServlet类" class="headerlink" title="JavaWeb开发环境的配置,http协议与HttpServlet类:"></a>JavaWeb开发环境的配置,http协议与HttpServlet类:</h1><p><strong>tomcat配置:</strong>  </p>
@@ -702,6 +1181,37 @@ B / S :
       </tags>
   </entry>
   <entry>
+    <title>11.20心得</title>
+    <url>/2019/11/20/2019-11-20-20xinde/</url>
+    <content><![CDATA[<h1 id="对于博客模板的修改"><a href="#对于博客模板的修改" class="headerlink" title="对于博客模板的修改:"></a>对于博客模板的修改:</h1><blockquote>
+<p>由于19号发现了之前自己的博客模板有一些没改好的地方,便下决心这次要彻底改好一个博客模板</p>
+</blockquote>
+<p>所以19号的整整一天就都是在找模板,看效果的  </p>
+<p>然后晚自习的时候就已经确定好了这个模板,开始着手修改  </p>
+<p>由于不太了解博客里面元素和.ejs文件的构造 在改一些东西的时候总会有报错  </p>
+<p>后来想到了把所有文件打开  然后去查找那个关键字  </p>
+<p>由于有一些js基础,这么一查找到,想做些修改也不是很难  </p>
+<p>在将一些404图片修改了,把多余的文字修改了之后  </p>
+<blockquote>
+<p>后续又对博客进行了一些优化  </p>
+</blockquote>
+<p>首先将<code>Valine</code>评论区的 ID 和 Key 换成了自己注册的LeanCloud 的ID 和 Key  </p>
+<p>还将github博客也推到了coding 这个仓库可以让国内访问github可以快一些  </p>
+<p>并将自己之前购买的域名都绑定到了自己的博客上:  </p>
+<p><a href="http://zhengyupeng.top" target="_blank" rel="noopener">zhengyupeng.top</a>  </p>
+<p><a href="https://www.zhengyupeng.top" target="_blank" rel="noopener">www.zhengyupeng.top</a>  </p>
+<p>也都能访问到我的博客了!  </p>
+<p><strong>最后总结一下心得吧:</strong>  </p>
+<p>昨天一天和今天上午到十点多相当于在学习Java的进度上没有进展,<br>但是改完这个博客,也学到了很多的东西,了解到了很多东西,<br>并且改完这个博客心情都变好了,可以安心学习去了。<br>接下来传完的个博客我就继续学习Java了,<strong><code>冲冲冲!!!</code></strong></p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>11.18JAVA学习进度</title>
     <url>/2019/11/18/2019-11-18-18ribao/</url>
     <content><![CDATA[<h1 id="11-18Java学习进度"><a href="#11-18Java学习进度" class="headerlink" title="11.18Java学习进度"></a>11.18Java学习进度</h1><h2 id="解析xml属性操作-Xpath"><a href="#解析xml属性操作-Xpath" class="headerlink" title="解析xml属性操作,Xpath:"></a>解析xml属性操作,Xpath:</h2><pre><code>// 1. 加载xml文件到jvm中,形成数据流
@@ -765,6 +1275,42 @@ xw.close();
       <tags>
         <tag>解析xml属性操作</tag>
         <tag>Xpath</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>11.16技术分享</title>
+    <url>/2019/11/16/2019-11-16-16jishu/</url>
+    <content><![CDATA[<h1 id="11-16技术分享"><a href="#11-16技术分享" class="headerlink" title="11.16技术分享"></a>11.16技术分享</h1><h2 id="idea运行tomcat控制台乱码"><a href="#idea运行tomcat控制台乱码" class="headerlink" title="idea运行tomcat控制台乱码:"></a>idea运行tomcat控制台乱码:</h2><h3 id="1-首先设置idea的编码格式"><a href="#1-首先设置idea的编码格式" class="headerlink" title="1.首先设置idea的编码格式:"></a>1.首先设置idea的编码格式:</h3><p>File–&gt;Settings–&gt;File Encodings</p>
+<p><img src="https://s2.ax1x.com/2019/11/20/MWMwvV.md.png" alt="idea编码格式">  </p>
+<p>将所有编码格式统一设置成UTF-8。  </p>
+<h3 id="2-再设置tomcat的编码格式"><a href="#2-再设置tomcat的编码格式" class="headerlink" title="2.再设置tomcat的编码格式:"></a>2.再设置tomcat的编码格式:</h3><p><img src="https://s2.ax1x.com/2019/11/20/MWMyE4.png" alt="tomcat设置">  </p>
+<p>改变VM options为-Dfile.encoding=UTF-8:<br><img src="https://s2.ax1x.com/2019/11/20/MWMrbF.md.png" alt="tomcat编码格式"> </p>
+<p><strong><code>完成上面的设置后还会有乱码,不要急</code></strong>  </p>
+<h3 id="3-配置idea的文件设置"><a href="#3-配置idea的文件设置" class="headerlink" title="3.配置idea的文件设置:"></a>3.配置idea的文件设置:</h3><p>找到idea图标,右键,打开文件位置找到  </p>
+<p><code>idea.exe.vmoptions</code>和<code>idea64.exe.vmoptions</code>文件  并打开文件  </p>
+<p>在文件后面添加一行：-Dfile.encoding=UTF-8   </p>
+<p>idae中的设置配置也要修改</p>
+<p>help–&gt;Edit Custom VM Options…  </p>
+<p>打开此配置 也在最后一行添加:-Dfile.encoding=UTF-8  </p>
+<h3 id="4-修改tomcat的运行编码格式"><a href="#4-修改tomcat的运行编码格式" class="headerlink" title="4.修改tomcat的运行编码格式:"></a>4.修改tomcat的运行编码格式:</h3><p>进入到tomcat的根目录的bin目录下  </p>
+<p>此时可以在文件地址栏输入cmd来启动dos窗口执行  </p>
+<pre><code>catalina.bat run
+</code></pre><p>(或者也可以直接cmd  然后cd到bin目录下 执行此命令)  </p>
+<p>之后再用命令切换cmd的编码格式<br>“chcp 65001”切换cmd为utf8，”chcp 936”切换cmd为gbk  </p>
+<p>这里我们使用chcp 65001来切换成utf8  </p>
+<p>执行之后可以再运行一下</p>
+<pre><code>catalina.bat run
+</code></pre><p>看看命令是否都编程正常汉语,若都成正常汉语就是成功了!</p>
+<p>然后重启idea即可.  </p>
+<p><code>最后提一句:</code>  </p>
+<p>自己改tomcat的logging.properties为GBk会导致调试时get/post参数乱码  </p>
+<p>还是都改成UTF8稳妥。</p>
+]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>idea控制台乱码</tag>
       </tags>
   </entry>
   <entry>
@@ -893,42 +1439,6 @@ for(Element e1: list){
       <tags>
         <tag>数据库优化</tag>
         <tag>XML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>11.16技术分享</title>
-    <url>/2019/11/16/2019-11-16-16jishu/</url>
-    <content><![CDATA[<h1 id="11-16技术分享"><a href="#11-16技术分享" class="headerlink" title="11.16技术分享"></a>11.16技术分享</h1><h2 id="idea运行tomcat控制台乱码"><a href="#idea运行tomcat控制台乱码" class="headerlink" title="idea运行tomcat控制台乱码:"></a>idea运行tomcat控制台乱码:</h2><h3 id="1-首先设置idea的编码格式"><a href="#1-首先设置idea的编码格式" class="headerlink" title="1.首先设置idea的编码格式:"></a>1.首先设置idea的编码格式:</h3><p>File–&gt;Settings–&gt;File Encodings</p>
-<p><img src="https://s2.ax1x.com/2019/11/20/MWMwvV.md.png" alt="idea编码格式">  </p>
-<p>将所有编码格式统一设置成UTF-8。  </p>
-<h3 id="2-再设置tomcat的编码格式"><a href="#2-再设置tomcat的编码格式" class="headerlink" title="2.再设置tomcat的编码格式:"></a>2.再设置tomcat的编码格式:</h3><p><img src="https://s2.ax1x.com/2019/11/20/MWMyE4.png" alt="tomcat设置">  </p>
-<p>改变VM options为-Dfile.encoding=UTF-8:<br><img src="https://s2.ax1x.com/2019/11/20/MWMrbF.md.png" alt="tomcat编码格式"> </p>
-<p><strong><code>完成上面的设置后还会有乱码,不要急</code></strong>  </p>
-<h3 id="3-配置idea的文件设置"><a href="#3-配置idea的文件设置" class="headerlink" title="3.配置idea的文件设置:"></a>3.配置idea的文件设置:</h3><p>找到idea图标,右键,打开文件位置找到  </p>
-<p><code>idea.exe.vmoptions</code>和<code>idea64.exe.vmoptions</code>文件  并打开文件  </p>
-<p>在文件后面添加一行：-Dfile.encoding=UTF-8   </p>
-<p>idae中的设置配置也要修改</p>
-<p>help–&gt;Edit Custom VM Options…  </p>
-<p>打开此配置 也在最后一行添加:-Dfile.encoding=UTF-8  </p>
-<h3 id="4-修改tomcat的运行编码格式"><a href="#4-修改tomcat的运行编码格式" class="headerlink" title="4.修改tomcat的运行编码格式:"></a>4.修改tomcat的运行编码格式:</h3><p>进入到tomcat的根目录的bin目录下  </p>
-<p>此时可以在文件地址栏输入cmd来启动dos窗口执行  </p>
-<pre><code>catalina.bat run
-</code></pre><p>(或者也可以直接cmd  然后cd到bin目录下 执行此命令)  </p>
-<p>之后再用命令切换cmd的编码格式<br>“chcp 65001”切换cmd为utf8，”chcp 936”切换cmd为gbk  </p>
-<p>这里我们使用chcp 65001来切换成utf8  </p>
-<p>执行之后可以再运行一下</p>
-<pre><code>catalina.bat run
-</code></pre><p>看看命令是否都编程正常汉语,若都成正常汉语就是成功了!</p>
-<p>然后重启idea即可.  </p>
-<p><code>最后提一句:</code>  </p>
-<p>自己改tomcat的logging.properties为GBk会导致调试时get/post参数乱码  </p>
-<p>还是都改成UTF8稳妥。</p>
-]]></content>
-      <categories>
-        <category>分享</category>
-      </categories>
-      <tags>
-        <tag>idea控制台乱码</tag>
       </tags>
   </entry>
   <entry>
@@ -1430,9 +1940,9 @@ System.out.println(&quot;是回文&quot;);
         <category>java</category>
       </categories>
       <tags>
-        <tag>String类</tag>
         <tag>Object类,</tag>
         <tag>包装类和数学处理类,</tag>
+        <tag>String类</tag>
       </tags>
   </entry>
   <entry>
@@ -3175,25 +3685,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.21日报</title>
-    <url>/2019/08/21/2019-08-21-21ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
-]]></content>
-      <categories>
-        <category>命令</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.21技术文档</title>
     <url>/2019/08/21/2019-08-21-21jishu/</url>
     <content><![CDATA[<h1 id="git常用命令整理"><a href="#git常用命令整理" class="headerlink" title="git常用命令整理"></a>git常用命令整理</h1><blockquote>
@@ -3419,6 +3910,25 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
+    <title>8.21日报</title>
+    <url>/2019/08/21/2019-08-21-21ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
+]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.20日报</title>
     <url>/2019/08/20/2019-08-20-20ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
@@ -3514,8 +4024,8 @@ onload          浏览器已完成页面的加载
         <category>系统与命令</category>
       </categories>
       <tags>
-        <tag>ubuntu</tag>
         <tag>git</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
 </search>
