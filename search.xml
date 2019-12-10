@@ -3505,28 +3505,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.26日报</title>
-    <url>/2019/08/26/2019-08-26-26ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天看了一天的linux命令但是侧重点不够明确，常用的命令也基本认识了，学习linux命令70%。</code>  </p>
-</blockquote>
-<blockquote>
-<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天是我们组技术分享的时间，我讲的是html，虽然事先做好了ppt，但是上台还是有些放不开，不够灵活，只是死板地讲</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>上台演讲的事还是要多练习，还要多和大家沟通，才会一点点地会站在前面讲项目</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.26技术文档</title>
     <url>/2019/08/26/2019-08-26-26jishu/</url>
     <content><![CDATA[<h1 id="linux常用命令整合版"><a href="#linux常用命令整合版" class="headerlink" title="linux常用命令整合版"></a>linux常用命令整合版</h1><p><strong>关机 (系统的关机、重启以及登出 ):</strong><br>shutdown -h now 关闭系统<br>init 0 关闭系统<br>telinit 0 关闭系统<br>shutdown -h hours:minutes &amp; 按预定时间关闭系统<br>shutdown -c 取消按预定时间关闭系统<br>shutdown -r now 重启<br>reboot 重启<br>logout 注销   </p>
@@ -3663,6 +3641,28 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.26日报</title>
+    <url>/2019/08/26/2019-08-26-26ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天看了一天的linux命令但是侧重点不够明确，常用的命令也基本认识了，学习linux命令70%。</code>  </p>
+</blockquote>
+<blockquote>
+<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天是我们组技术分享的时间，我讲的是html，虽然事先做好了ppt，但是上台还是有些放不开，不够灵活，只是死板地讲</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>上台演讲的事还是要多练习，还要多和大家沟通，才会一点点地会站在前面讲项目</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -3898,6 +3898,25 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
+    <title>8.21日报</title>
+    <url>/2019/08/21/2019-08-21-21ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
+]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.21技术文档</title>
     <url>/2019/08/21/2019-08-21-21jishu/</url>
     <content><![CDATA[<h1 id="git常用命令整理"><a href="#git常用命令整理" class="headerlink" title="git常用命令整理"></a>git常用命令整理</h1><blockquote>
@@ -4114,25 +4133,6 @@ onload          浏览器已完成页面的加载
 </blockquote>
 <p>git checkout -b 分支名 标签</p>
 <h3 id="最后放上一张网上找到的git常用命令表："><a href="#最后放上一张网上找到的git常用命令表：" class="headerlink" title="最后放上一张网上找到的git常用命令表："></a>最后放上一张网上找到的git常用命令表：</h3><p><img src="https://s2.ax1x.com/2019/11/20/MWMBuT.md.png" alt="git常用命令"></p>
-]]></content>
-      <categories>
-        <category>命令</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8.21日报</title>
-    <url>/2019/08/21/2019-08-21-21ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
 ]]></content>
       <categories>
         <category>命令</category>
