@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">12.04Java学习进度 | pengpeng</title>
+  <title itemprop="name">12.06Java学习进度 | pengpeng</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -332,7 +332,7 @@
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      12.04Java学习进度</h1>
+      12.06Java学习进度</h1>
       <p class="entry-census">
         <span>
           <a href="">
@@ -344,7 +344,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2019-12-4<span class="bull">
+        2019-12-6<span class="bull">
         </span></p>
     </header>
   </div>
@@ -357,7 +357,44 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <p># </p>
+          <h1 id="Spring-的声明式事务"><a href="#Spring-的声明式事务" class="headerlink" title="Spring 的声明式事务:"></a>Spring 的声明式事务:</h1><p>不继承JdbcDaoSupport 的方式 完成对数据库的访问<br>和之前的不同在于 需要我们自己在容器中创建一个模板对象(模板对象依赖于dataSource)<br>再把模板 注入给DAO 的实现类 使用自己的模板完成对应的操作  </p>
+<ol>
+<li>Spring 的声明式事务  </li>
+</ol>
+<p>Spring声明式事务管理,是使用Spring的AOP方式实现的  </p>
+<ol>
+<li>通过Spring配置将操作纳入到事务管理中  </li>
+<li>解除了事务管理和代码的耦合  </li>
+<li>不需要事务管理时,可直接从Spring配置文件中移除  </li>
+</ol>
+<ol start="2">
+<li><p>Spring 声明式事务的实现步骤  </p>
+<ol>
+<li>开启声明式事务<br><code>`</code><br>&lt;tx:annotation-driven transaction-manager=”事务管理器id”<br>proxy-target-class=”false”/&gt;  </li>
+</ol>
+<p>proxy-target-class 如果是false 代表优先使用sun公司的代理机制生成代理<br>proxy-target-class 如果是true 代表使用CGLIB的代理机制生成代理  </p>
+<pre><code>2. 在Spring 容器中创建一个事务管理器对象--- 依赖于dataSource  
+</code></pre><p><bean id="事务管理器id" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"><br> <property name="dataSource" ref="dataSource"><br></property></bean></p>
+<pre><code>
+3. 在需要事务管理的类或者方法上加事务管理标注  
+`@Transactional`  
+`@Transactional`的属性  
+- rollbackFor Spring 的声明式事务 默认只针对运行时异常进行事务回滚  
+- noRollbackFor 针对指定的运行时异常 不回滚  
+- isolation 事务隔离级别:  
+读未提交  读提交  可重复读  序列化    
+用于解决事务隔离三大读问题:  
+- 脏读: 一个事务读取到了另外一个事务没提交的数据(好处效率高)
+- 不可重复读: 一个事务在开始时 读取了一份数据 另外一个事务修改了这份数据 并进行了提交 当第一个事务再次读取数据时 发现数据发生改变.(不让另一个事务发生更改,安全性高,占用资源多)
+- 幻读: 一个事务统计了整张表的所有数据 另外一个事务增加了数据 并进行提交 当再次统计数据时 数据发生了改变  
+
+- readOnly 只读事务 只有当事务语句都是查询时 才能使用这个属性的值是true  默认这个属性的值是false  
+
+- propagation 事务传播特性 一个方法去调用另一个事务方法时 事务应该如何表现  
+</code></pre><p>Propagation.REQUIRED 如果当前方法没有事务 则会开启新事务<br>如果当前方法有事务 则将事务加入到当前事务中  </p>
+<p>propagation_required: 如果当前没有事务 ,就新建一个事务, 如果已存在一个事务中,加入到这个事务中,这是最常见的选择<br>propagation_supports: 支持当前事务, 如果没有当前事务, 就以非事务方法执行<br>propagation_mandatory: 使用当前事务, 如果没有当前事务, 就抛出异常<br>propagation_required_new: 新建事务,如果当前存在事务,把当前事务挂起<br>propagation_not_supported: 以非事务方式执行操作, 如果当前存在事务, 就把当前事务挂起<br>propagation_never: 以非事务方式执行操作, 如果当前事务存在则抛出异常<br>propagation_nested: 如果当前存在事务, 则再嵌套事务内执行, 如果当前没有事务, 则执行propagation_required<br><code>`</code></p>
+</li>
+</ol>
 
         </div>
         <!-- .entry-content -->
@@ -389,7 +426,7 @@
           
             <div class="post-nepre half previous">
           
-            <a href="/2019/12/04/2019-12-04-04ribao/" rel="prev">
+            <a href="/2019/12/07/2019-12-07-07ribao/" rel="prev">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
               </div>
@@ -397,7 +434,7 @@
               Previous Post</span>
               <div class="info">
                 <h3>
-                12.04Java学习进度</h3>
+                12.07Java学习进度</h3>
                 <hr>
               </div>
             </a>
@@ -407,7 +444,7 @@
           
             <div class="post-nepre half next">
           
-            <a href="/2019/12/03/2019-12-03-03ribao/" rel="next">
+            <a href="/2019/12/05/2019-12-05-05ribao/" rel="next">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
               </div>
@@ -415,7 +452,7 @@
               Next Post</span>
               <div class="info">
                 <h3>
-                12.03Java学习进度</h3>
+                12.05Java学习进度</h3>
                 <hr>
               </div>
             </a>

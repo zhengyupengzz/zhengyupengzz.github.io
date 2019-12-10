@@ -1,6 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>12.10Java学习进度</title>
+    <url>/2019/12/10/2019-12-10-10ribao/</url>
+    <content><![CDATA[<h1 id="Mybatis-Mybatis的作用"><a href="#Mybatis-Mybatis的作用" class="headerlink" title="Mybatis,Mybatis的作用:"></a>Mybatis,Mybatis的作用:</h1><p><strong>Mybatis 简介:</strong>  </p>
+<p>  Apache         Google            GitHub<br>  Ibatis         Mybatis           Mybatis  </p>
+<p><strong>Mybatis 的作用:</strong>  </p>
+<p>可以用来执行普通的sql操作   存储过程<br>它是一个高级的ORM(Object Relation  Mapping  对象关系映射  以面向对象的思想操作数据库)框架<br>它封装了几乎所有的jdbc 操作    以及参数的手工设置<br>结果集检索(把结果集自动转换成对象)<br><strong>Mybatis 框架的构成:</strong>  </p>
+<p>实体类:                     封住数据和业务逻辑<br>SQL定义文件:        写SQL语句的XML 文件<br>主配置文件:              用来定义连接数据库信息 和 加载SQL定义文件 以及做一些特殊设置的 XML文件<br>框架的API:     主要通过SqlSession 来体现   (SqlSession 略微麻烦一些)  用来完成增删改查  </p>
+<p><strong>使用Mybatis 完成根据id 查询银行账户:</strong>  </p>
+<ol>
+<li>建立一个项目 导入jar包(mybatis.jar 数据库驱动)  </li>
+<li>根据表建立对应的实体类  </li>
+<li>拷贝sql 定义文件的模板 到 一个包中     在sql 定义文件中 定义SQL语句  </li>
+<li>拷贝主配置文件模板 到src下     定义连接数据的信息  并加载sql定义文件  </li>
+<li>获取SqlSession对象   使用SqlSession 完成查询  </li>
+</ol>
+<p><strong>MyBatis 的Mapper 映射器规则:</strong>   </p>
+<ul>
+<li>如果按照规则编写DAO 接口则不用写DAO的实现类 因为可以自动生成</li>
+</ul>
+<ol>
+<li>接口中的方法名   和  Sql定义文件中的  sql语句的id 保持一致  </li>
+<li>接口中方法的返回值类型  和  sql语句中的  resultType 保持一致<br>当是查询语句时 如果是返回单值  则 和   resultType 保持一致  如果可能返回多个值  <pre><code> 则使用List&lt;这里的类型和restultType保持一致&gt;  
+</code></pre>如果是增删改 语句  则返回void 或者int  推荐使用 int  </li>
+<li>接口中方法的参数和 parameterType 保持一致<br>   如果没有  parameterType 则代表方法参数任意  </li>
+<li>SQL 定义文件中的 namespace  要写 包名.接口名   </li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Mybatis</tag>
+        <tag>Mybatis的使用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>12.09Java学习进度</title>
+    <url>/2019/12/09/2019-12-09-09ribao/</url>
+    <content><![CDATA[<h1 id="拦截器-Spring中异常处理"><a href="#拦截器-Spring中异常处理" class="headerlink" title="拦截器,Spring中异常处理:"></a>拦截器,Spring中异常处理:</h1><p><strong>拦截器:</strong>  </p>
+<p>拦截器 就是对 之前过滤器的一个封装   功能和之前的过滤器类似    比如有  身份认证   登录检查<br>  资源的加密访问    编码设置等功能。<br>拦截器在Spring  中 需要实现  HandlerInterceptor 接口  </p>
+<p><strong>HandlerInterceptor  接口介绍:</strong>  </p>
+<p>  preHandle    在HandlerMapping 之后  控制器之前    返回 布尔值类型   如果返回 true<br>  则代表继续后续逻辑调用     如果返回false  则请求被拦截。<br>  postHandle   控制器处理之后   视图处理器之前<br>  afterCompletion   视图处理器之后  响应之前  </p>
+<p><strong>拦截器的使用步骤:</strong>  </p>
+<ol>
+<li>搭建一个基于标注的 spring  MVC  完成基本的登录功能  最起码有  toLogin.do</li>
+<li>编写一个拦截器类  实现HandlerInterceptor  接口   覆盖接口方法 </li>
+<li>在Spring  配置文件中配置拦截器 <pre><code>   大体需要配置 拦截的路径   不拦截的路径    拦截器对象 
+</code></pre></li>
+<li>测试功能  </li>
+</ol>
+<p><strong>Spring 中的异常处理:</strong>  </p>
+<ol>
+<li>全局异常处理 —- 系统提供的异常处理器   <code>SimpleMappingExceptionResolver</code><br> 指定对应的异常  可以跳转到 对应的页面 <pre><code>&lt;!--  配置一个 系统提供的异常处理器  什么样对应什么样的页面 --&gt; 
+&lt;bean  id=&quot;exceptionResolver&quot;  
+   class=&quot;org.springframework.web.servlet.handler.SimpleMappingExceptionResolver&quot;&gt;
+   &lt;property name=&quot;exceptionMappings&quot;&gt;
+       &lt;props&gt;
+           &lt;prop key=&quot;java.lang.Exception&quot;&gt;error2&lt;/prop&gt;
+           &lt;prop key=&quot;java.lang.RuntimeException&quot;&gt;error&lt;/prop&gt; 
+       &lt;/props&gt;
+   &lt;/property&gt;
+&lt;/bean&gt;
+</code></pre></li>
+<li><p>全局异常处理  ——-  自定义异常处理器<br> 实现 HandlerExceptionResolver   并且在Spring 容器中创建自定义异常处理器对象<br><code>`</code><br>@Controller<br>public class MyExceptionResolver implements HandlerExceptionResolver {</p>
+<p> @Override<br> public ModelAndView resolveException(HttpServletRequest request,</p>
+<pre><code>     HttpServletResponse response, Object method,
+     Exception e) {
+ // 出现什么样的异常 就跳转到对应的页面 
+ ModelAndView  mav  = new  ModelAndView();
+ if(e  instanceof  RuntimeException) {
+      mav.setViewName(&quot;error&quot;);
+ }else if(e instanceof  Exception) {
+      mav.setViewName(&quot;error2&quot;);
+ }
+ return mav;
+</code></pre><p> }</p>
+</li>
+</ol>
+<p>}</p>
+<pre><code>3. 局部异常处理 ----- 只处理具体的一个控制器抛出的异常  
+
+</code></pre><p>@ExceptionHandler<br> public  String  方法名(Exception  e){<br>     return “错误页面的名字”;<br> }<br><code>`</code><br><strong>文件上传:</strong>  </p>
+<ol>
+<li>编写一个文件上传的页面<br>form 表单的method=”post”    enctype=”multipart/form-data”<br>form 表单中要有 type=”file”  的组件 </li>
+<li>编写一个控制器  用来获取文件数据 并将文件数据写入服务器的磁盘中<br>真正完成文件上传 需要依赖于文件解析器  —- 注意文件解析器依赖于文件上传的jar包  还有这个解析器的<br>id必须是  multipartResolver </li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>拦截器</tag>
+        <tag>Spring中异常处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>12.07Java学习进度</title>
+    <url>/2019/12/07/2019-12-07-07ribao/</url>
+    <content><![CDATA[<h1 id="MVC框架组件-MVC核心组件"><a href="#MVC框架组件-MVC核心组件" class="headerlink" title="MVC框架组件,MVC核心组件:"></a>MVC框架组件,MVC核心组件:</h1><p><strong>什么是MVC:</strong><br>MVC 模式代表 Model-View-Controller（模型-视图-控制器） 模式。这种模式用于应用程序的分层开发。</p>
+<p>Model（模型） - 模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。<br>View（视图） - 视图代表模型包含的数据的可视化。<br>Controller（控制器） - 控制器作用于模型和视图上。它控制数据流向模型对象，并在数据变化时更新视图。它使视图与模型分离开。</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/08/1200px-ModelViewControllerDiagram2.svg_.png" alt="MVC结构"></p>
+<p>MVC是一个设计模式，它强制性的使应用程序的输入、处理和输出分开。使用MVC应用程序被分成三个核心部件：模型、视图、控制器。它们各自处理自己的任务。 </p>
+<ul>
+<li>视图 </li>
+</ul>
+<p>视图是用户看到并与之交互的界面。对老式的Web应用程序来说，视图就是由HTML元素组成的界面，在新式的Web应用程序中，HTML依旧在视图中扮演着重要的角色，但一些新的技术已层出不穷，它们包括Macromedia Flash和象XHTML，XML/XSL，WML等一些标识语言和Web services. </p>
+<p>如何处理应用程序的界面变得越来越有挑战性。MVC一个大的好处是它能为你的应用程序处理很多不同的视图。在视图中其实没有真正的处理发生，不管这些数据是联机存储的还是一个雇员列表，作为视图来讲，它只是作为一种输出数据并允许用户操纵的方式。 </p>
+<ul>
+<li>模型 </li>
+</ul>
+<p>模型表示企业数据和业务规则。在MVC的三个部件中，模型拥有最多的处理任务。例如它可能用象EJBs和ColdFusion Components这样的构件对象来处理数据库。被模型返回的数据是中立的，就是说模型与数据格式无关，这样一个模型能为多个视图提供数据。由于应用于模型的代码只需写一次就可以被多个视图重用，所以减少了代码的重复性。 </p>
+<ul>
+<li>控制器 </li>
+</ul>
+<p>控制器接受用户的输入并调用模型和视图去完成用户的需求。所以当单击Web页面中的超链接和发送HTML表单时，控制器本身不输出任何东西和做任何处理。它只是接收请求并决定调用哪个模型构件去处理请求，然后用确定用哪个视图来显示模型处理返回的数据。 </p>
+<p>现在我们总结MVC的处理过程，首先控制器接收用户的请求，并决定应该调用哪个模型来进行处理，然后模型用业务逻辑来处理用户的请求并返回数据，最后控制器用相应的视图格式化模型返回的数据，并通过表示层呈现给用户。</p>
+<p><strong>MVC框架五大核心组件:</strong>  </p>
+<ol>
+<li>DispatcherServlet (控制器,请求入口)  </li>
+<li>HandlerMapping (控制器,请求派发 让请求和控制器建立一一对应的关系)  </li>
+<li>Controller (控制器,请求处理流程 真正处理请求的组件)  </li>
+<li>ModelAndView (模型,封装数据信息和视图信息的对象)  </li>
+<li>ViewResolver (视图,视图显示处理器)  </li>
+</ol>
+<p><strong>Spring MVC的编写步骤:</strong>  </p>
+<ol>
+<li>建立一个项目   导入jar包(ioc mvc)  并拷贝配置文件到src下   在WEB-INF下<br>建立一个jsp 页面 </li>
+<li>在WEB-INF下的 web.xml 中  配置DispatcherServlet  并使用初始化参数<br>contextConfigLocation关联Spring的配置文件</li>
+<li>在Spring 配置文件中 配置HandlerMapping  的  实现类<br>SimpleUrlHandlerMapping  并且要配置 请求和控制器的对应关系 </li>
+<li>编写控制器的实现类   实现 Controller 接口<br>在接口方法中 返回 ModelAndView    同时在容器中创建 控制器对象 </li>
+<li>在Spring 配置文件中  配置ViewResolver 的实现类<br>InternalResourceViewResolver   需要配置前缀和后缀   </li>
+</ol>
+<blockquote>
+<p>使用Spring MVC 访问WEB-INF下的jsp   </p>
+</blockquote>
+<p><strong>基于标注的Spring  MVC:</strong>  </p>
+<ol>
+<li>建立一个项目 导入jar包(ioc aop mvc)  拷贝配置文件到src 下  并 在WEB-INF下建立jsp文件 </li>
+<li>在web.xml 中配置 DispatcherServlet  并通过 初始化参数 contextConfigLocation<br>关联Spring 配置文件 </li>
+<li>开启组件扫描 和 标注形式的mvc<pre><code>&lt;context:component-san  base-package=&quot;&quot;  /&gt;
+&lt;mvc:annotation-driven /&gt;   
+</code></pre>底层创建了一个 RequestMappingHandlerMapping的组件</li>
+<li>写一个java类   不用实现Controller接口<br><code>`</code><br>@RequestMapping(“/请求路径”)<br>控制器方法的返回值类型 可以是String 也可以是 ModelAndView   方法名自由了(参数自由了){</li>
+</ol>
+<p>}<br><code>`</code><br>在类上加对应的标注  @Controller   可以把普通类 变成控制器  并在容器中创建Controller 对象</p>
+<ol start="5">
+<li>配置视图处理器   </li>
+</ol>
+<blockquote>
+<p>使用标注形式的 mvc  访问 WEB-INF下的  register.jsp </p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>MVC框架</tag>
+        <tag>MVC核心组件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>12.06Java学习进度</title>
+    <url>/2019/12/06/2019-12-06-06ribao/</url>
+    <content><![CDATA[<h1 id="Spring-的声明式事务"><a href="#Spring-的声明式事务" class="headerlink" title="Spring 的声明式事务:"></a>Spring 的声明式事务:</h1><p>不继承JdbcDaoSupport 的方式 完成对数据库的访问<br>和之前的不同在于 需要我们自己在容器中创建一个模板对象(模板对象依赖于dataSource)<br>再把模板 注入给DAO 的实现类 使用自己的模板完成对应的操作  </p>
+<ol>
+<li>Spring 的声明式事务  </li>
+</ol>
+<p>Spring声明式事务管理,是使用Spring的AOP方式实现的  </p>
+<ol>
+<li>通过Spring配置将操作纳入到事务管理中  </li>
+<li>解除了事务管理和代码的耦合  </li>
+<li>不需要事务管理时,可直接从Spring配置文件中移除  </li>
+</ol>
+<ol start="2">
+<li><p>Spring 声明式事务的实现步骤  </p>
+<ol>
+<li>开启声明式事务<br><code>`</code><br>&lt;tx:annotation-driven transaction-manager=”事务管理器id”<br>proxy-target-class=”false”/&gt;  </li>
+</ol>
+<p>proxy-target-class 如果是false 代表优先使用sun公司的代理机制生成代理<br>proxy-target-class 如果是true 代表使用CGLIB的代理机制生成代理  </p>
+<pre><code>2. 在Spring 容器中创建一个事务管理器对象--- 依赖于dataSource  
+</code></pre><p><bean id="事务管理器id" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"><br> <property name="dataSource" ref="dataSource"><br></property></bean></p>
+<pre><code>
+3. 在需要事务管理的类或者方法上加事务管理标注  
+`@Transactional`  
+`@Transactional`的属性  
+- rollbackFor Spring 的声明式事务 默认只针对运行时异常进行事务回滚  
+- noRollbackFor 针对指定的运行时异常 不回滚  
+- isolation 事务隔离级别:  
+读未提交  读提交  可重复读  序列化    
+用于解决事务隔离三大读问题:  
+- 脏读: 一个事务读取到了另外一个事务没提交的数据(好处效率高)
+- 不可重复读: 一个事务在开始时 读取了一份数据 另外一个事务修改了这份数据 并进行了提交 当第一个事务再次读取数据时 发现数据发生改变.(不让另一个事务发生更改,安全性高,占用资源多)
+- 幻读: 一个事务统计了整张表的所有数据 另外一个事务增加了数据 并进行提交 当再次统计数据时 数据发生了改变  
+
+- readOnly 只读事务 只有当事务语句都是查询时 才能使用这个属性的值是true  默认这个属性的值是false  
+
+- propagation 事务传播特性 一个方法去调用另一个事务方法时 事务应该如何表现  
+</code></pre><p>Propagation.REQUIRED 如果当前方法没有事务 则会开启新事务<br>如果当前方法有事务 则将事务加入到当前事务中  </p>
+<p>propagation_required: 如果当前没有事务 ,就新建一个事务, 如果已存在一个事务中,加入到这个事务中,这是最常见的选择<br>propagation_supports: 支持当前事务, 如果没有当前事务, 就以非事务方法执行<br>propagation_mandatory: 使用当前事务, 如果没有当前事务, 就抛出异常<br>propagation_required_new: 新建事务,如果当前存在事务,把当前事务挂起<br>propagation_not_supported: 以非事务方式执行操作, 如果当前存在事务, 就把当前事务挂起<br>propagation_never: 以非事务方式执行操作, 如果当前事务存在则抛出异常<br>propagation_nested: 如果当前存在事务, 则再嵌套事务内执行, 如果当前没有事务, 则执行propagation_required<br><code>`</code></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Spring 的声明式事务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>12.05Java学习进度</title>
+    <url>/2019/12/05/2019-12-05-05ribao/</url>
+    <content><![CDATA[<h1 id="根据银行账户增删改查项目"><a href="#根据银行账户增删改查项目" class="headerlink" title="根据银行账户增删改查项目"></a>根据银行账户增删改查项目</h1>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>java进度</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>12.04Java学习进度</title>
     <url>/2019/12/04/2019-12-04-04ribao/</url>
     <content><![CDATA[<h1 id="Bean-参数的注入"><a href="#Bean-参数的注入" class="headerlink" title="Bean 参数的注入:"></a>Bean 参数的注入:</h1><ol>
@@ -44,6 +265,7 @@
 &lt;util:set id=&quot;&quot;    &gt;
 &lt;util:map id=&quot;&quot;    &gt;
 &lt;util:properties id=&quot;&quot;    &gt;
+下面再使用时标签后面加 id=&quot;&quot; 即可
 </code></pre></li>
 <li><p>Properties 单独定义时 可以关联一个.properties 文件  </p>
 </li>
@@ -93,15 +315,6 @@ create sequence xdl_bank_account_29_id_seq;
         <tag>Bean 参数的注入</tag>
         <tag>Spring DAO 对JDBC的改进</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>12.04Java学习进度</title>
-    <url>/2019/12/04/2019-12-05-05ribao/</url>
-    <content><![CDATA[<p># </p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
   </entry>
   <entry>
     <title>12.03Java学习进度</title>
@@ -923,6 +1136,39 @@ test属性值:
       </tags>
   </entry>
   <entry>
+    <title>11.21技术分享</title>
+    <url>/2019/11/21/2019-11-21-21jishu/</url>
+    <content><![CDATA[<h1 id="对谷歌插件的导入导出"><a href="#对谷歌插件的导入导出" class="headerlink" title="对谷歌插件的导入导出:"></a>对谷歌插件的导入导出:</h1><ol>
+<li>导出谷歌插件</li>
+</ol>
+<p>在你的电脑中找到谷歌的安装的位置   </p>
+<p>正常情况下默认为<code>C:\Users\Administrator\AppData\Local\Google\Chrome\User Data\Default\Extensions</code></p>
+<p>这个路径下存放的都是谷歌浏览器中安装的插件  </p>
+<p>将此目录下的插件文件复制即可</p>
+<ol start="2">
+<li>判断文件分别对应哪个插件  </li>
+</ol>
+<p>在插件这个目录下 文件名都是随机生成的, 所以我们没办法直接在这里区分哪个插件  </p>
+<p>我们可以点进每个文件夹 它的下级目录就是一个版本号 , 在谷歌的扩展程序中寻找与之相同的插件  </p>
+<p>那这个文件夹就是对应的插件了 </p>
+<ol start="3">
+<li>如何导入谷歌插件</li>
+</ol>
+<p>设置—&gt; 左侧栏扩展程序 —&gt; 右上角确定开启开发者模式 —&gt; 加载已解压的扩展程序  </p>
+<p>然后在文件中找到之前复制导出的那些文件夹,<code>注意:要选中加载的文件夹 是乱码名下那个版本号名的文件夹!</code>  </p>
+<blockquote>
+<p>这里再分享一个安装插件的小技巧  </p>
+</blockquote>
+<p><strong>有时候我们在网上下载下来的插件是.crx文件,然而谷歌有时候会安装不上这种文件</strong><br><strong>这时候可以将.crx文件后缀名改为<code>.zip</code>或者其他压缩文件后缀名,然后再解压,之后的导入插件步骤同上</strong></p>
+]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>谷歌插件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>11.21Java学习进度</title>
     <url>/2019/11/21/2019-11-21-21ribao/</url>
     <content><![CDATA[<h1 id="Servlet-接收用户表单的参数-GET-POST-乱码问题"><a href="#Servlet-接收用户表单的参数-GET-POST-乱码问题" class="headerlink" title="Servlet,接收用户表单的参数,GET,POST,乱码问题:"></a>Servlet,接收用户表单的参数,GET,POST,乱码问题:</h1><p><strong>Servlet的生命周期:</strong><br>指的是Servlet从创建到消亡的周期!  </p>
@@ -1039,39 +1285,6 @@ String username = request.getParameter(&quot;username&quot;);
       <tags>
         <tag>Servlet生命周期</tag>
         <tag>GET/POST请求</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>11.21技术分享</title>
-    <url>/2019/11/21/2019-11-21-21jishu/</url>
-    <content><![CDATA[<h1 id="对谷歌插件的导入导出"><a href="#对谷歌插件的导入导出" class="headerlink" title="对谷歌插件的导入导出:"></a>对谷歌插件的导入导出:</h1><ol>
-<li>导出谷歌插件</li>
-</ol>
-<p>在你的电脑中找到谷歌的安装的位置   </p>
-<p>正常情况下默认为<code>C:\Users\Administrator\AppData\Local\Google\Chrome\User Data\Default\Extensions</code></p>
-<p>这个路径下存放的都是谷歌浏览器中安装的插件  </p>
-<p>将此目录下的插件文件复制即可</p>
-<ol start="2">
-<li>判断文件分别对应哪个插件  </li>
-</ol>
-<p>在插件这个目录下 文件名都是随机生成的, 所以我们没办法直接在这里区分哪个插件  </p>
-<p>我们可以点进每个文件夹 它的下级目录就是一个版本号 , 在谷歌的扩展程序中寻找与之相同的插件  </p>
-<p>那这个文件夹就是对应的插件了 </p>
-<ol start="3">
-<li>如何导入谷歌插件</li>
-</ol>
-<p>设置—&gt; 左侧栏扩展程序 —&gt; 右上角确定开启开发者模式 —&gt; 加载已解压的扩展程序  </p>
-<p>然后在文件中找到之前复制导出的那些文件夹,<code>注意:要选中加载的文件夹 是乱码名下那个版本号名的文件夹!</code>  </p>
-<blockquote>
-<p>这里再分享一个安装插件的小技巧  </p>
-</blockquote>
-<p><strong>有时候我们在网上下载下来的插件是.crx文件,然而谷歌有时候会安装不上这种文件</strong><br><strong>这时候可以将.crx文件后缀名改为<code>.zip</code>或者其他压缩文件后缀名,然后再解压,之后的导入插件步骤同上</strong></p>
-]]></content>
-      <categories>
-        <category>技术分享</category>
-      </categories>
-      <tags>
-        <tag>谷歌插件</tag>
       </tags>
   </entry>
   <entry>
@@ -3075,21 +3288,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.29日报</title>
-    <url>/2019/08/29/2019-08-29-29ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天完成了计时器的考核，关于计时器与属性获取基本掌握90%，轮播图效果80%，后面开始看node,但是刚开始看进度10%</code>  </p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天在做计时器效果与轮播图效果都是自己在网上寻找的教程与例子，当自己努力做出来的成果成果的时候是很开心的，很有动力。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.29技术文档</title>
     <url>/2019/08/29/2019-08-29-29jishu/</url>
     <content><![CDATA[<h1 id="简易的图片轮播"><a href="#简易的图片轮播" class="headerlink" title="简易的图片轮播"></a>简易的图片轮播</h1><p>今天主要学习了轮播图的原理和简易制作，以下是我轮播图的代码：</p>
@@ -3199,12 +3397,12 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.28日报</title>
-    <url>/2019/08/28/2019-08-28-28ribao/</url>
+    <title>8.29日报</title>
+    <url>/2019/08/29/2019-08-29-29ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天下午学习了JS基础，学习了 定时器和选择对象并修改内容，还看了一些基础语法。</code>  </p>
+<p><code>今天完成了计时器的考核，关于计时器与属性获取基本掌握90%，轮播图效果80%，后面开始看node,但是刚开始看进度10%</code>  </p>
 </blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天学习的新任务是JS ，原来学过一些php也有一些基础学得还不算慢，总体来说今天的学习效率还可以。</p>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天在做计时器效果与轮播图效果都是自己在网上寻找的教程与例子，当自己努力做出来的成果成果的时候是很开心的，很有动力。</p>
 ]]></content>
       <categories>
         <category>心得</category>
@@ -3254,6 +3452,40 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
+    <title>8.28日报</title>
+    <url>/2019/08/28/2019-08-28-28ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天下午学习了JS基础，学习了 定时器和选择对象并修改内容，还看了一些基础语法。</code>  </p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天学习的新任务是JS ，原来学过一些php也有一些基础学得还不算慢，总体来说今天的学习效率还可以。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.27日报</title>
+    <url>/2019/08/27/2019-08-27-27ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>linux命令已通过考核，但是还有一些没有太熟练，学习进度95%，下午绘制了聊天室的流程图和思维导图基本绘制完成进度90%。</code>  </p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>已经给了半天时间看文档，考试linux命令时候还勾抹几次，命令定义不明确，意思相近的有很多没有明确区分。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>背东西时候要专注，有效率不能左看一眼又看一眼，这个看会了再看下一个</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.27技术文档</title>
     <url>/2019/08/27/2019-08-27-27jishu/</url>
     <content><![CDATA[<h1 id="TCP-IP协议"><a href="#TCP-IP协议" class="headerlink" title="TCP/IP协议"></a>TCP/IP协议</h1><blockquote>
@@ -3273,16 +3505,19 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.27日报</title>
-    <url>/2019/08/27/2019-08-27-27ribao/</url>
+    <title>8.26日报</title>
+    <url>/2019/08/26/2019-08-26-26ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>linux命令已通过考核，但是还有一些没有太熟练，学习进度95%，下午绘制了聊天室的流程图和思维导图基本绘制完成进度90%。</code>  </p>
+<p><code>今天看了一天的linux命令但是侧重点不够明确，常用的命令也基本认识了，学习linux命令70%。</code>  </p>
+</blockquote>
+<blockquote>
+<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
 </blockquote>
 <h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
 <p>今天的不足与感悟</p>
 </blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>已经给了半天时间看文档，考试linux命令时候还勾抹几次，命令定义不明确，意思相近的有很多没有明确区分。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>背东西时候要专注，有效率不能左看一眼又看一眼，这个看会了再看下一个</p>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天是我们组技术分享的时间，我讲的是html，虽然事先做好了ppt，但是上台还是有些放不开，不够灵活，只是死板地讲</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>上台演讲的事还是要多练习，还要多和大家沟通，才会一点点地会站在前面讲项目</p>
 ]]></content>
       <categories>
         <category>心得</category>
@@ -3431,25 +3666,26 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.26日报</title>
-    <url>/2019/08/26/2019-08-26-26ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天看了一天的linux命令但是侧重点不够明确，常用的命令也基本认识了，学习linux命令70%。</code>  </p>
-</blockquote>
-<blockquote>
-<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天是我们组技术分享的时间，我讲的是html，虽然事先做好了ppt，但是上台还是有些放不开，不够灵活，只是死板地讲</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>上台演讲的事还是要多练习，还要多和大家沟通，才会一点点地会站在前面讲项目</p>
+    <title>8.23技术文档</title>
+    <url>/2019/08/23/2019-08-23-23jishu/</url>
+    <content><![CDATA[<h1 id="linux常用命令整理之一"><a href="#linux常用命令整理之一" class="headerlink" title="linux常用命令整理之一"></a>linux常用命令整理之一</h1><p><strong>关机 (系统的关机、重启以及登出 ):</strong><br>shutdown -h now 关闭系统<br>init 0 关闭系统<br>telinit 0 关闭系统<br>shutdown -h hours:minutes &amp; 按预定时间关闭系统<br>shutdown -c 取消按预定时间关闭系统<br>shutdown -r now 重启<br>reboot 重启<br>logout 注销   </p>
+<p><strong>文件和目录:</strong><br>cd /home 进入 ‘/ home’ 目录’<br>cd .. 返回上一级目录<br>cd ../.. 返回上两级目录<br>cd 进入个人的主目录<br>cd ~user1 进入个人的主目录<br>cd - 返回上次所在的目录<br>pwd 显示工作路径<br>ls 查看目录中的文件<br>ls -F 查看目录中的文件<br>ls -l 显示文件和目录的详细资料<br>ls -a 显示隐藏文件<br>ls <em>[0-9]</em> 显示包含数字的文件名和目录名<br>tree 显示文件和目录由根目录开始的树形结构<br>lstree 显示文件和目录由根目录开始的树形结构<br>mkdir dir1 创建一个叫做 ‘dir1’ 的目录’<br>mkdir dir1 dir2 同时创建两个目录<br>mkdir -p /tmp/dir1/dir2 创建一个目录树<br>rm -f file1 删除一个叫做 ‘file1’ 的文件’<br>rmdir dir1 删除一个叫做 ‘dir1’ 的目录’<br>rm -rf dir1 删除一个叫做 ‘dir1’ 的目录并同时删除其内容<br>rm -rf dir1 dir2 同时删除两个目录及它们的内容<br>mv dir1 new_dir 重命名/移动 一个目录<br>cp file1 file2 复制一个文件<br>cp dir/* . 复制一个目录下的所有文件到当前工作目录<br>cp -a /tmp/dir1 . 复制一个目录到当前工作目录<br>cp -a dir1 dir2 复制一个目录<br>ln -s file1 lnk1 创建一个指向文件或目录的软链接<br>ln file1 lnk1 创建一个指向文件或目录的物理链接<br>touch -t 0712250000 file1 修改一个文件或目录的时间戳 - (YYMMDDhhmm)<br>file file1 outputs the mime type of the file as text<br>iconv -l 列出已知的编码   </p>
+<p><strong>文件搜索 :</strong><br>find / -name file1 从 ‘/‘ 开始进入根文件系统搜索文件和目录<br>find / -user user1 搜索属于用户 ‘user1’ 的文件和目录   </p>
+<p>find /home/user1 -name *.bin 在目录 ‘/ home/user1’ 中搜索带有’.bin’ 结尾的文件 </p>
+<p>find /usr/bin -type f -atime +100 搜索在过去100天内未被使用过的执行文件     </p>
+<p>find /usr/bin -type f -mtime -10 搜索在10天内被创建或者修改过的文件     </p>
+<p>find / -name *.rpm -exec chmod 755 ‘{}’ \; 搜索以 ‘.rpm’ 结尾的文件并定义其权限 </p>
+<p>find / -xdev -name *.rpm 搜索以 ‘.rpm’   结尾的文件，忽略光驱、捷盘等可移动设备 </p>
+<p>locate *.ps 寻找以 ‘.ps’ 结尾的文件 - 先运行 ‘updatedb’ 命令<br>whereis halt 显示一个二进制文件、源码或man的位置   </p>
+<p>which halt 显示一个二进制文件或可执行文件的完整路径 </p>
+<p><strong>备份:</strong><br>dump [选项] 备份后文件名  原文件或目录选项：<br>-0~9  九个备份级别<br>-f文件名： 指定备份后的文件名<br>-u： 备份成功后，把备份时间记录在/etc/dumpdates文件<br>-v：显备份过程中更多的输出信息<br>-j ：把文件压缩为.bz2格式<br>-W：显示允许被dump的分区备份登等级及备份时间<br>例： dump -0uj -f /root/boot.bak.bz2 /boot<br><strong>备份命令，先执行一次完全备份，并压缩和更新备份时间:</strong><br>cat /etc/dumpdates<br><strong>查看备份时间文件 :</strong><br>cp install.log /boot/<br><strong>复制日志文件到boot分区 :</strong><br>dump -1uj -f /root/boot,bak1.bz2 /boot/<br><strong>增量备份/boot分区，并压缩:</strong><br>dump -W<br><strong>查询分区的备份时间及备份级别 :</strong><br>备份文件或目录，只能用0级别进行完全备份，并且不支持增量备份：<br>dump -0j -f /root/etc.dump.bz2 /etc/  </p>
+<p><strong>恢复备份:</strong><br>restore [模式选项] [选项]<br>有四种模式不能混用。<br>-C：比较备份数据和实际数据的变化<br>-i：进入交互模式，手工选择需要恢复的文件<br>-t：查看模式，用于查看文件中拥有哪些数据<br>-r：还原模式，用于数据还原<br>选项：<br>-f：指定备份文件的文件名</p>
 ]]></content>
       <categories>
-        <category>心得</category>
+        <category>命令</category>
       </categories>
       <tags>
-        <tag>心得</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -3472,29 +3708,6 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>心得</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8.23技术文档</title>
-    <url>/2019/08/23/2019-08-23-23jishu/</url>
-    <content><![CDATA[<h1 id="linux常用命令整理之一"><a href="#linux常用命令整理之一" class="headerlink" title="linux常用命令整理之一"></a>linux常用命令整理之一</h1><p><strong>关机 (系统的关机、重启以及登出 ):</strong><br>shutdown -h now 关闭系统<br>init 0 关闭系统<br>telinit 0 关闭系统<br>shutdown -h hours:minutes &amp; 按预定时间关闭系统<br>shutdown -c 取消按预定时间关闭系统<br>shutdown -r now 重启<br>reboot 重启<br>logout 注销   </p>
-<p><strong>文件和目录:</strong><br>cd /home 进入 ‘/ home’ 目录’<br>cd .. 返回上一级目录<br>cd ../.. 返回上两级目录<br>cd 进入个人的主目录<br>cd ~user1 进入个人的主目录<br>cd - 返回上次所在的目录<br>pwd 显示工作路径<br>ls 查看目录中的文件<br>ls -F 查看目录中的文件<br>ls -l 显示文件和目录的详细资料<br>ls -a 显示隐藏文件<br>ls <em>[0-9]</em> 显示包含数字的文件名和目录名<br>tree 显示文件和目录由根目录开始的树形结构<br>lstree 显示文件和目录由根目录开始的树形结构<br>mkdir dir1 创建一个叫做 ‘dir1’ 的目录’<br>mkdir dir1 dir2 同时创建两个目录<br>mkdir -p /tmp/dir1/dir2 创建一个目录树<br>rm -f file1 删除一个叫做 ‘file1’ 的文件’<br>rmdir dir1 删除一个叫做 ‘dir1’ 的目录’<br>rm -rf dir1 删除一个叫做 ‘dir1’ 的目录并同时删除其内容<br>rm -rf dir1 dir2 同时删除两个目录及它们的内容<br>mv dir1 new_dir 重命名/移动 一个目录<br>cp file1 file2 复制一个文件<br>cp dir/* . 复制一个目录下的所有文件到当前工作目录<br>cp -a /tmp/dir1 . 复制一个目录到当前工作目录<br>cp -a dir1 dir2 复制一个目录<br>ln -s file1 lnk1 创建一个指向文件或目录的软链接<br>ln file1 lnk1 创建一个指向文件或目录的物理链接<br>touch -t 0712250000 file1 修改一个文件或目录的时间戳 - (YYMMDDhhmm)<br>file file1 outputs the mime type of the file as text<br>iconv -l 列出已知的编码   </p>
-<p><strong>文件搜索 :</strong><br>find / -name file1 从 ‘/‘ 开始进入根文件系统搜索文件和目录<br>find / -user user1 搜索属于用户 ‘user1’ 的文件和目录   </p>
-<p>find /home/user1 -name *.bin 在目录 ‘/ home/user1’ 中搜索带有’.bin’ 结尾的文件 </p>
-<p>find /usr/bin -type f -atime +100 搜索在过去100天内未被使用过的执行文件     </p>
-<p>find /usr/bin -type f -mtime -10 搜索在10天内被创建或者修改过的文件     </p>
-<p>find / -name *.rpm -exec chmod 755 ‘{}’ \; 搜索以 ‘.rpm’ 结尾的文件并定义其权限 </p>
-<p>find / -xdev -name *.rpm 搜索以 ‘.rpm’   结尾的文件，忽略光驱、捷盘等可移动设备 </p>
-<p>locate *.ps 寻找以 ‘.ps’ 结尾的文件 - 先运行 ‘updatedb’ 命令<br>whereis halt 显示一个二进制文件、源码或man的位置   </p>
-<p>which halt 显示一个二进制文件或可执行文件的完整路径 </p>
-<p><strong>备份:</strong><br>dump [选项] 备份后文件名  原文件或目录选项：<br>-0~9  九个备份级别<br>-f文件名： 指定备份后的文件名<br>-u： 备份成功后，把备份时间记录在/etc/dumpdates文件<br>-v：显备份过程中更多的输出信息<br>-j ：把文件压缩为.bz2格式<br>-W：显示允许被dump的分区备份登等级及备份时间<br>例： dump -0uj -f /root/boot.bak.bz2 /boot<br><strong>备份命令，先执行一次完全备份，并压缩和更新备份时间:</strong><br>cat /etc/dumpdates<br><strong>查看备份时间文件 :</strong><br>cp install.log /boot/<br><strong>复制日志文件到boot分区 :</strong><br>dump -1uj -f /root/boot,bak1.bz2 /boot/<br><strong>增量备份/boot分区，并压缩:</strong><br>dump -W<br><strong>查询分区的备份时间及备份级别 :</strong><br>备份文件或目录，只能用0级别进行完全备份，并且不支持增量备份：<br>dump -0j -f /root/etc.dump.bz2 /etc/  </p>
-<p><strong>恢复备份:</strong><br>restore [模式选项] [选项]<br>有四种模式不能混用。<br>-C：比较备份数据和实际数据的变化<br>-i：进入交互模式，手工选择需要恢复的文件<br>-t：查看模式，用于查看文件中拥有哪些数据<br>-r：还原模式，用于数据还原<br>选项：<br>-f：指定备份文件的文件名</p>
-]]></content>
-      <categories>
-        <category>命令</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -4024,8 +4237,8 @@ onload          浏览器已完成页面的加载
         <category>系统与命令</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>ubuntu</tag>
+        <tag>git</tag>
       </tags>
   </entry>
 </search>
