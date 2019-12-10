@@ -3467,25 +3467,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.27日报</title>
-    <url>/2019/08/27/2019-08-27-27ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>linux命令已通过考核，但是还有一些没有太熟练，学习进度95%，下午绘制了聊天室的流程图和思维导图基本绘制完成进度90%。</code>  </p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>已经给了半天时间看文档，考试linux命令时候还勾抹几次，命令定义不明确，意思相近的有很多没有明确区分。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>背东西时候要专注，有效率不能左看一眼又看一眼，这个看会了再看下一个</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.27技术文档</title>
     <url>/2019/08/27/2019-08-27-27jishu/</url>
     <content><![CDATA[<h1 id="TCP-IP协议"><a href="#TCP-IP协议" class="headerlink" title="TCP/IP协议"></a>TCP/IP协议</h1><blockquote>
@@ -3502,6 +3483,25 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>TCP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.27日报</title>
+    <url>/2019/08/27/2019-08-27-27ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>linux命令已通过考核，但是还有一些没有太熟练，学习进度95%，下午绘制了聊天室的流程图和思维导图基本绘制完成进度90%。</code>  </p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>已经给了半天时间看文档，考试linux命令时候还勾抹几次，命令定义不明确，意思相近的有很多没有明确区分。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>背东西时候要专注，有效率不能左看一眼又看一眼，这个看会了再看下一个</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
