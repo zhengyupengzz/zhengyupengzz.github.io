@@ -1480,37 +1480,6 @@ String username = request.getParameter(&quot;username&quot;);
       </tags>
   </entry>
   <entry>
-    <title>11.20心得</title>
-    <url>/2019/11/20/2019-11-20-20xinde/</url>
-    <content><![CDATA[<h1 id="对于博客模板的修改"><a href="#对于博客模板的修改" class="headerlink" title="对于博客模板的修改:"></a>对于博客模板的修改:</h1><blockquote>
-<p>由于19号发现了之前自己的博客模板有一些没改好的地方,便下决心这次要彻底改好一个博客模板</p>
-</blockquote>
-<p>所以19号的整整一天就都是在找模板,看效果的  </p>
-<p>然后晚自习的时候就已经确定好了这个模板,开始着手修改  </p>
-<p>由于不太了解博客里面元素和.ejs文件的构造 在改一些东西的时候总会有报错  </p>
-<p>后来想到了把所有文件打开  然后去查找那个关键字  </p>
-<p>由于有一些js基础,这么一查找到,想做些修改也不是很难  </p>
-<p>在将一些404图片修改了,把多余的文字修改了之后  </p>
-<blockquote>
-<p>后续又对博客进行了一些优化  </p>
-</blockquote>
-<p>首先将<code>Valine</code>评论区的 ID 和 Key 换成了自己注册的LeanCloud 的ID 和 Key  </p>
-<p>还将github博客也推到了coding 这个仓库可以让国内访问github可以快一些  </p>
-<p>并将自己之前购买的域名都绑定到了自己的博客上:  </p>
-<p><a href="http://zhengyupeng.top" target="_blank" rel="noopener">zhengyupeng.top</a>  </p>
-<p><a href="https://www.zhengyupeng.top" target="_blank" rel="noopener">www.zhengyupeng.top</a>  </p>
-<p>也都能访问到我的博客了!  </p>
-<p><strong>最后总结一下心得吧:</strong>  </p>
-<p>昨天一天和今天上午到十点多相当于在学习Java的进度上没有进展,<br>但是改完这个博客,也学到了很多的东西,了解到了很多东西,<br>并且改完这个博客心情都变好了,可以安心学习去了。<br>接下来传完的个博客我就继续学习Java了,<strong><code>冲冲冲!!!</code></strong></p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>11.20Java学习进度</title>
     <url>/2019/11/20/2019-11-20-20ribao/</url>
     <content><![CDATA[<h1 id="JavaWeb开发环境的配置-http协议与HttpServlet类"><a href="#JavaWeb开发环境的配置-http协议与HttpServlet类" class="headerlink" title="JavaWeb开发环境的配置,http协议与HttpServlet类:"></a>JavaWeb开发环境的配置,http协议与HttpServlet类:</h1><p><strong>tomcat配置:</strong>  </p>
@@ -1617,6 +1586,37 @@ B / S :
       </tags>
   </entry>
   <entry>
+    <title>11.20心得</title>
+    <url>/2019/11/20/2019-11-20-20xinde/</url>
+    <content><![CDATA[<h1 id="对于博客模板的修改"><a href="#对于博客模板的修改" class="headerlink" title="对于博客模板的修改:"></a>对于博客模板的修改:</h1><blockquote>
+<p>由于19号发现了之前自己的博客模板有一些没改好的地方,便下决心这次要彻底改好一个博客模板</p>
+</blockquote>
+<p>所以19号的整整一天就都是在找模板,看效果的  </p>
+<p>然后晚自习的时候就已经确定好了这个模板,开始着手修改  </p>
+<p>由于不太了解博客里面元素和.ejs文件的构造 在改一些东西的时候总会有报错  </p>
+<p>后来想到了把所有文件打开  然后去查找那个关键字  </p>
+<p>由于有一些js基础,这么一查找到,想做些修改也不是很难  </p>
+<p>在将一些404图片修改了,把多余的文字修改了之后  </p>
+<blockquote>
+<p>后续又对博客进行了一些优化  </p>
+</blockquote>
+<p>首先将<code>Valine</code>评论区的 ID 和 Key 换成了自己注册的LeanCloud 的ID 和 Key  </p>
+<p>还将github博客也推到了coding 这个仓库可以让国内访问github可以快一些  </p>
+<p>并将自己之前购买的域名都绑定到了自己的博客上:  </p>
+<p><a href="http://zhengyupeng.top" target="_blank" rel="noopener">zhengyupeng.top</a>  </p>
+<p><a href="https://www.zhengyupeng.top" target="_blank" rel="noopener">www.zhengyupeng.top</a>  </p>
+<p>也都能访问到我的博客了!  </p>
+<p><strong>最后总结一下心得吧:</strong>  </p>
+<p>昨天一天和今天上午到十点多相当于在学习Java的进度上没有进展,<br>但是改完这个博客,也学到了很多的东西,了解到了很多东西,<br>并且改完这个博客心情都变好了,可以安心学习去了。<br>接下来传完的个博客我就继续学习Java了,<strong><code>冲冲冲!!!</code></strong></p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>11.18JAVA学习进度</title>
     <url>/2019/11/18/2019-11-18-18ribao/</url>
     <content><![CDATA[<h1 id="11-18Java学习进度"><a href="#11-18Java学习进度" class="headerlink" title="11.18Java学习进度"></a>11.18Java学习进度</h1><h2 id="解析xml属性操作-Xpath"><a href="#解析xml属性操作-Xpath" class="headerlink" title="解析xml属性操作,Xpath:"></a>解析xml属性操作,Xpath:</h2><pre><code>// 1. 加载xml文件到jvm中,形成数据流
@@ -1680,6 +1680,42 @@ xw.close();
       <tags>
         <tag>解析xml属性操作</tag>
         <tag>Xpath</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>11.16技术分享</title>
+    <url>/2019/11/16/2019-11-16-16jishu/</url>
+    <content><![CDATA[<h1 id="11-16技术分享"><a href="#11-16技术分享" class="headerlink" title="11.16技术分享"></a>11.16技术分享</h1><h2 id="idea运行tomcat控制台乱码"><a href="#idea运行tomcat控制台乱码" class="headerlink" title="idea运行tomcat控制台乱码:"></a>idea运行tomcat控制台乱码:</h2><h3 id="1-首先设置idea的编码格式"><a href="#1-首先设置idea的编码格式" class="headerlink" title="1.首先设置idea的编码格式:"></a>1.首先设置idea的编码格式:</h3><p>File–&gt;Settings–&gt;File Encodings</p>
+<p><img src="https://s2.ax1x.com/2019/11/20/MWMwvV.md.png" alt="idea编码格式">  </p>
+<p>将所有编码格式统一设置成UTF-8。  </p>
+<h3 id="2-再设置tomcat的编码格式"><a href="#2-再设置tomcat的编码格式" class="headerlink" title="2.再设置tomcat的编码格式:"></a>2.再设置tomcat的编码格式:</h3><p><img src="https://s2.ax1x.com/2019/11/20/MWMyE4.png" alt="tomcat设置">  </p>
+<p>改变VM options为-Dfile.encoding=UTF-8:<br><img src="https://s2.ax1x.com/2019/11/20/MWMrbF.md.png" alt="tomcat编码格式"> </p>
+<p><strong><code>完成上面的设置后还会有乱码,不要急</code></strong>  </p>
+<h3 id="3-配置idea的文件设置"><a href="#3-配置idea的文件设置" class="headerlink" title="3.配置idea的文件设置:"></a>3.配置idea的文件设置:</h3><p>找到idea图标,右键,打开文件位置找到  </p>
+<p><code>idea.exe.vmoptions</code>和<code>idea64.exe.vmoptions</code>文件  并打开文件  </p>
+<p>在文件后面添加一行：-Dfile.encoding=UTF-8   </p>
+<p>idae中的设置配置也要修改</p>
+<p>help–&gt;Edit Custom VM Options…  </p>
+<p>打开此配置 也在最后一行添加:-Dfile.encoding=UTF-8  </p>
+<h3 id="4-修改tomcat的运行编码格式"><a href="#4-修改tomcat的运行编码格式" class="headerlink" title="4.修改tomcat的运行编码格式:"></a>4.修改tomcat的运行编码格式:</h3><p>进入到tomcat的根目录的bin目录下  </p>
+<p>此时可以在文件地址栏输入cmd来启动dos窗口执行  </p>
+<pre><code>catalina.bat run
+</code></pre><p>(或者也可以直接cmd  然后cd到bin目录下 执行此命令)  </p>
+<p>之后再用命令切换cmd的编码格式<br>“chcp 65001”切换cmd为utf8，”chcp 936”切换cmd为gbk  </p>
+<p>这里我们使用chcp 65001来切换成utf8  </p>
+<p>执行之后可以再运行一下</p>
+<pre><code>catalina.bat run
+</code></pre><p>看看命令是否都编程正常汉语,若都成正常汉语就是成功了!</p>
+<p>然后重启idea即可.  </p>
+<p><code>最后提一句:</code>  </p>
+<p>自己改tomcat的logging.properties为GBk会导致调试时get/post参数乱码  </p>
+<p>还是都改成UTF8稳妥。</p>
+]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>idea控制台乱码</tag>
       </tags>
   </entry>
   <entry>
@@ -1808,42 +1844,6 @@ for(Element e1: list){
       <tags>
         <tag>数据库优化</tag>
         <tag>XML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>11.16技术分享</title>
-    <url>/2019/11/16/2019-11-16-16jishu/</url>
-    <content><![CDATA[<h1 id="11-16技术分享"><a href="#11-16技术分享" class="headerlink" title="11.16技术分享"></a>11.16技术分享</h1><h2 id="idea运行tomcat控制台乱码"><a href="#idea运行tomcat控制台乱码" class="headerlink" title="idea运行tomcat控制台乱码:"></a>idea运行tomcat控制台乱码:</h2><h3 id="1-首先设置idea的编码格式"><a href="#1-首先设置idea的编码格式" class="headerlink" title="1.首先设置idea的编码格式:"></a>1.首先设置idea的编码格式:</h3><p>File–&gt;Settings–&gt;File Encodings</p>
-<p><img src="https://s2.ax1x.com/2019/11/20/MWMwvV.md.png" alt="idea编码格式">  </p>
-<p>将所有编码格式统一设置成UTF-8。  </p>
-<h3 id="2-再设置tomcat的编码格式"><a href="#2-再设置tomcat的编码格式" class="headerlink" title="2.再设置tomcat的编码格式:"></a>2.再设置tomcat的编码格式:</h3><p><img src="https://s2.ax1x.com/2019/11/20/MWMyE4.png" alt="tomcat设置">  </p>
-<p>改变VM options为-Dfile.encoding=UTF-8:<br><img src="https://s2.ax1x.com/2019/11/20/MWMrbF.md.png" alt="tomcat编码格式"> </p>
-<p><strong><code>完成上面的设置后还会有乱码,不要急</code></strong>  </p>
-<h3 id="3-配置idea的文件设置"><a href="#3-配置idea的文件设置" class="headerlink" title="3.配置idea的文件设置:"></a>3.配置idea的文件设置:</h3><p>找到idea图标,右键,打开文件位置找到  </p>
-<p><code>idea.exe.vmoptions</code>和<code>idea64.exe.vmoptions</code>文件  并打开文件  </p>
-<p>在文件后面添加一行：-Dfile.encoding=UTF-8   </p>
-<p>idae中的设置配置也要修改</p>
-<p>help–&gt;Edit Custom VM Options…  </p>
-<p>打开此配置 也在最后一行添加:-Dfile.encoding=UTF-8  </p>
-<h3 id="4-修改tomcat的运行编码格式"><a href="#4-修改tomcat的运行编码格式" class="headerlink" title="4.修改tomcat的运行编码格式:"></a>4.修改tomcat的运行编码格式:</h3><p>进入到tomcat的根目录的bin目录下  </p>
-<p>此时可以在文件地址栏输入cmd来启动dos窗口执行  </p>
-<pre><code>catalina.bat run
-</code></pre><p>(或者也可以直接cmd  然后cd到bin目录下 执行此命令)  </p>
-<p>之后再用命令切换cmd的编码格式<br>“chcp 65001”切换cmd为utf8，”chcp 936”切换cmd为gbk  </p>
-<p>这里我们使用chcp 65001来切换成utf8  </p>
-<p>执行之后可以再运行一下</p>
-<pre><code>catalina.bat run
-</code></pre><p>看看命令是否都编程正常汉语,若都成正常汉语就是成功了!</p>
-<p>然后重启idea即可.  </p>
-<p><code>最后提一句:</code>  </p>
-<p>自己改tomcat的logging.properties为GBk会导致调试时get/post参数乱码  </p>
-<p>还是都改成UTF8稳妥。</p>
-]]></content>
-      <categories>
-        <category>分享</category>
-      </categories>
-      <tags>
-        <tag>idea控制台乱码</tag>
       </tags>
   </entry>
   <entry>
@@ -3480,21 +3480,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.29日报</title>
-    <url>/2019/08/29/2019-08-29-29ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天完成了计时器的考核，关于计时器与属性获取基本掌握90%，轮播图效果80%，后面开始看node,但是刚开始看进度10%</code>  </p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天在做计时器效果与轮播图效果都是自己在网上寻找的教程与例子，当自己努力做出来的成果成果的时候是很开心的，很有动力。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.29技术文档</title>
     <url>/2019/08/29/2019-08-29-29jishu/</url>
     <content><![CDATA[<h1 id="简易的图片轮播"><a href="#简易的图片轮播" class="headerlink" title="简易的图片轮播"></a>简易的图片轮播</h1><p>今天主要学习了轮播图的原理和简易制作，以下是我轮播图的代码：</p>
@@ -3604,12 +3589,12 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.28日报</title>
-    <url>/2019/08/28/2019-08-28-28ribao/</url>
+    <title>8.29日报</title>
+    <url>/2019/08/29/2019-08-29-29ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天下午学习了JS基础，学习了 定时器和选择对象并修改内容，还看了一些基础语法。</code>  </p>
+<p><code>今天完成了计时器的考核，关于计时器与属性获取基本掌握90%，轮播图效果80%，后面开始看node,但是刚开始看进度10%</code>  </p>
 </blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天学习的新任务是JS ，原来学过一些php也有一些基础学得还不算慢，总体来说今天的学习效率还可以。</p>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天在做计时器效果与轮播图效果都是自己在网上寻找的教程与例子，当自己努力做出来的成果成果的时候是很开心的，很有动力。</p>
 ]]></content>
       <categories>
         <category>心得</category>
@@ -3656,6 +3641,21 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.28日报</title>
+    <url>/2019/08/28/2019-08-28-28ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天下午学习了JS基础，学习了 定时器和选择对象并修改内容，还看了一些基础语法。</code>  </p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天学习的新任务是JS ，原来学过一些php也有一些基础学得还不算慢，总体来说今天的学习效率还可以。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -3858,28 +3858,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.23日报</title>
-    <url>/2019/08/23/2019-08-23-23ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天把vim常用命令整理得差不多了，vim进度90%，今天开始看的linux命令，但是感觉看的很乱，进度40%。</code>  </p>
-</blockquote>
-<blockquote>
-<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天心不够静，看到属性多了就乱了，不知道从哪开背起，后来慢慢的静下来从头看也看了好几个命令。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.23技术文档</title>
     <url>/2019/08/23/2019-08-23-23jishu/</url>
     <content><![CDATA[<h1 id="linux常用命令整理之一"><a href="#linux常用命令整理之一" class="headerlink" title="linux常用命令整理之一"></a>linux常用命令整理之一</h1><p><strong>关机 (系统的关机、重启以及登出 ):</strong><br>shutdown -h now 关闭系统<br>init 0 关闭系统<br>telinit 0 关闭系统<br>shutdown -h hours:minutes &amp; 按预定时间关闭系统<br>shutdown -c 取消按预定时间关闭系统<br>shutdown -r now 重启<br>reboot 重启<br>logout 注销   </p>
@@ -3900,6 +3878,28 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.23日报</title>
+    <url>/2019/08/23/2019-08-23-23ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天把vim常用命令整理得差不多了，vim进度90%，今天开始看的linux命令，但是感觉看的很乱，进度40%。</code>  </p>
+</blockquote>
+<blockquote>
+<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天心不够静，看到属性多了就乱了，不知道从哪开背起，后来慢慢的静下来从头看也看了好几个命令。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -4087,25 +4087,6 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>vim</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8.21日报</title>
-    <url>/2019/08/21/2019-08-21-21ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
-]]></content>
-      <categories>
-        <category>命令</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -4325,6 +4306,25 @@ onload          浏览器已完成页面的加载
 </blockquote>
 <p>git checkout -b 分支名 标签</p>
 <h3 id="最后放上一张网上找到的git常用命令表："><a href="#最后放上一张网上找到的git常用命令表：" class="headerlink" title="最后放上一张网上找到的git常用命令表："></a>最后放上一张网上找到的git常用命令表：</h3><p><img src="https://s2.ax1x.com/2019/11/20/MWMBuT.md.png" alt="git常用命令"></p>
+]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.21日报</title>
+    <url>/2019/08/21/2019-08-21-21ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
 ]]></content>
       <categories>
         <category>命令</category>
