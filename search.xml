@@ -1,6 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>12.12Java学习进度</title>
+    <url>/2019/12/12/2019-12-12-12ribao/</url>
+    <content><![CDATA[<h1 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot:"></a>SpringBoot:</h1><p>Pivotal  SpringBoot、SpringCloud，微服务架构。</p>
+<p>SpringBoot : 对Spring框架进行了封装，目的快速搭建Spring应用，快速开发。</p>
+<ol>
+<li>内置服务器，自动启动和web发布</li>
+<li>取消了XML配置，完全采用Java配置模式（注解+编码）</li>
+<li>有自动配置机制，可以创建大量常用对象</li>
+<li><p>starter启动工具集(jar)引入更加方便</p>
+<pre><code> spring-boot-starter //包含ioc、aop、yaml解析、自动配置
+ spring-boot-starter-web //包含mvc、rest、tomcat、boot-starter所有包
+ spring-boot-starter-jdbc //包含hikari、spring-jdbc
+ spring-boot-starter-test //包含junit、spring-test
+</code></pre></li>
+</ol>
+<p><strong>SpringBoot开发体验:</strong>  </p>
+<ol>
+<li><p>starter工具集导入（pom.xml）</p>
+<pre><code> &lt;dependencies&gt;
+     &lt;dependency&gt;
+         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+         &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+         &lt;version&gt;2.1.2.RELEASE&lt;/version&gt;
+     &lt;/dependency&gt;
+ &lt;/dependencies&gt;
+</code></pre></li>
+<li><p>application.properties或application.yml配置文件</p>
+<pre><code> server.port=8888
+</code></pre></li>
+<li><p>业务组件代码（Controller、Service、Dao）</p>
+<pre><code> @Controller
+ public class HelloController {
+
+     @RequestMapping(&quot;/hello&quot;)
+     @ResponseBody
+     public String say() {
+         return &quot;Hello SpringBoot&quot;;
+     }
+
+ }
+</code></pre></li>
+<li><p>启动类</p>
+<pre><code> @SpringBootApplication
+ public class RunBoot {
+
+     public static void main(String[] args) {
+         SpringApplication.run(RunBoot.class);
+     }
+
+ }
+</code></pre></li>
+</ol>
+<p><strong>SpringBoot程序结构:</strong>  </p>
+<p>SpringBoot程序由以下几部分构成：</p>
+<ol>
+<li><p>boot开发包(pom.xml)</p>
+<p> spring-boot-starter-xxx</p>
+</li>
+<li><p>主配置文件</p>
+<p> application.properties格式</p>
+<p> application.yml格式</p>
+</li>
+<li><p>启动类main</p>
+<p> @SpringBootApplication</p>
+<p> SpringApplication.run()</p>
+</li>
+<li><p>业务处理组件</p>
+<p> controller、service、dao、entity</p>
+</li>
+</ol>
+<p><strong>SpringBoot启动过程:</strong>  </p>
+<pre><code>SpringApplication.run()方法主要是构建一个Spring容器对象ApplicationContext，对容器环境、bean对象做设置。
+
+//原始Spring通过xml配置文件实例化容器
+ApplicationContext ac = new ClasspathXmlApplicationContext(&quot;applicationContext.xml&quot;);
+
+//SpringBoot通过启动标记@SpringBootApplication实例化Spring容器
+ApplicationContext ac = SpringApplication.run(xxx);
+</code></pre><ol>
+<li>创建SpringApplication对象，做初始化工作（加载spring.factories文件的初始组件和Listener组件）</li>
+<li><p>调用SpringApplication对象的run方法启动</p>
+<ul>
+<li>加载程序环境信息（Web环境、JDK环境…）</li>
+<li>打印Banner启动Logo</li>
+<li>创建ApplicationContext容器对象（根据环境不同创建不同的实例AnnotationConfigApplicationContext）</li>
+<li>设置Spring容器环境和参数</li>
+<li>往Spring容器中加载各种Bean组件</li>
+<li>如果底层有tomcat服务器，自动启动发布程序</li>
+<li>返回Spring容器对象</li>
+</ul>
+</li>
+</ol>
+<p><strong>SpringBoot启动标记:</strong>  </p>
+<p>SpringBoot启动加载@SpringBootApplication是一个复合标记，包含以下几项重要功能：</p>
+<ol>
+<li><p>@SpringBootConfiguration或@Configuration（Bean定义）</p>
+<p> 等价于之前XML配置中的&lt; bean id=”” class=””&gt;</p>
+<ul>
+<li><p>在启动类前追加@SpringBootConfiguration或@Configuration</p>
+<pre><code>  @SpringBootConfiguration//bean定义
+  public class RunBoot {
+
+  }
+</code></pre></li>
+<li><p>在类中定义方法，追加@Bean标记</p>
+<pre><code>  @Bean(name=&quot;deptdao&quot;)//将返回的对象添加到spring容器中，id名默认为方法名
+  public DeptDao deptDao2() {
+      return new DeptDao();
+  }
+</code></pre></li>
+<li><p>如果有多个相同类型对象，可以使用@Primary</p>
+<pre><code>  //&lt;bean id=&quot;deptDao1&quot; class=&quot;cn.xdl.dao.DeptDao&quot;&gt;
+  @Bean//将返回的对象添加到spring容器中，id名默认为方法名
+  @Primary//类型注入发生冲突，默认注入
+  public DeptDao deptDao1() {
+      return new DeptDao();
+  }
+</code></pre></li>
+<li><p>如果有多个配置类，可以使用@Import注解合并成一个</p>
+<pre><code>  @SpringBootConfiguration//bean定义
+  @Import(BeanConfiguration.class)//加载BeanConfiguration配置类
+  public class RunBoot {
+
+  }
+</code></pre></li>
+</ul>
+</li>
+<li><p>@ComponentScan（Bean扫描）</p>
+<p> 等价于之前XML配置中的&lt;context:component-scan base-pakcage=””&gt;</p>
+</li>
+<li><p>@EnableAutoConfiguration (自动配置)</p>
+<p> SpringBoot特有功能，省略大量的XML配置定义。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Springboot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>12.11Java学习进度</title>
+    <url>/2019/12/11/2019-12-11-11ribao/</url>
+    <content><![CDATA[<h1 id="SSM"><a href="#SSM" class="headerlink" title="SSM:"></a>SSM:</h1><p><strong>以登录为例   完成 SSM 架构的搭建:</strong>   </p>
+<p>将Mybatis 和  Spring 进行整合 (以MapperScannerConfigurer 最终提供Service)</p>
+<ol>
+<li>建立一个项目  导入jar包(ioc aop dao mvc mybatis mybatis-spring数据库连接池  数据库驱动 )  拷贝spring 配置文件到src下  </li>
+<li>根据表 建立实体类  </li>
+<li>编写SQL 定义文件   根据账号 和 密码进行查询  </li>
+<li>编写DAO 接口  </li>
+<li>在Spring 容器中 创建 SqlSessionFactoryBean  提供  SqlSessionFactory依赖dataSource  和 Sql定义文件  </li>
+<li>创建 MapperScannerConfigurer  批量产生DAO 实现类  依赖于basePackage和   SqlSessionFactory  </li>
+<li>编写Service 类 提供业务方法 根据账号和密码进行 登录    然后开启组件扫描 在容器中创建 Service 对应的对象  测试  </li>
+</ol>
+<p>1.2 搭建基于标注的Spring MVC</p>
+<p>1.3 编写控制器方法  让页面请求 结合到控制器方法<br>  控制器方法中使用  Service 完成 登录  根据结果 做页面跳转 </p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>SSM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>12.10Java学习进度</title>
     <url>/2019/12/10/2019-12-10-10ribao/</url>
     <content><![CDATA[<h1 id="Mybatis-Mybatis的作用"><a href="#Mybatis-Mybatis的作用" class="headerlink" title="Mybatis,Mybatis的作用:"></a>Mybatis,Mybatis的作用:</h1><p><strong>Mybatis 简介:</strong>  </p>
@@ -26,6 +193,31 @@
 </code></pre>如果是增删改 语句  则返回void 或者int  推荐使用 int  </li>
 <li>接口中方法的参数和 parameterType 保持一致<br>   如果没有  parameterType 则代表方法参数任意  </li>
 <li>SQL 定义文件中的 namespace  要写 包名.接口名   </li>
+</ol>
+<p><strong>Spring 和 Mybatis的整合:</strong>  </p>
+<ol>
+<li>新建一个项目  导入jar包(ioc aop  mybatis  mybatis-spring dao  数据库驱动 连接池)拷贝 Spring 容器的配置文件到src下  </li>
+<li>根据银行账户表  建立一个实体类  </li>
+<li>编写SQL 定义文件   根据 id  查询 银行账户   </li>
+<li>根据Mapper 映射器规则 编写DAO 接口  </li>
+<li>在Spring 容器中  创建 SqlSessionFactoryBean  返回SqlSessionFactory依赖于  dataSource   和  Sql 定义文件  </li>
+<li>在Spring 容器创建  MapperFactoryBean   返回 DAO 的实现类依赖于  接口 和 SqlSessionFactory  </li>
+<li>创建Spring容器 从容器中 获取DAO 的实现类  测试  </li>
+</ol>
+<p><strong>MapperScannerConfigurer  批量产生实现类</strong></p>
+<p><strong>自定义标注 解决接口的实现类控制问题</strong> </p>
+<p><strong>Mybatis  和  Spring 的第二种手段:</strong>  </p>
+<ul>
+<li>利用模板(SqlSessionTemplate) 自己写DAO的实现类  </li>
+</ul>
+<ol>
+<li>新建一个项目  导入jar包(ioc aop  mybatis  mybatis-spring dao  数据库驱动 连接池)拷贝 Spring 容器的配置文件到src下  </li>
+<li>根据银行账户表  建立一个实体类  </li>
+<li>编写SQL 定义文件   根据 id  查询 银行账户  </li>
+<li>根据Mapper 映射器规则 编写DAO 接口  </li>
+<li>在Spring 容器中  创建 SqlSessionFactoryBean  返回SqlSessionFactory依赖于  dataSource   和  Sql 定义文件  </li>
+<li>自己写DAO 的实现类 注入 SqlSessionTemplate对象  这个对象依赖于  SqlSessionFactory  </li>
+<li>开启组件扫描 在容器中创建DAO的实现类对应的对象  获取这个对象测试  </li>
 </ol>
 ]]></content>
       <categories>
@@ -1288,6 +1480,37 @@ String username = request.getParameter(&quot;username&quot;);
       </tags>
   </entry>
   <entry>
+    <title>11.20心得</title>
+    <url>/2019/11/20/2019-11-20-20xinde/</url>
+    <content><![CDATA[<h1 id="对于博客模板的修改"><a href="#对于博客模板的修改" class="headerlink" title="对于博客模板的修改:"></a>对于博客模板的修改:</h1><blockquote>
+<p>由于19号发现了之前自己的博客模板有一些没改好的地方,便下决心这次要彻底改好一个博客模板</p>
+</blockquote>
+<p>所以19号的整整一天就都是在找模板,看效果的  </p>
+<p>然后晚自习的时候就已经确定好了这个模板,开始着手修改  </p>
+<p>由于不太了解博客里面元素和.ejs文件的构造 在改一些东西的时候总会有报错  </p>
+<p>后来想到了把所有文件打开  然后去查找那个关键字  </p>
+<p>由于有一些js基础,这么一查找到,想做些修改也不是很难  </p>
+<p>在将一些404图片修改了,把多余的文字修改了之后  </p>
+<blockquote>
+<p>后续又对博客进行了一些优化  </p>
+</blockquote>
+<p>首先将<code>Valine</code>评论区的 ID 和 Key 换成了自己注册的LeanCloud 的ID 和 Key  </p>
+<p>还将github博客也推到了coding 这个仓库可以让国内访问github可以快一些  </p>
+<p>并将自己之前购买的域名都绑定到了自己的博客上:  </p>
+<p><a href="http://zhengyupeng.top" target="_blank" rel="noopener">zhengyupeng.top</a>  </p>
+<p><a href="https://www.zhengyupeng.top" target="_blank" rel="noopener">www.zhengyupeng.top</a>  </p>
+<p>也都能访问到我的博客了!  </p>
+<p><strong>最后总结一下心得吧:</strong>  </p>
+<p>昨天一天和今天上午到十点多相当于在学习Java的进度上没有进展,<br>但是改完这个博客,也学到了很多的东西,了解到了很多东西,<br>并且改完这个博客心情都变好了,可以安心学习去了。<br>接下来传完的个博客我就继续学习Java了,<strong><code>冲冲冲!!!</code></strong></p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>11.20Java学习进度</title>
     <url>/2019/11/20/2019-11-20-20ribao/</url>
     <content><![CDATA[<h1 id="JavaWeb开发环境的配置-http协议与HttpServlet类"><a href="#JavaWeb开发环境的配置-http协议与HttpServlet类" class="headerlink" title="JavaWeb开发环境的配置,http协议与HttpServlet类:"></a>JavaWeb开发环境的配置,http协议与HttpServlet类:</h1><p><strong>tomcat配置:</strong>  </p>
@@ -1394,37 +1617,6 @@ B / S :
       </tags>
   </entry>
   <entry>
-    <title>11.20心得</title>
-    <url>/2019/11/20/2019-11-20-20xinde/</url>
-    <content><![CDATA[<h1 id="对于博客模板的修改"><a href="#对于博客模板的修改" class="headerlink" title="对于博客模板的修改:"></a>对于博客模板的修改:</h1><blockquote>
-<p>由于19号发现了之前自己的博客模板有一些没改好的地方,便下决心这次要彻底改好一个博客模板</p>
-</blockquote>
-<p>所以19号的整整一天就都是在找模板,看效果的  </p>
-<p>然后晚自习的时候就已经确定好了这个模板,开始着手修改  </p>
-<p>由于不太了解博客里面元素和.ejs文件的构造 在改一些东西的时候总会有报错  </p>
-<p>后来想到了把所有文件打开  然后去查找那个关键字  </p>
-<p>由于有一些js基础,这么一查找到,想做些修改也不是很难  </p>
-<p>在将一些404图片修改了,把多余的文字修改了之后  </p>
-<blockquote>
-<p>后续又对博客进行了一些优化  </p>
-</blockquote>
-<p>首先将<code>Valine</code>评论区的 ID 和 Key 换成了自己注册的LeanCloud 的ID 和 Key  </p>
-<p>还将github博客也推到了coding 这个仓库可以让国内访问github可以快一些  </p>
-<p>并将自己之前购买的域名都绑定到了自己的博客上:  </p>
-<p><a href="http://zhengyupeng.top" target="_blank" rel="noopener">zhengyupeng.top</a>  </p>
-<p><a href="https://www.zhengyupeng.top" target="_blank" rel="noopener">www.zhengyupeng.top</a>  </p>
-<p>也都能访问到我的博客了!  </p>
-<p><strong>最后总结一下心得吧:</strong>  </p>
-<p>昨天一天和今天上午到十点多相当于在学习Java的进度上没有进展,<br>但是改完这个博客,也学到了很多的东西,了解到了很多东西,<br>并且改完这个博客心情都变好了,可以安心学习去了。<br>接下来传完的个博客我就继续学习Java了,<strong><code>冲冲冲!!!</code></strong></p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>11.18JAVA学习进度</title>
     <url>/2019/11/18/2019-11-18-18ribao/</url>
     <content><![CDATA[<h1 id="11-18Java学习进度"><a href="#11-18Java学习进度" class="headerlink" title="11.18Java学习进度"></a>11.18Java学习进度</h1><h2 id="解析xml属性操作-Xpath"><a href="#解析xml属性操作-Xpath" class="headerlink" title="解析xml属性操作,Xpath:"></a>解析xml属性操作,Xpath:</h2><pre><code>// 1. 加载xml文件到jvm中,形成数据流
@@ -1488,42 +1680,6 @@ xw.close();
       <tags>
         <tag>解析xml属性操作</tag>
         <tag>Xpath</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>11.16技术分享</title>
-    <url>/2019/11/16/2019-11-16-16jishu/</url>
-    <content><![CDATA[<h1 id="11-16技术分享"><a href="#11-16技术分享" class="headerlink" title="11.16技术分享"></a>11.16技术分享</h1><h2 id="idea运行tomcat控制台乱码"><a href="#idea运行tomcat控制台乱码" class="headerlink" title="idea运行tomcat控制台乱码:"></a>idea运行tomcat控制台乱码:</h2><h3 id="1-首先设置idea的编码格式"><a href="#1-首先设置idea的编码格式" class="headerlink" title="1.首先设置idea的编码格式:"></a>1.首先设置idea的编码格式:</h3><p>File–&gt;Settings–&gt;File Encodings</p>
-<p><img src="https://s2.ax1x.com/2019/11/20/MWMwvV.md.png" alt="idea编码格式">  </p>
-<p>将所有编码格式统一设置成UTF-8。  </p>
-<h3 id="2-再设置tomcat的编码格式"><a href="#2-再设置tomcat的编码格式" class="headerlink" title="2.再设置tomcat的编码格式:"></a>2.再设置tomcat的编码格式:</h3><p><img src="https://s2.ax1x.com/2019/11/20/MWMyE4.png" alt="tomcat设置">  </p>
-<p>改变VM options为-Dfile.encoding=UTF-8:<br><img src="https://s2.ax1x.com/2019/11/20/MWMrbF.md.png" alt="tomcat编码格式"> </p>
-<p><strong><code>完成上面的设置后还会有乱码,不要急</code></strong>  </p>
-<h3 id="3-配置idea的文件设置"><a href="#3-配置idea的文件设置" class="headerlink" title="3.配置idea的文件设置:"></a>3.配置idea的文件设置:</h3><p>找到idea图标,右键,打开文件位置找到  </p>
-<p><code>idea.exe.vmoptions</code>和<code>idea64.exe.vmoptions</code>文件  并打开文件  </p>
-<p>在文件后面添加一行：-Dfile.encoding=UTF-8   </p>
-<p>idae中的设置配置也要修改</p>
-<p>help–&gt;Edit Custom VM Options…  </p>
-<p>打开此配置 也在最后一行添加:-Dfile.encoding=UTF-8  </p>
-<h3 id="4-修改tomcat的运行编码格式"><a href="#4-修改tomcat的运行编码格式" class="headerlink" title="4.修改tomcat的运行编码格式:"></a>4.修改tomcat的运行编码格式:</h3><p>进入到tomcat的根目录的bin目录下  </p>
-<p>此时可以在文件地址栏输入cmd来启动dos窗口执行  </p>
-<pre><code>catalina.bat run
-</code></pre><p>(或者也可以直接cmd  然后cd到bin目录下 执行此命令)  </p>
-<p>之后再用命令切换cmd的编码格式<br>“chcp 65001”切换cmd为utf8，”chcp 936”切换cmd为gbk  </p>
-<p>这里我们使用chcp 65001来切换成utf8  </p>
-<p>执行之后可以再运行一下</p>
-<pre><code>catalina.bat run
-</code></pre><p>看看命令是否都编程正常汉语,若都成正常汉语就是成功了!</p>
-<p>然后重启idea即可.  </p>
-<p><code>最后提一句:</code>  </p>
-<p>自己改tomcat的logging.properties为GBk会导致调试时get/post参数乱码  </p>
-<p>还是都改成UTF8稳妥。</p>
-]]></content>
-      <categories>
-        <category>分享</category>
-      </categories>
-      <tags>
-        <tag>idea控制台乱码</tag>
       </tags>
   </entry>
   <entry>
@@ -1652,6 +1808,42 @@ for(Element e1: list){
       <tags>
         <tag>数据库优化</tag>
         <tag>XML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>11.16技术分享</title>
+    <url>/2019/11/16/2019-11-16-16jishu/</url>
+    <content><![CDATA[<h1 id="11-16技术分享"><a href="#11-16技术分享" class="headerlink" title="11.16技术分享"></a>11.16技术分享</h1><h2 id="idea运行tomcat控制台乱码"><a href="#idea运行tomcat控制台乱码" class="headerlink" title="idea运行tomcat控制台乱码:"></a>idea运行tomcat控制台乱码:</h2><h3 id="1-首先设置idea的编码格式"><a href="#1-首先设置idea的编码格式" class="headerlink" title="1.首先设置idea的编码格式:"></a>1.首先设置idea的编码格式:</h3><p>File–&gt;Settings–&gt;File Encodings</p>
+<p><img src="https://s2.ax1x.com/2019/11/20/MWMwvV.md.png" alt="idea编码格式">  </p>
+<p>将所有编码格式统一设置成UTF-8。  </p>
+<h3 id="2-再设置tomcat的编码格式"><a href="#2-再设置tomcat的编码格式" class="headerlink" title="2.再设置tomcat的编码格式:"></a>2.再设置tomcat的编码格式:</h3><p><img src="https://s2.ax1x.com/2019/11/20/MWMyE4.png" alt="tomcat设置">  </p>
+<p>改变VM options为-Dfile.encoding=UTF-8:<br><img src="https://s2.ax1x.com/2019/11/20/MWMrbF.md.png" alt="tomcat编码格式"> </p>
+<p><strong><code>完成上面的设置后还会有乱码,不要急</code></strong>  </p>
+<h3 id="3-配置idea的文件设置"><a href="#3-配置idea的文件设置" class="headerlink" title="3.配置idea的文件设置:"></a>3.配置idea的文件设置:</h3><p>找到idea图标,右键,打开文件位置找到  </p>
+<p><code>idea.exe.vmoptions</code>和<code>idea64.exe.vmoptions</code>文件  并打开文件  </p>
+<p>在文件后面添加一行：-Dfile.encoding=UTF-8   </p>
+<p>idae中的设置配置也要修改</p>
+<p>help–&gt;Edit Custom VM Options…  </p>
+<p>打开此配置 也在最后一行添加:-Dfile.encoding=UTF-8  </p>
+<h3 id="4-修改tomcat的运行编码格式"><a href="#4-修改tomcat的运行编码格式" class="headerlink" title="4.修改tomcat的运行编码格式:"></a>4.修改tomcat的运行编码格式:</h3><p>进入到tomcat的根目录的bin目录下  </p>
+<p>此时可以在文件地址栏输入cmd来启动dos窗口执行  </p>
+<pre><code>catalina.bat run
+</code></pre><p>(或者也可以直接cmd  然后cd到bin目录下 执行此命令)  </p>
+<p>之后再用命令切换cmd的编码格式<br>“chcp 65001”切换cmd为utf8，”chcp 936”切换cmd为gbk  </p>
+<p>这里我们使用chcp 65001来切换成utf8  </p>
+<p>执行之后可以再运行一下</p>
+<pre><code>catalina.bat run
+</code></pre><p>看看命令是否都编程正常汉语,若都成正常汉语就是成功了!</p>
+<p>然后重启idea即可.  </p>
+<p><code>最后提一句:</code>  </p>
+<p>自己改tomcat的logging.properties为GBk会导致调试时get/post参数乱码  </p>
+<p>还是都改成UTF8稳妥。</p>
+]]></content>
+      <categories>
+        <category>分享</category>
+      </categories>
+      <tags>
+        <tag>idea控制台乱码</tag>
       </tags>
   </entry>
   <entry>
@@ -3288,6 +3480,21 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
+    <title>8.29日报</title>
+    <url>/2019/08/29/2019-08-29-29ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天完成了计时器的考核，关于计时器与属性获取基本掌握90%，轮播图效果80%，后面开始看node,但是刚开始看进度10%</code>  </p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天在做计时器效果与轮播图效果都是自己在网上寻找的教程与例子，当自己努力做出来的成果成果的时候是很开心的，很有动力。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.29技术文档</title>
     <url>/2019/08/29/2019-08-29-29jishu/</url>
     <content><![CDATA[<h1 id="简易的图片轮播"><a href="#简易的图片轮播" class="headerlink" title="简易的图片轮播"></a>简易的图片轮播</h1><p>今天主要学习了轮播图的原理和简易制作，以下是我轮播图的代码：</p>
@@ -3397,12 +3604,12 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.29日报</title>
-    <url>/2019/08/29/2019-08-29-29ribao/</url>
+    <title>8.28日报</title>
+    <url>/2019/08/28/2019-08-28-28ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天完成了计时器的考核，关于计时器与属性获取基本掌握90%，轮播图效果80%，后面开始看node,但是刚开始看进度10%</code>  </p>
+<p><code>今天下午学习了JS基础，学习了 定时器和选择对象并修改内容，还看了一些基础语法。</code>  </p>
 </blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天在做计时器效果与轮播图效果都是自己在网上寻找的教程与例子，当自己努力做出来的成果成果的时候是很开心的，很有动力。</p>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天学习的新任务是JS ，原来学过一些php也有一些基础学得还不算慢，总体来说今天的学习效率还可以。</p>
 ]]></content>
       <categories>
         <category>心得</category>
@@ -3449,21 +3656,6 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8.28日报</title>
-    <url>/2019/08/28/2019-08-28-28ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天下午学习了JS基础，学习了 定时器和选择对象并修改内容，还看了一些基础语法。</code>  </p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天学习的新任务是JS ，原来学过一些php也有一些基础学得还不算慢，总体来说今天的学习效率还可以。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -3666,6 +3858,28 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
+    <title>8.23日报</title>
+    <url>/2019/08/23/2019-08-23-23ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天把vim常用命令整理得差不多了，vim进度90%，今天开始看的linux命令，但是感觉看的很乱，进度40%。</code>  </p>
+</blockquote>
+<blockquote>
+<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天心不够静，看到属性多了就乱了，不知道从哪开背起，后来慢慢的静下来从头看也看了好几个命令。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.23技术文档</title>
     <url>/2019/08/23/2019-08-23-23jishu/</url>
     <content><![CDATA[<h1 id="linux常用命令整理之一"><a href="#linux常用命令整理之一" class="headerlink" title="linux常用命令整理之一"></a>linux常用命令整理之一</h1><p><strong>关机 (系统的关机、重启以及登出 ):</strong><br>shutdown -h now 关闭系统<br>init 0 关闭系统<br>telinit 0 关闭系统<br>shutdown -h hours:minutes &amp; 按预定时间关闭系统<br>shutdown -c 取消按预定时间关闭系统<br>shutdown -r now 重启<br>reboot 重启<br>logout 注销   </p>
@@ -3686,28 +3900,6 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8.23日报</title>
-    <url>/2019/08/23/2019-08-23-23ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天把vim常用命令整理得差不多了，vim进度90%，今天开始看的linux命令，但是感觉看的很乱，进度40%。</code>  </p>
-</blockquote>
-<blockquote>
-<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天心不够静，看到属性多了就乱了，不知道从哪开背起，后来慢慢的静下来从头看也看了好几个命令。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
