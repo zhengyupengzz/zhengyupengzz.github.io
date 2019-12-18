@@ -1,6 +1,596 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>12.18Java学习进度</title>
+    <url>/2019/12/18/2019-12-18-18ribao/</url>
+    <content><![CDATA[<h1 id="SpringBoot-Servlet-Filter-SpringBoot-Task"><a href="#SpringBoot-Servlet-Filter-SpringBoot-Task" class="headerlink" title="SpringBoot Servlet/Filter,SpringBoot Task:"></a>SpringBoot Servlet/Filter,SpringBoot Task:</h1><h3 id="SpringBoot-Servlet-Filter"><a href="#SpringBoot-Servlet-Filter" class="headerlink" title="SpringBoot Servlet/Filter:"></a>SpringBoot Servlet/Filter:</h3><ol>
+<li><p>Servlet应用</p>
+<ul>
+<li><p>按Servlet标准编写实现组件</p>
+<pre><code>  @WebServlet(name=&quot;helloservlet&quot;,urlPatterns= {&quot;/hello&quot;,&quot;/hello.do&quot;},loadOnStartup=1)
+  public class HelloServlet extends HttpServlet{
+
+      public void service(HttpServletRequest request,HttpServletResponse response) throws IOException {
+          response.setContentType(&quot;text/html;charset=UTF-8&quot;);
+          PrintWriter out = response.getWriter();
+          out.println(&quot;Hello SpringBoot Servlet&quot;);
+          out.flush();
+          out.close();
+      }
+  }
+</code></pre></li>
+<li><p>使用@WebServlet和@ServletComponentScan配置</p>
+<pre><code>  @SpringBootApplication
+  @ServletComponentScan//扫描包下的@WebServlet、@WebFilter、@WebListener
+  public class RunBoot {
+
+      public static void main(String[] args) {
+          SpringApplication.run(RunBoot.class, args);
+      }
+
+  }
+</code></pre></li>
+</ul>
+</li>
+<li><p>Filter应用</p>
+<ul>
+<li><p>按Filter标准编写实现组件</p>
+<pre><code>  //@WebFilter(filterName=&quot;myfilter&quot;,urlPatterns= {&quot;/hello&quot;,&quot;/hello.do&quot;})
+  @WebFilter(filterName=&quot;myfilter&quot;,servletNames= {&quot;helloservlet&quot;})
+  public class MyFilter implements Filter{
+
+      public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+              throws IOException, ServletException {
+          System.out.println(&quot;进入MyFilter&quot;);
+          chain.doFilter(request, response);
+          System.out.println(&quot;退出MyFilter&quot;);
+      }
+
+  }
+</code></pre></li>
+<li><p>使用@WebFilter和@ServletComponentScan配置</p>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>    同上
+
+提示：多个Filter过滤器，执行顺序按类名字典顺序排列。
+</code></pre><ol start="3">
+<li>通过@Bean方式配置Servlet或Filter</li>
+</ol>
+<pre><code>    @Configuration
+    public class MyServletConfiguration {
+
+        @Bean
+        public ServletRegistrationBean&lt;Servlet&gt; someServlet(){
+            ServletRegistrationBean&lt;Servlet&gt; bean = 
+                    new ServletRegistrationBean&lt;Servlet&gt;();
+            bean.setServlet(new SomeServlet());
+            List&lt;String&gt; urls = new ArrayList&lt;String&gt;();
+            urls.add(&quot;/some&quot;);
+            urls.add(&quot;/some.do&quot;);
+            bean.setUrlMappings(urls);
+            return bean;
+        }
+
+        @Bean
+        public FilterRegistrationBean&lt;Filter&gt; somefilter(){
+            FilterRegistrationBean&lt;Filter&gt; bean = new FilterRegistrationBean&lt;Filter&gt;();
+            bean.setFilter(new SomeFilter());
+            List&lt;String&gt; servlets = new ArrayList&lt;String&gt;();
+            servlets.add(&quot;helloservlet&quot;);
+            bean.setServletNames(servlets);
+            return bean;
+        }
+
+    }
+</code></pre><h2 id="SpringBoot-Task"><a href="#SpringBoot-Task" class="headerlink" title="SpringBoot Task:"></a>SpringBoot Task:</h2><h3 id="启动Task"><a href="#启动Task" class="headerlink" title="启动Task:"></a>启动Task:</h3><p>tomcat服务器启动后，自动执行一个处理，例如解析配置文件，加载缓存数据。</p>
+<p>SpringBoot提供了ApplicationRunner和CommandLineRunner两个接口，用于实现启动任务封装。</p>
+<ul>
+<li><p>ApplicationRunner</p>
+<pre><code>  @Component
+  @Order(2)
+  public class MyTask1 implements ApplicationRunner{
+
+      public void run(ApplicationArguments args) throws Exception {
+          System.out.println(&quot;启动后立刻解析某个配置文件&quot;+new Date());
+      }
+
+  }
+</code></pre></li>
+<li><p>CommandLineRunner</p>
+<pre><code>  @Component
+  @Order(1)
+  public class MyTask2 implements CommandLineRunner{
+
+      public void run(String... args) throws Exception {
+          System.out.println(&quot;启动后自动为缓存加载数据&quot;+new Date());
+          Thread.sleep(10000);
+      }
+
+  }
+</code></pre></li>
+</ul>
+<p>提示：通过@Order注解指定调用顺序，1，2，3；多个任务是采用同步执行，单线程操作。</p>
+<h3 id="定时Task"><a href="#定时Task" class="headerlink" title="定时Task"></a>定时Task</h3><p>可以按指定时间或周期频率调用某个任务逻辑。</p>
+<p>Timer、TimerTask；quartz；spring task</p>
+<h3 id="cron表达式规则："><a href="#cron表达式规则：" class="headerlink" title="cron表达式规则："></a>cron表达式规则：</h3><p>由 秒  分  时  日   月  星期  年(可省略) 七部分构成。</p>
+<pre><code>  * ： 表示每秒、每分、每时、每日、每月 、星期每天
+  / ： 表示增量，0/5 表示0、5、10、15...; 3/5 表示3、8、13、18...
+ ? ： 只用在日和星期两部分，为了解决冲突。用日做限制，星期用?；如果星期做限制，日用?
+ L ： 用在日和星期位置，最后一天，星期六
+
+ 0 30 8-17 * * ?
+ 0 0 24 L * ?
+ 0/5 * * * * ?
+</code></pre>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>SpringBoot Servlet/Filter</tag>
+        <tag>SpringBoot Task</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>12.17Java学习进度</title>
+    <url>/2019/12/17/2019-12-17-17ribao/</url>
+    <content><![CDATA[<h1 id="Spring-MVC-拦截器-Spring-MVC-异常处理机制"><a href="#Spring-MVC-拦截器-Spring-MVC-异常处理机制" class="headerlink" title="Spring MVC 拦截器,Spring MVC 异常处理机制:"></a>Spring MVC 拦截器,Spring MVC 异常处理机制:</h1><h3 id="什么是Rest，有什么特点"><a href="#什么是Rest，有什么特点" class="headerlink" title="什么是Rest，有什么特点"></a>什么是Rest，有什么特点</h3><p>Rest、Restful</p>
+<p>REST：是一种规则或风格。</p>
+<p>Roy Thomas Fielding</p>
+<p>RESTFul：按RESTful规则的一种应用。</p>
+<p>目前主流的RESTful应用，都是REST规则在HTTP协议之上一种应用。</p>
+<p>基于URL定位资源，通过HTTP动作做不同操作。</p>
+<pre><code>http://localhost:8888/news/2
+GET 查询
+POST 添加
+PUT 更新
+DELETE 删除
+</code></pre><p>使用技术目的：前后分离模式，异构系统之间交互更规范。搜索引擎更敏感。</p>
+<h3 id="什么是Thymeleaf，有什么特点，常用属性标记"><a href="#什么是Thymeleaf，有什么特点，常用属性标记" class="headerlink" title="什么是Thymeleaf，有什么特点，常用属性标记"></a>什么是Thymeleaf，有什么特点，常用属性标记</h3><p>Thymeleaf是一种模板技术，例如veloctiy、freemarker等。</p>
+<p>Thymeleaf是对JSP替代，性能好。跟其他模板技术比，扩展名为html可以直接用浏览器打开，所见即所得。SpringBoot主推Thymeleaf。</p>
+<p>th:text 、th:each、 th:if、 th:value、 th:href等</p>
+<h2 id="SpringBoot-MVC机制"><a href="#SpringBoot-MVC机制" class="headerlink" title="SpringBoot MVC机制:"></a>SpringBoot MVC机制:</h2><h3 id="Spring-MVC-拦截器"><a href="#Spring-MVC-拦截器" class="headerlink" title="Spring MVC 拦截器:"></a>Spring MVC 拦截器:</h3><ol>
+<li><p>按规则编写拦截器组件，实现HandlerInterceptor接口</p>
+<pre><code> @Component//扫描
+ public class SomeInterceptor implements HandlerInterceptor{
+
+     //在controller前执行，如果方法返回false就是阻止流程继续执行
+     public boolean preHandle(HttpServletRequest request, 
+             HttpServletResponse response, Object handler)
+             throws Exception {
+         System.out.println(&quot;preHandle&quot;);
+         return true;
+     }
+
+     //在controller后执行，可以改变ModelAndView结果
+     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
+             @Nullable ModelAndView modelAndView) throws Exception {
+         System.out.println(&quot;postHandle&quot;);
+     }
+
+     //在响应输出前
+     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler,
+             @Nullable Exception ex) throws Exception {
+         System.out.println(&quot;afterCompletion&quot;);
+     }
+
+ }
+</code></pre></li>
+</ol>
+<ol start="2">
+<li><p>编写配置类，实现WebMvcConfigurer接口</p>
+<pre><code> @Configuration
+ public class MyInterceptorConfiguration implements WebMvcConfigurer{
+
+     @Autowired
+     private SomeInterceptor some;
+
+     public void addInterceptors(InterceptorRegistry registry) {
+
+         registry.addInterceptor(some).addPathPatterns(&quot;/demo1&quot;);
+     }
+
+ }
+</code></pre></li>
+</ol>
+<h3 id="Spring-MVC-异常处理机制"><a href="#Spring-MVC-异常处理机制" class="headerlink" title="Spring MVC 异常处理机制:"></a>Spring MVC 异常处理机制:</h3><ol>
+<li><p>SpringBoot异常处理过程</p>
+<p> SpringBoot提供了一个自动配置组件ErrorMvcAutoConfiguration,自动创建一个BasicErrorController对象，该对象有两个/error请求处理，一个返回html响应；另一个返回json响应。当Boot底层发生异常，会自动以转发方式调用/error请求，返回处理结果，显示白板界面。</p>
+</li>
+<li><p>自定义异常处理Controller</p>
+<p> 编写Controller，实现ErrorController，底层自动配置BasicErrorController将失效。</p>
+<pre><code> @Controller
+ @RequestMapping(&quot;/error&quot;)
+ public class MyErrorController implements ErrorController{
+
+     public String getErrorPath() {
+         return &quot;/error&quot;;
+     }
+
+     @RequestMapping(produces=MediaType.TEXT_HTML_VALUE)
+     public ModelAndView errorHtml() {
+         ModelAndView mav = new ModelAndView();
+         mav.setViewName(&quot;myerror&quot;);
+         mav.getModel().put(&quot;msg&quot;, &quot;自定义异常处理&quot;);
+         return mav;
+     }
+
+     @RequestMapping
+     @ResponseBody
+     public Object error() {
+         Map&lt;String,Object&gt; map = new HashMap&lt;String, Object&gt;();
+         map.put(&quot;msg&quot;, &quot;自定义异常&quot;);
+         map.put(&quot;error&quot;, &quot;json类型响应&quot;);
+         return map;
+     }
+
+ }
+</code></pre><p> 提示：追加thymeleaf支持，在templates下添加myerror.html模板文件。</p>
+</li>
+</ol>
+<ol start="3">
+<li><p>@ExceptionHanlder处理</p>
+<p> 在Controller中添加异常处理方法，处理当前Controller内的异常。</p>
+<pre><code> @Controller
+ public class Demo2Controller{
+
+     @GetMapping(&quot;/demo2&quot;)
+     @ResponseBody
+     public Object say() {
+         Map&lt;String, Object&gt; data = new HashMap&lt;String, Object&gt;();
+         data = null;
+         data.put(&quot;id&quot;, 1);
+         data.put(&quot;name&quot;, &quot;tom&quot;);
+         return data;
+     }
+
+     @ExceptionHandler
+     @ResponseBody
+     public Object handleException(Exception ex) {
+         Map&lt;String, Object&gt; data = new HashMap&lt;String, Object&gt;();
+         data.put(&quot;msg&quot;, &quot;发生异常了&quot;);
+         data.put(&quot;type&quot;, ex.getClass().getName());
+         return data;
+     }
+
+ }
+</code></pre><p> 提示：可以提成一个BasicController父类处理多个Controller异常，也可以添加@ControllerAdvice用于所有Controller异常处理。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Spring MVC 拦截器</tag>
+        <tag>Spring MVC 异常处理机制</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>12.16Java学习进度</title>
+    <url>/2019/12/16/2019-12-16-16ribao/</url>
+    <content><![CDATA[<h1 id="SpringBoot-MVC快速开发"><a href="#SpringBoot-MVC快速开发" class="headerlink" title="SpringBoot MVC快速开发:"></a>SpringBoot MVC快速开发:</h1><p>主要针对Spring MVC进行的封装应用。</p>
+<h3 id="基于Spring-MVC开发Rest服务"><a href="#基于Spring-MVC开发Rest服务" class="headerlink" title="基于Spring MVC开发Rest服务"></a>基于Spring MVC开发Rest服务</h3><p>rest请求–》Spring MVC–》返回JSON结果</p>
+<p>/news/xx GET —&gt; Spring MVC –&gt; 返回某个新闻的json结果</p>
+<p>/news/list GET —&gt; Spring MVC –&gt; 返回某个新闻列表的json结果</p>
+<h3 id="基于Spring-MVC开发JSP应用"><a href="#基于Spring-MVC开发JSP应用" class="headerlink" title="基于Spring MVC开发JSP应用"></a>基于Spring MVC开发JSP应用</h3><p>http请求–》Spring MVC–》list.jsp–》返回HTML列表界面</p>
+<ol>
+<li><p>pom.xml额外增加jar引入</p>
+<ul>
+<li>jasper引擎(tomcat解析jsp,内置tomcat不带)</li>
+<li>jstl（JSP标签）</li>
+</ul>
+</li>
+<li><p>application.properties额外增加参数</p>
+<pre><code> spring.mvc.view.prefix=/
+ spring.mvc.view.suffix=.jsp
+</code></pre></li>
+<li><p>controller返回ModelAndView（视图名字和传出来的数据对象）</p>
+<pre><code> public ModelAndView xx(){
+     // ... ...
+ }
+</code></pre></li>
+<li><p>在src/main/webapp目录下定义jsp文件</p>
+<p> <img src="webapp.png" alt></p>
+</li>
+</ol>
+<h3 id="基于Spring-MVC开发Thymeleaf应用"><a href="#基于Spring-MVC开发Thymeleaf应用" class="headerlink" title="基于Spring MVC开发Thymeleaf应用"></a>基于Spring MVC开发Thymeleaf应用</h3><p>模板技术是对JSP一种替代技术。例如velocity（<em>.vm+VTL）、freemarker（</em>.ftl+FTL）、Thymeleaf（*.html+THTL）</p>
+<p>JSP和模板技术区别：</p>
+<ul>
+<li>JSP编译成Servlet，然后由Servlet生成HTML响应输出;模板是将模板和数据直接输出位HTML响应（模板技术效率高）</li>
+<li>模板技术只识别模板表达式语言；JSP使用的技术EL、JSTL、框架标签、Java代码等（模板技术简单易用）</li>
+</ul>
+<p>http请求–》Spring MVC–》list.html–》返回HTML列表界面</p>
+<ol>
+<li><p>在pom.xml引入jar包</p>
+<ul>
+<li>spring-boot-starter-thymeleaf</li>
+<li>spring-boot-starter-web</li>
+<li>jdbc、驱动、devtools</li>
+</ul>
+</li>
+<li><p>在application.properties</p>
+<p> 配置datasource、tomcat端口，其他不同配，默认thymeleaf访问src/main/resources/templates目录，扩展名*.html</p>
+</li>
+<li><p>编写Controller、service、dao等业务组件</p>
+<p> 返回ModelAndView，去查找html模板，给模板传递数据</p>
+</li>
+<li><p>编写html模板文件</p>
+<p> 在src/main/resources/templates目录定义html模板，里面使用th:xxx表达式语言。</p>
+<pre><code> &lt;html xmlns:th=&quot;https://www.thymeleaf.org&quot;&gt;
+     ... ...
+ &lt;/html&gt;
+</code></pre></li>
+</ol>
+<h3 id="SpringBoot-MVC机制"><a href="#SpringBoot-MVC机制" class="headerlink" title="SpringBoot MVC机制"></a>SpringBoot MVC机制</h3><ol>
+<li><p>SpringBoot静态资源存放和访问</p>
+<p> SpringBoot提供了src/main/resources目录下约定几个存放位置</p>
+<ul>
+<li>META-INF/resources（优先级最高）</li>
+<li>resources</li>
+<li>static</li>
+<li><p>public（优先级最低）</p>
+<p>如果需要修改静态资源目录，可以自定义配置</p>
+<p>  @Configuration<br>  public class MyResourceConfiguration implements WebMvcConfigurer{</p>
+<pre><code>  public void addResourceHandlers(ResourceHandlerRegistry registry) {
+      registry.addResourceHandler(&quot;/**&quot;)
+          .addResourceLocations(
+              &quot;classpath:/mystatic/&quot;,
+              &quot;classpath:/resources/&quot;,
+              &quot;classpath:/static/&quot;,
+              &quot;classpath:/public/&quot;);
+  }
+</code></pre><p>  }</p>
+</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>SpringBoot MVC快速开发</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>12.14Java学习进度</title>
+    <url>/2019/12/14/2019-12-14-14ribao/</url>
+    <content><![CDATA[<h1 id="SpringBoot数据库访问-DataSource连接池-Spring-JPA"><a href="#SpringBoot数据库访问-DataSource连接池-Spring-JPA" class="headerlink" title="SpringBoot数据库访问,DataSource连接池,Spring JPA:"></a>SpringBoot数据库访问,DataSource连接池,Spring JPA:</h1><h3 id="DataSource连接池"><a href="#DataSource连接池" class="headerlink" title="DataSource连接池"></a>DataSource连接池</h3><p>连接池优点：连接对象重用提升程序性能（避免频繁创建和释放Connection对象）；控制最大连接数有效保护数据库稳定运行。</p>
+<p>各种不同的连接池组件都必须实现DataSource接口。</p>
+<p>SpringBoot中提供了DataSourceAutoConfiguration自动配置组件，用于创建DataSource对象。（依次创建Hikari、Tomcat、DBCP2连接池对象，也可以根据spring.datasource.type指定类型创建）</p>
+<ol>
+<li><p>引入驱动包和spring-boot-starter-jdbc </p>
+<p> boot2.x版本默认引入hikari，1.x默认引入tomcat-jdbc,将hikaricp从spring-boot-starter-jdbc排除方法如下</p>
+<pre><code> &lt;dependency&gt;
+     &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+     &lt;artifactId&gt;spring-boot-starter-jdbc&lt;/artifactId&gt;
+     &lt;version&gt;2.1.2.RELEASE&lt;/version&gt;
+     &lt;exclusions&gt;
+         &lt;exclusion&gt;
+             &lt;groupId&gt;com.zaxxer&lt;/groupId&gt;
+             &lt;artifactId&gt;HikariCP&lt;/artifactId&gt;
+         &lt;/exclusion&gt;
+     &lt;/exclusions&gt;
+ &lt;/dependency&gt;
+</code></pre></li>
+<li><p>在application.properties配置文件中定义db参数</p>
+<pre><code> spring.datasource.username=root
+ spring.datasource.password=123456
+ spring.datasource.url=jdbc:mysql://localhost:3306/jd
+ spring.datasource.driverClassName=com.mysql.jdbc.Driver
+</code></pre></li>
+<li><p>开启自动配置，会自动调用DataSourceAutoConfiguration创建连接池</p>
+<pre><code> 优先级为：hikari、tomcat、dbcp2
+</code></pre></li>
+<li><p>利用spring.datasource.type创建指定类型的连接池</p>
+<pre><code> spring.datasource.type=com.alibaba.druid.pool.DruidDataSource
+</code></pre></li>
+<li><p>如果通过@Bean自定义DataSource对象，自动配置dataSource不会再创建</p>
+<pre><code> @Bean
+ @Primary
+ @ConfigurationProperties(prefix=&quot;spring.datasource&quot;)
+ public DataSource dbcp() {
+     BasicDataSource dbcp = new BasicDataSource();
+     return dbcp;
+ }
+</code></pre></li>
+</ol>
+<h3 id="Spring-DAO-JdbcTemplate"><a href="#Spring-DAO-JdbcTemplate" class="headerlink" title="Spring DAO (JdbcTemplate)"></a>Spring DAO (JdbcTemplate)</h3><pre><code>spring-boot-starter-jdbc
+mysql-connector-java
+</code></pre><ol>
+<li>创建连接池对象（参考上面案例过程）</li>
+<li>根据表编写实体类型</li>
+<li>定义Dao接口</li>
+<li>定义Dao实现组件，注入JdbcTemplate对象使用</li>
+</ol>
+<h3 id="Spring-MyBatis"><a href="#Spring-MyBatis" class="headerlink" title="Spring MyBatis"></a>Spring MyBatis</h3><pre><code>spring-boot-starter-jdbc
+mybatis-spring-boot-starter
+mysql-connector-java
+</code></pre><h3 id="使用XML文件定义SQL"><a href="#使用XML文件定义SQL" class="headerlink" title="使用XML文件定义SQL:"></a>使用XML文件定义SQL:</h3><ol>
+<li>创建连接池对象（参考上面案例过程）</li>
+<li>根据表编写实体类型</li>
+<li>定义SQL语句XML文件（配置mybatis.mapperLocations=classpath:sql/*.xml）</li>
+<li>定义Mapper映射器接口（在启动类前加@MapperScan）</li>
+<li>定义启动类（@SpringBootApplication+@MapperScan）</li>
+<li><p>添加pageHelper-spring-boot-starter启动器追加分页功能</p>
+<p> PageHelper.startPage(1, 3);//设置分页参数<br> List<news> list = newDao.findAll();//pageHelper先将sql封装成分页sql，再执行查询</news></p>
+</li>
+</ol>
+<h3 id="使用注解定义SQL"><a href="#使用注解定义SQL" class="headerlink" title="使用注解定义SQL:"></a>使用注解定义SQL:</h3><ol>
+<li>创建连接池对象（参考上面案例过程）</li>
+<li>根据表编写实体类型</li>
+<li><p>定义Mapper映射器接口，（在启动类前加@MapperScan）</p>
+<p> 利用@Select、@Insert、@Update、@Delete定义SQL语句</p>
+</li>
+<li><p>定义启动类（@SpringBootApplication+@MapperScan）</p>
+</li>
+<li>添加pageHelper-spring-boot-starter启动器追加分页功能</li>
+</ol>
+<h3 id="参数映射-和-区别"><a href="#参数映射-和-区别" class="headerlink" title="参数映射#{}和${}区别:"></a>参数映射#{}和${}区别:</h3><pre><code>1. #{}采用PrepareStatement机制执行SQL；${}采用Statement拼SQL执行
+
+2. 字段值位置建议使用#{}安全;表名和字段名位置的参数需要使用${}不要使用#{}
+</code></pre><h3 id="Spring-JPA"><a href="#Spring-JPA" class="headerlink" title="Spring JPA"></a>Spring JPA</h3><pre><code>spring-boot-starter-jdbc
+spring-boot-starter-jpa
+mysql-connector-java
+</code></pre><ol>
+<li>创建连接池对象（参考上面案例过程）</li>
+<li>根据表编写实体类型（@Entity、@Table、@id、@Column映射描述）</li>
+<li>定义JPA Repository接口（继承JpaRepository、PagingAndSortingRepository或CrudRepository等）</li>
+<li>定义启动类（@SpringBootApplication）</li>
+</ol>
+<h3 id="Spring-JPA-扩展"><a href="#Spring-JPA-扩展" class="headerlink" title="Spring JPA 扩展"></a>Spring JPA 扩展</h3><ol>
+<li><p>按规则定义方法名</p>
+<pre><code> //select * from news where title like ?
+ public List&lt;News&gt; findByTitleLike(String title);
+ //select * from news where id&lt;?
+ public List&lt;News&gt; findByIdLessThan(int id);
+</code></pre></li>
+<li><p>定义SQL语句</p>
+<pre><code> @Query(nativeQuery=true,value=&quot;select * from news where title like :title&quot;)
+ public List&lt;News&gt; findSQL(@Param(&quot;title&quot;)String title);
+</code></pre></li>
+<li><p>定义JPQL面向对象语句</p>
+<pre><code> //JPQL 使用类型名和属性名，区分大小写
+ @Query(&quot;from News where id &lt; :no&quot;)
+ public List&lt;News&gt; findSQL2(@Param(&quot;no&quot;)int id);
+</code></pre></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>SpringBoot数据库访问</tag>
+        <tag>DataSource连接池</tag>
+        <tag>Spring JPA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>12.13Java学习进度</title>
+    <url>/2019/12/13/2019-12-13-13ribao/</url>
+    <content><![CDATA[<h1 id="SpringBoot-组件扫描-SpringBoot-自动配置"><a href="#SpringBoot-组件扫描-SpringBoot-自动配置" class="headerlink" title="SpringBoot 组件扫描,SpringBoot 自动配置:"></a>SpringBoot 组件扫描,SpringBoot 自动配置:</h1><h3 id="SpringBoot-组件扫描"><a href="#SpringBoot-组件扫描" class="headerlink" title="SpringBoot 组件扫描"></a>SpringBoot 组件扫描</h3><p>@ComponentScan，在启动类前使用，可以指定扫描包路径，也可以按默认路径规则加载。</p>
+<pre><code>@ComponentScan(basePackages= {&quot;cn.xdl&quot;}) //指定扫描包路径
+@ComponentScan //默认扫描当前包及子包组件
+</code></pre><p>在包中的组件前面，需要使用@Controller、@Service、@Repository、@Component等扫描标记。</p>
+<h3 id="SpringBoot自动配置案例（DataSource、JdbcTemplate）"><a href="#SpringBoot自动配置案例（DataSource、JdbcTemplate）" class="headerlink" title="SpringBoot自动配置案例（DataSource、JdbcTemplate）"></a>SpringBoot自动配置案例（DataSource、JdbcTemplate）</h3><ol>
+<li><p>在pom.xml引入驱动包、spring-boot-starter-jdbc</p>
+<p> spring-boot-starter-jdbc（包含了spring核心容器、spring dao、hikari功能）</p>
+</li>
+<li><p>在application.properties定义db连接参数</p>
+<pre><code> spring.datasource.username=SCOTT
+ spring.datasource.password=TIGER
+ spring.datasource.url=jdbc:oracle:thin:@localhost:1521:XE
+ #spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+</code></pre></li>
+<li><p>编写启动类，使用@EnableAutoConfiguration开启自动配置</p>
+<p> 实例化SpringBoot容器获取DataSource对象和JdbcTemplate对象。</p>
+<pre><code> @EnableAutoConfiguration
+ public class RunBoot {
+
+     public static void main(String[] args) {
+         ApplicationContext ac = SpringApplication.run(RunBoot.class, args);
+         DataSource ds = ac.getBean(DataSource.class);
+         System.out.println(ds);
+         JdbcTemplate template = ac.getBean(JdbcTemplate.class);
+         System.out.println(template);
+     }
+
+ }
+</code></pre></li>
+</ol>
+<h3 id="自动配置原理（自动配置类的加载过程）"><a href="#自动配置原理（自动配置类的加载过程）" class="headerlink" title="自动配置原理（自动配置类的加载过程）"></a>自动配置原理（自动配置类的加载过程）</h3><ol>
+<li>内部定义了很多自动配置类，在xxx-autoconfigure.jar包的META-INF/spring.factories文件定义。</li>
+<li>自动配置类，实际就是才用了@Configuration+@Bean标记实现了Bean定义</li>
+<li>在开启@EnableAutoConfiguration标记后，会自动导入AutoConfigurationImportSelector组件，该组件内部调用SpringFactoriesLoader加载autoconfigure.jar包中的spring.factories文件，根据文件定义列表载入各个配置类</li>
+<li>各个XxxAutoConfiguration配置类会创建相应对象载入Spring容器中，例如DataSource、JdbcTemplate、DispatcherServlet、HandlerMapping、RedisTemplate、MongoTemplate、RestTemplate等</li>
+</ol>
+<p>提示： @ConditionalOnClass注解表示能找到指定的实现类才加载配置</p>
+<p>##@SpringBootApplication</p>
+<p>平时使用时采用@SpringBootApplication,等价于定义@SpringBootConfiguration+@ComponentScan+@EnableAutoConfiguration。</p>
+<h3 id="配置参数注入"><a href="#配置参数注入" class="headerlink" title="配置参数注入"></a>配置参数注入</h3><p>将application.properties配置文件中定义的参数取出，写入到Bean对象属性中。</p>
+<ul>
+<li><p>application.properties参数定义</p>
+<pre><code>  spring.datasource.username=SCOTT
+  spring.datasource.password=TIGER
+  spring.datasource.url=jdbc:oracle:thin:@localhost:1521:XE
+  #spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+
+  db.user=root
+  db.password=123456
+</code></pre></li>
+<li><p>定义实体类</p>
+<p>  DbParams实体类，在类前使用注解@ConfigurationProperties</p>
+<pre><code>  @Component
+  @ConfigurationProperties(prefix=&quot;db&quot;)
+  public class DbParams {
+
+      private String user; //对应db.user=xxx
+      private String password;//对应db.password=xxx
+
+      public String getUser() {
+          return user;
+      }
+      public void setUser(String user) {
+          this.user = user;
+      }
+      public String getPassword() {
+          return password;
+      }
+      public void setPassword(String password) {
+          this.password = password;
+      }
+
+  }
+</code></pre><p>  OracleParams实体类</p>
+<pre><code>  public class OracleParams {
+
+      @Value(&quot;${spring.datasource.username}&quot;)
+      private String user;
+      private String password;
+      private String url;
+</code></pre></li>
+</ul>
+<pre><code>        public String getUser() {
+            return user;
+        }
+        public void setUser(String user) {
+            this.user = user;
+        }
+        public String getPassword() {
+            return password;
+        }
+        public void setPassword(String password) {
+            this.password = password;
+        }
+        public String getUrl() {
+            return url;
+        }
+        public void setUrl(String url) {
+            this.url = url;
+        }
+
+    }
+
+在@Bean方法前使用注解@ConfigurationProperties
+
+    @Bean
+    @ConfigurationProperties(prefix=&quot;spring.datasource&quot;)
+    public OracleParams params() {
+        return new OracleParams();
+    }
+</code></pre>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>SpringBoot自动配置</tag>
+        <tag>SpringBoot 组件扫描</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>12.12Java学习进度</title>
     <url>/2019/12/12/2019-12-12-12ribao/</url>
     <content><![CDATA[<h1 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot:"></a>SpringBoot:</h1><p>Pivotal  SpringBoot、SpringCloud，微服务架构。</p>
@@ -1328,39 +1918,6 @@ test属性值:
       </tags>
   </entry>
   <entry>
-    <title>11.21技术分享</title>
-    <url>/2019/11/21/2019-11-21-21jishu/</url>
-    <content><![CDATA[<h1 id="对谷歌插件的导入导出"><a href="#对谷歌插件的导入导出" class="headerlink" title="对谷歌插件的导入导出:"></a>对谷歌插件的导入导出:</h1><ol>
-<li>导出谷歌插件</li>
-</ol>
-<p>在你的电脑中找到谷歌的安装的位置   </p>
-<p>正常情况下默认为<code>C:\Users\Administrator\AppData\Local\Google\Chrome\User Data\Default\Extensions</code></p>
-<p>这个路径下存放的都是谷歌浏览器中安装的插件  </p>
-<p>将此目录下的插件文件复制即可</p>
-<ol start="2">
-<li>判断文件分别对应哪个插件  </li>
-</ol>
-<p>在插件这个目录下 文件名都是随机生成的, 所以我们没办法直接在这里区分哪个插件  </p>
-<p>我们可以点进每个文件夹 它的下级目录就是一个版本号 , 在谷歌的扩展程序中寻找与之相同的插件  </p>
-<p>那这个文件夹就是对应的插件了 </p>
-<ol start="3">
-<li>如何导入谷歌插件</li>
-</ol>
-<p>设置—&gt; 左侧栏扩展程序 —&gt; 右上角确定开启开发者模式 —&gt; 加载已解压的扩展程序  </p>
-<p>然后在文件中找到之前复制导出的那些文件夹,<code>注意:要选中加载的文件夹 是乱码名下那个版本号名的文件夹!</code>  </p>
-<blockquote>
-<p>这里再分享一个安装插件的小技巧  </p>
-</blockquote>
-<p><strong>有时候我们在网上下载下来的插件是.crx文件,然而谷歌有时候会安装不上这种文件</strong><br><strong>这时候可以将.crx文件后缀名改为<code>.zip</code>或者其他压缩文件后缀名,然后再解压,之后的导入插件步骤同上</strong></p>
-]]></content>
-      <categories>
-        <category>技术分享</category>
-      </categories>
-      <tags>
-        <tag>谷歌插件</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>11.21Java学习进度</title>
     <url>/2019/11/21/2019-11-21-21ribao/</url>
     <content><![CDATA[<h1 id="Servlet-接收用户表单的参数-GET-POST-乱码问题"><a href="#Servlet-接收用户表单的参数-GET-POST-乱码问题" class="headerlink" title="Servlet,接收用户表单的参数,GET,POST,乱码问题:"></a>Servlet,接收用户表单的参数,GET,POST,乱码问题:</h1><p><strong>Servlet的生命周期:</strong><br>指的是Servlet从创建到消亡的周期!  </p>
@@ -1477,6 +2034,39 @@ String username = request.getParameter(&quot;username&quot;);
       <tags>
         <tag>Servlet生命周期</tag>
         <tag>GET/POST请求</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>11.21技术分享</title>
+    <url>/2019/11/21/2019-11-21-21jishu/</url>
+    <content><![CDATA[<h1 id="对谷歌插件的导入导出"><a href="#对谷歌插件的导入导出" class="headerlink" title="对谷歌插件的导入导出:"></a>对谷歌插件的导入导出:</h1><ol>
+<li>导出谷歌插件</li>
+</ol>
+<p>在你的电脑中找到谷歌的安装的位置   </p>
+<p>正常情况下默认为<code>C:\Users\Administrator\AppData\Local\Google\Chrome\User Data\Default\Extensions</code></p>
+<p>这个路径下存放的都是谷歌浏览器中安装的插件  </p>
+<p>将此目录下的插件文件复制即可</p>
+<ol start="2">
+<li>判断文件分别对应哪个插件  </li>
+</ol>
+<p>在插件这个目录下 文件名都是随机生成的, 所以我们没办法直接在这里区分哪个插件  </p>
+<p>我们可以点进每个文件夹 它的下级目录就是一个版本号 , 在谷歌的扩展程序中寻找与之相同的插件  </p>
+<p>那这个文件夹就是对应的插件了 </p>
+<ol start="3">
+<li>如何导入谷歌插件</li>
+</ol>
+<p>设置—&gt; 左侧栏扩展程序 —&gt; 右上角确定开启开发者模式 —&gt; 加载已解压的扩展程序  </p>
+<p>然后在文件中找到之前复制导出的那些文件夹,<code>注意:要选中加载的文件夹 是乱码名下那个版本号名的文件夹!</code>  </p>
+<blockquote>
+<p>这里再分享一个安装插件的小技巧  </p>
+</blockquote>
+<p><strong>有时候我们在网上下载下来的插件是.crx文件,然而谷歌有时候会安装不上这种文件</strong><br><strong>这时候可以将.crx文件后缀名改为<code>.zip</code>或者其他压缩文件后缀名,然后再解压,之后的导入插件步骤同上</strong></p>
+]]></content>
+      <categories>
+        <category>技术分享</category>
+      </categories>
+      <tags>
+        <tag>谷歌插件</tag>
       </tags>
   </entry>
   <entry>
@@ -2699,6 +3289,26 @@ Person p = new Person();
       </tags>
   </entry>
   <entry>
+    <title>9.27七十周年心得</title>
+    <url>/2019/09/27/2019-09-27-27xinde/</url>
+    <content><![CDATA[<h1 id="今天看了很多关于国家的视频-发现这七十年发展的是真不容易"><a href="#今天看了很多关于国家的视频-发现这七十年发展的是真不容易" class="headerlink" title="今天看了很多关于国家的视频,发现这七十年发展的是真不容易"></a>今天看了很多关于国家的视频,发现这七十年发展的是真不容易</h1><p>70年的风雨征程，带来了祖国繁荣强大，如同阳光照亮了我们的前程，指明了我们前进的方向，带领全国各族人民从贫穷走向富裕，从胜利走向辉煌。</p>
+<p>　　中华人民共和国国旗旗面为红色象征革命。旗上的五颗五角星及其相互关系象征共产党领导下的革命人民大团结。星用黄色是为着在红地上显出光明，四颗小五角星各有一角正对着大星的中心点，表示围绕着一个中心而团结。每逢国庆，去天安门广场看升国旗是无数人心中的梦想。因此，利用国庆长假去北京游玩的人们，通常会赶早来到天安门广场看国旗班的军人升旗，以表达对祖国的无比热爱，看着五星红旗徐徐升起，心中的激动无以言表。每年10月1日是我国的国庆节，我国于1999年修订发布《全国年节及纪念日放假办法》，将国庆节与相邻的周六、日组合为7天的国庆长假，被称之为“国庆黄金周”，用放假的形式，让老百姓共同感受国庆的欢乐。</p>
+<p>　　回首这70年，中华人民走得每一步都是步履蹒跚，每一步都付出了巨大牺牲。但是如今中国经过几十年来的艰苦建设，已取得了“乘长风，破万里浪”的迅猛发展:《辉煌中国》之《圆梦工程》透过港珠澳大桥、胡麻岭隧道、郑万铁路、复兴号、上海洋山港自动化码头、中国移动互联网等一个个超级工程，领略五年来一张张中国基础建设的大网，如何编织起人民走向幸福、美好的希望版图，托举起中华民族伟大复兴的中国梦。</p>
+<p>面对飘扬的国旗亿万双眼睛注视五星红旗冉冉升起,亿万颗心灵伴随祖国母亲一起搏动。抬头仰望,发现鲜艳的国旗已在共和国的上空飘扬了半个世纪。在世纪之交的今天,共和国已走过了七十个春秋。七十年前，”洋油” ”洋面” 还充斥着中国的大江南北;七十年后，许多国产已遍及世界各地。</p>
+<p>七十年前,我们的祖先还把汉代的耕梨插进二十世纪的农田;七十年后,现代化机械已开进中国的农家。<br>七十年前,港澳游子还站在金门望厦门;五十年后,归国侨胞已站在厦门望金门。-样的遥望,却是两样的情形。<br>七十年里，萧瑟秋风今又是，换了人间。</p>
+<p>依旧淳朴中隐着聪慧,荒中透着俊季，可再也听不见那血泪凝结的叹息,更也找不到贫贱不堪的足印，再也寻不见你昔日枯瘦蹒跚的身影,麦穗和齿轮构筑的太阳,伸出金色的臂膀擎着一片晴空,逶道而来,斩断阴霾的剑光在普照众生的沧桑。</p>
+<p>你傲然屹立于世界的东方,不管身边的风云如何的变幻,始终坚定地沿真理的方向勇往直前。你般迎着八面春风,在辐射的节奏里,眺望着更加灿烂的前程。</p>
+<p>我灵魂的纤绳永系向你风帆的桅杆;我手中的彩笔,永远写你壮重的风姿;</p>
+<p>面对飘扬国旗，血液在奔涌，思绪在沸腾,理想的根须在土里扎得更深。面对飘扬的国旗,我们已把自己溶入母亲炙热的胸襟。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>9.27技术分享</title>
     <url>/2019/09/27/2019-09-27-27jishu/</url>
     <content><![CDATA[<h1 id="今天发现了git克隆下来的远程库特别大"><a href="#今天发现了git克隆下来的远程库特别大" class="headerlink" title="今天发现了git克隆下来的远程库特别大:"></a>今天发现了git克隆下来的远程库特别大:</h1><p>经过查询之后发现是每次推送之后都会留下记录缓存，这样很多没用的记录就会占用多余的空间，别人克隆的时候也会多耗费时间，今天我查到了一个清除无用记录的方法。</p>
@@ -2743,26 +3353,6 @@ Person p = new Person();
       </categories>
       <tags>
         <tag>git清理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>9.27七十周年心得</title>
-    <url>/2019/09/27/2019-09-27-27xinde/</url>
-    <content><![CDATA[<h1 id="今天看了很多关于国家的视频-发现这七十年发展的是真不容易"><a href="#今天看了很多关于国家的视频-发现这七十年发展的是真不容易" class="headerlink" title="今天看了很多关于国家的视频,发现这七十年发展的是真不容易"></a>今天看了很多关于国家的视频,发现这七十年发展的是真不容易</h1><p>70年的风雨征程，带来了祖国繁荣强大，如同阳光照亮了我们的前程，指明了我们前进的方向，带领全国各族人民从贫穷走向富裕，从胜利走向辉煌。</p>
-<p>　　中华人民共和国国旗旗面为红色象征革命。旗上的五颗五角星及其相互关系象征共产党领导下的革命人民大团结。星用黄色是为着在红地上显出光明，四颗小五角星各有一角正对着大星的中心点，表示围绕着一个中心而团结。每逢国庆，去天安门广场看升国旗是无数人心中的梦想。因此，利用国庆长假去北京游玩的人们，通常会赶早来到天安门广场看国旗班的军人升旗，以表达对祖国的无比热爱，看着五星红旗徐徐升起，心中的激动无以言表。每年10月1日是我国的国庆节，我国于1999年修订发布《全国年节及纪念日放假办法》，将国庆节与相邻的周六、日组合为7天的国庆长假，被称之为“国庆黄金周”，用放假的形式，让老百姓共同感受国庆的欢乐。</p>
-<p>　　回首这70年，中华人民走得每一步都是步履蹒跚，每一步都付出了巨大牺牲。但是如今中国经过几十年来的艰苦建设，已取得了“乘长风，破万里浪”的迅猛发展:《辉煌中国》之《圆梦工程》透过港珠澳大桥、胡麻岭隧道、郑万铁路、复兴号、上海洋山港自动化码头、中国移动互联网等一个个超级工程，领略五年来一张张中国基础建设的大网，如何编织起人民走向幸福、美好的希望版图，托举起中华民族伟大复兴的中国梦。</p>
-<p>面对飘扬的国旗亿万双眼睛注视五星红旗冉冉升起,亿万颗心灵伴随祖国母亲一起搏动。抬头仰望,发现鲜艳的国旗已在共和国的上空飘扬了半个世纪。在世纪之交的今天,共和国已走过了七十个春秋。七十年前，”洋油” ”洋面” 还充斥着中国的大江南北;七十年后，许多国产已遍及世界各地。</p>
-<p>七十年前,我们的祖先还把汉代的耕梨插进二十世纪的农田;七十年后,现代化机械已开进中国的农家。<br>七十年前,港澳游子还站在金门望厦门;五十年后,归国侨胞已站在厦门望金门。-样的遥望,却是两样的情形。<br>七十年里，萧瑟秋风今又是，换了人间。</p>
-<p>依旧淳朴中隐着聪慧,荒中透着俊季，可再也听不见那血泪凝结的叹息,更也找不到贫贱不堪的足印，再也寻不见你昔日枯瘦蹒跚的身影,麦穗和齿轮构筑的太阳,伸出金色的臂膀擎着一片晴空,逶道而来,斩断阴霾的剑光在普照众生的沧桑。</p>
-<p>你傲然屹立于世界的东方,不管身边的风云如何的变幻,始终坚定地沿真理的方向勇往直前。你般迎着八面春风,在辐射的节奏里,眺望着更加灿烂的前程。</p>
-<p>我灵魂的纤绳永系向你风帆的桅杆;我手中的彩笔,永远写你壮重的风姿;</p>
-<p>面对飘扬国旗，血液在奔涌，思绪在沸腾,理想的根须在土里扎得更深。面对飘扬的国旗,我们已把自己溶入母亲炙热的胸襟。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -3480,6 +4070,21 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
+    <title>8.29日报</title>
+    <url>/2019/08/29/2019-08-29-29ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天完成了计时器的考核，关于计时器与属性获取基本掌握90%，轮播图效果80%，后面开始看node,但是刚开始看进度10%</code>  </p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天在做计时器效果与轮播图效果都是自己在网上寻找的教程与例子，当自己努力做出来的成果成果的时候是很开心的，很有动力。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.29技术文档</title>
     <url>/2019/08/29/2019-08-29-29jishu/</url>
     <content><![CDATA[<h1 id="简易的图片轮播"><a href="#简易的图片轮播" class="headerlink" title="简易的图片轮播"></a>简易的图片轮播</h1><p>今天主要学习了轮播图的原理和简易制作，以下是我轮播图的代码：</p>
@@ -3589,12 +4194,12 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.29日报</title>
-    <url>/2019/08/29/2019-08-29-29ribao/</url>
+    <title>8.28日报</title>
+    <url>/2019/08/28/2019-08-28-28ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天完成了计时器的考核，关于计时器与属性获取基本掌握90%，轮播图效果80%，后面开始看node,但是刚开始看进度10%</code>  </p>
+<p><code>今天下午学习了JS基础，学习了 定时器和选择对象并修改内容，还看了一些基础语法。</code>  </p>
 </blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天在做计时器效果与轮播图效果都是自己在网上寻找的教程与例子，当自己努力做出来的成果成果的时候是很开心的，很有动力。</p>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天学习的新任务是JS ，原来学过一些php也有一些基础学得还不算慢，总体来说今天的学习效率还可以。</p>
 ]]></content>
       <categories>
         <category>心得</category>
@@ -3641,21 +4246,6 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8.28日报</title>
-    <url>/2019/08/28/2019-08-28-28ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天下午学习了JS基础，学习了 定时器和选择对象并修改内容，还看了一些基础语法。</code>  </p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天学习的新任务是JS ，原来学过一些php也有一些基础学得还不算慢，总体来说今天的学习效率还可以。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -3858,6 +4448,28 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
+    <title>8.23日报</title>
+    <url>/2019/08/23/2019-08-23-23ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天把vim常用命令整理得差不多了，vim进度90%，今天开始看的linux命令，但是感觉看的很乱，进度40%。</code>  </p>
+</blockquote>
+<blockquote>
+<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天心不够静，看到属性多了就乱了，不知道从哪开背起，后来慢慢的静下来从头看也看了好几个命令。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.23技术文档</title>
     <url>/2019/08/23/2019-08-23-23jishu/</url>
     <content><![CDATA[<h1 id="linux常用命令整理之一"><a href="#linux常用命令整理之一" class="headerlink" title="linux常用命令整理之一"></a>linux常用命令整理之一</h1><p><strong>关机 (系统的关机、重启以及登出 ):</strong><br>shutdown -h now 关闭系统<br>init 0 关闭系统<br>telinit 0 关闭系统<br>shutdown -h hours:minutes &amp; 按预定时间关闭系统<br>shutdown -c 取消按预定时间关闭系统<br>shutdown -r now 重启<br>reboot 重启<br>logout 注销   </p>
@@ -3878,28 +4490,6 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8.23日报</title>
-    <url>/2019/08/23/2019-08-23-23ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天把vim常用命令整理得差不多了，vim进度90%，今天开始看的linux命令，但是感觉看的很乱，进度40%。</code>  </p>
-</blockquote>
-<blockquote>
-<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天心不够静，看到属性多了就乱了，不知道从哪开背起，后来慢慢的静下来从头看也看了好几个命令。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
