@@ -401,10 +401,14 @@
 <li>开启组件扫描 和 标注形式的mvc<pre><code>&lt;context:component-san  base-package=&quot;&quot;  /&gt;
 &lt;mvc:annotation-driven /&gt;   
 </code></pre>底层创建了一个 RequestMappingHandlerMapping的组件</li>
-<li>写一个java类   不用实现Controller接口<br><code>`</code><br>@RequestMapping(“/请求路径”)<br>控制器方法的返回值类型 可以是String 也可以是 ModelAndView   方法名自由了(参数自由了){</li>
+<li>写一个java类   不用实现Controller接口  </li>
 </ol>
-<p>}<br><code>`</code><br>在类上加对应的标注  @Controller   可以把普通类 变成控制器  并在容器中创建Controller 对象</p>
-<ol start="5">
+<pre><code>@RequestMapping(&quot;/请求路径&quot;)
+控制器方法的返回值类型 可以是String 也可以是 ModelAndView   方法名自由了(参数自由了){
+
+}  
+</code></pre><p>在类上加对应的标注  @Controller   可以把普通类 变成控制器  并在容器中创建Controller 对象</p>
+<ol>
 <li>配置视图处理器   </li>
 </ol>
 <blockquote>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">pengpeng</title>
+  <title itemprop="name">12.19技术分享 | pengpeng</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -322,460 +322,186 @@
       <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
 <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
-<div class="blank" style="padding-top: 0px;"></div>
+<link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      12.19技术分享</h1>
+      <p class="entry-census">
+        <span>
+          <a href="">
+            <img src="https://s2.ax1x.com/2019/11/20/MWejJ0.png">
+          </a>
+        </span>
+        <span>
+          <a href="">鹏鹏</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2019-12-19<span class="bull">
+        </span></p>
+    </header>
+  </div>
+
 <div id="content" class="site-content">
-  
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <h1 class="main-title" style="font-family: 'Ubuntu', sans-serif;">
-      <i class="fa fa-envira" aria-hidden="true"></i>
-      文章</h1>
-      
-  <!-- 首页默认取最最新文章集 -->
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/12/07/2019-12-07-07ribao/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-12-7 00:12</div>
-      <a href="/2019/12/07/2019-12-07-07ribao/" class="post-title">
-        <h3>12.07Java学习进度</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
-            <a href="/tags/MVC框架/">MVC框架<em>·</em></a>
-          
-            <a href="/tags/MVC核心组件/">MVC核心组件<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/Java/">Java</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/12/07/2019-12-07-07ribao/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
+        <div class="entry-content">
+          <h1 id="mysql重置密码-MySQL-服务无法启动"><a href="#mysql重置密码-MySQL-服务无法启动" class="headerlink" title="mysql重置密码,MySQL 服务无法启动:"></a>mysql重置密码,MySQL 服务无法启动:</h1><h3 id="mysql重置密码"><a href="#mysql重置密码" class="headerlink" title="mysql重置密码:"></a>mysql重置密码:</h3><ol>
+<li><p>打开命令窗口cmd，输入命令：net stop mysql，停止MySQL服务，</p>
+</li>
+<li><p>开启跳过密码验证登录的MySQL服务</p>
+<pre><code> 输入命令  mysqld --console --skip-grant-tables --shared-memory 
+</code></pre></li>
+<li><p>再打开一个新的cmd，无密码登录MySQL，输入登录命令：mysql -u root -p</p>
+</li>
+<li><p>密码置为空，命令如下：</p>
+<p> use mysql</p>
+<p> update user set authentication_string=’’ where user=’root’;</p>
+</li>
+</ol>
+<ol start="5">
+<li><p>退出mysql，执行命令：</p>
+<p> quit</p>
+</li>
+</ol>
+<ol start="6">
+<li><p>关闭以-console –skip-grant-tables –shared-memory 启动的MySQL服务，</p>
+</li>
+<li><p>打开命令框，输入：net start mysql  启动MySQL服务，一管理员的身份运行cmd。</p>
+</li>
+<li><p>步骤4密码已经置空，所以无密码状态登录MySQL，输入登录命令：mysql -u root -p</p>
+</li>
+<li><p>利用上一篇博客中更改密码的命令，成功修改密码:</p>
+</li>
+</ol>
+<p>ALTER USER ‘root‘@’localhost’ IDENTIFIED BY ‘新密码’;</p>
+<ol start="10">
+<li>验证更改后密码正确登录</li>
+</ol>
+<p>输入quit，退出当前登录，输入登录命令：mysql -u root -p</p>
+<p>输入密码，成功登录，到此，重置密码结束。</p>
+<h3 id="MySQL-服务无法启动"><a href="#MySQL-服务无法启动" class="headerlink" title="MySQL 服务无法启动:"></a>MySQL 服务无法启动:</h3><p><code>安装MySQL启动时出现“net start mysql MySQL 服务正在启动 MySQL 服务无法启动。 服务没有报告任何错误</code>  </p>
+<ol>
+<li>进入mysql的bin目录.</li>
+<li>执行mysqld –initialize-insecure ，执行结束后没有输出信息.</li>
+<li>再次启动，成功.</li>
+</ol>
+<h3 id="关联mysql失败-Server-returns-invalid-timezone-Go-to-‘Advanced’-tab-and-set-‘serverTimezon’"><a href="#关联mysql失败-Server-returns-invalid-timezone-Go-to-‘Advanced’-tab-and-set-‘serverTimezon’" class="headerlink" title="关联mysql失败_Server returns invalid timezone. Go to ‘Advanced’ tab and set ‘serverTimezon’:"></a>关联mysql失败_Server returns invalid timezone. Go to ‘Advanced’ tab and set ‘serverTimezon’:</h3><p>mysql修改时区:  </p>
+<p>时区错误，MySQL默认的时区是UTC时区，比北京时间晚8个小时。</p>
+<p>所以要修改mysql的时长</p>
+<p>在mysql的命令模式下，输入：</p>
+<p>set global time_zone=’+8:00’;</p>
+<p>再次连接成功</p>
+
         </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/12/06/2019-12-06-06ribao/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-12-6 00:12</div>
-      <a href="/2019/12/06/2019-12-06-06ribao/" class="post-title">
-        <h3>12.06Java学习进度</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
+        <!-- .entry-content -->
+        <!-- <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6null"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6null"></li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <!-- <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer> -->
+        <!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
         
-            <a href="/tags/Spring-的声明式事务/">Spring 的声明式事务<em>·</em></a>
+        
           
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
+            <div class="post-nepre full next">
           
-            <a href="/categories/Java/">Java</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/12/06/2019-12-06-06ribao/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
+            <a href="/2019/12/18/2019-12-18-18ribao/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                12.18Java学习进度</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      <!-- 
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "AmxH4yw61P6os5AiWxgsp3eh-gzGzoHsz",
+        appKey: "jfvqz9VwDczpjELERSQUWguL",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+ -->
+
+
+<div id="vcomments"></div>
+<script>
+    window.onload = function(){
+          var valine = new Valine();
+          valine.init({    
+            el: '#vcomments',    
+            appId: "AmxH4yw61P6os5AiWxgsp3eh-gzGzoHsz",   
+             appKey: "jfvqz9VwDczpjELERSQUWguL",    
+             path: window.location.pathname,    
+             placeholder: "你是我一生只会遇见一次的惊喜 ...",    
+             avatar:'wavatar', //用不同面孔和背景组合生成的头像    
+             notify: true, // 邮件提醒!!!    
+             verify: true, // 验证码      
+          })  
+    }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <a href="" class="profile gravatar"><img src="https://s2.ax1x.com/2019/11/20/MWejJ0.png" itemprop="image" alt="鹏鹏" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="" itemprop="url" rel="author">鹏鹏</a>
+            </h3>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/12/05/2019-12-05-05ribao/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-12-5 00:12</div>
-      <a href="/2019/12/05/2019-12-05-05ribao/" class="post-title">
-        <h3>12.05Java学习进度</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/java进度/">java进度<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/Java/">Java</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/12/05/2019-12-05-05ribao/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/12/04/2019-12-04-04ribao/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-12-4 00:12</div>
-      <a href="/2019/12/04/2019-12-04-04ribao/" class="post-title">
-        <h3>12.04Java学习进度</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/Bean-参数的注入/">Bean 参数的注入<em>·</em></a>
-          
-            <a href="/tags/Spring-DAO-对JDBC的改进/">Spring DAO 对JDBC的改进<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/Java/">Java</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/12/04/2019-12-04-04ribao/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/12/03/2019-12-03-03ribao/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-12-3 00:12</div>
-      <a href="/2019/12/03/2019-12-03-03ribao/" class="post-title">
-        <h3>12.03Java学习进度</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/DI-依赖注入/">DI(依赖注入)<em>·</em></a>
-          
-            <a href="/tags/组件扫描/">组件扫描<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/Java/">Java</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/12/03/2019-12-03-03ribao/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/12/02/2019-12-02-02ribao/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-12-2 00:12</div>
-      <a href="/2019/12/02/2019-12-02-02ribao/" class="post-title">
-        <h3>12.02Java学习进度</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/项目编程思想/">项目编程思想<em>·</em></a>
-          
-            <a href="/tags/Spring-框架/">Spring 框架<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/Java/">Java</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/12/02/2019-12-02-02ribao/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/11/30/2019-11-30-30ribao/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-11-30 00:11</div>
-      <a href="/2019/11/30/2019-11-30-30ribao/" class="post-title">
-        <h3>11.30Java学习进度</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/Jquery/">Jquery<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/Java/">Java</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/11/30/2019-11-30-30ribao/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/11/29/2019-11-29-29ribao/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-11-29 00:11</div>
-      <a href="/2019/11/29/2019-11-29-29ribao/" class="post-title">
-        <h3>11.29Java学习进度</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/Ajax/">Ajax<em>·</em></a>
-          
-            <a href="/tags/GSON-jar/">GSON.jar<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/Java/">Java</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/11/29/2019-11-29-29ribao/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb post-list-thumb-left"  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/11/28/2019-11-28-28ribao/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-11-28 00:11</div>
-      <a href="/2019/11/28/2019-11-28-28ribao/" class="post-title">
-        <h3>11.28Java学习进度</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/JSTL标签/">JSTL标签<em>·</em></a>
-          
-            <a href="/tags/自定义标签/">自定义标签<em>·</em></a>
-          
-            <a href="/tags/web三大组件/">web三大组件<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/Java/">Java</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/11/28/2019-11-28-28ribao/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-    
-<article  class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
-
-  <div class="post-thumb">
-    <a href="/2019/11/27/2019-11-27-27ribao/">
-      <img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://static.2heng.xin/wp-content/uploads//2019/02/wallhaven-672007-1-1024x576.png">
-    </a>
-  </div>
-  <div class="post-content-wrap">
-    <div class="post-content">
-      <div class="post-date">
-        <i class="iconfont icon-time">
-        </i>2019-11-27 00:11</div>
-      <a href="/2019/11/27/2019-11-27-27ribao/" class="post-title">
-        <h3>11.27Java学习进度</h3>
-      </a>
-      <div class="post-meta">
-        <span><i class="fa fa-tags"></i>
-        
-            <a href="/tags/JSP指令/">JSP指令<em>·</em></a>
-          
-            <a href="/tags/JSP对象/">JSP对象<em>·</em></a>
-          
-            <a href="/tags/EL/">EL<em>·</em></a>
-          
-        </span>
-        <span>
-          <i class="iconfont icon-file"></i>
-          
-            <a href="/categories/Java/">Java</a>
-          
-        </span>
-      </div>
-      <div class="float-content">
-        <p></p>
-        <div class="post-bottom">
-          <a href="/2019/11/27/2019-11-27-27ribao/" class="button-normal">
-            <i class="iconfont icon-caidan"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-  
-
-
-    </main>
-      <!-- 首页默认取最最新文章集 -->
-    <!-- 
-      <nav class="navigator">
-        
-        <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-back"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/"><i class="iconfont icon-right"></i></a>
-      </nav>
-     -->
-  </div>
-  
-    <div id="pagination"><a href="/page/3/" class="">更多</a></div>
-  
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
 
     </div>    
     <div class="ins-search">
