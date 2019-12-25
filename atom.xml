@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-12-25T02:04:30.565Z</updated>
+  <updated>2019-12-24T08:21:30.478Z</updated>
   <id>/</id>
   
   <author>
@@ -15,32 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>12.25技术分享</title>
-    <link href="/2019/12/25/2019-12-25-25jishu/"/>
-    <id>/2019/12/25/2019-12-25-25jishu/</id>
-    <published>2019-12-24T16:00:00.000Z</published>
-    <updated>2019-12-25T02:04:30.565Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;springboot网页显示数据库数据步骤-以XdhClass为例&quot;&gt;&lt;a href=&quot;#springboot网页显示数据库数据步骤-以XdhClass为例&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="springboot+mybatis" scheme="/categories/springboot-mybatis/"/>
-    
-    
-      <category term="springboot+mybatis网页显示数据库数据" scheme="/tags/springboot-mybatis%E7%BD%91%E9%A1%B5%E6%98%BE%E7%A4%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E6%95%B0%E6%8D%AE/"/>
-    
-  </entry>
   
   <entry>
     <title>12.19技术分享</title>
@@ -567,6 +541,36 @@
       <category term="自定义标签" scheme="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%87%E7%AD%BE/"/>
     
       <category term="web三大组件" scheme="/tags/web%E4%B8%89%E5%A4%A7%E7%BB%84%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11.27Java学习进度</title>
+    <link href="/2019/11/27/2019-11-27-27ribao/"/>
+    <id>/2019/11/27/2019-11-27-27ribao/</id>
+    <published>2019-11-26T16:00:00.000Z</published>
+    <updated>2019-11-27T14:02:20.803Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JSP指令-JSP的九大内置对象-EL&quot;&gt;&lt;a href=&quot;#JSP指令-JSP的九大内置对象-EL&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="/categories/Java/"/>
+    
+    
+      <category term="JSP指令" scheme="/tags/JSP%E6%8C%87%E4%BB%A4/"/>
+    
+      <category term="JSP对象" scheme="/tags/JSP%E5%AF%B9%E8%B1%A1/"/>
+    
+      <category term="EL" scheme="/tags/EL/"/>
     
   </entry>
   
