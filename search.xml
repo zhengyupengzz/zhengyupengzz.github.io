@@ -1,33 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>12.27所见问题</title>
+    <url>/2019/12/27/2020-01-02-02jishu/</url>
+    <content><![CDATA[<h1 id="今天安装了一些IDEA的插件"><a href="#今天安装了一些IDEA的插件" class="headerlink" title="今天安装了一些IDEA的插件:"></a>今天安装了一些IDEA的插件:</h1><h3 id="一些常用IDEA插件"><a href="#一些常用IDEA插件" class="headerlink" title="一些常用IDEA插件"></a>一些常用IDEA插件</h3><ol>
+<li>aiXcode:  </li>
+</ol>
+<p>AI智能编程插件。aiXcoder主要两个功能：代码自动补全和相似代码智能推荐。程序员写代码时，AI引擎会进行预测并自动补全后续代码。同时，aiXcoder会基于程序员输入的代码，从后台规范代码库中调用相似的代码，在分屏中显示以供程序员参考。</p>
+<ol start="2">
+<li>GenerateAllSetter:  </li>
+</ol>
+<p>一款效率插件，它主要有以下功能： </p>
+<p>通过alt+enter对变量类生成对类的所有setter方法的调用<br>当两个对象具有相同的字段时生成一个转换器<br>当returnType为List Set Map时生成默认值<br>在所有getter方法上生成对assertThat的调用  </p>
+<ol start="3">
+<li>EasyCode:  </li>
+</ol>
+<p>很强的插件,可以根据数据库的表自动生成实体类，dao层，service层，controller层等，还有必要的注释。</p>
+<ol start="4">
+<li>Rainbow Brackets :  </li>
+</ol>
+<p>彩虹括号,看着舒服一些</p>
+<ol start="5">
+<li>Translation:  </li>
+</ol>
+<p>翻译插件，装好之后只需要选中，右键，翻译即可  </p>
+<ol start="6">
+<li>JRebel(热部署):  </li>
+</ol>
+<p>关于安装与配置热部署博客:<br><a href="https://www.jiweichengzhu.com/article/33c0330308f5429faf7a1e74127c9708" target="_blank" rel="noopener">https://www.jiweichengzhu.com/article/33c0330308f5429faf7a1e74127c9708</a></p>
+]]></content>
+      <categories>
+        <category>idea项目热部署</category>
+      </categories>
+      <tags>
+        <tag>idea实用插件</tag>
+        <tag>idea项目热部署</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>12.27所见问题</title>
+    <url>/2019/12/27/2019-12-27-27jishu/</url>
+    <content><![CDATA[<h1 id="SQL语句没问题报SQL语句错误问题及解决"><a href="#SQL语句没问题报SQL语句错误问题及解决" class="headerlink" title="SQL语句没问题报SQL语句错误问题及解决:"></a>SQL语句没问题报SQL语句错误问题及解决:</h1><h3 id="一直报500-SQL语句没问题报SQL语句错误问题及解决"><a href="#一直报500-SQL语句没问题报SQL语句错误问题及解决" class="headerlink" title="一直报500,SQL语句没问题报SQL语句错误问题及解决:"></a>一直报500,SQL语句没问题报SQL语句错误问题及解决:</h3><p>网页端报错</p>
+<pre><code>
+There was an unexpected error (type=Internal Server Error, status=500).
+### Error updating database. Cause: java.sql.SQLSyntaxErrorException: Unknown column &#39;??????&#39; in &#39;field list&#39; ### The error may involve cn.xdh.dao.TeacherDao.updateByTeacher-Inline ### The error occurred while setting parameters ### SQL: UPDATE xdh_teacher SET name = ??????, mobile= 937615, password= 4848948, add_time= 1576856786, add_ip= 48498 where id =16 ### Cause: java.sql.SQLSyntaxErrorException: Unknown column &#39;??????&#39; in &#39;field list&#39; ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column &#39;??????&#39; in &#39;field list&#39;
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column &#39;??????&#39; in &#39;field list&#39;
+### The error may involve cn.xdh.dao.TeacherDao.updateByTeacher-Inline
+### The error occurred while setting parameters
+### SQL: UPDATE     xdh_teacher     SET     name = ??????,     mobile= 937615,     password= 4848948,     add_time= 1576856786,     add_ip= 48498     where     id =16
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column &#39;??????&#39; in &#39;field list&#39;
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column &#39;??????&#39; in &#39;field list&#39;
+
+</code></pre><p>控制台报错</p>
+<pre><code>
+### Error updating database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column &#39;别已被占用了&#39; in &#39;field list&#39;
+### The error may involve cn.xdh.dao.TeacherDao.updateByTeacher-Inline
+### The error occurred while setting parameters
+### SQL: UPDATE     xdh_teacher     SET     name = 别已被占用了,     mobile= 937615,     password= 4848948,     add_time= 1576856786,     add_ip= 48498     where     id =16
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column &#39;别已被占用了&#39; in &#39;field list&#39;
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column &#39;别已被占用了&#39; in &#39;field list&#39;] with root cause
+
+java.sql.SQLSyntaxErrorException: Unknown column &#39;别已被占用了&#39; in &#39;field list&#39;
+
+</code></pre><p>这个问题是程序识别不出<code>name</code>后面的值, 之前我试了可以使用数字,字母和字符串都不行,也就是数据库只能识别int类型了 并不能识别string类型  </p>
+<blockquote>
+<p>我的解决方法:<br><code>`</code></p>
+</blockquote>
+<p> UPDATE<br>    xdh_teacher<br>    SET<br>    name = ${‘“‘+name+’”‘},<br>    mobile= ${mobile},<br>    password= ${password},<br>    add_time= ${add_time},<br>    add_ip= ${add_ip}<br>    where<br>    id =${id}</p>
+<p><code>`</code>  </p>
+<p>将<code>name=${name}</code>换成<code>name = ${&#39;&quot;&#39;+name+&#39;&quot;&#39;}</code><br>具体拼接方法我也没太理解 但是它就是好使了  </p>
+<h3 id="IDEA里面MySQL数据库时区问题"><a href="#IDEA里面MySQL数据库时区问题" class="headerlink" title="IDEA里面MySQL数据库时区问题:"></a>IDEA里面MySQL数据库时区问题:</h3><p>每次电脑重启 连接IDEA里面的masql数据库时候都会提示我时区错误 实际在cmd里面看时区是正常的,<br>后来我就找到了这种方案:<br>在添加mysql的时候 IDEA在添加数据库时里面有Advanced设置 里面有<code>serverTimezone</code>项,在后面的值填写<code>GMT+8</code>即可</p>
+<p><img src="https://s2.ax1x.com/2019/12/27/lEqnV1.png" alt="Advanced"></p>
+]]></content>
+      <categories>
+        <category>一直报500,SQL语句错误</category>
+      </categories>
+      <tags>
+        <tag>SQL语句没问题报SQL语句错误</tag>
+        <tag>MySQL数据库时区问题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>12.25技术分享</title>
     <url>/2019/12/25/2019-12-25-25jishu/</url>
-    <content><![CDATA[<h1 id="springboot网页显示数据库数据步骤-以XdhClass为例"><a href="#springboot网页显示数据库数据步骤-以XdhClass为例" class="headerlink" title="springboot网页显示数据库数据步骤(以XdhClass为例):"></a>springboot网页显示数据库数据步骤(以XdhClass为例):</h1><ol>
+    <content><![CDATA[<h1 id="springboot网页显示数据库数据步骤-以Teacher为例"><a href="#springboot网页显示数据库数据步骤-以Teacher为例" class="headerlink" title="springboot网页显示数据库数据步骤(以Teacher为例):"></a>springboot网页显示数据库数据步骤(以Teacher为例):</h1><ol>
 <li>创建一个实体类(entity):</li>
 </ol>
 <pre><code>package cn.xdh.entity;
 
+
 import java.io.Serializable;
 
-public class XdhClass implements Serializable {
+public class Teacher implements Serializable {
     private int id;
-    private String class_name;
-    // 开班时间
+    private String name;
+    private String mobile;
+    // 登录密码(使用MD5加密)
+    private String password;
+    // 入职时间
     private int add_time;
-    private int teacher_id;
-    // 判断是否毕业 1.毕业 0.未毕业
-    private int is_graduate;
+    private String add_ip;
 
-    public XdhClass() {
+    public Teacher() {
     }
 
-    public XdhClass(int id, String class_name, int add_time, int teacher_id, int is_graduate) {
+    public Teacher(int id, String name, String mobile, String password, int add_time, String add_ip) {
         this.id = id;
-        this.class_name = class_name;
+        this.name = name;
+        this.mobile = mobile;
+        this.password = password;
         this.add_time = add_time;
-        this.teacher_id = teacher_id;
-        this.is_graduate = is_graduate;
+        this.add_ip = add_ip;
     }
 
     public int getId() {
@@ -38,12 +122,28 @@ public class XdhClass implements Serializable {
         this.id = id;
     }
 
-    public String getClass_name() {
-        return class_name;
+    public String getName() {
+        return name;
     }
 
-    public void setClass_name(String class_name) {
-        this.class_name = class_name;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public int getAdd_time() {
@@ -54,131 +154,123 @@ public class XdhClass implements Serializable {
         this.add_time = add_time;
     }
 
-    public int getTeacher_id() {
-        return teacher_id;
+    public String getAdd_ip() {
+        return add_ip;
     }
 
-    public void setTeacher_id(int teacher_id) {
-        this.teacher_id = teacher_id;
-    }
-
-    public int getIs_graduate() {
-        return is_graduate;
-    }
-
-    public void setIs_graduate(int is_graduate) {
-        this.is_graduate = is_graduate;
+    public void setAdd_ip(String add_ip) {
+        this.add_ip = add_ip;
     }
 }
 
+
 </code></pre><ol start="2">
-<li>在resource中新建mapper.xml配置文件(XdhClassMapper.xml):</li>
+<li>在resource中新建mapper.xml配置文件(TeacherMapper.xml):</li>
 </ol>
 <pre><code>
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
-&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;
-        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
-        &lt;!--namespace作用是绑定dao接口--&gt;
-&lt;mapper namespace=&quot;cn.xdh.dao.XdhClassDao&quot;&gt;
-    &lt;!--selectByXdhClass为之后其他文件类名--&gt;
-    &lt;select id=&quot;selectByXdhClass&quot; resultType=&quot;cn.xdh.entity.XdhClass&quot;&gt;
-        select * from xdh_class
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;  
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; 
+&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;cn.xdh.dao.TeacherDao&quot;&gt;
+
+    &lt;select id=&quot;selectByTeacher&quot; resultType=&quot;cn.xdh.entity.Teacher&quot;&gt;
+        select * from xdh_teacher
     &lt;/select&gt;
 
 &lt;/mapper&gt;
 
 
+
 </code></pre><ol start="3">
-<li>新建一个Dao接口(XdhClassDao):  </li>
+<li>新建一个Dao接口(TeacherDao):  </li>
 </ol>
 <pre><code>
 package cn.xdh.dao;
 
-import cn.xdh.entity.XdhClass;
+import cn.xdh.entity.Teacher;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
-public interface XdhClassDao {
-    public XdhClass selectByXdhClass();
+public interface TeacherDao {
+    public List&lt;Teacher&gt; selectByTeacher();
 }
 
 
+
 </code></pre><ol start="4">
-<li>新建一个Service接口(XdhClassService):</li>
+<li>新建一个Service接口(TeacherService):</li>
 </ol>
 <pre><code>
 package cn.xdh.service;
 
-import cn.xdh.entity.XdhClass;
 
-public interface XdhClassService {
-    public XdhClass selectByXdhClass();
+import cn.xdh.entity.Teacher;
+
+import java.util.List;
+
+public interface TeacherService {
+   public List&lt;Teacher&gt; selectByTeacher();
 }
 
 
+
 </code></pre><ol start="5">
-<li>编写一个Service实现接口(XdhClassServiceImpl):</li>
+<li>编写一个Service实现接口(TeacherServiceImpl):</li>
 </ol>
 <pre><code>
 package cn.xdh.service.impl;
 
-import cn.xdh.dao.XdhClassDao;
-import cn.xdh.entity.XdhClass;
-import cn.xdh.service.XdhClassService;
+import cn.xdh.dao.TeacherDao;
+import cn.xdh.entity.Teacher;
+import cn.xdh.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class XdhClassServiceImpl implements XdhClassService {
+public class TeacherServiceImpl implements TeacherService {
     @Autowired
-    private XdhClassDao xdhClassDao;
+    private TeacherDao teacherDao;
 
     @Override
-    public XdhClass selectByXdhClass() {
-        XdhClass xdhClass = xdhClassDao.selectByXdhClass();
-        return xdhClass;
+    public List&lt;Teacher&gt; selectByTeacher() {
+        List&lt;Teacher&gt; selectByTeacher = teacherDao.selectByTeacher();
+        return selectByTeacher;
     }
 }
 
 
+
 </code></pre><ol start="6">
-<li>新建一个Controller控制器类(XdhClassController):</li>
+<li>新建一个Controller控制器类(TeacherController):</li>
 </ol>
 <pre><code>
 package cn.xdh.web;
 
-import cn.xdh.entity.XdhClass;
-import cn.xdh.service.XdhClassService;
+import cn.xdh.entity.Teacher;
+import cn.xdh.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
-public class XdhClassController {
-
-
-    @GetMapping(value = &quot;xdhclass.do&quot;)
-    @ResponseBody
-    public ModelAndView xdhclass() {
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName(&quot;admin/xdhclass&quot;);
-        return mav;
-    }
-
+public class TeacherController {
     @Autowired
-    private XdhClassService xdhClassService;
-    // 先用一个测试页
-    @RequestMapping(value = &quot;/test&quot;)
-    public String selectXdhClass(Model model){
+    private TeacherService teacherService;
 
-        XdhClass xdhClass = xdhClassService.selectByXdhClass();
-        model.addAttribute(&quot;xdhClass&quot;,xdhClass);
-        return &quot;admin/test&quot;;
+    @RequestMapping(value = &quot;/teacher&quot;)
+    public String selectTeacher(Model model){
+        List&lt;Teacher&gt; selectByTeacher = teacherService.selectByTeacher();
+        model.addAttribute(&quot;selectTeacher&quot;,selectByTeacher);
+        return &quot;admin/teacher&quot;;
     }
+
 
 }
 
@@ -195,11 +287,11 @@ public class XdhClassController {
     &lt;title&gt;Title&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;p th:text=&quot;${xdhClass.getId()}&quot;&gt; &lt;/p&gt;
-    &lt;p th:text=&quot;${xdhClass.getClass_name()}&quot;&gt; &lt;/p&gt;
-    &lt;p th:text=&quot;${xdhClass.getAdd_time()}&quot;&gt; &lt;/p&gt;
-    &lt;p th:text=&quot;${xdhClass.getTeacher_id()}&quot;&gt; &lt;/p&gt;
-    &lt;p th:text=&quot;${xdhClass.getIs_graduate()}&quot;&gt; &lt;/p&gt;
+    &lt;p th:text=&quot;${selectTeacher.getId()}&quot;&gt; &lt;/p&gt;
+    &lt;p th:text=&quot;${selectTeacher.getClass_name()}&quot;&gt; &lt;/p&gt;
+    &lt;p th:text=&quot;${selectTeacher.getAdd_time()}&quot;&gt; &lt;/p&gt;
+    &lt;p th:text=&quot;${selectTeacher.getTeacher_id()}&quot;&gt; &lt;/p&gt;
+    &lt;p th:text=&quot;${selectTeacher.getIs_graduate()}&quot;&gt; &lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 
@@ -229,7 +321,7 @@ public class RunBoot {
 server.port=8888
 spring.datasource.username=root
 spring.datasource.password=123456
-spring.datasource.url=jdbc:mysql://localhost:3306/xdhbg?useSSL=false
+spring.datasource.url=jdbc:mysql://localhost:3306/xdhbg?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8
 spring.datasource.driverClassName=com.mysql.jdbc.Driver
 
 mybatis.mapper-locations= classpath:/mapper/*.xml
@@ -240,6 +332,9 @@ spring.thymeleaf.suffix=.html
 spring.thymeleaf.mode=HTML
 spring.thymeleaf.encoding=UTF-8
 spring.thymeleaf.cache=false
+
+
+
 
 
 
@@ -339,7 +434,7 @@ spring.thymeleaf.cache=false
 </code></pre><ol start="4">
 <li>项目目录结构:  </li>
 </ol>
-<p><img src="https://s2.ax1x.com/2019/12/25/linIqx.png" alt></p>
+<p><img src="https://s2.ax1x.com/2019/12/25/libTnx.png" alt></p>
 ]]></content>
       <categories>
         <category>springboot+mybatis</category>
@@ -2483,6 +2578,37 @@ String username = request.getParameter(&quot;username&quot;);
       </tags>
   </entry>
   <entry>
+    <title>11.20心得</title>
+    <url>/2019/11/20/2019-11-20-20xinde/</url>
+    <content><![CDATA[<h1 id="对于博客模板的修改"><a href="#对于博客模板的修改" class="headerlink" title="对于博客模板的修改:"></a>对于博客模板的修改:</h1><blockquote>
+<p>由于19号发现了之前自己的博客模板有一些没改好的地方,便下决心这次要彻底改好一个博客模板</p>
+</blockquote>
+<p>所以19号的整整一天就都是在找模板,看效果的  </p>
+<p>然后晚自习的时候就已经确定好了这个模板,开始着手修改  </p>
+<p>由于不太了解博客里面元素和.ejs文件的构造 在改一些东西的时候总会有报错  </p>
+<p>后来想到了把所有文件打开  然后去查找那个关键字  </p>
+<p>由于有一些js基础,这么一查找到,想做些修改也不是很难  </p>
+<p>在将一些404图片修改了,把多余的文字修改了之后  </p>
+<blockquote>
+<p>后续又对博客进行了一些优化  </p>
+</blockquote>
+<p>首先将<code>Valine</code>评论区的 ID 和 Key 换成了自己注册的LeanCloud 的ID 和 Key  </p>
+<p>还将github博客也推到了coding 这个仓库可以让国内访问github可以快一些  </p>
+<p>并将自己之前购买的域名都绑定到了自己的博客上:  </p>
+<p><a href="http://zhengyupeng.top" target="_blank" rel="noopener">zhengyupeng.top</a>  </p>
+<p><a href="https://www.zhengyupeng.top" target="_blank" rel="noopener">www.zhengyupeng.top</a>  </p>
+<p>也都能访问到我的博客了!  </p>
+<p><strong>最后总结一下心得吧:</strong>  </p>
+<p>昨天一天和今天上午到十点多相当于在学习Java的进度上没有进展,<br>但是改完这个博客,也学到了很多的东西,了解到了很多东西,<br>并且改完这个博客心情都变好了,可以安心学习去了。<br>接下来传完的个博客我就继续学习Java了,<strong><code>冲冲冲!!!</code></strong></p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>11.20Java学习进度</title>
     <url>/2019/11/20/2019-11-20-20ribao/</url>
     <content><![CDATA[<h1 id="JavaWeb开发环境的配置-http协议与HttpServlet类"><a href="#JavaWeb开发环境的配置-http协议与HttpServlet类" class="headerlink" title="JavaWeb开发环境的配置,http协议与HttpServlet类:"></a>JavaWeb开发环境的配置,http协议与HttpServlet类:</h1><p><strong>tomcat配置:</strong>  </p>
@@ -2586,37 +2712,6 @@ B / S :
       <tags>
         <tag>tomcat</tag>
         <tag>HttpServlet</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>11.20心得</title>
-    <url>/2019/11/20/2019-11-20-20xinde/</url>
-    <content><![CDATA[<h1 id="对于博客模板的修改"><a href="#对于博客模板的修改" class="headerlink" title="对于博客模板的修改:"></a>对于博客模板的修改:</h1><blockquote>
-<p>由于19号发现了之前自己的博客模板有一些没改好的地方,便下决心这次要彻底改好一个博客模板</p>
-</blockquote>
-<p>所以19号的整整一天就都是在找模板,看效果的  </p>
-<p>然后晚自习的时候就已经确定好了这个模板,开始着手修改  </p>
-<p>由于不太了解博客里面元素和.ejs文件的构造 在改一些东西的时候总会有报错  </p>
-<p>后来想到了把所有文件打开  然后去查找那个关键字  </p>
-<p>由于有一些js基础,这么一查找到,想做些修改也不是很难  </p>
-<p>在将一些404图片修改了,把多余的文字修改了之后  </p>
-<blockquote>
-<p>后续又对博客进行了一些优化  </p>
-</blockquote>
-<p>首先将<code>Valine</code>评论区的 ID 和 Key 换成了自己注册的LeanCloud 的ID 和 Key  </p>
-<p>还将github博客也推到了coding 这个仓库可以让国内访问github可以快一些  </p>
-<p>并将自己之前购买的域名都绑定到了自己的博客上:  </p>
-<p><a href="http://zhengyupeng.top" target="_blank" rel="noopener">zhengyupeng.top</a>  </p>
-<p><a href="https://www.zhengyupeng.top" target="_blank" rel="noopener">www.zhengyupeng.top</a>  </p>
-<p>也都能访问到我的博客了!  </p>
-<p><strong>最后总结一下心得吧:</strong>  </p>
-<p>昨天一天和今天上午到十点多相当于在学习Java的进度上没有进展,<br>但是改完这个博客,也学到了很多的东西,了解到了很多东西,<br>并且改完这个博客心情都变好了,可以安心学习去了。<br>接下来传完的个博客我就继续学习Java了,<strong><code>冲冲冲!!!</code></strong></p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -3702,26 +3797,6 @@ Person p = new Person();
       </tags>
   </entry>
   <entry>
-    <title>9.27七十周年心得</title>
-    <url>/2019/09/27/2019-09-27-27xinde/</url>
-    <content><![CDATA[<h1 id="今天看了很多关于国家的视频-发现这七十年发展的是真不容易"><a href="#今天看了很多关于国家的视频-发现这七十年发展的是真不容易" class="headerlink" title="今天看了很多关于国家的视频,发现这七十年发展的是真不容易"></a>今天看了很多关于国家的视频,发现这七十年发展的是真不容易</h1><p>70年的风雨征程，带来了祖国繁荣强大，如同阳光照亮了我们的前程，指明了我们前进的方向，带领全国各族人民从贫穷走向富裕，从胜利走向辉煌。</p>
-<p>　　中华人民共和国国旗旗面为红色象征革命。旗上的五颗五角星及其相互关系象征共产党领导下的革命人民大团结。星用黄色是为着在红地上显出光明，四颗小五角星各有一角正对着大星的中心点，表示围绕着一个中心而团结。每逢国庆，去天安门广场看升国旗是无数人心中的梦想。因此，利用国庆长假去北京游玩的人们，通常会赶早来到天安门广场看国旗班的军人升旗，以表达对祖国的无比热爱，看着五星红旗徐徐升起，心中的激动无以言表。每年10月1日是我国的国庆节，我国于1999年修订发布《全国年节及纪念日放假办法》，将国庆节与相邻的周六、日组合为7天的国庆长假，被称之为“国庆黄金周”，用放假的形式，让老百姓共同感受国庆的欢乐。</p>
-<p>　　回首这70年，中华人民走得每一步都是步履蹒跚，每一步都付出了巨大牺牲。但是如今中国经过几十年来的艰苦建设，已取得了“乘长风，破万里浪”的迅猛发展:《辉煌中国》之《圆梦工程》透过港珠澳大桥、胡麻岭隧道、郑万铁路、复兴号、上海洋山港自动化码头、中国移动互联网等一个个超级工程，领略五年来一张张中国基础建设的大网，如何编织起人民走向幸福、美好的希望版图，托举起中华民族伟大复兴的中国梦。</p>
-<p>面对飘扬的国旗亿万双眼睛注视五星红旗冉冉升起,亿万颗心灵伴随祖国母亲一起搏动。抬头仰望,发现鲜艳的国旗已在共和国的上空飘扬了半个世纪。在世纪之交的今天,共和国已走过了七十个春秋。七十年前，”洋油” ”洋面” 还充斥着中国的大江南北;七十年后，许多国产已遍及世界各地。</p>
-<p>七十年前,我们的祖先还把汉代的耕梨插进二十世纪的农田;七十年后,现代化机械已开进中国的农家。<br>七十年前,港澳游子还站在金门望厦门;五十年后,归国侨胞已站在厦门望金门。-样的遥望,却是两样的情形。<br>七十年里，萧瑟秋风今又是，换了人间。</p>
-<p>依旧淳朴中隐着聪慧,荒中透着俊季，可再也听不见那血泪凝结的叹息,更也找不到贫贱不堪的足印，再也寻不见你昔日枯瘦蹒跚的身影,麦穗和齿轮构筑的太阳,伸出金色的臂膀擎着一片晴空,逶道而来,斩断阴霾的剑光在普照众生的沧桑。</p>
-<p>你傲然屹立于世界的东方,不管身边的风云如何的变幻,始终坚定地沿真理的方向勇往直前。你般迎着八面春风,在辐射的节奏里,眺望着更加灿烂的前程。</p>
-<p>我灵魂的纤绳永系向你风帆的桅杆;我手中的彩笔,永远写你壮重的风姿;</p>
-<p>面对飘扬国旗，血液在奔涌，思绪在沸腾,理想的根须在土里扎得更深。面对飘扬的国旗,我们已把自己溶入母亲炙热的胸襟。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>9.27技术分享</title>
     <url>/2019/09/27/2019-09-27-27jishu/</url>
     <content><![CDATA[<h1 id="今天发现了git克隆下来的远程库特别大"><a href="#今天发现了git克隆下来的远程库特别大" class="headerlink" title="今天发现了git克隆下来的远程库特别大:"></a>今天发现了git克隆下来的远程库特别大:</h1><p>经过查询之后发现是每次推送之后都会留下记录缓存，这样很多没用的记录就会占用多余的空间，别人克隆的时候也会多耗费时间，今天我查到了一个清除无用记录的方法。</p>
@@ -3766,6 +3841,26 @@ Person p = new Person();
       </categories>
       <tags>
         <tag>git清理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>9.27七十周年心得</title>
+    <url>/2019/09/27/2019-09-27-27xinde/</url>
+    <content><![CDATA[<h1 id="今天看了很多关于国家的视频-发现这七十年发展的是真不容易"><a href="#今天看了很多关于国家的视频-发现这七十年发展的是真不容易" class="headerlink" title="今天看了很多关于国家的视频,发现这七十年发展的是真不容易"></a>今天看了很多关于国家的视频,发现这七十年发展的是真不容易</h1><p>70年的风雨征程，带来了祖国繁荣强大，如同阳光照亮了我们的前程，指明了我们前进的方向，带领全国各族人民从贫穷走向富裕，从胜利走向辉煌。</p>
+<p>　　中华人民共和国国旗旗面为红色象征革命。旗上的五颗五角星及其相互关系象征共产党领导下的革命人民大团结。星用黄色是为着在红地上显出光明，四颗小五角星各有一角正对着大星的中心点，表示围绕着一个中心而团结。每逢国庆，去天安门广场看升国旗是无数人心中的梦想。因此，利用国庆长假去北京游玩的人们，通常会赶早来到天安门广场看国旗班的军人升旗，以表达对祖国的无比热爱，看着五星红旗徐徐升起，心中的激动无以言表。每年10月1日是我国的国庆节，我国于1999年修订发布《全国年节及纪念日放假办法》，将国庆节与相邻的周六、日组合为7天的国庆长假，被称之为“国庆黄金周”，用放假的形式，让老百姓共同感受国庆的欢乐。</p>
+<p>　　回首这70年，中华人民走得每一步都是步履蹒跚，每一步都付出了巨大牺牲。但是如今中国经过几十年来的艰苦建设，已取得了“乘长风，破万里浪”的迅猛发展:《辉煌中国》之《圆梦工程》透过港珠澳大桥、胡麻岭隧道、郑万铁路、复兴号、上海洋山港自动化码头、中国移动互联网等一个个超级工程，领略五年来一张张中国基础建设的大网，如何编织起人民走向幸福、美好的希望版图，托举起中华民族伟大复兴的中国梦。</p>
+<p>面对飘扬的国旗亿万双眼睛注视五星红旗冉冉升起,亿万颗心灵伴随祖国母亲一起搏动。抬头仰望,发现鲜艳的国旗已在共和国的上空飘扬了半个世纪。在世纪之交的今天,共和国已走过了七十个春秋。七十年前，”洋油” ”洋面” 还充斥着中国的大江南北;七十年后，许多国产已遍及世界各地。</p>
+<p>七十年前,我们的祖先还把汉代的耕梨插进二十世纪的农田;七十年后,现代化机械已开进中国的农家。<br>七十年前,港澳游子还站在金门望厦门;五十年后,归国侨胞已站在厦门望金门。-样的遥望,却是两样的情形。<br>七十年里，萧瑟秋风今又是，换了人间。</p>
+<p>依旧淳朴中隐着聪慧,荒中透着俊季，可再也听不见那血泪凝结的叹息,更也找不到贫贱不堪的足印，再也寻不见你昔日枯瘦蹒跚的身影,麦穗和齿轮构筑的太阳,伸出金色的臂膀擎着一片晴空,逶道而来,斩断阴霾的剑光在普照众生的沧桑。</p>
+<p>你傲然屹立于世界的东方,不管身边的风云如何的变幻,始终坚定地沿真理的方向勇往直前。你般迎着八面春风,在辐射的节奏里,眺望着更加灿烂的前程。</p>
+<p>我灵魂的纤绳永系向你风帆的桅杆;我手中的彩笔,永远写你壮重的风姿;</p>
+<p>面对飘扬国旗，血液在奔涌，思绪在沸腾,理想的根须在土里扎得更深。面对飘扬的国旗,我们已把自己溶入母亲炙热的胸襟。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -4607,6 +4702,21 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
+    <title>8.28日报</title>
+    <url>/2019/08/28/2019-08-28-28ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天下午学习了JS基础，学习了 定时器和选择对象并修改内容，还看了一些基础语法。</code>  </p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天学习的新任务是JS ，原来学过一些php也有一些基础学得还不算慢，总体来说今天的学习效率还可以。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.28技术文档</title>
     <url>/2019/08/28/2019-08-28-28jishu/</url>
     <content><![CDATA[<h1 id="JS常用知识"><a href="#JS常用知识" class="headerlink" title="JS常用知识"></a>JS常用知识</h1><blockquote>
@@ -4644,21 +4754,6 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8.28日报</title>
-    <url>/2019/08/28/2019-08-28-28ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天下午学习了JS基础，学习了 定时器和选择对象并修改内容，还看了一些基础语法。</code>  </p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><p>今天学习的新任务是JS ，原来学过一些php也有一些基础学得还不算慢，总体来说今天的学习效率还可以。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -4861,6 +4956,28 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
+    <title>8.23日报</title>
+    <url>/2019/08/23/2019-08-23-23ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天把vim常用命令整理得差不多了，vim进度90%，今天开始看的linux命令，但是感觉看的很乱，进度40%。</code>  </p>
+</blockquote>
+<blockquote>
+<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天心不够静，看到属性多了就乱了，不知道从哪开背起，后来慢慢的静下来从头看也看了好几个命令。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
+]]></content>
+      <categories>
+        <category>心得</category>
+      </categories>
+      <tags>
+        <tag>心得</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>8.23技术文档</title>
     <url>/2019/08/23/2019-08-23-23jishu/</url>
     <content><![CDATA[<h1 id="linux常用命令整理之一"><a href="#linux常用命令整理之一" class="headerlink" title="linux常用命令整理之一"></a>linux常用命令整理之一</h1><p><strong>关机 (系统的关机、重启以及登出 ):</strong><br>shutdown -h now 关闭系统<br>init 0 关闭系统<br>telinit 0 关闭系统<br>shutdown -h hours:minutes &amp; 按预定时间关闭系统<br>shutdown -c 取消按预定时间关闭系统<br>shutdown -r now 重启<br>reboot 重启<br>logout 注销   </p>
@@ -4881,28 +4998,6 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>8.23日报</title>
-    <url>/2019/08/23/2019-08-23-23ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天把vim常用命令整理得差不多了，vim进度90%，今天开始看的linux命令，但是感觉看的很乱，进度40%。</code>  </p>
-</blockquote>
-<blockquote>
-<p><code>今天按照网上的材料整理了一些linux常用命令，分享了技术博客。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>今天心不够静，看到属性多了就乱了，不知道从哪开背起，后来慢慢的静下来从头看也看了好几个命令。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>代码还是多敲，实践起来记忆得才快，代码敲得多了自然就会了。</p>
-]]></content>
-      <categories>
-        <category>心得</category>
-      </categories>
-      <tags>
-        <tag>心得</tag>
       </tags>
   </entry>
   <entry>
@@ -5090,6 +5185,25 @@ onload          浏览器已完成页面的加载
       </categories>
       <tags>
         <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>8.21日报</title>
+    <url>/2019/08/21/2019-08-21-21ribao/</url>
+    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
+<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
+</blockquote>
+<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
+<p>今天的不足与感悟</p>
+</blockquote>
+<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
+<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
+]]></content>
+      <categories>
+        <category>命令</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -5318,25 +5432,6 @@ onload          浏览器已完成页面的加载
       </tags>
   </entry>
   <entry>
-    <title>8.21日报</title>
-    <url>/2019/08/21/2019-08-21-21ribao/</url>
-    <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
-<p><code>今天勉强通过了老师的测试 git完成度在90%，并且今天整理了git常用命令。</code></p>
-</blockquote>
-<h1 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h1><blockquote>
-<p>今天的不足与感悟</p>
-</blockquote>
-<h3 id="今天的不足"><a href="#今天的不足" class="headerlink" title="今天的不足"></a>今天的不足</h3><p>考试的时候在写 git commit时候忘记先使用 git status 看一看，平时自己记笔记的时候还特意记过这一点，考试的时候还忘记了，这种马虎要长记性。还有今天学习效率问题，虽然勉强过了老师的考试，但是今天在学习时间的学习效率自我感觉很差 看的git官方后面的概念文档很蒙，感觉今天往后看没什么太大进度，只有一点大致了解。</p>
-<h3 id="今天的感悟"><a href="#今天的感悟" class="headerlink" title="今天的感悟"></a>今天的感悟</h3><p>在一个知识点搞不明白时候一定要自己亲手自己实验几遍，实验几遍不会再去问其他同学，其他同学有问题也要勤看，尽管自己也不能会，等他解决问题之后再去看看他怎么解决的，以后注意同样问题。<br>总之个人的发展离不开团体。</p>
-]]></content>
-      <categories>
-        <category>命令</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8.20日报</title>
     <url>/2019/08/20/2019-08-20-20ribao/</url>
     <content><![CDATA[<h1 id="学习进度"><a href="#学习进度" class="headerlink" title="学习进度"></a>学习进度</h1><blockquote>
@@ -5432,8 +5527,8 @@ onload          浏览器已完成页面的加载
         <category>系统与命令</category>
       </categories>
       <tags>
-        <tag>ubuntu</tag>
         <tag>git</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
 </search>

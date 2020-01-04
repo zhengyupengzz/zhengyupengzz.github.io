@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-12-25T02:04:30.565Z</updated>
+  <updated>2020-01-02T06:31:40.207Z</updated>
   <id>/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>12.25技术分享</title>
-    <link href="/2019/12/25/2019-12-25-25jishu/"/>
-    <id>/2019/12/25/2019-12-25-25jishu/</id>
-    <published>2019-12-24T16:00:00.000Z</published>
-    <updated>2019-12-25T02:04:30.565Z</updated>
+    <title>12.27所见问题</title>
+    <link href="/2019/12/27/2020-01-02-02jishu/"/>
+    <id>/2019/12/27/2020-01-02-02jishu/</id>
+    <published>2019-12-26T16:00:00.000Z</published>
+    <updated>2020-01-02T06:31:40.207Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,63 @@
       
         
         
-          &lt;h1 id=&quot;springboot网页显示数据库数据步骤-以XdhClass为例&quot;&gt;&lt;a href=&quot;#springboot网页显示数据库数据步骤-以XdhClass为例&quot; class=&quot;headerlink&quot;
+          &lt;h1 id=&quot;今天安装了一些IDEA的插件&quot;&gt;&lt;a href=&quot;#今天安装了一些IDEA的插件&quot; class=&quot;headerlink&quot; title=&quot;今天安装了一些IDEA的插件:&quot;&gt;&lt;/a&gt;今天安装了一些IDEA的插件:&lt;/h1&gt;&lt;h3 id=&quot;一些常用IDEA插件&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="idea项目热部署" scheme="/categories/idea%E9%A1%B9%E7%9B%AE%E7%83%AD%E9%83%A8%E7%BD%B2/"/>
+    
+    
+      <category term="idea实用插件" scheme="/tags/idea%E5%AE%9E%E7%94%A8%E6%8F%92%E4%BB%B6/"/>
+    
+      <category term="idea项目热部署" scheme="/tags/idea%E9%A1%B9%E7%9B%AE%E7%83%AD%E9%83%A8%E7%BD%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>12.27所见问题</title>
+    <link href="/2019/12/27/2019-12-27-27jishu/"/>
+    <id>/2019/12/27/2019-12-27-27jishu/</id>
+    <published>2019-12-26T16:00:00.000Z</published>
+    <updated>2019-12-27T01:36:24.855Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SQL语句没问题报SQL语句错误问题及解决&quot;&gt;&lt;a href=&quot;#SQL语句没问题报SQL语句错误问题及解决&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="一直报500,SQL语句错误" scheme="/categories/%E4%B8%80%E7%9B%B4%E6%8A%A5500-SQL%E8%AF%AD%E5%8F%A5%E9%94%99%E8%AF%AF/"/>
+    
+    
+      <category term="SQL语句没问题报SQL语句错误" scheme="/tags/SQL%E8%AF%AD%E5%8F%A5%E6%B2%A1%E9%97%AE%E9%A2%98%E6%8A%A5SQL%E8%AF%AD%E5%8F%A5%E9%94%99%E8%AF%AF/"/>
+    
+      <category term="MySQL数据库时区问题" scheme="/tags/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%B6%E5%8C%BA%E9%97%AE%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>12.25技术分享</title>
+    <link href="/2019/12/25/2019-12-25-25jishu/"/>
+    <id>/2019/12/25/2019-12-25-25jishu/</id>
+    <published>2019-12-24T16:00:00.000Z</published>
+    <updated>2019-12-25T07:06:56.469Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;springboot网页显示数据库数据步骤-以Teacher为例&quot;&gt;&lt;a href=&quot;#springboot网页显示数据库数据步骤-以Teacher为例&quot; class=&quot;headerlink&quot;
         
       
     
@@ -509,64 +565,6 @@
     
     
       <category term="Jquery" scheme="/tags/Jquery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11.29Java学习进度</title>
-    <link href="/2019/11/29/2019-11-29-29ribao/"/>
-    <id>/2019/11/29/2019-11-29-29ribao/</id>
-    <published>2019-11-28T16:00:00.000Z</published>
-    <updated>2019-11-30T01:35:09.509Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Ajax-GSON-jar&quot;&gt;&lt;a href=&quot;#Ajax-GSON-jar&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="/categories/Java/"/>
-    
-    
-      <category term="Ajax" scheme="/tags/Ajax/"/>
-    
-      <category term="GSON.jar" scheme="/tags/GSON-jar/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11.28Java学习进度</title>
-    <link href="/2019/11/28/2019-11-28-28ribao/"/>
-    <id>/2019/11/28/2019-11-28-28ribao/</id>
-    <published>2019-11-27T16:00:00.000Z</published>
-    <updated>2019-11-28T15:55:09.579Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;JSTL常用标签-自定义标签-web三大组件&quot;&gt;&lt;a href=&quot;#JSTL常用标签-自定义标签-web三大组件&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="/categories/Java/"/>
-    
-    
-      <category term="JSTL标签" scheme="/tags/JSTL%E6%A0%87%E7%AD%BE/"/>
-    
-      <category term="自定义标签" scheme="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%87%E7%AD%BE/"/>
-    
-      <category term="web三大组件" scheme="/tags/web%E4%B8%89%E5%A4%A7%E7%BB%84%E4%BB%B6/"/>
     
   </entry>
   
